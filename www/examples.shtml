@@ -10,14 +10,11 @@
 <!--#include virtual="header.html" -->
 <h1>Examples</h1>
 <ul>
-  <li style="margin:8px"><a href="https://github.com/gosu-lang/gosu-example-dynamictype">Dynamic Type Loader</a>
-    <li style="margin:16px">A simple dynamic type loader</li>
+  <li style="margin:8px"><a href="https://github.com/gosu-lang/gosu-example-dynamictype">Dynamic Type Loader</a> - A simple dynamic type loader
   </li>
-  <li style="margin:8px"><a href="https://github.com/gosu-lang/gosu-example-servlet">Gosu Servlet</a>
-    <li style="margin:16px">Example for deploying a Gosu-powered servlet</li>
+  <li style="margin:8px"><a href="https://github.com/gosu-lang/gosu-example-servlet">Gosu Servlet</a> - Example for deploying a Gosu-powered servlet
   </li>
-  <li style="margin:8px">Using Hibernate (coming soon on GitHub)
-    <li style="margin:16px">Example usage of Hibernate in Gosu</li>
+  <li style="margin:8px">Using Hibernate (coming soon on GitHub) - Example usage of Hibernate in Gosu
   </li>
 </ul>
 <!--#include virtual="footer.html" -->
