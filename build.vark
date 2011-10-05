@@ -13,6 +13,10 @@ uses org.apache.maven.artifact.ant.RemoteRepository
 
 uses www.*
 
+DefaultTarget = "build-website"
+
+var _current = "downloads/gosu-0.8.6.1-C/gosu-0.8.6.1-C"
+
 var binariesRepository = LazyVar.make(\ -> {
   // TODO - use a target arg or system property rather than hard coding
   var repoDir = file("/depot/opensource/gosu")
@@ -63,7 +67,6 @@ function buildWebsite() {
 
   log( "Generating dynamic web pages..." )
   buildIndexPage()
-  buildExamplesPage()
   buildDownloadsPage()
 
   log( "Copying releases to downloads" )
@@ -79,40 +82,11 @@ function buildWebsite() {
 }
 
 private function buildIndexPage() {
-  var latest = getLatestRelease()
-  buildDir.getChild( "www/index.shtml" ).write( Index.renderToString(latest) )
-}
-
-private function buildExamplesPage() 
-{
-  log( "Building examples..." )
-
-  var exampleDirs : List<File> = {}
-  if (binariesRepository.get() != null) {
-    exampleDirs = binariesRepository.get().file("SampleApps").Children
-  }
-
-  var exampleNames = exampleDirs.map(\ f -> f.Name).sort()
-
-  var targetExamplesDir = buildDir.getChild( "www/examples" )
-  Ant.mkdir(:dir = targetExamplesDir)
-  for( example in exampleDirs ) {
-    var targetZip = targetExamplesDir.getChild( "${example.Name}.zip" )
-    Ant.zip( :destfile=targetZip, :zipfilesetList={example.zipfileset()} )
-  }
-
-  var examplesPage = buildDir.getChild("www/examples.shtml" )
-  examplesPage.write( Examples.renderToString( exampleNames ) )
+  buildDir.getChild( "www/index.shtml" ).write( Index.renderToString( _current ) )
 }
 
 private function buildDownloadsPage() {
-  var latest = getLatestRelease()
-  buildDir.getChild( "www/downloads.shtml" ).write( Downloads.renderToString( latest ) )
-}
-
-private function getLatestRelease() : String {
-  // TODO
-  return "foo"
+  buildDir.getChild( "www/downloads.shtml" ).write( Downloads.renderToString( _current ) )
 }
 
 /* 
