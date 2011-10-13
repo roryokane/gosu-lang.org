@@ -19,6 +19,16 @@
   <li style="padding:16px">Eclipse plugin - TBD</li>
 </ul>
 
+<h1><a name="Past_Milestones"></a>Past Milestones<a href="#Past_Milestones" class="section_anchor"></a></h1>
+<h2><a name="0.8.0"></a>0.8.0<a href="#0.8.0" class="section_anchor"></a></h2>
+<p>Enhancements : 
+<ul><li>Editor to support multi-file edit </li>
+<li>Feature Literals </li><li>Named Variables </li>
+<li>some other Features requested by the <a href="https://github.com/kprevas/ronin" rel="nofollow">Ronin</a> team </li>
+<li>some other feature requests from the <a href="http://vark.github.com" rel="nofollow">Vark</a> team </li>
+<li>XML typeloader </li>
+</ul>
+
 <!--#include virtual="footer.html" -->
 </body>
 <SCRIPT>setNav('about');</SCRIPT>
