@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Dynamic Type Example</title>
+    <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1472410">Getting Started with Gosu </a> : Dynamic Type Example</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1472410">Dynamic Type Example</a></div>
+      <div class="B_-_Body"><a name="1472447">The Gosu type system has an extensible type system. The language supports custom type loaders that dynami</a>cally inject types into the language so you can use them as native objects in Gosu. For example, custom type loaders add Gosu types for objects from XML schemas (XSDs) and from remote WS-I compliant web services (SOAP). Modules of code can create entire namespaces of new types. This means that a type loader can dynamically add types and Gosu code can manipulate them as native objects.</div>
+      <div class="B_-_Body"><a name="1473195">Later versions of the Gosu community release will include more APIs and documentation about creating your </a>own custom type loaders. </div>
+      <div class="B_-_Body"><a name="1472552">The Gosu examples directory includes two example projects that are related:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;margin-bottom: 2.0pt; vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="cv_-_computer_voice"><a name="1472544">DynamicType</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;margin-bottom: 2.0pt; vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="cv_-_computer_voice"><a name="1472558">UseDynamicType</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1472566">The </a><span class="cv_-_computer_voice">DynamicType</span> project is a demonstration type loader that demonstrates the unusual power of the Gosu extensible type system without having to type a lot of code. </div>
+      <div class="B_-_Body"><a name="1472820">The purpose of </a><span class="cv_-_computer_voice">DynamicType</span> is to create a type with the fully-qualified name <span class="cv_-_computer_voice">dynamic.Dynamic</span> that has a few special behaviors in the Gosu type system:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1472880">Any object can be assigned to a variable of this special type. For example, if a variable has type </a><span class="cv_-_computer_voice">dynamic.Dynamic</span>, then you could assign a <span class="cv_-_computer_voice">String</span>, a <span class="cv_-_computer_voice">Map</span>, an <span class="cv_-_computer_voice">ArrayList</span> or any other object to the variable. Effectively, this is way of creating a non-statically-typed type in Gosu, as opposed to its normal static typing behavior. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1472907">Method invocations and property invocations can happen dynamically and reflectively. In other words, you </a>can call a method on an object or get a property from an object, and at compile time Gosu will permit it. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1473150">This dynamic type approach is effectively the opposite of the normal way of coding in a statically-typed </a>language such as Gosu. This is not a normal way of writing Gosu code. This example simply demonstrates that custom type loader behavior can generate complex new and potentially useful behaviors.</div>
+      <div class="B_-_Body"><a name="1473151">The main files of this project are in the directory </a><span class="cv_-_computer_voice">src/custom/dyntype</span>. The Gosu type loaders are written in Java, which is a requirement for Gosu type loaders.</div>
+      <div class="B_-_Body"><a name="1472772">That directory includes the Java files for the type loader for the </a><span class="cv_-_computer_voice">Dynamic</span> type. These Java files tell Gosu how to, for example, load a type, how to get properties from a type, and how to expose and invoke methods on the type. The files have names such as <span class="cv_-_computer_voice">DynamicMethodInfo.java</span> and <span class="cv_-_computer_voice">DynamicTypeLoader.java</span>.</div>
+      <div class="B_-_Body"><a name="1472774">The </a><span class="cv_-_computer_voice">UseDynamicType</span> example shows how you might use this type in a simple way:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472715">classpath ".."</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472616">//typeloader custom.dyntype.DynamicTypeLoader</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472617">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472618">uses dynamic.Dynamic</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472619">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472620">foo( "hello" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472621">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472622">function foo( value: Dynamic )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472623">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472624">  print( value.charAt( 1 ) )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472625">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473011">&nbsp;</a></PRE>
+      <div class="B_-_Body"><a name="1472721">In this example, a function has an argument of the special type called </a><span class="cv_-_computer_voice">Dynamic</span>. The call to the function passes a String object. This compiles successfully because the dynamic type allows any object to be assigned to it. As a function parameter, within the function the parameter name value contains the object. The code then calls the <span class="cv_-_computer_voice">charAt</span> method of the object. Normally, Gosu requires that the declared type contain explicit methods on the object if you want to call them. In this case, the example type loader allows any method name on the <span class="cv_-_computer_voice">Dynamic</span> object without compile errors. At run time, the type loader handles the method invocation and if the target object at run time contains that method, it will succeed. </div>
+      <div class="B_-_Body"><a name="1473085">In this example, the </a><span class="cv_-_computer_voice">charAt</span> method is a method on a <span class="cv_-_computer_voice">String</span> object, so the code succeeds. If you changed the code to call some arbitrary method name that String does not possess, such as <span class="cv_-_computer_voice">notRealMethodName</span>, this code would throw an exception at run time. However, because of the special dynamic nature of the type loader, by design it would not show any error at compile time.</div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1473025">This example is intended for reading only. It is not fully functional in the initial Gosu </a>community release due to in-progress changes in adding type loaders. Later versions of the Gosu community release will include more APIs and documentation about creating your own custom type loaders.</div>
+      <div class="B_-_Body"><a name="1472662">&nbsp;</a></div>
+      <div class="B_-_Body"><a name="1473183">In this example, a function has an argument of the special type called </a><span class="cv_-_computer_voice">Dynamic</span>. The call to the function passes a String object. This compiles successfully because the dynamic type allows any object to be assigned to it. As a function parameter, within the function the parameter name value contains the object. The code then calls the <span class="cv_-_computer_voice">charAt</span> method of the object. Normally, Gosu requires that the declared type contain explicit methods on the object if you want to call them. In this case, the example type loader allows any method name on the <span class="cv_-_computer_voice">Dynamic</span> object without compile errors. At run time, the type loader handles the method invocation and if the target object at run time contains that method, it will succeed. </div>
+      <div class="B_-_Body"><a name="1473184">In this example, the </a><span class="cv_-_computer_voice">charAt</span> method is a method on a <span class="cv_-_computer_voice">String</span> object, so the code succeeds. If you changed the code to call some arbitrary method name that String does not possess, such as <span class="cv_-_computer_voice">notRealMethodName</span>, this code would throw an exception at run time. However, because of the special dynamic nature of the type loader, by design it would not show any error at compile time.</div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1473185">This example is intended for reading only. It is not fully functional in the initial Gosu </a>community release due to in-progress changes in adding type loaders. Later versions of the Gosu community release will include more APIs and documentation about creating your own custom type loaders.</div>
+      <div class="B_-_Body"><a name="1473186">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

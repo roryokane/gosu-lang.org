@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Hibernate Example</title>
+    <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1471689">Getting Started with Gosu </a> : Hibernate Example</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1471689">Hibernate Example</a></div>
+      <div class="B_-_Body"><a name="1471894">The </a><span class="cv_-_computer_voice">examples</span> directory in the Gosu directory includes an example called <span class="cv_-_computer_voice">hibernate</span>. This shows an example project that uses the Hibernate tool. Hibernate is a Java library that provides a framework for mapping an object-oriented domain model to a traditional relational database. This is also called an object-relational mapping (ORM). Hibernate is free and open source software. </div>
+      <div class="B_-_Body"><a name="1471801">Gosu can easily access any Java classes or JAR files, so Gosu can access these valuable persistence libraries.</a></div>
+      <div class="B_-_Body"><a name="1471989">For more information about the Hibernate project, refer to:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1471990">http://www.hibernate.org/</a></div>
+      <div class="B_-_Body"><a name="1471978">The example contains a couple Gosu files and a directory of libraries (including the Hibernate libraries).</a></div>
+      <div class="B_-_Body"><a name="1472029">The main file is the file </a><span class="cv_-_computer_voice">src/demo/TestDrive.gsp</span>. This is the main entry point to the example. The file extension is <span class="cv_-_computer_voice">.gsp</span>, which means this is a Gosu program. A Gosu program is a way to write small scripts or to launch larger Gosu applications that use Gosu classes or other Java types.</div>
+      <div class="B_-_Body"><a name="1472074">The TestDrive.gsp file has a utility function called </a><span class="cv_-_computer_voice">configureHibernate</span>, which sets up a map of configuration properties for Hibernate. It uses the initialization Gosu syntax as follows:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472120">var props = {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472121">    "hibernate.dialect" -&gt; "org.hibernate.dialect.HSQLDialect",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472122">    "hibernate.connection.driver_class" -&gt; "org.hsqldb.jdbcDriver",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472123">    "hibernate.connection.url" -&gt; "jdbc:hsqldb:mem:demodb",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472124">    "hibernate.connection.username" -&gt; "sa",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472125">    "hibernate.connection.password" -&gt; "",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472126">    "hibernate.connection.pool_size" -&gt; "1",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472127">    "hibernate.connection.autocommit" -&gt; "true",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472128">    "hibernate.cache.provider_class" -&gt; "org.hibernate.cache.NoCacheProvider",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472129">    "hibernate.hbm2ddl.auto" -&gt; "create-drop",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472130">    //"hibernate.show_sql" -&gt; "true",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472131">    "hibernate.transaction.factory_class" -&gt; "org.hibernate.transaction.JDBCTransactionFactory",</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472132">    "hibernate.current_session_context_class" -&gt; "thread"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472133">  }</a></PRE>
+      <div class="B_-_Body"><a name="1472105">The resulting type is a </a><span class="cv_-_computer_voice">java.util.Map&lt;String, String&gt;</span> object, which is not explicit. Gosu infers the type because of the use of the -&gt; syntax that maps the property (a <span class="cv_-_computer_voice">String</span>) to a value (a <span class="cv_-_computer_voice">String</span>).</div>
+      <div class="B_-_Body"><a name="1472164">The configuration function then sends these properties to the Hibernate system:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472364">var config = new AnnotationConfiguration()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472365">props.eachKeyAndValue( \k, v -&gt; config.setProperty(k, v) )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472366">config.addAnnotatedClass( Book.Type.BackingClass )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472367">return config.buildSessionFactory()</a></PRE>
+      <div class="B_-_Body"><a name="1472344">Next, the example begins a database transaction using the Hibernate libraries:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472190">// Add some books</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472191">var sn = sessionFactory.CurrentSession</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472192">var tx = sn.beginTransaction()</a></PRE>
+      <div class="B_-_Body"><a name="1472240">Next, the example creates some new objects to save in the database, and commits them to the database.</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472193">sn.save( new Book() {:Author="I.N. Herstein", :Title="Abstract Algebra"} )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472194">sn.save( new Book() {:Author="David Hackett Fischer", :Title="Washington's Crossing"} )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472195">tx.commit()</a></PRE>
+      <div class="B_-_Body"><a name="1472250">Finally, the example runs a database query to confirm that the sample worked successfully:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472275">// Find some books</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472276">sn = sessionFactory.CurrentSession</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472277">tx = sn.beginTransaction()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472278">var query = sn.createQuery( "from " + Book.Type.RelativeName )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472279">for( book in query.iterate() as Iterator&lt;Book&gt; ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472280">  print( book.Title + " by " + book.Author )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472281">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472282">tx.commit()</a></PRE>
+      <div class="B_-_Body"><a name="1472264">The Gosu code iterates across the results in a </a><span class="cv_-_computer_voice">for</span> loop. Note the code that casts the query to an iterator:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1472310">as Iterator&lt;Book&gt;</a></div>
+      <div class="B_-_Body"><a name="1472219">By doing this, the code inside the loop can treat the book variable as the </a><span class="e_-_emphasis">correct specific type</span>. That means that it can access type-specific fields like <span class="cv_-_computer_voice">book.Title</span> and <span class="cv_-_computer_voice">book.Author</span> in a type-safe way.</div>
+      <div class="B_-_Body"><a name="1472334">As you can see, inside the loop is an example of the one global function in Gosu, which is the </a><span class="cv_-_computer_voice">print</span> function. It prints a <span class="cv_-_computer_voice">String</span> to the console or standard output.</div>
+      <div class="B_-_Body"><a name="1472498">Another project file is </a><span class="cv_-_computer_voice">src/demo/Book.gs</span>. It is a Gosu class that defines the structure of the book objects in the example. Refer to it for details if you plan to implement a Hibernate project in Gosu.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

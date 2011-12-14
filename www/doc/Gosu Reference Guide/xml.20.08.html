@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>XSD-based Properties and Types</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.20.01.html#1539306">Gosu and XML</a> : XSD-based Properties and Types</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1539306">XSD-based Properties and Types</a></div>
+      <div class="B_-_Body"><a name="1539307">The most powerful way to use XML in Gosu is to use an XSD that describes in a strict way what is valid in your </a>XML. If you can use or generate an XSD for your data, it is strongly recommended.</div>
+      <div class="B_-_Body"><a name="1539308">When you load an XSD into the Gosu type system by putting it in the Gosu class hierarchy, Gosu creates new </a>types and properties. If you are using XSDs and you use these types and properties for your Gosu code, your XML-related code is significantly easier to read and understand. You can use natural Gosu syntax to access child elements such as <span class="cv_-_computer_voice">element.ChildName</span>.</div>
+      <div class="B_-_Body"><a name="1539309">You can use the basic </a><span class="cv_-_computer_voice">XmlElement</span> properties and methods like <span class="cv_-_computer_voice">element.Children</span> and <span class="cv_-_computer_voice">element.getChild("ChildName")</span>, but they are harder to understand for the typical getting and setting values and elements.</div>
+      <div class="B_-_Body"><a name="1605255">For this topic, </a><span class="p_-_parameter">schema</span> represents the fully-qualified path to the schema, <span class="p_-_parameter">elementName</span> represents an element name, and <span class="p_-_parameter">parentName</span> and <span class="p_-_parameter">childName</span> represent names of parent and child elements. The following table summarizes the automatic XSD-based properties that Gosu creates. The rightmost column indicates (for properties only) whether the property becomes a list property if it can appear more than once. If it says Yes, it is declared as a <span class="cv_-_computer_voice">java.util.List</span> parameterized on the type it would be if it were singular. </div>
+      <div class="B_-_Body"><a name="1605296">For example, suppose a child element is declared in the XSD with the type </a><span class="cv_-_computer_voice">xsd:int</span>. If its <span class="cv_-_computer_voice">maxOccurs</span> setting is <span class="e_-_emphasis">1</span>, the Gosu type for the property is <span class="cv_-_computer_voice">Integer</span>. If its <span class="cv_-_computer_voice">maxOccurs</span> attribute value is <span class="e_-_emphasis">greater than 1</span>, the Gosu type for the property is <span class="cv_-_computer_voice">List&lt;Integer&gt;</span> (a list of integers). </div>
+      <div class="B_-_Body"><a name="1605303">There are other circumstances in which a property becomes a list. For example, suppose there is a XSD choice </a>(<span class="cv_-_computer_voice">&lt;xsd:choice&gt;</span>) in an XSD that has <span class="cv_-_computer_voice">maxOccurs</span> attribute value greater than 1. Any child elements become list properties. For example, if the choice defines child elements with names <span class="cv_-_computer_voice">"elementA"</span> and <span class="cv_-_computer_voice">"elementB"</span>, Gosu creates properties called <span class="cv_-_computer_voice">ElementA</span> and <span class="cv_-_computer_voice">ElementB</span>, both declared as lists. (Gosu also exposes some shortcuts for inserting items. See <a href="javascript:WWHClickedPopup('gosu', 'xml.20.08.html#1621424', '');" title="XSD-based Properties and Types">"Automatic Insertion into Lists"</a>)</div>
+      <div class="T_-_Table"><a name="1539398">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left;" cellspacing="10" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1605584">For each...</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1605586">There is a </a>new...</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1605588">With syntax...</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1605590">Becomes list </a>property if can appear more than once?</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605592">top-level element in the schema</a></div>
+          </td>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605594">type</a></div>
+          </td>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605596">For top-level elements, Gosu creates the type:</a></div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: italic; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605597">schema.ElementName</a></span></div>
+            <div class="TT_-_Table_Text"><a name="1605598">However, if the top-level element is defined in a </a>WSDL, then Gosu creates the type:</div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605599">schema</a></span><span class="cvt_-_computer_voice_table">.elements.</span><span class="pt_-_parameter_in_table">ElementName</span></div>
+          </td>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605601">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605603">anonymous (non-top-level) ele</a>ment in the schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605605">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605607">schema</a></span><span class="cvt_-_computer_voice_table">.anonymous.elements.</span><span class="pt_-_parameter_in_table">PathFromRoot</span></div>
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="1605980">IMPORTANT:</a></span> The<span class="pt_-_parameter_in_table">PathFromRoot</span> placeholder is a generated name that embeds the path <span class="e_-_emphasis">from the root </span><span class="e_-_emphasis">of the XSD</span>, with names separated by underscores. For example, suppose the anonymous element with name <span class="cvt_-_computer_voice_table">A</span> is defined in the XSD under a group named <span class="cvt_-_computer_voice_table">GroupB</span>. The <span class="pt_-_parameter_in_table">PathFromRoot</span> would be <span class="cvt_-_computer_voice_table">GroupB_A</span>. This is also true if the anonymous element is more than two levels from the root of the XSD. For example, if the A element had an anonymous child element named C, then the <span class="pt_-_parameter_in_table">PathFromRoot</span> would be <span class="cvt_-_computer_voice_table">GroupB_A_C</span>.</div>
+            <div class="TT_-_Table_Text"><a name="1606111">For elements, the last part of the </a><span class="e_-_emphasis">PathFromRoot</span> is always the element name.</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605609">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605611">top-level complex type in the </a>schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605613">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605615">schema</a></span><span class="cvt_-_computer_voice_table">.types.complex.</span><span class="pt_-_parameter_in_table">TypeName</span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605617">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605619">anonymous (non-top-level) com</a>plex type in the schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605621">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605623">schema</a></span><span class="cvt_-_computer_voice_table">.anonymous.types.complex.</span><span class="pt_-_parameter_in_table">TypeName</span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605625">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605768">top-level simple type in the </a>schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605770">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605772">schema</a></span><span class="cvt_-_computer_voice_table">.types.simple.</span><span class="pt_-_parameter_in_table">TypeName</span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605774">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605760">anonymous (non-top-level) sim</a>ple type in the schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605762">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605764">schema</a></span><span class="cvt_-_computer_voice_table">.anonymous.types.simple.</span><span class="pt_-_parameter_in_table">TypeName</span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605766">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605804">top-level attribute in the schema</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605806">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605808">schema</a></span><span class="cvt_-_computer_voice_table">.attributes.</span><span class="pt_-_parameter_in_table">AttributeName</span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605810">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605812">anonymous (non-top-level) attri</a>bute in the schema</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605814">type</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605816">schema</a></span><span class="cvt_-_computer_voice_table">.anonymous.attributes.</span><span class="pt_-_parameter_in_table">PathFromRoot</span></div>
+            <div class="TT_-_Table_Text"><a name="1606075">See earlier in this table for the definition of the </a><span class="e_-_emphasis">Path</span><span class="e_-_emphasis"></span><span class="e_-_emphasis">FromRoot</span>. The last part of the <span class="e_-_emphasis">PathFromRoot</span> is always the attribute name.</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605818">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605889">attribute</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605891">property</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: italic; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605893">element.AttributeName</a></span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605895">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605651">schema</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605653">special schema </a>access object</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><span class="pt_-_parameter_in_table"><a name="1605655">schema</a></span><span class="cv_-_computer_voice">.</span><span class="cvt_-_computer_voice_table">util.SchemaAccess</span> </div>
+            <div class="TT_-_Table_Text"><a name="1605656">It is a special utility object for providing access to </a>the original schema that produced this type hierarchy. Think of this as a way of representing this schema. This is important if you need one schema to include another schema (see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.06.html#1594202', '');" title="Parsing XML Data into an XML Element">"Referencing Additional Schemas During Parsing"</a>).</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605661">--</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605663">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605665">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605667">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605669">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #F7F7F7; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;" colspan="4">
+            <div class="TH_-_Table_Heading"><a name="1605671">For every child element with simple type -- or a child element with a complex type and a simple content</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605679">child element. </a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605682">property</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: italic; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605684">element.ChildName_elem</a></span></div>
+            <div class="TT_-_Table_Text"><a name="1605946">If it is a top-level (non-anonymous) element in XSD, </a>the type is <span class="pt_-_parameter_in_table">schema.ChildName</span></div>
+            <div class="TT_-_Table_Text"><a name="1605958">If it is an anonymous (non-top-level) element in </a>XSD, the type is <span class="pt_-_parameter_in_table">schema.</span><span class="cvt_-_computer_voice_table">anonymous.elements</span><span class="pt_-_parameter_in_table">.PathFromRoot</span></div>
+            <div class="TT_-_Table_Text"><a name="1606597">See earlier in this table for the definition of the </a><span class="e_-_emphasis">Path</span><span class="e_-_emphasis"></span><span class="e_-_emphasis">FromRoot</span>. The last part of the <span class="e_-_emphasis">PathFromRoot</span> is always the attribute name.</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1606450">Yes </a></span></div>
+            <div class="TT_-_Table_Text"><a name="1606461">(See discus</a>sion of list properties immediately before this table.)</div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><a name="1605689">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605691">child element’s </a><span class="e_-_emphasis">value</span>. See discussion of list properties immediately before this table.</div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605694">property</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: italic; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="pt_-_parameter_in_table"><a name="1605696">element.ChildName</a></span></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605698">Yes</a></span></div>
+            <div class="TT_-_Table_Text"><a name="1606480">(See discus</a>sion of list properties immediately before this table.)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605709">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605711">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605713">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605715">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;" colspan="4">
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="1605717">NOTE: </a></span>Gosu uses the <span class="cv_-_computer_voice">ChildName/ChildName_elem</span> property pair for any child element with a complex type and a simple content. This is just the same behavior as for a child element with a simple type. Gosu does this because it is a common pattern to convert a <span class="cv_-_computer_voice">simpleType</span> to a <span class="cv_-_computer_voice">simpleContent</span> to add <span class="s_-_strong">attributes</span> to an element with a simple type. By taking this approach, no Gosu XML-related code breaks if you later decide to add attributes to an element and make this change.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605725">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605727">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605729">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605731">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #F7F7F7; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;" colspan="3">
+            <div class="TH_-_Table_Heading"><a name="1605733">For every child element with complex type but with no simple content</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605739">&nbsp;</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605741">child element</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1605743">property</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><span class="pt_-_parameter_in_table"><a name="1605745">element</a></span>.<span class="pt_-_parameter_in_table">ChildName</span></div>
+            <div class="TT_-_Table_Text"><a name="1606507">If it is a top-level (non-anonymous) element in XSD, </a>the type is <span class="pt_-_parameter_in_table">schema.ChildName</span></div>
+            <div class="TT_-_Table_Text"><a name="1606508">If it is an anonymous (non-top-level) element in </a>XSD, the type is <span class="pt_-_parameter_in_table">schema.</span><span class="cvt_-_computer_voice_table">anonymous.elements</span><span class="pt_-_parameter_in_table">.PathFromRoot</span></div>
+            <div class="TT_-_Table_Text"><a name="1606530">See earlier in this table for the definition of the </a><span class="e_-_emphasis">Path</span><span class="e_-_emphasis"></span><span class="e_-_emphasis">FromRoot</span>. The last part of the <span class="e_-_emphasis">PathFromRoot</span> is always the element name.</div>
+            <div class="TT_-_Table_Text"><a name="1606509">The type name combines the names of the parent </a>element and the child element, separated by an underscore</div>
+            <div class="TT_-_Table_Text"><a name="1605747">&nbsp;</a></div>
+          </td>
+          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: Arial; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="s_-_strong"><a name="1605749">Yes</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_-_Heading_2"><a name="1606610">Normalization of Gosu Generated XSD-based Names</a></div>
+      <div class="B_-_Body"><a name="1606558">In cases where Gosu creates type names and element names, Gosu performs slight normalization of the names:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1606181">One prominent aspect of normalization is capitalization to conform to Gosu naming standards for packages, </a>properties, and types. For example, Gosu packages become all lowercase. Types must start with initial capitals. Properties must start with initial capitals. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1606191">If the type or property names contains invalid characters for Gosu for that context, Gosu changes them. For </a>example, hyphens are disallowed and removed.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1606357">If Gosu finds an invalid character and the following character is lowercase, Gosu removes the invalid </a>character and uppercases the following letter. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1606367">If Gosu finds an invalid character and the following character is uppercase, Gosu converts the invalid </a>character to an underscore and does not change the following character. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1606374">If the first character is invalid as a first character but otherwise valid (for example, a numeric digit), Gosu </a>simply prepends an underscore. If it is entirely invalid within a name in that context (such as hyphen), Gosu removes the character. In the unusual case in which after removing all start characters, no characters remain, Gosu simply renames that item a simple underscore.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1606394">If there are duplicates, Gosu appends numbers to some of them. For example, </a><span class="cv_-_computer_voice">MyProp</span>, <span class="cv_-_computer_voice">MyProp2</span>, <span class="cv_-_computer_voice">MyProp3</span>, and so on.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_-_Heading_2"><a name="1621501">Examples of XSD Names</a></div>
+      <div class="B_-_Body"><a name="1621502">Let us try these with actual examples. Suppose you have the following XSD in the package </a><span class="cv_-_computer_voice">examples.pl.gosu.xml</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621503">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621504">    &lt;xsd:element name="Element1"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621505">        &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621506">            &lt;xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621507">                &lt;xsd:element name="Child1"/&gt; &lt;!-- default type is xsd:anyType --&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621508">                &lt;xsd:element name="Child2" type="xsd:int"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621509">            &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621510">        &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621511">    &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621512">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1621513">Review the following Gosu code:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621514">var xml = new packagename.myschema.Element1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621515">var child1 = xml.Child1 // this is a schema.anonymous.elements.Element1_Child1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621516">var child2 = xml.Child2 // this is a java.lang.Integer</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621517">xml.Child2 = 5 // set the property with a simple type</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621518">var child2Elem = xml.Child2_elem // this is a schema.anonymous.elements.Element1_Child2</a></PRE>
+      <div class="B_-_Body"><a name="1621519">Note the following:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1621520">The </a><span class="cv_-_computer_voice">Child1</span> property is of type <span class="cv_-_computer_voice">schema.anonymous.elements.Element1_Child1</span>, which is a subclass of <span class="cv_-_computer_voice">XmlElement</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1621521">The </a><span class="cv_-_computer_voice">Child2</span> property is of type <span class="cv_-_computer_voice">java.lang.Integer</span>. When a child element has a simple type, its natural property name gets the value, not than the child element object itself. If you wish to access the element object (the <span class="cv_-_computer_voice">XmlElement</span> instance) for that child, use the property with the <span class="cv_-_computer_voice">_elem</span> suffix. In this case, for the child named <span class="cv_-_computer_voice">Child2</span>, you use the element.<span class="cv_-_computer_voice">Child2_elem</span> property, which is of type <span class="cv_-_computer_voice">schema.anonymous.elements.Element1_Child2</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_-_Heading_2"><a name="1621424">Automatic Insertion into Lists</a></div>
+      <div class="B_-_Body"><a name="1621428">If you are using XSDs, for properties that represent child elements that can appear more than once, Gosu exposes </a>that property as a list. For properties that Gosu exposes as list properties (see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.08.html#1539306', '');" title="XSD-based Properties and Types">"XSD-based Properties and Types"</a>), Gosu has a special shorthand syntax for <span class="s_-_strong">inserting</span> items into the list. If you assign to the list index equal to the size of the list, then the index assignment becomes an insertion. </div>
+      <div class="B_-_Body"><a name="1623258">This is also true if the size of the list is zero: use the </a><span class="cv_-_computer_voice">[0]</span> array/list index notation and set the property. This inserts the value into the list, which is equivalent to adding an element to the list. However, you do not have to worry about whether the list exists yet if you use this syntax. (If you are creating XML objects in Gosu, by default the lists do not yet exist. From Gosu they are <span class="cv_-_computer_voice">null</span>.) </div>
+      <div class="B_-_Body"><a name="1623259">In other words, you can add an element with the syntax:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1623260">element.PropertyName[0] = childElement</a></div>
+      <div class="B_-_Body"><a name="1623261">If the list does</a>&nbsp;not&nbsp;exist yet for a list property at all, Gosu <span class="s_-_strong">creates</span> the list upon the first insertion. </div>
+      <div class="B_-_Body"><a name="1623290">In other words, suppose an element contains child elements that represent an address and the child element has </a>the name <span class="cv_-_computer_voice">Address</span>. If the XSD declares the element could exist more than once, the <span class="cv_-_computer_voice">element.Address</span> property is a list of addresses. The following code creates a new <span class="cv_-_computer_voice">Address</span>:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1623262">element.Address[0] = new my.package.xsdname.elements.Address()</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1623200">If you use XSDs, Gosu automatically creates intermediate XML elements as needed. </a>Use this feature to significantly improve the readability of your XML-related Gosu code.</div>
+      <div class="B_-_Body"><a name="1621430">For example, suppose you have the following XSD:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621431">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621432">    &lt;xsd:element name="Element1"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621433">        &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621434">            &lt;xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621435">                &lt;xsd:element name="Child1" type="xsd:int" maxOccurs="unbounded"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621436">            &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621437">        &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621438">    &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621439">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1621440">Run the following code:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621441">var xml = new schema.Element1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621442">print( "Before insertion: ${xml.Child1.Count}" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621443">xml.Child1[0] = 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621444">xml.Child1[1] = 1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621445">xml.Child1[2] = 2</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621446">print( "After insertion: ${xml.Child1.Count}" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621447">xml.print()</a></PRE>
+      <div class="B_-_Body"><a name="1621448">This outputs:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621449">Before insertion: 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621450">After insertion: 3</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621451">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621452">&lt;Element1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621453">  &lt;Child1&gt;0&lt;/Child1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621454">  &lt;Child1&gt;1&lt;/Child1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621455">  &lt;Child1&gt;2&lt;/Child1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621456">&lt;/Element1&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1621457">This also works with simple types derived by list (</a><span class="cv_-_computer_voice">xsd:list</span>):</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621458">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621459">    &lt;xsd:element name="Element1"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621460">        &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621461">            &lt;xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621462">                &lt;xsd:element name="Child1"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621463">                    &lt;xsd:simpleType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621464">                        &lt;xsd:list itemType="xsd:int"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621465">                    &lt;/xsd:simpleType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621466">                &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621467">            &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621468">        &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621469">    &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621470">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1621471">Output after running the exact same Gosu code:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621472">Before insertion: 0</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621473">After insertion: 3</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621474">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621475">&lt;Element1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621476">  &lt;Child1&gt;0 1 2&lt;/Child1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1621477">&lt;/Element1&gt;</a></PRE>
+      <div class="H2_-_Heading_2"><a name="1610237">XSD List Property Example</a></div>
+      <div class="B_-_Body"><a name="1610238">As mentioned earlier in this topic, if the possibility exists for a child element name to appear multiple times, then </a>the property becomes a list-based property.</div>
+      <div class="B_-_Body"><a name="1610240">For example, consider the following XSD:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610241">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610242">    &lt;xsd:element name="Element1"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610243">        &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610244">            &lt;xsd:choice&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610245">                &lt;xsd:element name="Child1" type="xsd:int"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610246">                &lt;xsd:sequence maxOccurs="unbounded"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610247">                    &lt;xsd:element name="Child2" type="xsd:int"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610248">                &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610249">            &lt;/xsd:choice&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610250">        &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610251">    &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610252">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1610253">The following code uses this XSD:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610254">var xml = new schema.Element1()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610255">xml.Child1 = 1</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610256">xml.print()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610257"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610258">print( "----------" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610259"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610260">xml.Child1 = null</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610261">xml.Child2 = { 1, 2, 3, 4 }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610262">xml.print()</a></PRE>
+      <div class="B_-_Body"><a name="1610263">This prints the following:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610264">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610265">&lt;Element1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610266">  &lt;Child1&gt;1&lt;/Child1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610267">&lt;/Element1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610268">----------</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610269">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610270">&lt;Element1&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610271">  &lt;Child2&gt;1&lt;/Child2&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610272">  &lt;Child2&gt;2&lt;/Child2&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610273">  &lt;Child2&gt;3&lt;/Child2&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610274">  &lt;Child2&gt;4&lt;/Child2&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1610275">&lt;/Element1&gt;</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

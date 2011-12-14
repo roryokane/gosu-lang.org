@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Exporting XML Data</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.20.01.html#1539076">Gosu and XML</a> : Exporting XML Data</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1539076">Exporting XML Data</a></div>
+      <div class="B_-_Body"><a name="1517978">The </a><span class="cv_-_computer_voice">XmlElement</span> class includes the following methods and properties that export XML data. All of these methods have alternate method signatures that takes a serialization options object of type <span class="cv_-_computer_voice">XmlSerializationOptions</span>. See later in this topic for details of this customization.</div>
+      <div class="B_-_Body"><a name="1575335">Each XML element provides the following methods that serialize the XML element:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1518149">bytes</a></span> method - This method returns an array of bytes (the type <span class="cvt_-_computer_voice_table">byte[]</span>) containing the UTF-8-encoded bytes in the XML. Generally speaking, this is the best approach for serializing the XML.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1518220">var ba = element.bytes()</a></div>
+      <div class="LP_-_List_Para"><a name="1518244">Compare and contrast with the </a><span class="cv_-_computer_voice">asUTFString</span> method, mentioned in the next bullet point.</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1628844">If your code sends XML with a transport that only understands character (not byte) data, always base-64 </a>encode the bytes to compactly and safely encode binary data. To do this, use the Gosu&nbsp;syntax: </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cv_-_computer_voice"><a name="1628845">var base64String = gw.util.Base64Util.encode(element.bytes())</a></span></div>
+      <div class="LP_-_List_Para"><a name="1628846">To reverse the process in Gosu, use the code:</a></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cv_-_computer_voice"><a name="1628847">var bytes = gw.util.Base64Util.decode(base64String)</a></span></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593771">print</a></span> method - serializes the element to the standard output stream (<span class="cv_-_computer_voice">System.out</span>). For example:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1593772">element.print()</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593782">writeTo</a></span> method - Writes to an output stream (<span class="cv_-_computer_voice">java.io.OutputStream</span>). This method does <span class="s_-_strong">not</span> close the stream afterward.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593783">asUTFString</a></span> method - serializes the element to a <span class="cv_-_computer_voice">String</span> object in UTF-8. For example:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1593784">var s = element.asUTFString()</a></div>
+      <div class="LP_-_List_Para"><a name="1518125">This method outputs the node as a </a><span class="cv_-_computer_voice">String</span> value containing XML with a header suitable for later export to UTF-8 or UTF-16 encoding. The generated XML header does <span class="s_-_strong">not</span> specify the encoding. In the absence of a specified encoding, all XML parsers must autodetect the encoding (UTF-8 or UTF-16). The existence of a <span class="e_-_emphasis">byte order mark</span> at the beginning of the document tells the parser what encoding to use. For more details of the XML byte order mark, refer to: <span class="cv_-_computer_voice"><a href="http://www.w3.org/TR/REC-xml/#sec-guessing" target="external_window">http://www.w3.org/TR/REC-xml/#sec-guessing</a></span></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1593689">Although the </a><span class="cv_-_computer_voice">asUTFString</span> method is helpful for debugging use, the <span class="cv_-_computer_voice">asUTFString</span> method is not the best way to export XML safely to external systems. In general, use the <span class="cv_-_computer_voice">bytes</span> method to get an array of bytes. If your code sends or stores XML with a transport that only understands character data (not byte data), always <span class="cv_-_computer_voice">Base64</span> encode the array of bytes. See the example earlier in this section for the <span class="cv_-_computer_voice">bytes</span> method. </div>
+      <div class="LP_-_List_Para"><a name="1518129">For more information about UTF-8, refer to:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1518130">http://tools.ietf.org/html/rfc3629</a></div>
+      <div class="B_-_Body"><a name="1593731">For all serializations, be sure to test your code with non-English characters. In other words, be sure to test with </a>characters with high Unicode code points.</div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1593742">Always test your XML serialization and integration code with non-English characters.</a></div>
+      <div class="B_-_Body"><a name="1521044">For all of these methods, you can customize serialization by optionally passing an </a><span class="cv_-_computer_voice">XmlSerializationOptions</span> instance as another parameter at the end of the parameter list. The serialization options object contains the following properties:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1521097">Comments</a></span> - <span class="cv_-_computer_voice">Boolean</span>. If true, exports each element’s comments. The default is <span class="cv_-_computer_voice">true</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1522838">Pretty</a></span> - <span class="cv_-_computer_voice">Boolean</span>. If <span class="cv_-_computer_voice">true</span>, Gosu attempts to improve visual layout of the XML with indenting and line separators. The default is <span class="cv_-_computer_voice">true</span>. If you set this to <span class="cv_-_computer_voice">false</span>, then Gosu ignores the values of the <span class="cv_-_computer_voice">Indent</span> and <span class="cv_-_computer_voice">LineSeparator</span> properties.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1521109">Indent</a></span> - <span class="cv_-_computer_voice">String</span>. Specifies the String to export for each level of hierarchy. The default is two spaces.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1521220">LineSeparator</a></span> - <span class="cv_-_computer_voice">String</span>. Sets the line separator. The default is newline (ASCII 10).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1521221">Sort</a></span> - <span class="cv_-_computer_voice">Boolean</span>. If true, ensures that the order of children elements of each element match the XSD. The default is <span class="cv_-_computer_voice">true</span>. This is particularly important for sequences. This feature only has an effect on an element if it is based on an XSD type. If the entire graph of <span class="cv_-_computer_voice">XmlElement</span> objects contains no XSD-based elements, this property has no effect. If a graph of XML objects contains a mix of XSD and non-XSD-based elements, this feature only applies to the XSD-based elements. This is true independent of whether the root node is an XSD-based element.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1590526">XmlDeclaration</a></span> - Returns whether to write the XML declaration at the top of the file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1521380">For example, the following example creates an element, then adds an element comment. Next, it demonstrates </a>printing the element with the default settings (with comments) and how to customize the output to omit comments.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1521394">uses gw.xml.XmlSerializationOptions</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521399">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521400">// create an element</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521401">var a =  new com.guidewire.pl.docexamples.gosu.xml.simpleelement.MyElement()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521402">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521403">// add a comment</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521404">a.$Comment = "Hello I am a comment"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521405">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521406">print("print element with default settings...")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521407">a.print()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521408">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521409">print("print element with no comments...")</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1521410">a.print(new XmlSerializationOptions()  { :Comments = false})</a></PRE>
+      <div class="B_-_Body"><a name="1628247">Note that all serialization APIs generate XML data for the entire XML hierarchy with that element at the root.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
