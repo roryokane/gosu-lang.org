@@ -85,11 +85,33 @@ text_val.select();
           </tr>
         </table>
       </div>
-      <div class="H3_-_Heading_3"><a name="2183366">Raw Argument Processing</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="2183366">Raw Argument Processing</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="2183458">To get the full list of command line arguments as a list of </a><span class="cv_-_computer_voice">String</span> values, use the <span class="cv_-_computer_voice">CommandLineAccess</span> class. Call its <span class="cv_-_computer_voice">getRawArgs</span> method, which returns an array of String values.</div>
       <PRE class="CF_-_Code_First_Line"><a name="2183459">uses gw.lang.cli.CommandLineAccess</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="2183473">print( "CommandLineArgs: " + CommandLineAccess.getRawArgs() )</a></PRE>
-      <div class="H3_-_Heading_3"><a name="2183494">Advanced Argument Processing</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="2183494">Advanced Argument Processing</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="2183549">A more advanced way to access command line arguments is to write your own class that populate all your prop</a>erties from the individual command line options. This approach supports Boolean flags or setting values from the command line.</div>
       <div class="B_-_Body"><a name="2183603">This approach requires you to define a simple Gosu class upon which you define static properties. Define one </a>static property for each command line option. Static properties are properties stored exactly once on the class itself, rather than on instances of the class.</div>
       <div class="B_-_Body"><a name="2183624">You can then initialize those properties by passing your custom class to the </a><span class="cv_-_computer_voice">CommandLineAccess.initialize(...)</span> method. The <span class="cv_-_computer_voice">initialize</span> method overrides the static property values with values extracted from the command line. After processing, you can use an intuitive Gosu property syntax to get the values from the static properties in your own Gosu class.</div>
@@ -134,34 +156,34 @@ text_val.select();
       <table class="withHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="2184541">Annotation</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="2184543">Description</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="2184545">@Required()</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="2184547">This command line tool will not parse unless this property is included</a></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="2184549">@DefaultValue( String ) </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="2184551">The default string value of this property.</a></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="2184553">@ShortName( String ) </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="2184603">The short name of this option when used with a single-dash argument. For example, a </a>property named <span class="cvt_-_computer_voice_table">Day</span> preceded by the annotation <span class="cv_-_computer_voice">@ShortName( "d" )</span> allows the option <span class="cvt_-_computer_voice_table">"-d"</span> shortcut instead of “<span class="cvt_-_computer_voice_table">-day</span>”. The short name works with the single-dash argument but not the double-dash variant.</div>
           </td>
         </tr>

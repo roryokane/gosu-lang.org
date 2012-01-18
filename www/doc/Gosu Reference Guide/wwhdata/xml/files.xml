@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebWorksHelpBook version="5.0" name="Gosu Reference Guide" context="gosu" locale="en" xmlns="urn:WebWorks-Help-Book-Files-Schema">
-  <CommonWordsToSkip minlen="2">
+  <CommonWordsToSkip minlen="3">
     a about after all also am an and another any are as at
     be because been before being between both but by
     came can come copyright corp corporation could
@@ -57,14 +57,11 @@
     <Document title="Gosu Reserved Words" href="intro.03.15.html" />
     <Document title="Notable Differences Between Gosu and Java" href="intro.03.16.html" />
     <Document title="Get Ready for Gosu" href="intro.03.17.html" />
-    <Document title="Getting Started with Gosu" href="getting-started-gosu-opensource.04.1.html" />
-    <Document title="Installing the Eclipse Gosu Editor Plugin" href="getting-started-gosu-opensource.04.2.html" />
-    <Document title="Getting Started with Gosu in Eclipse" href="getting-started-gosu-opensource.04.3.html" />
-    <Document title="The IntelliJ IDEA Plugin" href="getting-started-gosu-opensource.04.4.html" />
-    <Document title="Installing Gosu as Command Line Tool" href="getting-started-gosu-opensource.04.5.html" />
-    <Document title="The Servlet Example" href="getting-started-gosu-opensource.04.6.html" />
-    <Document title="Hibernate Example" href="getting-started-gosu-opensource.04.7.html" />
-    <Document title="Dynamic Type Example" href="getting-started-gosu-opensource.04.8.html" />
+    <Document title="Getting Started with Gosu Community Release" href="getting-started-gosu-opensource.04.1.html" />
+    <Document title="Gosu and IntelliJ IDEA" href="getting-started-gosu-opensource.04.2.html" />
+    <Document title="Installing Gosu as Command Line Tool" href="getting-started-gosu-opensource.04.3.html" />
+    <Document title="Advanced Examples" href="getting-started-gosu-opensource.04.4.html" />
+    <Document title="Dynamic Type Example" href="getting-started-gosu-opensource.04.5.html" />
     <Document title="Gosu Programs and Command Line Tools" href="gscript-shell.05.1.html" />
     <Document title="Gosu Command Line Tool Basics" href="gscript-shell.05.2.html" />
     <Document title="The Structure of a Gosu Program" href="gscript-shell.05.3.html" />
@@ -132,11 +129,10 @@
     <Document title="Defining and Using an Interface" href="interfaces.13.3.html" />
     <Document title="Composition" href="composition.14.1.html" />
     <Document title="Using Gosu Composition" href="composition.14.2.html" />
-    <Document title="Annotations and Interceptors" href="annotations.15.1.html" />
+    <Document title="Annotations" href="annotations.15.1.html" />
     <Document title="Annotating a Class, Method, Type, or Constructor" href="annotations.15.2.html" />
     <Document title="Annotations at Run Time" href="annotations.15.3.html" />
     <Document title="Defining Your Own Annotations" href="annotations.15.4.html" />
-    <Document title="Gosu Interceptors" href="annotations.15.5.html" />
     <Document title="Enhancements" href="enhancements.16.1.html" />
     <Document title="Using Enhancements" href="enhancements.16.2.html" />
     <Document title="Gosu Blocks" href="blocks.17.1.html" />
@@ -179,12 +175,10 @@
     <Document title="Element Sorting for XSD-based Elements" href="xml.20.16.html" />
     <Document title="Built-in Schemas" href="xml.20.17.html" />
     <Document title="Schema Access Type" href="xml.20.18.html" />
-    <Document title="Calling Web Services from Gosu" href="webservice-consuming.21.1.html" />
-    <Document title="Learning Gosu XML APIs" href="webservice-consuming.21.2.html" />
-    <Document title="Adding WS-I Configuration Options" href="webservice-consuming.21.3.html" />
-    <Document title="One-Way Methods" href="webservice-consuming.21.4.html" />
-    <Document title="Asynchronous Methods" href="webservice-consuming.21.5.html" />
-    <Document title="MTOM Attachments" href="webservice-consuming.21.6.html" />
+    <Document title="Calling WS-I Web Services from Gosu" href="webservice-wsi-consuming.21.1.html" />
+    <Document title="Adding WS-I Configuration Options" href="webservice-wsi-consuming.21.2.html" />
+    <Document title="One-Way Methods" href="webservice-wsi-consuming.21.3.html" />
+    <Document title="Asynchronous Methods" href="webservice-wsi-consuming.21.4.html" />
     <Document title="Java and Gosu" href="java-gosu.22.1.html" />
     <Document title="Overview of Calling Java from Gosu" href="java-gosu.22.2.html" />
     <Document title="Deploying Your Java Classes" href="java-gosu.22.3.html" />
@@ -197,17 +191,23 @@
     <Document title="Basic Type Checking" href="typesystem.24.2.html" />
     <Document title="Using Reflection" href="typesystem.24.3.html" />
     <Document title="Compound Types" href="typesystem.24.4.html" />
-    <Document title="Gosu Type Loaders" href="typesystem.24.5.html" />
+    <Document title="Type Loaders" href="typesystem.24.5.html" />
     <Document title="Running Local Shell Commands" href="gw-util-shell.html" />
     <Document title="Checksums" href="checksums.26.1.html" />
     <Document title="Overview of Checksums" href="checksums.26.2.html" />
+    <Document title="Concurrency" href="concurrency.27.1.html" />
+    <Document title="Overview of Thread Safety and Concurrency" href="concurrency.27.2.html" />
+    <Document title="Gosu Scoping Classes (Pre-scoped Maps)" href="concurrency.27.3.html" />
+    <Document title="Concurrent Lazy Variables" href="concurrency.27.4.html" />
+    <Document title="Concurrent Cache" href="concurrency.27.5.html" />
+    <Document title="Concurrency with Monitor Locks and Reentrant Objects" href="concurrency.27.6.html" />
     <Document title="Properties Files" href="propertiesfiles.html" />
-    <Document title="Coding Style" href="style.28.1.html" />
-    <Document title="General Coding Guidelines" href="style.28.2.html" />
+    <Document title="Coding Style" href="style.29.1.html" />
+    <Document title="General Coding Guidelines" href="style.29.2.html" />
   </DocumentInfo>
   <TopicMap>
     <Topic name="The_Gosu_Language" href="intro.03.02.html#1466155" />
-    <Topic name="Gosu_Case_Sensitivity" href="intro.03.12.html#1410297" />
+    <Topic name="Gosu_Case_Sensitivity" href="intro.03.12.html#1489374" />
     <Topic name="Gosu_Code_Comments" href="intro.03.14.html#1437092" />
     <Topic name="Gosu_Shell" href="gscript-shell.05.1.html#2186180" />
     <Topic name="Gosu_Interactive_Shell" href="gscript-shell.05.7.html#2190274" />
@@ -218,5 +218,6 @@
     <Topic name="Gosu-to-Java_Class_Deployment" href="java-gosu.22.3.html#2001895" />
     <Topic name="Type_System_and_Reflection" href="typesystem.24.1.html#1444075" />
     <Topic name="Running_Command_Line_Tools_from_Gosu" href="gw-util-shell.html#2186018" />
+    <Topic name="Gosu_Scoping_Classes" href="concurrency.27.3.html#1443367" />
   </TopicMap>
 </WebWorksHelpBook>

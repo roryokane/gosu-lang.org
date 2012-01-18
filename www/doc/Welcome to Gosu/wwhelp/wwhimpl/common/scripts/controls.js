@@ -72,6 +72,9 @@ function Guidewire_SafeTopicName(theTitle) {
   theTitle = theTitle.replace(/\u2018/g, "'"); // dub quote smart
   theTitle = theTitle.replace(/\u2019/g, "'"); // dub quote smart
   theTitle = theTitle.replace(/\u2122/g, ""); // trademark
+  theTitle = theTitle.replace(/\</g, "(");  // open bracket
+  theTitle = theTitle.replace(/\>/g, ")");   // close bracket
+  theTitle = theTitle.replace(/:/g, "_");    // colon
   //alert(theTitle);// DEBUG
  return (theTitle);
 }

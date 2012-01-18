@@ -140,35 +140,35 @@ text_val.select();
       <PRE class="CF_-_Code_First_Line"><a name="2447849">MyPropValue</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="2447850">MyPropValue from MySubClass</a></PRE>
       <div class="H2_-_Heading_2"><a name="2465283">Property Paths are Null Tolerant</a></div>
-      <div class="B_-_Body"><a name="2477186">In Gosu, a period character gets a property from an object or calls a method. </a></div>
-      <div class="B_-_Body"><a name="2477187">By default, the period operator is not null-safe. This means that if the value on the left side of the period evalu</a>ates to <span class="cv_-_computer_voice">null</span> at runtime, Gosu throws a <span class="e_-_emphasis">null pointer exception</span> (NPE). For example, <span class="cv_-_computer_voice">obj.PropertyA.PropertyB</span> throws an exception if <span class="cv_-_computer_voice">obj</span> or <span class="cv_-_computer_voice">obj.PropertyA</span> are null at run time.</div>
-      <div class="B_-_Body"><a name="2477188">Gosu provides a variant of the period operator that is always null-safe for both property access and method </a>access. The null-safe period operator has a question mark before it: <span class="cv_-_computer_voice">?.</span></div>
-      <div class="B_-_Body"><a name="2477189">If the value on the left of the </a><span class="cv_-_computer_voice">?.</span> operator is <span class="cv_-_computer_voice">null</span>, the expression evaluates to <span class="cv_-_computer_voice">null</span>.</div>
-      <div class="B_-_Body"><a name="2477190">For example, the following expression evaluates left-to-right and contains three null-safe property operators:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="2477191">obj?.PropertyA?.PropertyB?.PropertyC</a></div>
-      <div class="B_-_Body"><a name="2477192">If any object to the left of the period character is </a><span class="cv_-_computer_voice">null</span>, the null-safe period operator does not throw a <span class="e_-_emphasis">null pointer </span><span class="e_-_emphasis">exception</span> (NPE) and the expression returns <span class="cv_-_computer_voice">null</span>. Gosu null-safe property paths tends to simplify real-world code. Often, a <span class="cv_-_computer_voice">null</span> expression result has the same meaning whether the final property access is <span class="cv_-_computer_voice">null</span> or whether earlier parts of the path are <span class="cv_-_computer_voice">null</span>. For such cases in Gosu, do not bother to check for <span class="cv_-_computer_voice">null</span> value at every level of the path. This makes your Gosu code easier to read and understand.</div>
-      <div class="B_-_Body"><a name="2477193">For example, suppose you had a variable called </a><span class="cv_-_computer_voice">house</span>, which contained a property called <span class="cv_-_computer_voice">Walls</span>, and that object had a property called <span class="cv_-_computer_voice">Windows</span>. You could get the <span class="cv_-_computer_voice">Windows</span> value with the following syntax:</div>
-      <div class="CS_-_Code_Single_Line"><a name="2477194">house.Walls.Windows</a></div>
-      <div class="B_-_Body"><a name="2477195">In some languages, you must worry that if </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span> or <span class="cv_-_computer_voice">house.Walls</span> is <span class="cv_-_computer_voice">null</span>, your code throws a <span class="cv_-_computer_voice">null</span> pointer exception. This causes programmers to use the following common coding pattern:</div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477196">// initialize to null</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477197">var x : ArrayList&lt;Windows&gt; = null </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477198">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477199">// check earlier parts of the path for null to avoid a null pointer exceptions (NPEs)</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477200">if( house != null and house.Walls != null ) {</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477201">   x = house.Walls.Windows</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="2477202">}</a></PRE>
-      <div class="B_-_Body"><a name="2477203">The following concise Gosu code is equivalent to the previous example and avoids any null pointer exceptions:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="2477204"> var x = house?.Walls?.Windows</a></div>
-      <div class="HS_-_Head_Sub"><a name="2477205">Null Safe Method Calls</a></div>
-      <div class="B_-_Body"><a name="2477206">By default, method calls are not null safe. This means that if the right side of a period character is a method call, </a>Gosu throws a null pointer exception if the left side of the period is <span class="cv_-_computer_voice">null</span>.</div>
-      <div class="B_-_Body"><a name="2477207">For example:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="2477208">house.myaction()</a></div>
-      <div class="B_-_Body"><a name="2477209">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws an NPE exception. Gosu assumes that method calls <span class="s_-_strong">might</span> have side effects, so Gosu cannot quietly skip the method call and return <span class="cv_-_computer_voice">null</span>.</div>
-      <div class="B_-_Body"><a name="2477210">In contrast, a </a><span class="e_-_emphasis">null-safe method call</span> does not throw an exception if the left side of the period character is <span class="cv_-_computer_voice">null</span>. Gosu just returns null from that expression. In contrast, using the ?. operator calls the method with null safety:</div>
-      <div class="CS_-_Code_Single_Line"><a name="2477211">house?.myaction()</a></div>
-      <div class="B_-_Body"><a name="2477212">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu does not throw an exception. Gosu simply returns <span class="cv_-_computer_voice">null</span> from the expression.</div>
-      <div class="HS_-_Head_Sub"><a name="2477213">Null-Safe Versions of Other Operators</a></div>
-      <div class="B_-_Body"><a name="2477214">Gosu provides other null-safe versions of other common operators:</a></div>
+      <div class="B_-_Body"><a name="2481920">In Gosu, a period character gets a property from an object or calls a method. </a></div>
+      <div class="B_-_Body"><a name="2481921">By default, the period operator is not null-safe. This means that if the value on the left side of the period evalu</a>ates to <span class="cv_-_computer_voice">null</span> at runtime, Gosu throws a <span class="e_-_emphasis">null pointer exception</span> (NPE). For example, <span class="cv_-_computer_voice">obj.PropertyA.PropertyB</span> throws an exception if <span class="cv_-_computer_voice">obj</span> or <span class="cv_-_computer_voice">obj.PropertyA</span> are null at run time.</div>
+      <div class="B_-_Body"><a name="2481922">Gosu provides a variant of the period operator that is always null-safe for both property access and method </a>access. The null-safe period operator has a question mark before it: <span class="cv_-_computer_voice">?.</span></div>
+      <div class="B_-_Body"><a name="2481923">If the value on the left of the </a><span class="cv_-_computer_voice">?.</span> operator is <span class="cv_-_computer_voice">null</span>, the expression evaluates to <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2481924">For example, the following expression evaluates left-to-right and contains three null-safe property operators:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481925">obj?.PropertyA?.PropertyB?.PropertyC</a></div>
+      <div class="B_-_Body"><a name="2481926">If any object to the left of the period character is </a><span class="cv_-_computer_voice">null</span>, the null-safe period operator does not throw a <span class="e_-_emphasis">null pointer </span><span class="e_-_emphasis">exception</span> (NPE) and the expression returns <span class="cv_-_computer_voice">null</span>. Gosu null-safe property paths tends to simplify real-world code. Often, a <span class="cv_-_computer_voice">null</span> expression result has the same meaning whether the final property access is <span class="cv_-_computer_voice">null</span> or whether earlier parts of the path are <span class="cv_-_computer_voice">null</span>. For such cases in Gosu, do not bother to check for <span class="cv_-_computer_voice">null</span> value at every level of the path. This makes your Gosu code easier to read and understand.</div>
+      <div class="B_-_Body"><a name="2481927">For example, suppose you had a variable called </a><span class="cv_-_computer_voice">house</span>, which contained a property called <span class="cv_-_computer_voice">Walls</span>, and that object had a property called <span class="cv_-_computer_voice">Windows</span>. You could get the <span class="cv_-_computer_voice">Windows</span> value with the following syntax:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2481928">house.Walls.Windows</a></div>
+      <div class="B_-_Body"><a name="2481929">In some languages, you must worry that if </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span> or <span class="cv_-_computer_voice">house.Walls</span> is <span class="cv_-_computer_voice">null</span>, your code throws a <span class="cv_-_computer_voice">null</span> pointer exception. This causes programmers to use the following common coding pattern:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481930">// initialize to null</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481931">var x : ArrayList&lt;Windows&gt; = null </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481932">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481933">// check earlier parts of the path for null to avoid a null pointer exceptions (NPEs)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481934">if( house != null and house.Walls != null ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481935">   x = house.Walls.Windows</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2481936">}</a></PRE>
+      <div class="B_-_Body"><a name="2481937">The following concise Gosu code is equivalent to the previous example and avoids any null pointer exceptions:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481938"> var x = house?.Walls?.Windows</a></div>
+      <div class="HS_-_Head_Sub"><a name="2481939">Null Safe Method Calls</a></div>
+      <div class="B_-_Body"><a name="2481940">By default, method calls are not null safe. This means that if the right side of a period character is a method call, </a>Gosu throws a null pointer exception if the left side of the period is <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2481941">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481942">house.myaction()</a></div>
+      <div class="B_-_Body"><a name="2481943">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws an NPE exception. Gosu assumes that method calls <span class="s_-_strong">might</span> have side effects, so Gosu cannot quietly skip the method call and return <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="2481944">In contrast, a </a><span class="e_-_emphasis">null-safe method call</span> does not throw an exception if the left side of the period character is <span class="cv_-_computer_voice">null</span>. Gosu just returns null from that expression. In contrast, using the ?. operator calls the method with null safety:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2481945">house?.myaction()</a></div>
+      <div class="B_-_Body"><a name="2481946">If </a><span class="cv_-_computer_voice">house</span> is <span class="cv_-_computer_voice">null</span>, Gosu does not throw an exception. Gosu simply returns <span class="cv_-_computer_voice">null</span> from the expression.</div>
+      <div class="HS_-_Head_Sub"><a name="2481947">Null-Safe Versions of Other Operators</a></div>
+      <div class="B_-_Body"><a name="2481948">Gosu provides other null-safe versions of other common operators:</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -178,12 +178,12 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="2477215">The null-safe default operator (</a><span class="cv_-_computer_voice">?:)</span>. This operator lets you specify an alternate value if the value to the left of the operator is null. For example:</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="2481949">The null-safe default operator (</a><span class="cv_-_computer_voice">?:)</span>. This operator lets you specify an alternate value if the value to the left of the operator is null. For example:</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="2477216">var displayName = Book.Title ?: "(Unknown Title)" // return "(Unknown Title)" if Book.Title is null</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481950">var displayName = Book.Title ?: "(Unknown Title)" // return "(Unknown Title)" if Book.Title is null</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -193,12 +193,12 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="2477217">The null-safe index operator (</a><span class="cv_-_computer_voice">?[])</span>. Use this operator with lists and arrays. It returns null if the list or array value is null at run time, rather than throwing an exception. For example:</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="2481951">The null-safe index operator (</a><span class="cv_-_computer_voice">?[])</span>. Use this operator with lists and arrays. It returns null if the list or array value is null at run time, rather than throwing an exception. For example:</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="2477218">var book = bookshelf?[bookNumber] // return null if bookshelf is null</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481952">var book = bookshelf?[bookNumber] // return null if bookshelf is null</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -208,17 +208,17 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="2477219">The null-safe math operators (</a><span class="cv_-_computer_voice">?+</span>, <span class="cv_-_computer_voice">?-</span>, <span class="cv_-_computer_voice">?*</span>, <span class="cv_-_computer_voice">?/</span>, and <span class="cv_-_computer_voice">?%</span>). For example: </div>
+              <div class="BI_-_Bullet_Item_inner"><a name="2481953">The null-safe math operators (</a><span class="cv_-_computer_voice">?+</span>, <span class="cv_-_computer_voice">?-</span>, <span class="cv_-_computer_voice">?*</span>, <span class="cv_-_computer_voice">?/</span>, and <span class="cv_-_computer_voice">?%</span>). For example: </div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="2477220">var displayName = cost ?* 2</a>&nbsp;&nbsp;&nbsp;// multiply times 2, or return null if cost is null</div>
-      <div class="B_-_Body"><a name="2477224">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a>. </div>
-      <div class="HS_-_Head_Sub"><a name="2477225">Design Code for Null Safety</a></div>
-      <div class="B_-_Body"><a name="2477226">Use null-safe operators where appropriate. They make code easy to read and easier to handle edge cases.</a></div>
-      <div class="B_-_Body"><a name="2477227">You can also design your code to take advantage of this special language feature. For example, expose data as </a><span class="e_-_emphasis">properties</span> in Gosu classes and interfaces rather setter and getter methods. This allows you to use the null-safe property operator (the <span class="cv_-_computer_voice">?.</span> operator), which can make your code both powerful and concise.</div>
-      <div class="HS_-_Head_Sub"><a name="2477228">See Also</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2481954">var displayName = cost ?* 2</a>&nbsp;&nbsp;&nbsp;// multiply times 2, or return null if cost is null</div>
+      <div class="B_-_Body"><a name="2481958">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a>. </div>
+      <div class="HS_-_Head_Sub"><a name="2481959">Design Code for Null Safety</a></div>
+      <div class="B_-_Body"><a name="2481960">Use null-safe operators where appropriate. They make code easy to read and easier to handle edge cases.</a></div>
+      <div class="B_-_Body"><a name="2481961">You can also design your code to take advantage of this special language feature. For example, expose data as </a><span class="e_-_emphasis">properties</span> in Gosu classes and interfaces rather setter and getter methods. This allows you to use the null-safe property operator (the <span class="cv_-_computer_voice">?.</span> operator), which can make your code both powerful and concise.</div>
+      <div class="HS_-_Head_Sub"><a name="2481962">See Also</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -228,14 +228,25 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="2477232">For more examples and discussion, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a></div>
+              <div class="BI_-_Bullet_Item_inner"><a name="2481966">For more examples and discussion, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a></div>
             </td>
           </tr>
         </table>
       </div>
       <div class="NI_-_Note_Important">
         <span class="n_-_note">IMPORTANT   </span><a name="2465340">Expose public data as properties rather than as getter functions. This allows you to take </a>advantage of Gosu null-safe property accessor paths. Additionally, note it is standard Gosu practice to separate your implementation from your class’s interaction with other code by using properties rather than public instance variables. Gosu provides a simple shortcut with the <span class="cv_-_computer_voice">as</span> keyword to expose an instance variable as a property. See <a href="javascript:WWHClickedPopup('gosu', 'classes.11.4.html#2447772', '');" title="Properties">"Properties"</a></div>
-      <div class="H3_-_Heading_3"><a name="2474798">Design APIs Around Null Safe Property Paths</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="2474798">Design APIs Around Null Safe Property Paths</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="2474799">You may also want to design your Gosu code logic around this feature. For example, Gosu uses the </a><span class="cv_-_computer_voice">java.util.String</span> class as its native text class. This class includes a built-in method to check whether the <span class="cv_-_computer_voice">String</span> is empty. The method is called <span class="cv_-_computer_voice">isEmpty</span>, and Gosu exposes this as the <span class="cv_-_computer_voice">Empty</span> property. This is difficult to use with Gosu property accessor paths. For example, consider the following <span class="cv_-_computer_voice">if</span> statement:</div>
       <div class="CS_-_Code_Single_Line"><a name="2474800">if (obj.StringProperty.Empty)</a></div>
       <div class="B_-_Body"><a name="2474801">Because </a><span class="cv_-_computer_voice">null</span> coerces implicitly to Boolean (the type of the <span class="cv_-_computer_voice">Empty</span> property), the expression evaluates to <span class="cv_-_computer_voice">false</span> in either of the following cases:</div>

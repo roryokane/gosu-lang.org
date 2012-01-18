@@ -116,7 +116,18 @@ text_val.select();
       <div class="B_-_Body"><a name="1252445">It is possible to string together multiple relatational operators to compare multiple values. Add parenthesis </a>around each individual expression. For example, the following expression ultimately evaluates to <span class="cv_-_computer_voice">true</span>:</div>
       <div class="CS_-_Code_Single_Line"><a name="1252393">( (1 &lt;= 2) &lt;= (3 &gt; 4) ) &gt;= (5 </a><span class="cv_-_computer_voice">&gt; 6)</span></div>
       <div class="B_-_Body"><a name="1252484">The first compound expression evaluates to </a><span class="cv_-_computer_voice">false</span> ( <span class="cv_-_computer_voice">(1 &lt;= 2) &lt;= (3 &gt; 4)</span> ) as does the second expression ( <span class="cv_-_computer_voice">5 &gt; </span><span class="cv_-_computer_voice">6</span> ). However, the larger expression tests for greater than or equal. Therefore, as <span class="cv_-_computer_voice">false</span> is equal to <span class="cv_-_computer_voice">false</span>, the entire expression evaluates to <span class="cv_-_computer_voice">true</span>.</div>
-      <div class="H3_-_Heading_3"><a name="1132116">&gt; Operator</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1132116">&gt; Operator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1132164">The “&gt;” operator tests two expressions for a “greater than” relationship. The operands can be either </a><span class="cv_-_computer_voice">Number</span>, <span class="cv_-_computer_voice">String</span>, or <span class="cv_-_computer_voice">DateTime</span> data types. The result is always <span class="cv_-_computer_voice">Boolean</span>.</div>
       <div class="HS_-_Head_Sub"><a name="1252396">Syntax</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1252397">expression1 &gt; expression2</a></div>
@@ -125,47 +136,58 @@ text_val.select();
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132730">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132732">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132734">8 &gt; 8</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132736"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132738">"zoo" &gt; "apple" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132740"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132742">5 &gt; "6" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132744"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132746">currentDate &gt; policyEffectiveDate</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132748"> true</a></span></div>
           </td>
         </tr>
       </table>
-      <div class="H3_-_Heading_3"><a name="1132158">&gt;= Operator</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1132158">&gt;= Operator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1132222">The “&gt;=” operator tests two expressions for a “greater than or equal” relationship. The operands can be either </a><span class="cv_-_computer_voice">Number</span>, <span class="cv_-_computer_voice">String</span>, or <span class="cv_-_computer_voice">DateTime</span> data types. The result is always <span class="cv_-_computer_voice">Boolean</span>.</div>
       <div class="HS_-_Head_Sub"><a name="1268871">Syntax</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1268872">expression1 &gt;= expression2</a></div>
@@ -174,47 +196,58 @@ text_val.select();
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132841">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132843">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132845">8 &gt;= 8</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132847"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132849">"zoo" &gt;= "zoo"</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132851"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132853">5 &gt;= "6"</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132855"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132857">currentDate &gt;= policyEffectiveDate</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132859"> true</a></span></div>
           </td>
         </tr>
       </table>
-      <div class="H3_-_Heading_3"><a name="1132159">&lt; Operator</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1132159">&lt; Operator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1132230">The “&lt;” operator tests two expressions for a “less than” relationship. The operands can be either </a><span class="cv_-_computer_voice">Number</span>, <span class="cv_-_computer_voice">String</span>, or <span class="cv_-_computer_voice">DateTime</span> data types. The result is always <span class="cv_-_computer_voice">Boolean</span>.</div>
       <div class="HS_-_Head_Sub"><a name="1268880">Syntax</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1268881">expression1 &lt; expression2</a></div>
@@ -223,47 +256,58 @@ text_val.select();
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132932">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1132934">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132936">8 &lt; 5 </a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132938"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132940">"zoo" &lt; "zoo" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132942"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132944">5 &lt; "6" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132946"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132948">currentDate &lt; policyEffectiveDate </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1132950"> false</a></span></div>
           </td>
         </tr>
       </table>
-      <div class="H3_-_Heading_3"><a name="1132160">&lt;= Operator</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1132160">&lt;= Operator</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1132234">The “&lt;=” operator tests two expressions for a “less than or equal to” relationship. The operands can be either </a><span class="cv_-_computer_voice">Number</span>, <span class="cv_-_computer_voice">String</span>, or <span class="cv_-_computer_voice">DateTime</span> data types. The result is always <span class="cv_-_computer_voice">Boolean</span>.</div>
       <div class="HS_-_Head_Sub"><a name="1268890">Syntax</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1268891">expression1 &lt;= expression2</a></div>
@@ -272,42 +316,42 @@ text_val.select();
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1138331">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1138333">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138335">8 &lt;= 5</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138337"> false</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138339">"zoo" &lt;= "zoo" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138341"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138343">5 &lt;= "6" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138345"> true</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138347">currentDate &lt;= policyEffectiveDate </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1138349"> false</a></span></div>
           </td>
         </tr>

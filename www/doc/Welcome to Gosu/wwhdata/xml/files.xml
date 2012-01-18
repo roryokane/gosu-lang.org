@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebWorksHelpBook version="5.0" name="Welcome to Gosu" context="welcome" locale="en" xmlns="urn:WebWorks-Help-Book-Files-Schema">
-  <CommonWordsToSkip minlen="2">
+  <CommonWordsToSkip minlen="3">
     a about after all also am an and another any are as at
     be because been before being between both but by
     came can come copyright corp corporation could
@@ -38,7 +38,7 @@
     <h7 weight="2" />
   </ScoringPrefs>
   <DocumentInfo>
-    <Document title="Welcome to Gosu 0.8.5-C" href="cover.html" />
+    <Document title="Welcome to Gosu 0.9.0-C" href="cover.html" />
   </DocumentInfo>
   <TopicMap>
     <Topic name="Welcome" href="cover.html#1018755" />

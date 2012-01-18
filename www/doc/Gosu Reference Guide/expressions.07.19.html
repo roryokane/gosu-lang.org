@@ -86,21 +86,43 @@ text_val.select();
           </tr>
         </table>
       </div>
-      <div class="H3_-_Heading_3"><a name="1601236">How the Standard Period Operator Handles Null</a></div>
-      <div class="B_-_Body"><a name="1602132">The standard “.” operator is not null-safe. </a></div>
-      <div class="B_-_Body"><a name="1602133">For example, suppose that you have an expression similar to the following: </a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1602134">var groupType = claim.AssignedGroup.GroupType </a></div>
-      <div class="B_-_Body"><a name="1602135">At run time, if </a><span class="cv_-_computer_voice">claim</span> or <span class="cv_-_computer_voice">claim.AssignedGroup</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
-      <div class="B_-_Body"><a name="1602136">If the expression contains a </a><span class="s_-_strong">method</span> call, the rules are similar. For example:</div>
-      <div class="CS_-_Code_Single_Line"><a name="1602137">var groupType = claim.myAction()</a></div>
-      <div class="B_-_Body"><a name="1602138">At run time, if </a><span class="cv_-_computer_voice">claim</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
-      <div class="H3_-_Heading_3"><a name="1597755">How the Null-Safe Period Operator Handles Null</a></div>
-      <div class="B_-_Body"><a name="1597694">In contrast to the standard period character operator, the null-safe period operator </a><span class="cv_-_computer_voice">?.</span> <span class="s_-_strong">always</span> returns <span class="cv_-_computer_voice">null</span> if the left side of the operator is <span class="cv_-_computer_voice">null</span>. This works both for accessing properties and for invoking methods. If the left side of the operator is <span class="cv_-_computer_voice">null</span>, Gosu does <span class="s_-_strong">not</span> attempt to evaluate the right side of the expression.</div>
-      <div class="B_-_Body"><a name="1602143">The following example uses the null-safe period operator:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1602144">var s : String = null;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1602145">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1602146">var result = s?.length</a></PRE>
-      <div class="B_-_Body"><a name="1602147">Although the variable called </a><span class="cv_-_computer_voice">result</span> has the value <span class="cv_-_computer_voice">null</span>, the code does not throw any exception. If you use the regular period operator instead, Gosu throws a null pointer exception.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1601236">How the Standard Period Operator Handles Null</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1602752">The standard “.” operator is not null-safe. </a></div>
+      <div class="B_-_Body"><a name="1602753">For example, suppose that you have an expression similar to the following: </a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1602754">var groupType = claim.AssignedGroup.GroupType </a></div>
+      <div class="B_-_Body"><a name="1602755">At run time, if </a><span class="cv_-_computer_voice">claim</span> or <span class="cv_-_computer_voice">claim.AssignedGroup</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
+      <div class="B_-_Body"><a name="1602756">If the expression contains a </a><span class="s_-_strong">method</span> call, the rules are similar. For example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1602757">var groupType = claim.myAction()</a></div>
+      <div class="B_-_Body"><a name="1602758">At run time, if </a><span class="cv_-_computer_voice">claim</span> is <span class="cv_-_computer_voice">null</span>, Gosu throws a <span class="cv_-_computer_voice">NullPointerException</span> exception. </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1597755">How the Null-Safe Period Operator Handles Null</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1597694">In contrast to the standard period character operator, the null-safe period operator </a><span class="cv_-_computer_voice">?.</span> <span class="s_-_strong">always</span> returns <span class="cv_-_computer_voice">null</span> if the left side of the operator is <span class="cv_-_computer_voice">null</span>. This works both for accessing properties and for invoking methods. If the left side of the operator is <span class="cv_-_computer_voice">null</span>, Gosu does <span class="s_-_strong">not</span> evaluate the right side of the expression.</div>
+      <div class="B_-_Body"><a name="1602763">The following example uses the null-safe period operator:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1602764">var s : String = null;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1602765">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1602766">var result = s?.length</a></PRE>
+      <div class="B_-_Body"><a name="1602767">Although the variable called </a><span class="cv_-_computer_voice">result</span> has the value <span class="cv_-_computer_voice">null</span>, the code does not throw any exception. If you use the regular period operator instead, Gosu throws a null pointer exception.</div>
       <div class="H2_-_Heading_2"><a name="1598038">Null-safe Default Operator</a></div>
       <div class="B_-_Body"><a name="1598062">Sometimes you might need to return a different value based on whether some expression evaluates to </a><span class="cv_-_computer_voice">null</span>. The Gosu operator <span class="cv_-_computer_voice">?:</span> results in the value of the left-hand-side if it is non-null, avoiding evaluation of the right-hand-side.  If the left-hand side expression is <span class="cv_-_computer_voice">null</span>, Gosu evaluates the right-hand-side and returns that result.</div>
       <div class="B_-_Body"><a name="1598150">For example, suppose there is a variable </a><span class="cv_-_computer_voice">str</span> of type <span class="cv_-_computer_voice">String</span>. At run time the value contains either a <span class="cv_-_computer_voice">String</span> or <span class="cv_-_computer_voice">null</span>. Perhaps you want to pass the input to a display routine. However, if the value of <span class="cv_-_computer_voice">str</span> is <span class="cv_-_computer_voice">null</span>, you want to use a default value rather than <span class="cv_-_computer_voice">null</span>. Use the <span class="cv_-_computer_voice">?:</span> operator as follows:</div>

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
     <title>Asynchronous Methods</title>
-    <link rel="StyleSheet" href="css/webservice-consuming.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webservice-wsi-consuming.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
     <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
@@ -52,14 +52,14 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="webservice-consuming.21.1.html#2003179">Calling Web Services from Gosu</a> : Asynchronous Methods</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="webservice-wsi-consuming.21.1.html#2003179">Calling WS-I Web Services from Gosu</a> : Asynchronous Methods</span></div>
     <hr align="left" />
     <div>
       <div class="H1_-_Heading_1"><a name="2003179">Asynchronous Methods</a></div>
       <div class="B_-_Body"><a name="2043051">Gosu supports optional asynchronous calls to web services. Gosu exposes alternate web service methods signa</a>tures on the service with the <span class="cv_-_computer_voice">async_</span> prefix. Gosu does not generate the additional method signature if the method is a one-way method. The asynchronous method variants return an <span class="cv_-_computer_voice">AsyncResponse</span> object. Use that object with a polling design pattern (check regularly whether it is done) the choose to get results later (synchronously in relation to the calling code). </div>
-      <div class="B_-_Body"><a name="2042969">See the introductory comments in </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-consuming.21.1.html#2001852', '');" title="Calling Web Services from Gosu">"WS-I Web Service Overview"</a> for related information about the basic types of connections for a method.</div>
+      <div class="B_-_Body"><a name="2042969">See the introductory comments in </a><a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.21.1.html#2001852', '');" title="Calling WS-I Web Services from Gosu">"Consuming WS-I Web Service Overview"</a> for related information about the basic types of connections for a method.</div>
       <div class="NI_-_Note_Important">
-        <span class="n_-_note">IMPORTANT   </span><a name="2051322">Be careful not to confuse </a><span class="e_-_emphasis">one-way methods</span> with <span class="e_-_emphasis">asychronous methods</span>. For more information about one-way methods, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-consuming.21.4.html#2054441', '');" title="One-Way Methods">"One-Way Methods"</a>.</div>
+        <span class="n_-_note">IMPORTANT   </span><a name="2051322">Be careful not to confuse </a><span class="e_-_emphasis">one-way methods</span> with <span class="e_-_emphasis">asychronous methods</span>. For more information about one-way methods, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.21.3.html#2054441', '');" title="One-Way Methods">"One-Way Methods"</a>.</div>
       <div class="B_-_Body"><a name="2042250">The </a><span class="cv_-_computer_voice">AsyncResponse</span> object contains the following properties and methods:</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
@@ -169,6 +169,7 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="2042897">print("asynchronous reply to our earlier request = " + laterResult.Description)</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="2042898">&nbsp;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="2048439">print("response XML = " + a.ResponseEnvelope.asUTFString())</a></PRE>
+      <div class="B_-_Body"><a name="2048943">&nbsp;</a></div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics

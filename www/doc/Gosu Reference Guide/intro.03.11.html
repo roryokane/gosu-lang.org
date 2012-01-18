@@ -56,8 +56,8 @@ text_val.select();
     <hr align="left" />
     <div>
       <div class="H2B_-_Heading_2_Break"><a name="1486615">Gosu Type Loaders</a></div>
-      <div class="B_-_Body"><a name="1484771">The Gosu type system has an open type system. An important part of this is that Gosu supports custom type </a>loaders. A type loader dynamically injects types into the language and attaches potentially complex dynamic behaviors to working with the type. For example, a custom type loader could add types to the type system and run custom Java code every time a property is accessed or methods are called on these custom types.</div>
-      <div class="B_-_Body"><a name="1478505">There are several built-in type loaders:</a></div>
+      <div class="B_-_Body"><a name="1484771">The Gosu type system has an open type system. An important part of this is that Gosu supports custom type </a>loaders. A type loader dynamically injects types into the language and attaches potentially complex dynamic behaviors to working with the type. For example, a custom type loader adds types to the type system. Each time Gosu code accesses a property or calls methods on the custom types, you can run custom code. Gosu calls custom type loader code each time any Gosu code accesses a property or calls methods on the custom types.</div>
+      <div class="B_-_Body"><a name="1489594">There are several built-in type loaders:</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -67,7 +67,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1478506">Gosu XML/XSD type loader.</a></span> This type loader supports the native Gosu APIs for XML. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.01.html#1470967', '');" title="Gosu and XML">"Gosu and XML"</a>.</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1489595">Gosu XML/XSD type loader.</a></span> This type loader supports the native Gosu APIs for XML. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.01.html#1470967', '');" title="Gosu and XML">"Gosu and XML"</a>.</div>
             </td>
           </tr>
         </table>
@@ -81,7 +81,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1486062">Gosu SOAP/WSDL type loader.</a></span> This type loader supports the native Gosu APIs for the web services SOAP protocol. This works through a Gosu type loaders that reads web service WSDL files and lets you interact with the external service through a natural syntax and type-safe coding. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-consuming.21.1.html#2001714', '');" title="Calling Web Services from Gosu">"Calling Web Services from Gosu"</a></div>
+              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1486062">Gosu SOAP/WSDL type loader.</a></span> This type loader supports the native Gosu APIs for the web services SOAP protocol. This works through a Gosu type loaders that reads web service WSDL files and lets you interact with the external service through a natural syntax and type-safe coding. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.21.1.html#2001852', '');" title="Calling WS-I Web Services from Gosu">"Consuming WS-I Web Service Overview"</a></div>
             </td>
           </tr>
         </table>
@@ -101,9 +101,9 @@ text_val.select();
         </table>
       </div>
       <div class="B_-_Body"><a name="1486193">You do not need to do anything special to install or enable these type loaders. Gosu includes these type loaders </a>automatically for all Gosu code.</div>
-      <div class="B_-_Body"><a name="1486222">A future Gosu release will include documentation and supported APIs for creating custom type loaders.</a></div>
+      <div class="B_-_Body"><a name="1489364">A future Gosu release will include documentation and supported APIs for creating custom type loaders.</a></div>
       <div class="NI_-_Note_Important" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;">
-        <span class="n_-_note">IMPORTANT   </span><span class="s_-_strong"><a name="1486165">Later versions of the Gosu community release will include more APIs and docu</a></span><span class="s_-_strong"></span><span class="s_-_strong">mentation about creating your own custom Gosu type loaders.</span></div>
+        <span class="n_-_note">IMPORTANT   </span><span class="s_-_strong"><a name="1490456">Later versions of the Gosu community release will include more APIs and docu</a></span><span class="s_-_strong">mentation about creating your own custom Gosu type loaders.</span></div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics

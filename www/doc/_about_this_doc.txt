@@ -1,13 +1,13 @@
 When sending questions to customer support, include this:
 
- ** PRODUCT Gosu 0.8.5-C
+ ** PRODUCT Gosu 0.9.0-C
  ** PRODUCTCODE OSLANG
- ** BRANCH //depot/eng/doc/diamond/release/oslang/0.8.5CR1/docs/
- ** DATE 2/8/2011 11:57:58 AM
- ** SERVER DOCBUILD
+ ** BRANCH //depot/eng/doc/diamond/release/oslang/0.9.0/docs/
+ ** DATE 1/17/2012 6:09:32 PM
+ ** SERVER DOCBUILD2WIN7
  ** LINK TO A PAGE: Click on "LINK TO THIS PAGE" in the upper-right of any HTML page. Copy that URL.
 
-The following is an auto-generated listing of the structure of all books in the doc set.
+The following is an auto-generated summary of the structure of all books in the doc set.
 
 
 
@@ -61,26 +61,18 @@ The following is an auto-generated listing of the structure of all books in the 
 * Notable Differences Between Gosu and Java
 * Get Ready for Gosu
 
-===Getting Started with Gosu ===
+===Getting Started with Gosu Community Release===
 * System Requirements
-* Installing the Eclipse Gosu Editor Plugin
-* Getting Started with Gosu in Eclipse
-** Using Gosu Tester to Write 'Hello World'
-** Creating a Gosu Project in Eclipse
-** Running and Debugging Gosu in Eclipse
-** Gosu Editor Features
-** Using Dot Completion
-** Other Eclipse Features
-** Preferences in Eclipse
-* The IntelliJ IDEA Plugin
+* Gosu and IntelliJ IDEA
 * Installing Gosu as Command Line Tool
-* The Servlet Example
-* Hibernate Example
+* Advanced Examples
+** Servlet Example
+** Hibernate Database Example
 * Dynamic Type Example
 
 ===Gosu Programs and Command Line Tools===
 * Gosu Command Line Tool Basics
-** Gosu Command Line Tool Options
+** Command Line Tool Options
 ** Writing a Simple Gosu Program
 * The Structure of a Gosu Program
 ** Metaline as First Line
@@ -103,6 +95,10 @@ The following is an auto-generated listing of the structure of all books in the 
 ** Number
 ** Object
 ** String
+*** String Variables Can Have Content, Be Empty, or Be Null
+*** Other Methods on String Objects
+*** String Utilities
+*** In-line String Templates
 *** Escaping Special Characters in Strings
 *** Gosu String Templates
 ** Type
@@ -147,6 +143,7 @@ The following is an auto-generated listing of the structure of all books in the 
 *** Logical NOT
 *** Typeis Expressions
 * New Object Expressions
+*** Optionally Omit Type Name with ‘new' When Type is Determined From Context
 *** Object Initializer Syntax
 *** Special Syntax for Initializing Lists, Collections, and Maps
 * Relational Expressions
@@ -180,15 +177,15 @@ The following is an auto-generated listing of the structure of all books in the 
 ** Variable Type Declaration
 ** Variable Assignment
 * Gosu Conditional Execution and Looping 
-** If() ‚Ä¶ Else() Statements
+** If() … Else() Statements
 ** For() Statements
 *** Iteration in For() Statements
 *** Examples
 ** While() Statements
-** Do‚Ä¶While() Statements
+** Do…While() Statements
 ** Switch() Statements
 * Gosu Functions
-** Named Arguments
+** Named Functions Arguments and Argument Defaults
 ** Public and Private Functions
 
 ===Intervals===
@@ -205,11 +202,11 @@ The following is an auto-generated listing of the structure of all books in the 
 * Try-Catch-Finally Constructions
 * Throw Statements
 * Checked Exceptions in Gosu
-* Object Lifecycle Management ('using' Clauses)
+* Object Lifecycle Management (‘using' Clauses)
 ** Disposable Objects
-** Closeable Objects and 'using' Clauses
-** Reentrant Objects and 'using' Clauses
-** Returning Values from 'using' Clauses
+** Closeable Objects and ‘using' Clauses
+** Reentrant Objects and ‘using' Clauses
+** Returning Values from ‘using' Clauses
 
 ===Classes===
 * What Are Classes?
@@ -251,13 +248,12 @@ The following is an auto-generated listing of the structure of all books in the 
 ** Using One Delegate for Multiple Interfaces
 ** Using Composition With Built-in Interfaces
 
-===Annotations and Interceptors===
+===Annotations===
 * Annotating a Class, Method, Type, or Constructor
 ** Built-in Annotations
 * Annotations at Run Time
 * Defining Your Own Annotations
 ** Customizing Annotation Usage
-* Gosu Interceptors
 
 ===Enhancements===
 * Using Enhancements
@@ -283,7 +279,7 @@ The following is an auto-generated listing of the structure of all books in the 
 * Generics and Blocks
 * How Generics Help Define Collection APIs
 * Multiple Dimensionality Generics
-* Generics With Custom 'Containers'
+* Generics With Custom ‘Containers'
 ** Generics with Non-Containers
 
 ===Collections===
@@ -312,8 +308,12 @@ The following is an auto-generated listing of the structure of all books in the 
 *** Referencing Additional Schemas During Parsing
 * Creating Many QNames in the Same Namespace
 * XSD-based Properties and Types
-** Normalization of Gosu Generated XSD-based Names
-** Examples of XSD Names
+** Important Concepts in XSD Properties and Types
+*** Reference of XSD Properties and Types
+*** Normalization of Gosu Generated XSD-based Names
+** XSD Generated Type Examples
+*** XSD Generated Type Examples 1
+*** XSD Generated Types: Element Type Instances Compared to Backing Type Instances
 ** Automatic Insertion into Lists
 ** XSD List Property Example
 * Getting Data From an XML Element
@@ -335,15 +335,18 @@ The following is an auto-generated listing of the structure of all books in the 
 ** The XSD that Defines an XSD (The Metaschema)
 * Schema Access Type
 
-===Calling Web Services from Gosu===
-* WS-I Web Service Overview
-** Loading WS-I WSDL File Into Gosu
+===Calling WS-I Web Services from Gosu===
+* Consuming WS-I Web Service Overview
+** Loading WS-I WSDL Directly into the File System
+*** Security and Authentication
+*** Types of WS-I Client Connections
 ** How Does Gosu Process WSDL?
 ** Learning Gosu XML APIs
 ** What Gosu Creates from Your WSDL
 *** Special Behavior For Multiple Ports
 ** A Real Example: Weather
 * Adding WS-I Configuration Options
+*** Directly Modifying the WSDL Configuration Object for a Service
 ** HTTP Authentication
 ** Setting a Timeout
 ** Custom SOAP Headers
@@ -351,7 +354,6 @@ The following is an auto-generated listing of the structure of all books in the 
 ** Implementing Advanced Web Service Security with WSS4J
 * One-Way Methods
 * Asynchronous Methods
-* MTOM Attachments
 
 ===Java and Gosu===
 * Overview of Calling Java from Gosu
@@ -384,13 +386,13 @@ The following is an auto-generated listing of the structure of all books in the 
 ===Type System===
 * Basic Type Coercion
 * Basic Type Checking
-** Automatic Downcasting for 'typeis' and 'typeof'
+** Automatic Downcasting for ‘typeis' and ‘typeof'
 * Using Reflection
 ** Type Object Properties
 ** Java Type Reflection
 ** Type System Class
 * Compound Types
-* Gosu Type Loaders
+* Type Loaders
 
 ===Running Local Shell Commands===
 * Running Command Line Tools from Gosu
@@ -400,6 +402,13 @@ The following is an auto-generated listing of the structure of all books in the 
 * Creating Fingerprints
 ** How to Output Data Inside a Fingerprint
 * Extending Fingerprints
+
+===Concurrency===
+* Overview of Thread Safety and Concurrency
+* Gosu Scoping Classes (Pre-scoped Maps)
+* Concurrent Lazy Variables
+* Concurrent Cache
+* Concurrency with Monitor Locks and Reentrant Objects
 
 ===Properties Files===
 * Reading Properties Files
@@ -411,5 +420,5 @@ The following is an auto-generated listing of the structure of all books in the 
 ** The == and != Operator Recommendations and Warnings
 ** Gosu Case Sensitivity Implications
 ** Class Variable and Class Property Recommendations
-** Use 'typeis' Inference
+** Use ‘typeis' Inference
 

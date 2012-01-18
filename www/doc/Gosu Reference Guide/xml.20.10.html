@@ -234,7 +234,18 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1538885">  &lt;Child2&gt;7&lt;/Child2&gt;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1538886">&lt;/Element1&gt;</a></PRE>
       <div class="B_-_Body"><a name="1613491">Note that the </a><span class="cv_-_computer_voice">Child2</span> element contains the integer as text data in the serialized XML export. Gosu does not serialize the simple types to bytes (or a <span class="cv_-_computer_voice">String</span>) until serialization. In this example, the final <span class="cv_-_computer_voice">print</span> statement is what serializes the element and all its subelements.</div>
-      <div class="H3_-_Heading_3"><a name="1613484">Getting Child Elements By Name</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1613484">Getting Child Elements By Name</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1613485">If you want to iterate across the </a><span class="cv_-_computer_voice">List</span> of child elements to find your desired data, you can do so using the <span class="cv_-_computer_voice">Children</span> property mentioned earlier in this topic. Depending on what you are doing, you might want to use the Gosu enhancements on lists to find the items you want. See <a href="javascript:WWHClickedPopup('gosu', 'collections.19.1.html#1448766', '');" title="Collections">"Collections"</a> for more details. </div>
       <div class="B_-_Body"><a name="1535438">However, it is common to want to get a child element </a><span class="s_-_strong">by its name</span>. To support this common case, Gosu provides methods on the XML element object. There are two main variants of this method. Use <span class="cv_-_computer_voice">getChild</span> if you expect only one match. Use <span class="cv_-_computer_voice">getChildren</span> if you expect multiple matches. Each one of these has an alternate signature that takes a <span class="cv_-_computer_voice">String</span>.</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
@@ -276,7 +287,18 @@ text_val.select();
       <div class="B_-_Body"><a name="1535575">This prints the following:</a></div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1535596">&lt;?xml version="1.0"?&gt;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1535597">&lt;Child2&gt;5&lt;/Child2&gt;</a></PRE>
-      <div class="H3_-_Heading_3"><a name="1535955">Removing Child Elements By Name</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1535955">Removing Child Elements By Name</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1535989">To remove child elements, Gosu provides methods on the XML element to remove a child and specifying the </a>child to remove by its name. Use <span class="cv_-_computer_voice">removeChild</span> if you expect only one match. Use <span class="cv_-_computer_voice">removeChildren</span> if you expect multiple matches.:</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">

@@ -108,10 +108,10 @@ text_val.select();
       <table class="BulletListDoubleCol" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1622824">Method signature</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1622826">Description</a></div>
           </td>
         </tr>
@@ -370,10 +370,10 @@ text_val.select();
       <table class="BulletListDoubleCol" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1622956">Schema Type </a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1622958">Gosu Type</a></div>
           </td>
         </tr>
@@ -629,7 +629,7 @@ text_val.select();
       <div class="H2_-_Heading_2"><a name="1623085">Facet Validation</a></div>
       <div class="B_-_Body"><a name="1623086">A facet is a characteristic of a data type that restricts possible values. For example, setting a minimum value or </a>matching a specific regular expression.</div>
       <div class="B_-_Body"><a name="1623087">Gosu represents each facet as an element. Each facet element has a fixed attribute that is a Boolean value. All the </a>facets for a simple type collectively define the set of legal values for that simple type. </div>
-      <div class="B_-_Body"><a name="1623088">Most schema facets are validated at property setter time. A few facets are unvalidated until serialization time to </a>allow incremental construction of lists at runtime. This mostly affects facets relating to lengths of lists, and those that validate QNames. Gosu cannot validate QName objects at property setting time because there is not enough information available. Also, the XML Schema specification recommends against applying facets to QNames at all.</div>
+      <div class="B_-_Body"><a name="1623088">Most schema facets are validated at property setter time. A few facets are not validated until serialization time to </a>allow incremental construction of lists at runtime. This mostly affects facets relating to lengths of lists, and those that validate QNames. Gosu cannot validate QName objects at property setting time because there is not enough information available. Also, the XML Schema specification recommends against applying facets to QNames at all.</div>
       <div class="B_-_Body"><a name="1623089">Example:</a></div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1623090">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1623091">    &lt;xsd:element name="Element1"&gt;</a></PRE>

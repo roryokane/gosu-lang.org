@@ -77,7 +77,7 @@ text_val.select();
       <PRE class="CF_-_Code_First_Line"><a name="1441659">myObject.Prop = "Test Value" </a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1441660">var startTime = myObject.UpdateTime</a></PRE>
       <div class="H2_-_Heading_2"><a name="1441662">Accessing Object Properties</a></div>
-      <div class="B_-_Body"><a name="1441663">Gosu retrieves a property’s value using the dot-separated path rooted at an expression. If any property in the path </a>evaluates to <span class="cv_-_computer_voice">null</span>, the entire path evaluates to <span class="cv_-_computer_voice">null</span> (instead of throwing an exception and terminating execution).</div>
+      <div class="B_-_Body"><a name="1467915">Gosu retrieves a property’s value using the period operator. You can chain this expression with additional prop</a>erty accessors. For more details about how Gosu handles null values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a>.</div>
       <div class="HS_-_Head_Sub"><a name="1441664">Syntax</a></div>
       <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441665">&lt;expression&gt;.&lt;property&gt;</a></span></div>
       <div class="HS_-_Head_Sub"><a name="1441666">Examples</a></div>
@@ -85,118 +85,111 @@ text_val.select();
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441669">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441671">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441673">Claim.Contacts.Attorney.Name </a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441675">Some Name</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441677">Claim.Addresses.State</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441679">New Mexico</a></span></div>
           </td>
         </tr>
       </table>
       <div class="H2_-_Heading_2"><a name="1441682">Accessing Object Methods</a></div>
-      <div class="B_-_Body"><a name="1441683">An object property can be any valid data type, including an array, a function, or another object. An object func</a>tion is generally called a <span class="e_-_emphasis">method</span>. Invoking a method on an object is similar to accessing an object property, with the addition of parenthesis at the end to denote the function. Gosu uses the dot notation to call a method on a object instance. See the information in <a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a> for a discussion on how Gosu handles object method calls that evaluate to <span class="cv_-_computer_voice">null</span>.</div>
+      <div class="B_-_Body"><a name="1441683">An object property can be any valid data type, including an array, a function, or another object. An object func</a>tion is generally called a <span class="e_-_emphasis">method</span>. Invoking a method on an object is similar to accessing an object property, with the addition of parenthesis at the end to denote the function. Gosu uses the dot notation to call a method on a object instance. </div>
+      <div class="B_-_Body"><a name="1467931">For more details about how Gosu handles </a><span class="cv_-_computer_voice">null</span> values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.07.19.html#1597339', '');" title="Handling Null Values In Expressions">"Handling Null Values In Expressions"</a>.</div>
       <div class="HS_-_Head_Sub"><a name="1441688">Syntax</a></div>
-      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441689">&lt;expression&gt;.&lt;method-call&gt;</a></span></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pc_-_parameter_in_code"><a name="1441689">expression</a></span><span class="cvt_-_computer_voice_table">.</span><span class="pc_-_parameter_in_code">METHOD_NAME</span><span class="cvt_-_computer_voice_table">()</span></div>
       <div class="HS_-_Head_Sub"><a name="1441690">Example</a></div>
       <div class="T_-_Table"><a name="1441708">&nbsp;</a></div>
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441693">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441695">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441697">Claim.isClosed()</a></span></div>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441697">claim.isClosed()</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441699">Return a Boolean value indicating the status of Claim</a></span></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441701">Claim.SetFlag()</a></span></div>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441701">claim.resetFlags()</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441703">Flag this claim for the specified reason</a></span></div>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441705">Claim.CreateActivityFromPattern()</a></span></div>
-          </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441707">Associate an activity of the specified type with this claim</a></span></div>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441703">Reset flags for this claim</a></span></div>
           </td>
         </tr>
       </table>
       <div class="B_-_Body"><a name="1441715">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.17.html#1161201', '');" title="Static Method Calls">"Static Method Calls"</a> for more details. See also <a href="javascript:WWHClickedPopup('gosu', 'typesystem.24.3.html#1455649', '');" title="Using Reflection">"Using Reflection"</a> for regarding using type information to determine methods of an object.</div>
       <div class="H2_-_Heading_2"><a name="1441721">Accessing Object Arrays</a></div>
-      <div class="B_-_Body"><a name="1441722">Gosu provides access to the properties of an Object by property name or by associative array access. Use the </a>following syntax to access Object properties through array access.</div>
+      <div class="B_-_Body"><a name="1441722">Gosu provides access to the properties of an </a><span class="cv_-_computer_voice">Object</span> by property name or by associative array access. Use the following syntax to access <span class="cv_-_computer_voice">Object</span> properties through array access syntax.</div>
       <div class="HS_-_Head_Sub"><a name="1441723">Syntax</a></div>
-      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441724">&lt;object-reference&gt;[&lt;property name&gt;]</a></span></div>
-      <div class="B_-_Body"><a name="1441725">Array access uses late binding to avoid potential compile-time errors. For example, suppose that you have an </a>instance of a general type, say Object, as a function argument:</div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="pc_-_parameter_in_code"><a name="1441724">OBJ</a></span><span class="cvt_-_computer_voice_table">[</span><span class="pc_-_parameter_in_code">PROPERTY_NAME</span><span class="cvt_-_computer_voice_table">]</span></div>
+      <div class="B_-_Body"><a name="1441725">Array access uses late binding to avoid potential compile-time errors. For example, suppose that you have an </a>instance of a general type, say <span class="cv_-_computer_voice">Object</span>, as a function argument:</div>
       <PRE class="CF_-_Code_First_Line"><a name="1441726">function getDisplayName( obj : Object) {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1441727">&nbsp;</a>&nbsp;var name : String</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1441728">&nbsp;</a>&nbsp;name = obj.DisplayName &nbsp;&nbsp;&nbsp;&nbsp;// Compile error - no DisplayName property on Object</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1441729">&nbsp;</a>&nbsp;name = obj["DisplayName"]&nbsp;&nbsp;// Ok, so long as there is a DisplayName property at runtime</PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1441730">}</a></PRE>
-      <div class="B_-_Body"><a name="1441731">The only requirement is that object's type have a property called </a><span class="cv_-_computer_voice">DisplayName</span>; there is no base interface that all the arguments implement. The only way to access the <span class="cv_-_computer_voice">DisplayName</span> property without a compile-time error is through “late binding” as with associative array access. </div>
+      <div class="B_-_Body"><a name="1441731">The only requirement is that object’s type have a property called </a><span class="cv_-_computer_voice">DisplayName</span>. There is no base interface that all the arguments implement. The only way to access the <span class="cv_-_computer_voice">DisplayName</span> property without a compile-time error is through “late binding” as with associative array access.</div>
       <div class="B_-_Body"><a name="1441732">In this example, if the function caller passes an object parameter that does not have a </a><span class="cv_-_computer_voice">DisplayName</span> property, at run time Gosu throws an exception.</div>
       <div class="HS_-_Head_Sub"><a name="1441733">Examples</a></div>
       <div class="T_-_Table"><a name="1441753">&nbsp;</a></div>
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441736">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441738">Result</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1441740">Description</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441742">person["StreetAddress"] </a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441744">"123 Main Street"</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1441746">example of a single associative array access</a></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441748">person["Address"]["City"]</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1441750">"Birmingham" </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1441752">example of a double associative array access. This is </a>equivalent to the code <span class="cvt_-_computer_voice_table">person.Address.City</span>.</div>
           </td>
         </tr>

@@ -11,9 +11,9 @@ if(x.t("text_val=eval"))y.f("0,1");
 if(x.t("error"))y.f("0,1");
 if(x.t("guidewire_selectall"))y.f("0,1");
 if(x.t("function"))y.f("0,1");
+if(x.t("0.9.0-c"))y.f("0,22");
 if(x.t("occurred"))y.f("0,1");
 if(x.t("document.linktothisurlform.urlfield"))y.f("0,1");
 if(x.t("page"))y.f("0,1");
-if(x.t("0.8.5-c"))y.f("0,22");
 if(x.t("var"))y.f("0,1");
 }

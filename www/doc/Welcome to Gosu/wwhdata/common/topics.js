@@ -54,7 +54,7 @@ function Guidewire_FMSourceFileMatch(FROM_URL,LOCAL_FILENAME) {
 
 
 // IMPORTANT: IF YOU CHANGE THE LOGIC OF THIS CODE, ALSO CHANGE THE MIRROR FUNCTION IN CONTROLS.JS
-// THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION DECODES IT
+// THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION ENCODES it and compares against the input string with the full name for each topic (potentially with funny characters)
 function Guidewire_SafeTopicName(theTitle) {
 theTitle = theTitle.replace(/ /g, "_");  // converts space char
 theTitle = theTitle.replace(/\u00a0/g, "_");  // converts nbsp char
@@ -66,6 +66,9 @@ theTitle = theTitle.replace(/\u201d/g, "'");// single quote smart
 theTitle = theTitle.replace(/\u2018/g, "'");// dub quote smart
 theTitle = theTitle.replace(/\u2019/g, "'");// dub quote smart
 theTitle = theTitle.replace(/\u2022/g, "");// trademark
+theTitle = theTitle.replace(/\</g, "(");  // open bracket
+theTitle = theTitle.replace(/\>/g, ")");   // close bracket
+theTitle = theTitle.replace(/:/g, "_");    // colon
 theTitle = theTitle.replace(/&/g, "");
 return (theTitle);  }
 
@@ -81,7 +84,7 @@ var varLower2 = WHATTOMATCH.toLowerCase();
 function GUIDEWIRE_TOPIC_TO_FILE(TOPIC, SRCFILE) { 
 if (Guidewire_TopicMatch(TOPIC,"cover")) return "index.html"
 
-else if (Guidewire_TopicMatch(TOPIC,"Welcome to Gosu 0.8.5-C") && Guidewire_FMSourceFileMatch(SRCFILE,"cover.html") ) { return "cover.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Welcome to Gosu 0.9.0-C") && Guidewire_FMSourceFileMatch(SRCFILE,"cover.html") ) { return "cover.html";}
 else { return("../wwhelp/topic_cannot_be_found.html"); } }
 
 function  WWHBookData_MatchTopic(P)

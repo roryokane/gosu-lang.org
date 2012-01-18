@@ -279,18 +279,19 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1435580">for( a in addressList index i) {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1435581">   print( a.Id + " has index " + i)</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1435582">}</a></PRE>
-      <div class="B_-_Body"><a name="1491813">Gosu has native support for </a><span class="e_-_emphasis">intervals</span>, which are sequences of values of the same type between a given pair of endpoint values. For instance, the set of integers beginning with 0 and ending with 10 is an integer interval. If it is a closed interval (contains the starting and ending values), it contains the values 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. The Gosu shorthand syntax for this is <span class="cv_-_computer_voice">0..10</span>. Intervals are particularly useful to write concise easy-to-understand <span class="cv_-_computer_voice">for</span> loops:</div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491814">for( i in 1..10 ) {</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491815">  print( i )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491816">}</a></PRE>
-      <div class="B_-_Body"><a name="1491817">You can optionaly specify an open interval at one or both ends of the interval, meaning not to include the speci</a>fied values. The Gosu syntax 1|..|10 means an open interval on both sides, which means the values from 2 through 9.</div>
-      <div class="B_-_Body"><a name="1491818">Intervals do not need to represent numbers. Intervals can be a variety of types including numbers, dates, or other </a>abstractions such as names. Gosu includes the built-in shorthand syntax (the two periods, shown earlier) for intervals of dates and common number types. You can also add custom interval types that support iterable comparable sequences. As long as your interval type implements the required interfaces, you can use your new intervals in <span class="cv_-_computer_voice">for</span> loop declarations:</div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491819">for( i in new ColorInterval("red", "blue")) {</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491820">  print( i )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1491821">}</a></PRE>
-      <div class="B_-_Body"><a name="1491822">Gosu does not have a direct general purpose equivalent of the Java three-part </a><span class="cv_-_computer_voice">for</span> declaration:<br />&nbsp;&nbsp;<span class="cv_-_computer_voice">for ( i =1 ; i &lt;20 ; ++i )</span></div>
-      <div class="B_-_Body"><a name="1491823">However, in practice the use of intervals makes most typical use of this pattern unnecessary, and you can use a </a>Gosu <span class="cv_-_computer_voice">while</span> loop to duplicate this pattern.</div>
-      <div class="B_-_Body"><a name="1491824">To use intervals with </a><span class="cv_-_computer_voice">for</span> loops, they must be an iterative interval. You can choose to make custom non-iterative intervals if you want. They are mainly useful for math and theoretical work. For example, represent non-countable values like the infinite number of real numbers between two other real numbers.</div>
+      <div class="B_-_Body"><a name="1487928">Gosu has native support for </a><span class="e_-_emphasis">intervals</span>, which are sequences of values of the same type between a given pair of endpoint values. For instance, the set of integers beginning with 0 and ending with 10 is an integer interval. If it is a closed interval (contains the starting and ending values), it contains the values 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. The Gosu shorthand syntax for this is <span class="cv_-_computer_voice">0..10</span>. Intervals are particularly useful to write concise easy-to-understand <span class="cv_-_computer_voice">for</span> loops:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487929">for( i in 1..10 ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487930">  print( i )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487931">}</a></PRE>
+      <div class="B_-_Body"><a name="1487932">You can optionaly specify an open interval at one or both ends of the interval, meaning not to include the speci</a>fied values. The Gosu syntax 1|..|10 means an open interval on both sides, which means the values from 2 through 9.</div>
+      <div class="B_-_Body"><a name="1487933">Intervals do not need to represent numbers. Intervals can be a variety of types including numbers, dates, or other </a>abstractions such as names. Gosu includes the built-in shorthand syntax (the two periods, shown earlier) for intervals of dates and common number types. You can also add custom interval types that support iterable comparable sequences. As long as your interval type implements the required interfaces, you can use your new intervals in <span class="cv_-_computer_voice">for</span> loop declarations:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487934">for( i in new ColorInterval("red", "blue")) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487935">  print( i )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1487936">}</a></PRE>
+      <div class="B_-_Body"><a name="1487937">Gosu does not have a direct general purpose equivalent of the Java three-part </a><span class="cv_-_computer_voice">for</span> declaration:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1489324">for ( i =1 ; i &lt;20 ; ++i )</a></div>
+      <div class="B_-_Body"><a name="1487938">However, in practice the use of intervals makes most typical use of this pattern unnecessary, and you can use a </a>Gosu <span class="cv_-_computer_voice">while</span> loop to duplicate this pattern.</div>
+      <div class="B_-_Body"><a name="1487939">To use intervals with </a><span class="cv_-_computer_voice">for</span> loops, they must be an iterative interval. You can choose to make custom non-iterative intervals if you want. They are mainly useful for math and theoretical work. For example, represent non-countable values like the infinite number of real numbers between two other real numbers.</div>
       <div class="B_-_Body"><a name="1456819">The Gosu </a><span class="cv_-_computer_voice">switch</span> statement can test any type of object, with a special default case at the end:</div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1435382">var x = "b"</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1436055">&nbsp;</a></PRE>
@@ -572,8 +573,43 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1466921">&nbsp;</a>&nbsp;:Update = true,</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1466946">&nbsp;</a>&nbsp;:WhenManifestOnly = ScriptEnvironment.WHEN_EMPTY_SKIP </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1466954">}</a></PRE>
-      <div class="B_-_Body"><a name="1466838">For more details, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.11.3.html#2447712', '');" title="Creating and Instantiating Classes">"Creating and Instantiating Classes"</a>.</div>
-      <div class="H3_-_Heading_3"><a name="1466839">Functions</a></div>
+      <div class="B_-_Body"><a name="1490609">Unlike Java, you can omit the type name entirely in a </a><span class="cv_-_computer_voice">new</span> expression if the type is known from its context. For example: </div>
+      <PRE class="CF_-_Code_First_Line"><a name="1490828">class Person {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490829"> private var _name : String as Name</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490830"> private var _age : int as Age</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490831">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490832">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490833">class Tutoring {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490834">  private var _teacher : Person as Teacher</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490835">  private var _student : Person as Student</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490836">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490837">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490838">// declare a variable as a specific type to omit the type name in the "new" expression</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490839">// during assignment to that variable</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490840">var p : Person</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490841">var t : Tutoring</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490842">p = new() </a>&nbsp;&nbsp;&nbsp;// notice the type name is omitted</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490843">t = new()</a>&nbsp;&nbsp;&nbsp;&nbsp;// notice the type name is omitted</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490844">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490845">// if a class var or other data property has a declared type, optionally omit type name</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490846">t.Teacher = new()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490847">t.Student = new()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490848">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1490850">// optionally OMIT 'new' keyword and still use the Gosu initialization syntax</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1490851">t.Student = { :Name = "Bob Smith", :Age = 30 }</a></PRE>
+      <div class="B_-_Body"><a name="1490614">For more details, see </a><a href="javascript:WWHClickedPopup('gosu', 'classes.11.3.html#2447712', '');" title="Creating and Instantiating Classes">"Creating and Instantiating Classes"</a> and <a href="javascript:WWHClickedPopup('gosu', 'expressions.07.10.html#1595812', '');" title="New Object Expressions">"New Object Expressions"</a>.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1466839">Functions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1451930">Declare a function using the </a><span class="cv_-_computer_voice">function</span> keyword. When a function is part of another type, a function is called a <span class="e_-_emphasis">method</span>. In Gosu, types follow the variable or function definition, separated by a colon. In contrast, Java types precede the variable or parameter name with no delimiter. To return a value, add a statement with the <span class="cv_-_computer_voice">return</span> keyword followed by the value. The following simple function returns a value:</div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1451861">public function createReport( user : User) : Boolean {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1451862">&nbsp;</a>&nbsp;return ReportUtils.newReport(user, true)</PRE>
@@ -587,10 +623,21 @@ text_val.select();
       <div class="B_-_Body"><a name="1451868">Gosu supports access control modifiers (</a><span class="cv_-_computer_voice">public</span>, <span class="cv_-_computer_voice">private</span>, <span class="cv_-_computer_voice">internal</span>, and <span class="cv_-_computer_voice">protected</span>) and they have the same meaning as in Java. For example, if you mark a method <span class="cv_-_computer_voice">public</span>, any other code can call that method. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'classes.11.5.html#2445688', '');" title="Modifiers">"Access Modifiers"</a>.</div>
       <div class="B_-_Body"><a name="1467211">Gosu also supports static methods, which means methods on the type rather than on object instances. See </a><a href="javascript:WWHClickedPopup('gosu', 'intro.03.02.html#1455920', '');" title="Welcome to Gosu">"Static Members"</a>.</div>
       <div class="B_-_Body"><a name="1468357">If the return type is not </a><span class="cv_-_computer_voice">void</span>, <span class="s_-_strong">all</span> possible code paths must return a value in a method that declares a return type. In other words, if any code path contains a <span class="cv_-_computer_voice">return</span> statement, Gosu requires a <span class="cv_-_computer_voice">return</span> statement for all possible paths through the function. The set of all paths includes all outcomes of conditional execution, such as <span class="cv_-_computer_voice">if</span> and <span class="cv_-_computer_voice">switch</span> statements. This is identical to the analogous requirement in Java. The Gosu editor automatically notifies you at compile time of this issue if it happens. For details, see <a href="javascript:WWHClickedPopup('gosu', 'statements.08.5.html#1440333', '');" title="Gosu Functions">"Gosu Functions"</a>.</div>
-      <div class="H3_-_Heading_3"><a name="1451913">Class Variables and Properties</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1451913">Class Variables and Properties</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1450158">Gosu supports instance variables and static variables in class declarations in basically the same way Java does, </a>although the syntax is slightly different. Use the <span class="cv_-_computer_voice">var</span> keyword in the class definition, and declare the type explicitly. Note that variables are <span class="cv_-_computer_voice">private</span> by default in Gosu.</div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1461837">var _id : String            //vars are private by default</a></PRE>
-      <div class="B_-_Body"><a name="1461864">One special difference between Gosu and some languages (including Java) is full support in Gosu for </a><span class="s_-_strong">proper</span><span class="s_-_strong"></span><span class="s_-_strong">ties</span>, which are dynamic getter and setter methods for values. To set or get properties from an object (internally, Gosu calls the property getter and setter methods), use natural syntax. Type the period (.) character followed by the property name just as you would for an object variable:</div>
+      <div class="B_-_Body"><a name="1461864">One special difference between Gosu and some languages (including Java) is full support in Gosu for </a><span class="s_-_strong">proper</span><span class="s_-_strong">ties</span>, which are dynamic getter and setter methods for values. To set or get properties from an object (internally, Gosu calls the property getter and setter methods), use natural syntax. Type the period (.) character followed by the property name just as you would for an object variable:</div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1461865">var s = myobj.Name</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1461866">myobj.Name = "John"</a></PRE>
       <div class="B_-_Body"><a name="1461850">In addition, Gosu has a special null-safety behavior with pure property paths, which are the form </a><span class="cv_-_computer_voice">obj.Property1.Property2.Property3</span>. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'intro.03.02.html#1450820', '');" title="Welcome to Gosu">"Property Accessor Paths are Null Safe"</a>.</div>
@@ -632,7 +679,18 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1468475">print(n.ID)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// get a property</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1468483">n.Name = "John" </a>&nbsp;&nbsp;&nbsp;// set a property -- see the "as Name" part of the class definition!</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1468484">print(n.Name) </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// get a property -- see the "as Name" part of the class definition!</PRE>
-      <div class="H3_-_Heading_3"><a name="1468476">From Gosu, Java Get and Set Methods Become Properties</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1468476">From Gosu, Java Get and Set Methods Become Properties</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1468477">For methods on Java types that look like getters and setters, Gosu exposes methods on the type as properties </a>rather than methods. Gosu uses the following rules for methods on Java types:</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
@@ -685,17 +743,39 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1459083">circle.Radius = 5 // property SET</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1459093">print(circle.Radius) // property GET</a></PRE>
       <div class="B_-_Body"><a name="1459100">For a detailed example, see </a><a href="javascript:WWHClickedPopup('gosu', 'java-gosu.22.2.html#2021794', '');" title="Overview of Calling Java from Gosu">"Java Get and Set Methods Convert to Gosu Properties"</a>.</div>
-      <div class="H3_-_Heading_3"><a name="1450820">Property Accessor Paths are Null Safe</a></div>
-      <div class="B_-_Body"><a name="1485761">For normal property access with the period character, all objects to the left of the period must be non-null at run </a>time or Gosu throws an exception. For example:</div>
-      <div class="CS_-_Code_Single_Line"><a name="1485675">obj.Property1.Property2.Property3</a></div>
-      <div class="B_-_Body"><a name="1485812">Gosu provides a way to access properties in a way that is tolerant of unexpected </a><span class="cv_-_computer_voice">null</span> values, a feature called <span class="e_-_emphasis">null </span><span class="e_-_emphasis">safety</span>. To do this, add a question mark before the period to transform the operator into the null-safe version. For example:</div>
-      <div class="CS_-_Code_Single_Line"><a name="1485832">obj?.Property1?.Property2?.Property3</a></div>
-      <div class="B_-_Body"><a name="1485820">In most cases, if any object to the left of the </a><span class="cv_-_computer_voice">?.</span> operator is <span class="cv_-_computer_voice">null</span>, the expression returns <span class="cv_-_computer_voice">null</span> and Gosu does <span class="s_-_strong">not</span> throw a null pointer exception (NPE). Using null-safe property paths tends to simplify real-world code. Gosu null-tolerant property accessor paths are a good reason to expose data as <span class="e_-_emphasis">properties</span> in Gosu classes and interfaces rather than as setter and getter methods.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1450820">Property Accessor Paths are Null Safe</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1490403">For normal property access with the period character, all objects to the left of the period must be non-null at run </a>time or Gosu throws an exception. For example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490404">obj.Property1.Property2.Property3</a></div>
+      <div class="B_-_Body"><a name="1490405">Gosu provides a way to access properties in a way that is tolerant of unexpected </a><span class="cv_-_computer_voice">null</span> values, a feature called <span class="e_-_emphasis">null </span><span class="e_-_emphasis">safety</span>. To do this, add a question mark before the period to transform the operator into the null-safe version. For example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1490406">obj?.Property1?.Property2?.Property3</a></div>
+      <div class="B_-_Body"><a name="1490407">In most cases, if any object to the left of the </a><span class="cv_-_computer_voice">?.</span> operator is <span class="cv_-_computer_voice">null</span>, the expression returns <span class="cv_-_computer_voice">null</span> and Gosu does <span class="s_-_strong">not</span> throw a null pointer exception (NPE). Using null-safe property paths tends to simplify real-world code. Gosu null-tolerant property accessor paths are a good reason to expose data as <span class="e_-_emphasis">properties</span> in Gosu classes and interfaces rather than as setter and getter methods.</div>
       <div class="B_-_Body"><a name="1485880">There are additional null-safe operators. For example, specify default values with code like:</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1485917">// Set display text to the String in the txt variable, or if it is null use "(empty)"</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1485927">var displayText = txt ?: "(empty)"</a></div>
       <div class="B_-_Body"><a name="1467369">For more about Gosu null safety, see </a><a href="javascript:WWHClickedPopup('gosu', 'intro.03.08.html#1467241', '');" title="Null Safety for Properties Other Operators">"Null Safety for Properties Other Operators"</a>.</div>
-      <div class="H3_-_Heading_3"><a name="1455920">Static Members</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1455920">Static Members</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1468828">Gosu supports </a><span class="e_-_emphasis">static</span> members on a type. This includes variables, functions, property declarations, and static inner classes on a type. The static quality means that the member exists only on the <span class="e_-_emphasis">type</span> (which exists only once), not on <span class="e_-_emphasis">instances</span> of the type. The syntax is simple. After a type reference (just the type name), use the period (.) character followed by the property name or method call. For example:</div>
       <div class="CS_-_Code_Single_Line"><a name="1468829">MyClass.PropertyName // get a static property name</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1468830">MyClass.methodName() // call a static method </a></div>
@@ -777,45 +857,45 @@ text_val.select();
       <table class="withHeadingIndent" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1452760">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1452762">Prints this Result</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1452764">Description</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483320">var x = 1 + 2</a></span></div>
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483321">var s = x as String</a></span></div>
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483322">print(s == "3")</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483325">true</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1483327">These two variables reference the same value but different </a>objects. If you use the double-equals operator, it returns <span class="cvt_-_computer_voice_table">true</span>.</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483338">var x = 1 + 2</a></span></div>
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483339">var s = x as String</a></span></div>
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1483340">print(s === "3")</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1452782">false</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1483380">These two variables reference the same value but different </a>objects. If you use the triple-equals operator, it returns <span class="cvt_-_computer_voice_table">false</span>.</div>
           </td>
         </tr>
       </table>
       <div class="H2_-_Heading_2"><a name="1450590">Case Sensitivity</a></div>
-      <div class="B_-_Body"><a name="1453856">Gosu language itself is case insensitive, but Gosu compiles and runs faster if you write all Gosu as case-sensitive </a>code matching the declaration of the language element. Additionally, proper capitalization makes your Gosu code easier to read. For more information, including Gosu standards for capitalizing your own language elements, see <a href="javascript:WWHClickedPopup('gosu', 'intro.03.12.html#1410297', '');" title="Gosu Case Sensitivity">"Gosu Case Sensitivity"</a>.</div>
+      <div class="B_-_Body"><a name="1453856">Gosu language itself is case insensitive, but Gosu compiles and runs faster if you write all Gosu as case-sensitive </a>code matching the declaration of the language element. Additionally, proper capitalization makes your Gosu code easier to read. For more information, including Gosu standards for capitalizing your own language elements, see <a href="javascript:WWHClickedPopup('gosu', 'intro.03.12.html#1489374', '');" title="Gosu Case Sensitivity">"Gosu Case Sensitivity"</a>.</div>
       <div class="H2_-_Heading_2"><a name="1454915">Compound Assignment Statements</a></div>
       <div class="B_-_Body"><a name="1454979">Gosu supports all operators in the Java language, including bit-oriented operators. Additionally, Gosu has </a>compound operators such as:</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
@@ -974,7 +1054,7 @@ text_val.select();
         </table>
       </div>
       <div class="CS_-_Code_Single_Line"><a name="1469073">print(myCache.get("Hello world")</a></div>
-      <div class="B_-_Body"><a name="1465126">For more information about concurrency APIs, see </a>"Concurrency"</div>
+      <div class="B_-_Body"><a name="1465126">For more information about concurrency APIs, see </a><a href="javascript:WWHClickedPopup('gosu', 'concurrency.27.1.html#1441309', '');" title="Concurrency">"Concurrency"</a></div>
       <div class="H2_-_Heading_2"><a name="1457070">Exceptions</a></div>
       <div class="B_-_Body"><a name="1458558">Gosu supports the full feature set for Java exception handling, including </a><span class="cv_-_computer_voice">try/catch/finally</span> blocks. However, unlike Java, no exceptions are checked. Standard Gosu style is to avoid checked exceptions where possible. You can throw any exception you like in Gosu, but if it is not a <span class="cv_-_computer_voice">RuntimeException</span>, Gosu wraps the exception in a <span class="cv_-_computer_voice">RuntimeException</span>. </div>
       <div class="HS_-_Head_Sub"><a name="1458617">Catching Exceptions</a></div>
@@ -1014,10 +1094,11 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1457218">@Throws(java.text.ParseException, "If text is invalid format, throws ParseException")</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1457219">&nbsp;</a>&nbsp;public function myMethod() {}</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1457220">}</a></PRE>
-      <div class="B_-_Body"><a name="1457196">You can define custom annotations, and optionally have your annotations take arguments. (If there are no argu</a>ments, you can omit the parentheses). </div>
+      <div class="B_-_Body"><a name="1457196">You can define custom annotations, and optionally have your annotations take arguments. If there are no argu</a>ments, you can omit the parentheses. </div>
       <div class="B_-_Body"><a name="1457247">You can get annotations from types at run time.</a></div>
-      <div class="B_-_Body"><a name="1457266">For more advanced usage, annotations can define an </a><span class="e_-_emphasis">interceptor</span> for a method. This allows you to wrap a method with code before the method runs, after the method runs, or both. This enables certain types of <span class="e_-_emphasis">aspect program</span><span class="e_-_emphasis"></span><span class="e_-_emphasis">ming</span>.</div>
-      <div class="B_-_Body"><a name="1457254">For more information, se </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.15.1.html#1433440', '');" title="Annotations and Interceptors">"Annotations and Interceptors"</a>.</div>
+      <div class="B_-_Body"><a name="1490995">Gosu supports named arguments syntax for annotations:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1491043">@MyAnnotation(a = "myname", b = true)</a></div>
+      <div class="B_-_Body"><a name="1457254">For more information, se </a><a href="javascript:WWHClickedPopup('gosu', 'annotations.15.1.html#1433440', '');" title="Annotations">"Annotations"</a>.</div>
       <div class="H2_-_Heading_2"><a name="1457886">Gosu Templates</a></div>
       <div class="B_-_Body"><a name="1457887">Gosu supports in-line dynamic templates using a simple syntax. Use these to combine static text with values </a>from variables or other calculations Gosu evaluates at run time. For example, suppose you want to display text with some calculation in the middle of the text:</div>
       <div class="CS_-_Code_Single_Line"><a name="1457888">var s = "One plus one equals ${ 1 + 1 }."</a></div>
@@ -1082,19 +1163,18 @@ text_val.select();
       <div class="B_-_Body"><a name="1461664">For more information, see </a><a href="javascript:WWHClickedPopup('gosu', 'xml.20.01.html#1470967', '');" title="Gosu and XML">"Gosu and XML"</a>.</div>
       <div class="H2_-_Heading_2"><a name="1460937">Native Web Service Support Using a WSDL Type Loader</a></div>
       <div class="B_-_Body"><a name="1461602">Gosu code can import web services (SOAP APIs) from external systems and call these services as a SOAP client </a>(an API consumer). The Gosu language handles all aspects of object serialization, object deserialization, basic authentication, and SOAP fault handling.</div>
-      <div class="B_-_Body"><a name="1485035">The following example uses the MapPoint geocoding service:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1486011">// get a reference to the service in the package namespace of the WSDL</a></PRE>
+      <div class="B_-_Body"><a name="1485035">The following example uses a hypothetical web service </a><span class="cv_-_computer_voice">SayHello</span>.</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1486011">// -- get a reference to the service in the package namespace of the WSDL</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486012">var service = new example.gosu.wsi.myservice.SayHello()</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486013">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1486031">// set authentication options</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1486031">// -- set security options</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486014">service.Config.Http.Authentication.Basic.Username = "jms"</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486015">service.Config.Http.Authentication.Basic.Password = "b5"</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486016">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1486017">// call a method on the service</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1486017">// -- call a method on the service</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1486018">var result = service.helloWorld()</a></PRE>
       <div class="H2_-_Heading_2"><a name="1484203">Gosu Character Set</a></div>
-      <div class="B_-_Body"><a name="1458323">As Gosu runs within a Java Virtual Machine (JVM), Gosu shares the same 16-bit Unicode character set as Java.</a></div>
-      <div class="B_-_Body"><a name="1458324">This allows you to represent a character in virtually any human language in Gosu.</a></div>
+      <div class="B_-_Body"><a name="1458323">Because Gosu runs within a Java Virtual Machine (JVM), Gosu shares the same 16-bit Unicode character set as </a>Java. This allows you to represent a character in virtually any human language in Gosu.</div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics

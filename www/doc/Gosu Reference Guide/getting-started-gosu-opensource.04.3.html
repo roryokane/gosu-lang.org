@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
-    <title>Getting Started with Gosu in Eclipse</title>
+    <title>Installing Gosu as Command Line Tool</title>
     <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
@@ -52,13 +52,12 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1464259">Getting Started with Gosu </a> : Getting Started with Gosu in Eclipse</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1477943">Getting Started with Gosu Community Release</a> : Installing Gosu as Command Line Tool</span></div>
     <hr align="left" />
     <div>
-      <div class="H1_-_Heading_1"><a name="1464259">Getting Started with Gosu in Eclipse</a></div>
-      <div class="H2_-_Heading_2"><a name="1464260">Using Gosu Tester to Write ‘Hello World’</a></div>
-      <div class="B_-_Body"><a name="1464261">The easiest thing to confirm that Gosu is installed in Eclipse is to use the Gosu Tester window.</a></div>
-      <div class="HS_-_Head_Sub"><a name="1464210">To open the Gosu Tester window</a></div>
+      <div class="H1_-_Heading_1"><a name="1477943">Installing Gosu as Command Line Tool</a></div>
+      <div class="B_-_Body"><a name="1477944">To use Gosu as a command line tool, run the appropriate executable in the </a><span class="cv_-_computer_voice">bin</span> directory in the Gosu download.</div>
+      <div class="HS_-_Head_Sub"><a name="1465851">To use Gosu as a Windows command line tool</a></div>
       <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -68,13 +67,12 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1463947">Click the menu item </a><span class="ui_-_UI_element">Window</span> → <span class="ui_-_UI_element">Show View</span> → <span class="ui_-_UI_element">Gosu Tester</span></div>
+              <div class="LS_-_List_Start_inner"><a name="1465852">Download the </a><span class="cv_-_computer_voice">gosu.zip</span> file from the location:</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1468215">If the </a><span class="ui_-_UI_element">Gosu Tester</span> item does not appear, you did not perform all the steps in installation. Pay particular note to switching to the Java perspective in Eclipse and then performing the <span class="ui_-_UI_element">Reset Perspective</span> action. See <a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.2.html#1467759', '');" title="Installing the Eclipse Gosu Editor Plugin">"Installing the Eclipse Gosu Editor Plugin"</a> for details.</div>
+      <div class="CS_-_Code_Single_Line"><a name="1468588">http://gosu-lang.org/gosu/downloads/gosu.zip</a></div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -84,34 +82,11 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1468231">If the Gosu Tester pane appears in an undesired location, drag its title bar to the desired location.</a></div>
+              <div class="LI_-_List_Item_inner"><a name="1468538">Unzip the file to the desired location on your local disk. The documentation refers to this root directory for </a>gosu simply as the name <span class="cv_-_computer_voice">Gosu</span>. The <span class="cv_-_computer_voice">Gosu/bin</span> directory contains the binary executables and the <span class="cv_-_computer_voice">Gosu/lib</span> directory contains the Gosu libraries.</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	3.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1468221">The typing focus is in the Gosu Tester pane in Eclipse. </a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1468222">You can type Gosu code directly into the Gosu Tester pane and click the </a><span class="ui_-_UI_element">Execute</span> button to run the code. </div>
-      <div class="B_-_Body"><a name="1464167">For example, type the following simple Gosu program:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1464188">print("Hello World!")</a></div>
-      <div class="B_-_Body"><a name="1464189">Next, click the </a><span class="ui_-_UI_element">Execute</span> button to runs your program.</div>
-      <div class="B_-_Body"><a name="1464190">In the pane to the right, which is white text on black background, you can see the output. For the previous </a>example, the output is:</div>
-      <div class="CS_-_Code_Single_Line"><a name="1464104">Hello World!</a></div>
-      <div class="B_-_Body"><a name="1464058">Congratulations! You just ran your first Gosu program.</a></div>
-      <div class="H2_-_Heading_2"><a name="1464274">Creating a Gosu Project in Eclipse</a></div>
-      <div class="HS_-_Head_Sub"><a name="1465536">To create a new Gosu project and a new Gosu program</a></div>
       <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -121,15 +96,11 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1468278">Click the menu item </a><span class="ui_-_UI_element">File</span> → <span class="ui_-_UI_element">New</span> → <span class="ui_-_UI_element">Gosu Project</span>. A Gosu project dialog appears.</div>
+              <div class="LS_-_List_Start_inner"><a name="1468507">Open a DOS command line window (</a><span class="cv_-_computer_voice">cmd.exe</span>)</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1468249">If the </a><span class="ui_-_UI_element">Gosu Project</span> item does not appear, you likely did not perform all installation steps. Pay particular note to switching to the Java perspective in Eclipse. If necessary, repeat the <span class="ui_-_UI_element">Reset Perspective</span> action. See <a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.2.html#1467759', '');" title="Installing the Eclipse Gosu Editor Plugin">"Installing the Eclipse Gosu Editor Plugin"</a> for details.</div>
-      <div class="NI_-_Note_Important">
-        <span class="n_-_note">IMPORTANT   </span><a name="1469711">In Eclipse, if any files contain Gosu, the project type </a><span class="s_-_strong">must</span> be Gosu Project. Your Gosu project can contain other Java files and other resources. The initial program that you run <span class="s_-_strong">must</span> be a Gosu program, which is a <span class="cv_-_computer_voice">.gsp</span> file. Your Gosu program can use other Gosu classes, Java classes, and other Gosu types. However, if the types you use are not built-in to Gosu or Java, you must add these resources to your Gosu project. For more information about Gosu programs, see <a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.3.html#2182766', '');" title="The Structure of a Gosu Program">"The Structure of a Gosu Program"</a>.</div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -139,11 +110,12 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465044">In the </a><span class="ui_-_UI_element">Project Name</span> field, type a project name, such as <span class="cv_-_computer_voice">GSProjectSimple</span>.</div>
+              <div class="LI_-_List_Item_inner"><a name="1465853">Type the command:</a></div>
             </td>
           </tr>
         </table>
       </div>
+      <div class="CS_-_Code_Single_Line"><a name="1465856">Gosu/bin/gosu.bat</a></div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -153,11 +125,14 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465061">Modify any other optional fields in that dialog.</a></div>
+              <div class="LI_-_List_Item_inner"><a name="1465995">When the Gosu prompt (</a><span class="cv_-_computer_voice">"gs&gt;"</span>) appears, type</div>
             </td>
           </tr>
         </table>
       </div>
+      <div class="CS_-_Code_Single_Line"><a name="1465997">print("hello world!")</a></div>
+      <div class="LP_-_List_Para"><a name="1465998">The console prints the following</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466061">hello world!</a></div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -167,7 +142,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465068">Click </a><span class="ui_-_UI_element">Finish</span>. Eclipse may take a while to set up your new Gosu project.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466127">Experiment by typing other Gosu expressions or programs.</a></div>
             </td>
           </tr>
         </table>
@@ -181,7 +156,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469543">Your new Gosu project appears in the </a><span class="ui_-_UI_element">Package Explorer</span> pane in Eclipse.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466128">When you are done, type the one-word command </a><span class="cv_-_computer_voice">quit</span>, and then press the <span class="cv_-_computer_voice">Enter</span> key.</div>
             </td>
           </tr>
         </table>
@@ -195,7 +170,26 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469585">Create a package (namespace hierarchy) to contain your Gosu program. Right click on the </a><span class="cv_-_computer_voice">src</span> folder underneath your project folder icon. Right-click on the <span class="cv_-_computer_voice">src</span> folder and choose <span class="ui_-_UI_element">New</span> → <span class="ui_-_UI_element">Package</span>. In the next dialog, in the <span class="ui_-_UI_element">Name</span> field, type the word <span class="cv_-_computer_voice">example</span>. There is now a top-level package called <span class="cv_-_computer_voice">example</span>.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466145">Optionally, you may want to add the </a><span class="cv_-_computer_voice">Gosu/bin</span> directory to your system path. That allows you to type <span class="cv_-_computer_voice">gosu</span> at command line, independent of the current working directory. Go to the <span class="ui_-_UI_element">Start</span> menu and choose <span class="ui_-_UI_element">Control Panel</span> → <span class="ui_-_UI_element">System</span> → <span class="ui_-_UI_element">Environment Variables</span>. Next, choose the <span class="cv_-_computer_voice">Path</span> variable. At end of the current path, append a semicolon and the full path to the <span class="cv_-_computer_voice">bin</span> directory. For example, suppose you installed (copied) the Gosu shell directory to the path: </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="1466152">C:\gosu\</a></div>
+      <div class="LP_-_List_Para"><a name="1466085">Add the following to the system path:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466086">;C:\gosu\bin</a></div>
+      <div class="LP_-_List_Para"><a name="1466087">To test this, close any existing command prompt windows, then open a new command prompt window and </a>type the word <span class="cv_-_computer_voice">gosu</span> then the type the <span class="cv_-_computer_voice">Enter</span> key.</div>
+      <div class="HS_-_Head_Sub"><a name="1466062">To use Gosu as a Unix, Linux, or Mac OS X command line tool</a></div>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1466063">Open a Terminal window</a></div>
             </td>
           </tr>
         </table>
@@ -205,55 +199,43 @@ text_val.select();
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	7.	</span>
+                <span class="ri_-_run_in_header">	2.	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469547">Right-click on the icon for the </a><span class="cv_-_computer_voice">example</span> package. From the contextual menu, choose <span class="ui_-_UI_element">New</span> → <span class="ui_-_UI_element">Gosu Program</span>. This action tells Eclipse to create a new program in the <span class="cv_-_computer_voice">example</span> package.</div>
+              <div class="LI_-_List_Item_inner"><a name="1465966">Run the file:</a></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1469548">If the </a><span class="ui_-_UI_element">Gosu Program</span> item does not appear, you likely did not perform all installation steps. Pay particular note to switching to the Java perspective in Eclipse. If necessary, repeat the <span class="ui_-_UI_element">Reset Perspective</span> action. See <a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.2.html#1467759', '');" title="Installing the Eclipse Gosu Editor Plugin">"Installing the Eclipse Gosu Editor Plugin"</a> for details.</div>
+      <div class="CS_-_Code_Single_Line"><a name="1465859">Gosu/bin/gosu.sh</a></div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	8.	</span>
+                <span class="ri_-_run_in_header">	3.	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465135">In the dialog that appears, in the </a><span class="ui_-_UI_element">Program Name</span> field, type a program name that starts with a capital letter. Do not add a file extension (such as <span class="cv_-_computer_voice">.gsp</span>) in this dialog because Eclipse interprets it as a package qualification.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466190">When the Gosu prompt (</a><span class="cv_-_computer_voice">"gs&gt;"</span>) appears, type</div>
             </td>
           </tr>
         </table>
       </div>
+      <div class="CS_-_Code_Single_Line"><a name="1466191">print("hello world!")</a></div>
+      <div class="LP_-_List_Para"><a name="1466192">The console prints the following</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1466193">hello world!</a></div>
       <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	9.	</span>
+                <span class="ri_-_run_in_header">	4.	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465146">If you want to change which package for your program, next to the </a><span class="ui_-_UI_element">Package</span> field, click <span class="ui_-_UI_element">Browse</span> and select a new package.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	10.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465201">Click </a><span class="ui_-_UI_element">Finish</span>. Eclipse creates your new Gosu program.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466194">Experiment by typing other Gosu expressions or programs.</a></div>
             </td>
           </tr>
         </table>
@@ -263,41 +245,11 @@ text_val.select();
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	11.	</span>
+                <span class="ri_-_run_in_header">	5.	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465279">In the </a><span class="ui_-_UI_element">Package Explorer</span> pane, navigate to the following path and click on the item:</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LP_-_List_Para"><span class="pc_-_parameter_in_code"><a name="1465289">project_name</a></span> → <span class="cv_-_computer_voice">src</span> → <span class="cv_-_computer_voice">example</span> → <span class="pc_-_parameter_in_code">program_name</span></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	12.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465564">In the Gosu editor for your Gosu program file, type or paste the following Gosu code:</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="CS_-_Code_Single_Line"><a name="1465565">print("Hello from Gosu!")</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	13.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465569">Click the menu item </a><span class="ui_-_UI_element">Run</span> → <span class="ui_-_UI_element">Run</span>.</div>
+              <div class="LI_-_List_Item_inner"><a name="1466195">When you are done, type the one-word command </a><span class="cv_-_computer_voice">quit</span>, and then press the <span class="cv_-_computer_voice">Enter</span> key.</div>
             </td>
           </tr>
         </table>
@@ -307,336 +259,15 @@ text_val.select();
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	14.	</span>
+                <span class="ri_-_run_in_header">	6.	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465364">The Console window appears and displays the text:</a></div>
+              <div class="LI_-_List_Item_inner"><a name="1467804">For more information about command line options, see </a><a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.1.html#2186180', '');" title="Gosu Programs and Command Line Tools">"Gosu Programs and Command Line Tools"</a>.</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1465379">print("Hello from Gosu!")</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	15.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465203">Congratulations! You just created a Gosu project and created a file-based Gosu program!</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="NI_-_Note_Important">
-        <span class="n_-_note">IMPORTANT   </span><a name="1468686">You can run Gosu programs (</a><span class="cv_-_computer_voice">.gsp</span> files) from within Eclipse. You cannot run a Gosu class file or other types file directly from the Eclipse user interface. If you want to call a Gosu class (or other type of file), make a simple Gosu program that uses your other types. For example, instead of defining a <span class="cv_-_computer_voice">main()</span> method in a class and telling the IDE your main class, your <span class="cv_-_computer_voice">.gsp</span> file is your main file. Your main <span class="cv_-_computer_voice">.gsp</span> file can call static methods on your main class with syntax: <span class="cv_-_computer_voice">myClass.main()</span>. Or create an instance of your class with syntax <span class="cv_-_computer_voice">new</span><span class="cv_-_computer_voice">&nbsp;</span><span class="cv_-_computer_voice">myClass().main()</span>.</div>
-      <div class="B_-_Body"><a name="1466327">The types of Gosu files include:</a></div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466395">Gosu programs</a></span> - provide a way to write small scripts or to launch larger Gosu applications</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466342">Gosu classes</a></span> - the core structure for encapsulating data and functions</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1468812">Gosu enhancements</a></span> - add properties methods to existing types</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1468756">Gosu interfaces</a></span> - a set of methods that other types (implementing classes) must implement</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1468772">Gosu enumerations </a></span>- an encapsulated set of unique identifiers associated with unique numbers</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466344">Gosu templates</a></span> - provide a convenient way to build large text objects</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="H2_-_Heading_2"><a name="1466465">Running and Debugging Gosu in Eclipse</a></div>
-      <div class="B_-_Body"><a name="1466466">To run and debug Gosu in Eclipse, you can use the standard Eclipse tools, panes, and windows:</a></div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466473">if you run a Gosu program, it does not stop at breakpoints</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466496">double click to the left of a line to set or a clear a breakpoint</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466504">if you run a Gosu program in debug mode (the menu items says </a><span class="ui_-_UI_element">Debug</span>), Gosu stops at breakpoints. When stopped, you can examine variables or step over, step in, or step out in the Gosu editor. This is the same flow as with other languages such as Java within Eclipse.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466497">open the console window to see Gosu output of the </a><span class="cv_-_computer_voice">print</span> function, or exceptions during execution.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466518">open the variables panel to view the current state of variables</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1466525">In addition, the Gosu Tester window lets you run short bits of code and see the output quickly. The Gosu Tester </a>window has access to Gosu and Java classes in your Eclipse project. However, you cannot use the Eclipse debugger from within the Gosu Tester window (you cannot set breakpoints there).</div>
-      <div class="H2_-_Heading_2"><a name="1464918">Gosu Editor Features</a></div>
-      <div class="B_-_Body"><a name="1466543">The Gosu editor includes the following features:</a></div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466662">Quickfix.</a></span> The Gosu editor offers suggestions to fix code, insert <span class="cv_-_computer_voice">uses</span> statements, add a cast operation, add interface requirement methods, or fix capitalization. Type <span class="cv_-_computer_voice">ALT-RETURN</span> to accept the suggestion.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1468861">Dot completion.</a></span> After you type a period character, Gosu shows a list of valid objects after the period (see <a href="javascript:WWHClickedPopup('gosu', 'getting-started-gosu-opensource.04.3.html#1466721', '');" title="Getting Started with Gosu in Eclipse">"Using Dot Completion"</a>). This feature uses the advanced Gosu type system to ensure that only valid (and non-deprecated) properties and methods appear.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466663">Code autocompletion.</a></span> Press <span class="cv_-_computer_voice">CNTL-SPACE</span> to see suggestions for completing the current code. For example, if there is a method call and you typed none of the name or part of the name, code autocompletion offers suggestions based on what you already typed.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466664">Error highlighting.</a></span> The Gosu editor highlights errors automatically</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466601">Find original definitions.</a></span> CNTL-click on a term in Gosu code to jump to where that object is defined, even in Java code</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1466602">Mark occurrences.</a></span> Automatically mark all occurrences of what you select or currently place the cursor. The editor only marks that term in that file, and only within the current code context. This means that if two different functions have a local variable of the same name, Gosu considers them different. The mark occurrences feature works with most Gosu files but does not work with Gosu templates.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1466742">All keyboard shortcuts use the Eclipse defaults in the same as Java. Refer to the Eclipse documentation for </a>details.</div>
-      <div class="H2_-_Heading_2"><a name="1466721">Using Dot Completion</a></div>
-      <div class="B_-_Body"><a name="1466722">You can use the Gosu editor to complete your code by placing the cursor at the end of a valid Gosu object or </a>subobject. Next, type a period (dot) character. This action causes the editor to open a pop-up window that contains all the subobjects and methods that are valid for this object in this context. </div>
-      <div class="B_-_Body"><a name="1466625">As you type, Gosu filters this list to include only those choices that match what you have typed thus far. Use the </a>down arrow to highlight the item you want and press <span class="ui_-_UI_element">Enter</span>, the space bar, or <span class="ui_-_UI_element">Tab</span> to select it. After you select an item, Gosu inserts it in the correct location in the code.</div>
-      <div class="B_-_Body"><a name="1466626">Dot completion also works with Gosu or Java packages. You can enter a package name and press dot to get a list </a>of packages and types within the package name before the dot. The Gosu editor can complete all packages and namespaces within the Gosu type system including. Gosu filters the list as you type to include only those choices that match what you have typed thus far.</div>
-      <div class="H2_-_Heading_2"><a name="1466551">Other Eclipse Features</a></div>
-      <div class="B_-_Body"><a name="1466565">If you use the Eclipse search feature, it searches through Gosu classes. </a></div>
-      <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1466574">This only works for classes, not for Gosu Programs, enhancements, or templates.</a></div>
-      <div class="B_-_Body"><a name="1466586">This release does not support Eclipse refactoring tools.</a></div>
-      <div class="H2_-_Heading_2"><a name="1464877">Preferences in Eclipse</a></div>
-      <div class="B_-_Body"><a name="1466795">There are preferences in the Eclipse preferences that affect the Gosu plugin, some of which inherit from the Java </a>preferences:</div>
-      <div class="B_-_Body"><a name="1466827">In the </a><span class="ui_-_UI_element">Gosu</span> pane:</div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1467361">Syntax coloring customization - For each type of element in the language, customize how to show them. For </a>example, specific colors for class names.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1467318">In the </a><span class="ui_-_UI_element">General</span> pane:</div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1467319">To set the font choices: go the pane </a><span class="ui_-_UI_element">Preferences → General → Appearance → Colors and Fonts → Gosu</span></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1467329">If your system has the font Consolas, that is a good choice for Gosu coding.</a></div>
-      <div class="B_-_Body"><a name="1466895">In the </a><span class="ui_-_UI_element">Java</span> pane:</div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1466896">Syntax coloring</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1466913">Note that the hover text colors are built-in. You cannot customize those colors.</a></div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics

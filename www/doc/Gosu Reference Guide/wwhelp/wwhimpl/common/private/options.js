@@ -7,7 +7,7 @@ function  WWHCommonSettings_Object()
 
   this.mbCookies            = true;
   this.mCookiesDaysToExpire = 30;
-  this.mCookiesID           = "Zv3tYUh1A2E";
+  this.mCookiesID           = "pV9t9lVb7eo";
 
   this.mAccessible = "false";
 

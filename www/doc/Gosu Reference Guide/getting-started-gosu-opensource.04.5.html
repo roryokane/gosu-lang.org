@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
-    <title>Installing Gosu as Command Line Tool</title>
+    <title>Dynamic Type Example</title>
     <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
@@ -52,222 +52,97 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1471451">Getting Started with Gosu </a> : Installing Gosu as Command Line Tool</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1472410">Getting Started with Gosu Community Release</a> : Dynamic Type Example</span></div>
     <hr align="left" />
     <div>
-      <div class="H1_-_Heading_1"><a name="1471451">Installing Gosu as Command Line Tool</a></div>
-      <div class="B_-_Body"><a name="1465647">To use Gosu as a command line tool, run the appropriate executable in the </a><span class="cv_-_computer_voice">bin</span> directory in the Gosu download.</div>
-      <div class="HS_-_Head_Sub"><a name="1465851">To use Gosu as a Windows command line tool</a></div>
-      <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
+      <div class="H1_-_Heading_1"><a name="1472410">Dynamic Type Example</a></div>
+      <div class="B_-_Body"><a name="1472447">The Gosu type system has an extensible type system. The language supports custom type loaders that dynami</a>cally inject types into the language so you can use them as native objects in Gosu. For example, custom type loaders add Gosu types for objects from XML schemas (XSDs) and from remote WS-I compliant web services (SOAP). Modules of code can create entire namespaces of new types. This means that a type loader can dynamically add types and Gosu code can manipulate them as native objects.</div>
+      <div class="B_-_Body"><a name="1473195">Later versions of the Gosu community release will include more APIs and documentation about creating your </a>own custom type loaders. </div>
+      <div class="B_-_Body"><a name="1473238">The Gosu examples directory includes two example projects that are related:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;margin-bottom: 2.0pt; vertical-align: baseline;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	1.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1465852">Download the </a><span class="cv_-_computer_voice">gosu.zip</span> file from the location:</div>
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="cv_-_computer_voice"><a name="1473239">DynamicType</a></span></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1468588">http://gosu-lang.org/gosu/downloads/gosu.zip</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;margin-bottom: 2.0pt; vertical-align: baseline;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	2.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1468538">Unzip the file to the desired location on your local disk. The documentation refers to this root directory for </a>gosu simply as the name <span class="cv_-_computer_voice">Gosu</span>. The <span class="cv_-_computer_voice">Gosu/bin</span> directory contains the binary executables and the <span class="cv_-_computer_voice">Gosu/lib</span> directory contains the Gosu libraries.</div>
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="cv_-_computer_voice"><a name="1472558">UseDynamicType</a></span></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
+      <div class="B_-_Body"><a name="1472566">The </a><span class="cv_-_computer_voice">DynamicType</span> project is a demonstration type loader that demonstrates the unusual power of the Gosu extensible type system without having to type a lot of code. </div>
+      <div class="B_-_Body"><a name="1472820">The purpose of </a><span class="cv_-_computer_voice">DynamicType</span> is to create a type with the fully-qualified name <span class="cv_-_computer_voice">dynamic.Dynamic</span> that has a few special behaviors in the Gosu type system:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	1.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1468507">Open a DOS command line window (</a><span class="cv_-_computer_voice">cmd.exe</span>)</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1472880">Any object can be assigned to a variable of this special type. For example, if a variable has type </a><span class="cv_-_computer_voice">dynamic.Dynamic</span>, then you could assign a <span class="cv_-_computer_voice">String</span>, a <span class="cv_-_computer_voice">Map</span>, an <span class="cv_-_computer_voice">ArrayList</span> or any other object to the variable. Effectively, this is way of creating a non-statically-typed type in Gosu, as opposed to its normal static typing behavior. </div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	2.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465853">Type the command:</a></div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1472907">Method invocations and property invocations can happen dynamically and reflectively. In other words, you </a>can call a method on an object or get a property from an object, and at compile time Gosu will permit it. </div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1465856">Gosu/bin/gosu.bat</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	3.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465995">When the Gosu prompt (</a><span class="cv_-_computer_voice">"gs&gt;"</span>) appears, type</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="CS_-_Code_Single_Line"><a name="1465997">print("hello world!")</a></div>
-      <div class="LP_-_List_Para"><a name="1465998">The console prints the following</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1466061">hello world!</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	4.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466127">Experiment by typing other Gosu expressions or programs.</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	5.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466128">When you are done, type the one-word command </a><span class="cv_-_computer_voice">quit</span>, and then press the <span class="cv_-_computer_voice">Enter</span> key.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	6.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466145">Optionally, you may want to add the </a><span class="cv_-_computer_voice">Gosu/bin</span> directory to your system path. That allows you to type <span class="cv_-_computer_voice">gosu</span> at command line, independent of the current working directory. Go to the <span class="ui_-_UI_element">Start</span> menu and choose <span class="ui_-_UI_element">Control Panel</span> → <span class="ui_-_UI_element">System</span> → <span class="ui_-_UI_element">Environment Variables</span>. Next, choose the <span class="cv_-_computer_voice">Path</span> variable. At end of the current path, append a semicolon and the full path to the <span class="cv_-_computer_voice">bin</span> directory. For example, suppose you installed (copied) the Gosu shell directory to the path: </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="CS_-_Code_Single_Line"><a name="1466152">C:\gosu\</a></div>
-      <div class="LP_-_List_Para"><a name="1466085">Add the following to the system path:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1466086">;C:\gosu\bin</a></div>
-      <div class="LP_-_List_Para"><a name="1466087">To test this, close any existing command prompt windows, then open a new command prompt window and </a>type the word <span class="cv_-_computer_voice">gosu</span> then the type the <span class="cv_-_computer_voice">Enter</span> key.</div>
-      <div class="HS_-_Head_Sub"><a name="1466062">To use Gosu as a Unix, Linux, or Mac OS X command line tool</a></div>
-      <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	1.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1466063">Open a Terminal window</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	2.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1465966">Run the file:</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="CS_-_Code_Single_Line"><a name="1465859">Gosu/bin/gosu.sh</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	3.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466190">When the Gosu prompt (</a><span class="cv_-_computer_voice">"gs&gt;"</span>) appears, type</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="CS_-_Code_Single_Line"><a name="1466191">print("hello world!")</a></div>
-      <div class="LP_-_List_Para"><a name="1466192">The console prints the following</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1466193">hello world!</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	4.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466194">Experiment by typing other Gosu expressions or programs.</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	5.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1466195">When you are done, type the one-word command </a><span class="cv_-_computer_voice">quit</span>, and then press the <span class="cv_-_computer_voice">Enter</span> key.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	6.	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467804">For more information about command line options, see </a><a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.1.html#2186180', '');" title="Gosu Programs and Command Line Tools">"Gosu Programs and Command Line Tools"</a>.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <div class="B_-_Body"><a name="1473150">This dynamic type approach is effectively the opposite of the normal way of coding in a statically-typed </a>language such as Gosu. This is not a normal way of writing Gosu code. This example simply demonstrates that custom type loader behavior can generate complex new and potentially useful behaviors.</div>
+      <div class="B_-_Body"><a name="1473151">The main files of this project are in the directory </a><span class="cv_-_computer_voice">src/custom/dyntype</span>. The Gosu type loaders are written in Java, which is a requirement for Gosu type loaders.</div>
+      <div class="B_-_Body"><a name="1472772">That directory includes the Java files for the type loader for the </a><span class="cv_-_computer_voice">Dynamic</span> type. These Java files tell Gosu how to, for example, load a type, how to get properties from a type, and how to expose and invoke methods on the type. The files have names such as <span class="cv_-_computer_voice">DynamicMethodInfo.java</span> and <span class="cv_-_computer_voice">DynamicTypeLoader.java</span>.</div>
+      <div class="B_-_Body"><a name="1472774">The </a><span class="cv_-_computer_voice">UseDynamicType</span> example shows how you might use this type in a simple way:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472715">classpath ".."</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472616">//typeloader custom.dyntype.DynamicTypeLoader</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472617">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472618">uses dynamic.Dynamic</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472619">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472620">foo( "hello" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472621">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472622">function foo( value: Dynamic )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472623">{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472624">  print( value.charAt( 1 ) )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1472625">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1473011">&nbsp;</a></PRE>
+      <div class="B_-_Body"><a name="1472721">In this example, a function has an argument of the special type called </a><span class="cv_-_computer_voice">Dynamic</span>. The call to the function passes a String object. This compiles successfully because the dynamic type allows any object to be assigned to it. As a function parameter, within the function the parameter name value contains the object. The code then calls the <span class="cv_-_computer_voice">charAt</span> method of the object. Normally, Gosu requires that the declared type contain explicit methods on the object if you want to call them. In this case, the example type loader allows any method name on the <span class="cv_-_computer_voice">Dynamic</span> object without compile errors. At run time, the type loader handles the method invocation and if the target object at run time contains that method, it will succeed. </div>
+      <div class="B_-_Body"><a name="1473085">In this example, the </a><span class="cv_-_computer_voice">charAt</span> method is a method on a <span class="cv_-_computer_voice">String</span> object, so the code succeeds. If you changed the code to call some arbitrary method name that String does not possess, such as <span class="cv_-_computer_voice">notRealMethodName</span>, this code would throw an exception at run time. However, because of the special dynamic nature of the type loader, by design it would not show any error at compile time.</div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1473025">This example is intended for reading only. It is not fully functional in the initial Gosu </a>community release due to in-progress changes in adding type loaders. Later versions of the Gosu community release will include more APIs and documentation about creating your own custom type loaders.</div>
+      <div class="B_-_Body"><a name="1472662">&nbsp;</a></div>
+      <div class="B_-_Body"><a name="1473183">In this example, a function has an argument of the special type called </a><span class="cv_-_computer_voice">Dynamic</span>. The call to the function passes a String object. This compiles successfully because the dynamic type allows any object to be assigned to it. As a function parameter, within the function the parameter name value contains the object. The code then calls the <span class="cv_-_computer_voice">charAt</span> method of the object. Normally, Gosu requires that the declared type contain explicit methods on the object if you want to call them. In this case, the example type loader allows any method name on the <span class="cv_-_computer_voice">Dynamic</span> object without compile errors. At run time, the type loader handles the method invocation and if the target object at run time contains that method, it will succeed. </div>
+      <div class="B_-_Body"><a name="1473184">In this example, the </a><span class="cv_-_computer_voice">charAt</span> method is a method on a <span class="cv_-_computer_voice">String</span> object, so the code succeeds. If you changed the code to call some arbitrary method name that String does not possess, such as <span class="cv_-_computer_voice">notRealMethodName</span>, this code would throw an exception at run time. However, because of the special dynamic nature of the type loader, by design it would not show any error at compile time.</div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="1473185">This example is intended for reading only. It is not fully functional in the initial Gosu </a>community release due to in-progress changes in adding type loaders. Later versions of the Gosu community release will include more APIs and documentation about creating your own custom type loaders.</div>
+      <div class="B_-_Body"><a name="1473186">&nbsp;</a></div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics

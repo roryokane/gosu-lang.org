@@ -67,27 +67,14 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1518149">bytes</a></span> method - This method returns an array of bytes (the type <span class="cvt_-_computer_voice_table">byte[]</span>) containing the UTF-8-encoded bytes in the XML. Generally speaking, this is the best approach for serializing the XML.</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1518149">bytes</a></span> method – This method returns an array of bytes (the type <span class="cvt_-_computer_voice_table">byte[]</span>) containing the UTF-8-encoded bytes in the XML. Generally speaking, this is the best approach for serializing the XML.</div>
             </td>
           </tr>
         </table>
       </div>
       <div class="CS_-_Code_Single_Line"><a name="1518220">var ba = element.bytes()</a></div>
       <div class="LP_-_List_Para"><a name="1518244">Compare and contrast with the </a><span class="cv_-_computer_voice">asUTFString</span> method, mentioned in the next bullet point.</div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1628844">If your code sends XML with a transport that only understands character (not byte) data, always base-64 </a>encode the bytes to compactly and safely encode binary data. To do this, use the Gosu&nbsp;syntax: </div>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <div class="LP_-_List_Para"><a name="1628844">If your code sends XML with a transport that only understands character (not byte) data, always base-64 </a>encode the bytes to compactly and safely encode binary data. To do this, use the Gosu&nbsp;syntax: </div>
       <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cv_-_computer_voice"><a name="1628845">var base64String = gw.util.Base64Util.encode(element.bytes())</a></span></div>
       <div class="LP_-_List_Para"><a name="1628846">To reverse the process in Gosu, use the code:</a></div>
       <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cv_-_computer_voice"><a name="1628847">var bytes = gw.util.Base64Util.decode(base64String)</a></span></div>
@@ -100,7 +87,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593771">print</a></span> method - serializes the element to the standard output stream (<span class="cv_-_computer_voice">System.out</span>). For example:</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593771">print</a></span> method – serializes the element to the standard output stream (<span class="cv_-_computer_voice">System.out</span>). For example:</div>
             </td>
           </tr>
         </table>
@@ -115,7 +102,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593782">writeTo</a></span> method - Writes to an output stream (<span class="cv_-_computer_voice">java.io.OutputStream</span>). This method does <span class="s_-_strong">not</span> close the stream afterward.</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593782">writeTo</a></span> method – Writes to an output stream (<span class="cv_-_computer_voice">java.io.OutputStream</span>). This method does <span class="s_-_strong">not</span> close the stream afterward.</div>
             </td>
           </tr>
         </table>
@@ -129,7 +116,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593783">asUTFString</a></span> method - serializes the element to a <span class="cv_-_computer_voice">String</span> object in UTF-8. For example:</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1593783">asUTFString</a></span> method – serializes the element to a <span class="cv_-_computer_voice">String</span> object in UTF-8. For example:</div>
             </td>
           </tr>
         </table>

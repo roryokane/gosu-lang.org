@@ -116,6 +116,8 @@ text_val.select();
       </div>
       <div class="B_-_Body"><a name="1457219">After all statements in the </a><span class="cv_-_computer_voice">try</span> block have been executed and any error handling has occurred in the <span class="cv_-_computer_voice">catch</span> block, the <span class="cv_-_computer_voice">finally</span> block is unconditionally executed.</div>
       <div class="B_-_Body"><a name="1457220">Gosu executes the code inside the </a><span class="cv_-_computer_voice">finally</span> block, even if a <span class="cv_-_computer_voice">return</span> statement occurs inside the <span class="cv_-_computer_voice">try</span> or <span class="cv_-_computer_voice">catch</span> blocks, or if an error is thrown from a <span class="cv_-_computer_voice">catch</span> block. Thus, Gosu guarantees that the <span class="cv_-_computer_voice">finally</span> block executes.</div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1483119">Gosu does not permit you to use a return, break, or continue statement in a </a><span class="cv_-_computer_voice">finally</span> block.</div>
       <div class="HS_-_Head_Sub"><a name="1457221">Syntax</a></div>
       <PRE class="CF_-_Code_First_Line"><a name="1457222">try </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1457223">&nbsp;</a>&nbsp;&lt;try statements&gt;</PRE>

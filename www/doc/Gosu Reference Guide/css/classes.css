@@ -987,7 +987,7 @@ div.H2_-_Heading_2
   margin-right: 0pt;
   margin-top: 14.0pt;
   text-align: Left;
-  text-indent: 0pt;
+  text-indent: -28.8pt;
   text-transform: none;
   vertical-align: baseline;
 }
@@ -1033,7 +1033,7 @@ div.H2B_-_Heading_2_Break
   margin-right: 0pt;
   margin-top: 14.0pt;
   text-align: Left;
-  text-indent: 0pt;
+  text-indent: -28.8pt;
   text-transform: none;
   vertical-align: baseline;
 }
@@ -1068,18 +1068,18 @@ div.H2B_-_Heading_2_Break
 
 div.H3_-_Heading_3
 {
-  color: #000000;
+  color: #77774d;
   font-family: "Trebuchet MS";
-  font-size: 11.0pt;
+  font-size: 11.5pt;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
   margin-bottom: 4.0pt;
   margin-left: 54pt;
   margin-right: 0pt;
-  margin-top: 13.0pt;
+  margin-top: 13.5pt;
   text-align: Left;
-  text-indent: 0pt;
+  text-indent: -18pt;
   text-transform: none;
   vertical-align: baseline;
 }
@@ -1088,14 +1088,14 @@ div.H3_-_Heading_3
 {
   margin-bottom: 4.0pt;
   margin-right: 0pt;
-  margin-top: 13.0pt;
+  margin-top: 13.5pt;
 }
 
 .H3_-_Heading_3_inner
 {
-  color: #000000;
+  color: #77774d;
   font-family: "Trebuchet MS";
-  font-size: 11.0pt;
+  font-size: 11.5pt;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
@@ -1120,10 +1120,10 @@ div.HS_-_Head_Sub
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  margin-bottom: 2.0pt;
+  margin-bottom: 0.0pt;
   margin-left: 54pt;
   margin-right: 0pt;
-  margin-top: 12.0pt;
+  margin-top: 11.1pt;
   text-align: Left;
   text-indent: 0pt;
   text-transform: none;
@@ -1132,9 +1132,9 @@ div.HS_-_Head_Sub
 
 .HS_-_Head_Sub_outer
 {
-  margin-bottom: 2.0pt;
+  margin-bottom: 0.0pt;
   margin-right: 0pt;
-  margin-top: 12.0pt;
+  margin-top: 11.1pt;
 }
 
 .HS_-_Head_Sub_inner
@@ -3892,21 +3892,35 @@ table.UnstructMasterPageMaps
   text-align: left;
 }
 
-table.Shading
+table.FigureTable
+{
+  border-collapse: collapse;
+  margin-bottom: 12.0pt;
+  margin-left: 54pt;
+  margin-right: 0pt;
+  margin-top: 12.0pt;
+  padding-bottom: 2pt;
+  padding-left: 2pt;
+  padding-right: 2pt;
+  padding-top: 2pt;
+  text-align: left;
+}
+
+table.BulletListDoubleCol
 {
   border-collapse: collapse;
   margin-bottom: 20.0pt;
   margin-left: 54pt;
   margin-right: 0pt;
   margin-top: 6.0pt;
-  padding-bottom: auto;
-  padding-left: auto;
-  padding-right: auto;
-  padding-top: auto;
+  padding-bottom: 0pt;
+  padding-left: 0pt;
+  padding-right: 5pt;
+  padding-top: 0pt;
   text-align: left;
 }
 
-table.ShadingTitle
+table.Shading
 {
   border-collapse: collapse;
   margin-bottom: 20.0pt;
@@ -3934,35 +3948,7 @@ table.ShadingIndent
   text-align: left;
 }
 
-table.FigureTable
-{
-  border-collapse: collapse;
-  margin-bottom: 12.0pt;
-  margin-left: 54pt;
-  margin-right: 0pt;
-  margin-top: 12.0pt;
-  padding-bottom: 2pt;
-  padding-left: 2pt;
-  padding-right: 2pt;
-  padding-top: 2pt;
-  text-align: left;
-}
-
-table.withHeadingIndent
-{
-  border-collapse: collapse;
-  margin-bottom: 20.0pt;
-  margin-left: 68.4pt;
-  margin-right: 0pt;
-  margin-top: 6.0pt;
-  padding-bottom: auto;
-  padding-left: auto;
-  padding-right: auto;
-  padding-top: auto;
-  text-align: left;
-}
-
-table.withHeading
+table.ShadingTitle
 {
   border-collapse: collapse;
   margin-bottom: 20.0pt;
@@ -3990,16 +3976,44 @@ table.withoutHeading
   text-align: left;
 }
 
-table.BulletListDoubleCol
+table.withHeading
 {
   border-collapse: collapse;
   margin-bottom: 20.0pt;
   margin-left: 54pt;
   margin-right: 0pt;
   margin-top: 6.0pt;
-  padding-bottom: 0pt;
-  padding-left: 0pt;
-  padding-right: 5pt;
+  padding-bottom: auto;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: auto;
+  text-align: left;
+}
+
+table.withHeadingIndent
+{
+  border-collapse: collapse;
+  margin-bottom: 20.0pt;
+  margin-left: 68.4pt;
+  margin-right: 0pt;
+  margin-top: 6.0pt;
+  padding-bottom: auto;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: auto;
+  text-align: left;
+}
+
+table.withHeadingTallCells
+{
+  border-collapse: collapse;
+  margin-bottom: 20.0pt;
+  margin-left: 54pt;
+  margin-right: 0pt;
+  margin-top: 6.0pt;
+  padding-bottom: 4pt;
+  padding-left: 2pt;
+  padding-right: 8pt;
   padding-top: 0pt;
   text-align: left;
 }

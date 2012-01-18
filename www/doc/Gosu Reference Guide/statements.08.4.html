@@ -143,7 +143,7 @@ text_val.select();
       <PRE class="CL_-_Code_Last_Line"><a name="1140209">else { print( "a does not equal b, nor does it equal c" ) } </a></PRE>
       <div class="B_-_Body"><a name="1456493">To improve the readability of your Gosu code, Gosu automatically downcasts after a </a><span class="cv_-_computer_voice">typeis</span> expression if the type is a subtype of the original type. This is particularly valuable for <span class="cv_-_computer_voice">if</span> statements and similar Gosu structures. Within the Gosu code bounded by the <span class="cv_-_computer_voice">if</span> statement, you do not need to do casting (<span class="cv_-_computer_voice">as</span>&nbsp;<span class="ps_-_parameter_in_code_snippets">TYPE</span> expressions) to that subtype. Because Gosu confirms that the object has the more specific subtype, Gosu implicitly considers that variable’s type to be the <span class="s_-_strong">subtype</span>, at least within that block of code. For details, see <a href="javascript:WWHClickedPopup('gosu', 'typesystem.24.2.html#1441193', '');" title="Basic Type Checking">"Basic Type Checking"</a></div>
       <div class="H2_-_Heading_2"><a name="1456475">For() Statements</a></div>
-      <div class="B_-_Body"><a name="1143327">The </a><span class="cvt_-_computer_voice_table">for(...in...)</span> statement block uses a multi-part construction. </div>
+      <div class="B_-_Body"><a name="1143327">The </a><span class="cvt_-_computer_voice_table">for(...in...)</span> statement block uses a multi-part construction.</div>
       <div class="HS_-_Head_Sub"><a name="1138651">Syntax</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1138675">for ( &lt;identifier&gt; in &lt;expression&gt; [ index &lt;identifier&gt; ] ) { &lt;statement&gt; }</a></div>
       <div class="B_-_Body"><a name="1197251">The scope of the </a><span class="cv_-_computer_voice">&lt;identifier&gt;</span> is limited to the statement block itself. The <span class="cv_-_computer_voice">&lt;expression&gt;</span> in the <span class="cv_-_computer_voice">in</span> clause must evaluate to one of the following:</div>
@@ -205,8 +205,19 @@ text_val.select();
       </div>
       <div class="B_-_Body"><a name="1197269">See also </a><a href="javascript:WWHClickedPopup('gosu', 'datatypes.06.12.html#1441480', '');" title="Arrays">"Java-based Lists as Arrays"</a> for details on using lists as arrays and accessing list members using array notation.</div>
       <div class="N_-_Note">
-        <span class="n_-_note">Note: </span><a name="1482807">Gosu provides backwards compatibility for the use of the </a><span class="cv_-_computer_voice">foreach(...)</span> statement. HOwever, it is best to use the <span class="cv_-_computer_voice">for(...)</span> statement instead.</div>
-      <div class="H3_-_Heading_3"><a name="1184964">Iteration in For() Statements</a></div>
+        <span class="n_-_note">Note: </span><a name="1482807">Gosu provides backwards compatibility for the use of the </a><span class="cv_-_computer_voice">foreach(...)</span> statement. However, it is best to use the <span class="cv_-_computer_voice">for(...)</span> statement instead.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1184964">Iteration in For() Statements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1197234">There are three ways that you can iterate through the members of the list or array contained in the </a><span class="cv_-_computer_voice">for()</span> statement: </div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
@@ -252,14 +263,15 @@ text_val.select();
       </div>
       <div class="HS_-_Head_Sub"><a name="1184965">Automatic Iteration</a></div>
       <div class="B_-_Body"><a name="1186203">Use automatic iteration to iterate automatically through the array or list members. Iteration starts with the initial </a>member and continues sequentially until terminating at the last member. Specify this type of iteration by using the following syntax:</div>
-      <PRE class="CF_-_Code_First_Line"><a name="1186279">for ( </a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">OBJ</span>)</PRE>
-      <div class="B_-_Body"><a name="1478714">In this case, </a><span class="p_-_parameter">OBJ</span> must be a list, an array, or an integer. If it is an integer, Gosu iterates through the list that many times, and the variable contains the zero-based index.</div>
-      <div class="B_-_Body"><a name="1441292">Example:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1184969">for( i in 100 ) </a></PRE>
-      <PRE class="CL_-_Code_Last_Line"><a name="1184970">for( property in Claim.TypeInfo.Properties ) </a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1186279">for ( </a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">OBJ </span>)</PRE>
+      <div class="B_-_Body"><a name="1478714">In this case, </a><span class="p_-_parameter">OBJ</span> must be a list, an array, an interval, or an integer. If it is an integer, Gosu iterates through the list that many times, and the index variable if defined contains the current zero-based index value.</div>
+      <div class="B_-_Body"><a name="1441292">Examples:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1184970">for( property in Claim.TypeInfo.Properties )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1485613">for( iteration in 0..|100 )</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1485591">for( iteration in 100 )</a></PRE>
       <div class="HS_-_Head_Sub"><a name="1184971">Automatic Iteration with Index</a></div>
       <div class="B_-_Body"><a name="1186216">Use index iteration if you need to determine the exact position of a particular element of an array or list. This </a>technique adds an explicit index to determine the index value or to access members of the array or list in a non-sequential fashion using array notation. Specify this type of iteration by using the following syntax:</div>
-      <PRE class="CF_-_Code_First_Line"><a name="1186278">for ( </a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">OBJ</span> index <span class="pc_-_parameter_in_code">loopcount</span>)</PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1186278">for ( </a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">OBJ</span> index <span class="pc_-_parameter_in_code">loopcount </span>)</PRE>
       <div class="B_-_Body"><a name="1184995">Example:</a></div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186380">//This example prints the index of the highest score in an array of test scores. </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186386">//This particular example prints "3".</a></PRE>
@@ -281,7 +293,8 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1186319">//Result</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1210144">3</a></PRE>
       <div class="HS_-_Head_Sub"><a name="1210147">Iterator Method Iteration</a></div>
-      <div class="B_-_Body"><a name="1210148">Use this type of iteration if the object over which you are iterating is </a><span class="s_-_strong">not</span> a list or array, but it has an iterator. See "Using a Find Expression’s Results (Using a Query)" for additional iteration examples using the <span class="cv_-_computer_voice">iterator()</span> method. Specify this type of iteration by using the following syntax:</div>
+      <div class="B_-_Body"><a name="1210148">Use this type of iteration if the object over which you are iterating is </a><span class="s_-_strong">not</span> a list or array, but it has an iterator. </div>
+      <div class="B_-_Body"><a name="1483809">Specify this type of iteration by using the following syntax:</a></div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186199">for(</a><span class="pc_-_parameter_in_code">member</span> in <span class="pc_-_parameter_in_code">object</span>.iterator() )</PRE>
       <div class="B_-_Body"><a name="1185401">Example</a></div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186471">//This example iterates over the color values in a map</a></PRE>
@@ -299,29 +312,39 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1186425">red</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186426">green</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1186427">blue</a></PRE>
-      <div class="H3_-_Heading_3"><a name="1186421">Examples</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1186421">Examples</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1186274">The following examples illustrate the different methods for iterating through the members of an array or list in a </a><span class="cv_-_computer_voice">for()</span> block.</div>
-      <PRE class="CF_-_Code_First_Line"><a name="1140286">//Example 1: Prints all the letters  with the index </a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1140286">// Example 1: Prints all the letters with the index. </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1185261">for( var letter in gw.api.util.StringUtil.splitWhitespace( "a b c d e" ) index i ) {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140289">&nbsp;</a>&nbsp;print( "Letter " + i + ": " + letter ) </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140290">} </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140291">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1140292">//Example 2: Print a message for the first exposure with 'other coverage' </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1185279">//OtherCoverage is a Boolean property</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140292">// Example 2: Print a message for the first exposure with 'other coverage'. </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1185262">for( var exp in Claim.Exposures ) { </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1140294">&nbsp;</a>&nbsp;if( exp.OtherCoverage ) { </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140294">&nbsp;</a>&nbsp;if( exp.OtherCoverage ) { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// OtherCoverage is a Boolean property.</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140297">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;print( "Found an exposure with other coverage." ) </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140298">&nbsp;</a>&nbsp;&nbsp;&nbsp;// Transfer control to statement following this for…in statement</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140299">&nbsp;</a>&nbsp;&nbsp;&nbsp;break </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140300">&nbsp;</a>&nbsp;} </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140301">} </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140303">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1140304">// Example 3: Prints numbers 0 - 99 using simple iteration</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1140304">// Example 3: Prints numbers 0 - 99 using simple iteration.</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1140305">for( i in 100 ) { </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186002">&nbsp;</a>&nbsp;print( i + " of 100" ) </PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1186003">} </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1141496">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1141510">// Example 4: Prints all Claim properties using reflection</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1141510">// Example 4: Prints all Claim properties using reflection.</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1141497">for( property in Claim.TypeInfo.Properties ) { </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1141499">&nbsp;</a>&nbsp;print( property ) </PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1141500">} </a></PRE>

@@ -230,7 +230,7 @@ text_val.select();
       </div>
       <div class="LP_-_List_Para"><a name="1516924">When constructing an </a><span class="cv_-_computer_voice">XmlElement</span>, an explicit backing type is optional. If you are constructing the element from an XSD, Gosu sets the backing type automatically based on the subclass of <span class="cv_-_computer_voice">XmlElement</span>. </div>
       <div class="LP_-_List_Para"><a name="1622198">You can use </a><span class="cv_-_computer_voice">XmlElement</span> essentially as untyped nodes, in other words with no explicit XSD for your data format. If you are not using an XSD and do not provide a backing type, Gosu uses the default backing type <span class="cv_-_computer_voice">gw.xml.xsd.w3c.xmlschema.types.complex.AnyType</span>. All valid backing types are subclass of that <span class="cv_-_computer_voice">AnyType</span> type. See <a href="javascript:WWHClickedPopup('gosu', 'xml.20.09.html#1520150', '');" title="Getting Data From an XML Element">"Getting Data From an XML Element"</a> for related information</div>
-      <div class="LP_-_List_Para"><a name="1520341">The type instance of an XML element is responsible for most of the element behavior but does not contain the </a>element’s name. You can usually ignore the division of labor between an <span class="cv_-_computer_voice">XmlElement</span> and its backing type instance. If you are using an XSD, this distinction is useful. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.09.html#1520150', '');" title="Getting Data From an XML Element">"Getting Data From an XML Element"</a>.</div>
+      <div class="LP_-_List_Para"><a name="1520341">The type instance of an XML element is responsible for most of the element’s behavior but does not contain </a>the element’s name. You can sometimes ignore the division of labor between an <span class="cv_-_computer_voice">XmlElement</span> and its backing type instance. If you are using an XSD, this distinction is useful and sometimes critical. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.09.html#1520150', '');" title="Getting Data From an XML Element">"Getting Data From an XML Element"</a>.</div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -250,58 +250,58 @@ text_val.select();
       <table class="withHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1518701">XmlElement </a>property</div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1518703">Type</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1518705">Description</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518707">QName</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518709">QName</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1518711">A read-only property that returns the element’s </a>QName.</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518713">Namespace</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518715">XmlNamespace</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1518717">Returns an </a><span class="cvt_-_computer_voice_table">XmlNamespace</span> object that represents the element’s namespace</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1622261">TypeInstance</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><span class="cvt_-_computer_voice_table"><a name="1622263">gw.xsd.w3c.xmlschema.types.complex.AnyType</a></span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;"> </span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">or any subclass of that class</span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1622265">Returns the element's backing type instance</a></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518719">Nillness</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="cv_-_computer_voice"><a name="1518721">boolean</a></span></div>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518721">boolean</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text"><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;"><a name="1518723">Specifies whether this element is </a></span><span class="cv_-_computer_voice">nil</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">, which is </span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">an XML concept that is not the same as being </span><span class="cv_-_computer_voice">null</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">. See </span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;"><a href="javascript:WWHClickedPopup('gosu', 'xml.20.12.html#1594523', '');" title="Access the Nillness of an Element">"Access the Nillness of an Element"</a></span></div>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;"><a name="1518723">Specifies whether this element is </a></span><span class="cvt_-_computer_voice_table">nil</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">, which is </span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">an XML concept that is not the same as being </span><span class="cvt_-_computer_voice_table">null</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;">. See </span><span style="font-family: &quot;Times New Roman&quot;; font-size: 10.0pt;"><a href="javascript:WWHClickedPopup('gosu', 'xml.20.12.html#1594523', '');" title="Access the Nillness of an Element">"Access the Nillness of an Element"</a></span></div>
           </td>
         </tr>
       </table>

@@ -376,7 +376,18 @@ text_val.select();
       </div>
       <div class="LP_-_List_Para"><a name="1462083">The most complex methods to implement correctly are methods that return iterators. The easiest way to </a>implement these methods is to define iterator classes as <span class="e_-_emphasis">inner classes</span> to your main class. For more information about inner classes, see <a href="javascript:WWHClickedPopup('gosu', 'classes.11.6.html#2450606', '');" title="Inner Classes">"Inner Classes"</a>.</div>
       <div class="LP_-_List_Para"><a name="1462212">Your class must be able to return two different types of iterators, one iterating forward (normally), and one </a>iterating in reverse (backward). One way to do this is to implement a main iterator. Next, implement a class that extends your main iterator class, and which operates in reverse. On the class for the reverse iterator, to reverse the behavior you may need to override only the <span class="cv_-_computer_voice">hasNext</span> and <span class="cv_-_computer_voice">next</span> methods.</div>
-      <div class="H3_-_Heading_3"><a name="1462720">Example: Color Interval Written With Manual Iterators</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1462720">Example: Color Interval Written With Manual Iterators</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1462764">In some cases, the item you want to iterate across does not implement the </a><span class="cv_-_computer_voice">ISequenceable</span> interface. You cannot modify it to directly implement this interface because it is a Java class from a third-party library. Although you cannot use the Gosu shortcuts discussed in <a href="javascript:WWHClickedPopup('gosu', 'intervals.09.3.html#1461393', '');" title="Writing Your Own Interval Type">"Custom Iterable Intervals Using Sequenceable Items"</a>, you can still implement an iterable interval. </div>
       <div class="B_-_Body"><a name="1462769">The following example demonstrates creating a custom iterable interval. Suppose you want to create a new iter</a>able interval that can iterate across a list of predefined (and ordered) color names with a starting and ending color value. Define an enumeration containing the possible color values in their interval:</div>
       <PRE class="CM_-_Code_Middle_Line"><a name="1461645">package example.pl.gosu.interval</a></PRE>

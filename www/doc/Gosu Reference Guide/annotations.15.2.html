@@ -52,13 +52,13 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="annotations.15.1.html#1437545">Annotations and Interceptors</a> : Annotating a Class, Method, Type, or Constructor</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="annotations.15.1.html#1437545">Annotations</a> : Annotating a Class, Method, Type, or Constructor</span></div>
     <hr align="left" />
     <div>
       <div class="H1_-_Heading_1"><a name="1437545">Annotating a Class, Method, Type, or Constructor</a></div>
       <div class="B_-_Body"><a name="1437546">Annotations are a simple syntax to add metadata to a Gosu class, constructor, method, or property. For example, </a>annotations could add indicate what a method returns, or indicate what kinds of exceptions the method might throw. You can add completely custom annotations and this information can be read at run time. If you use an annotation, use the at sign (<span class="cv_-_computer_voice">@</span>), followed by the annotation name, immediately before declarations of what they annotate. </div>
       <div class="B_-_Body"><a name="1436734">For example, the following simple example specifies a class to expose as a web service for external systems:</a></div>
-      <PRE class="CF_-_Code_First_Line"><a name="1436756">@WebService</a></PRE>
+      <PRE class="CF_-_Code_First_Line"><a name="1436756">@WsiWebService</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1436775">class MyServiceAPI {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1436772">&nbsp;</a>&nbsp;public function myRemoteMethod() {}</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1436811">}</a></PRE>
@@ -77,9 +77,9 @@ text_val.select();
       <div class="B_-_Body"><a name="1471891">Gosu requires argument lists to be in the same format as regular function or method argument lists:</a></div>
       <PRE class="CF_-_Code_First_Line"><a name="1471972">// standard Gosu argument lists</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1471995">@KnownBreak("user", "branch", "ABC-xxxxx")</a></PRE>
-      <div class="B_-_Body"><a name="1471963">Gosu does not support the special named arguments calling convention from Java:</a></div>
-      <PRE class="CF_-_Code_First_Line"><a name="1471872">// invalid in Gosu</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1471938">@KnownBreak(targetUser = "user", targetBranch = "branch", jira = "ABC-xxxxx")</a></PRE>
+      <div class="B_-_Body"><a name="1473102">Gosu supports the named arguments calling convention from Java:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1473103">@KnownBreak(targetUser = "user", targetBranch = "branch", jira = "ABC-xxxxx")</a></div>
+      <div class="B_-_Body"><a name="1473106">For related information about named arguments, see </a><a href="javascript:WWHClickedPopup('gosu', 'statements.08.5.html#1483902', '');" title="Gosu Functions">"Named Functions Arguments and Argument Defaults"</a>.</div>
       <div class="H2_-_Heading_2"><a name="1471842">Built-in Annotations</a></div>
       <div class="B_-_Body"><a name="1436600">The Gosu language includes built-in annotations defined in the </a><span class="cv_-_computer_voice">gw.lang.*</span> package, which is always in scope, so their fully-qualified name is not required. </div>
       <div class="B_-_Body"><a name="1438599">The following table lists the built-in general annotations:</a></div>
@@ -87,72 +87,72 @@ text_val.select();
       <table class="withHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1438602">Annotation</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1438604">Description</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1438606">Usage limits</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
             <div class="TH_-_Table_Heading"><a name="1438608">Parameters</a></div>
           </td>
         </tr>
         <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1438610">@Param</a></span></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438612">Specifies the documentation of a param</a>eter. </div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438614">Methods only</a></div>
           </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438616">(1) The name of the parameter. </a>(2) Documentation in Javadoc format for the method’s parameter.</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1438618">@Returns</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438620">Specifies the documentation for the </a>return result of the method. </div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438622">Methods only, but </a>only once per method</div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438624">(1) Documentation in Javadoc </a>format for the method’s return value.</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1438626">@Throws</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438628">Specifies what exceptions might be </a>thrown by this method.</div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438630">Methods only</a></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438632">(1) An exception type. (2) A </a>description in Javadoc format of what circumstances it would throw that exception, and how to interpret that exception.</div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1438684">@Deprecated</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438686">Specifies not to use a class, method, </a>constructor, or property. It goes away in a future release. Begin rewriting code to avoid using this class, method, constructor, or property.</div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438688">Can appear any</a>where, but only once for any specific class, method, constructor, or property.</div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
             <div class="TT_-_Table_Text"><a name="1438690">(1) A warning string to display if </a>this deprecated class, method, or constructor is used.</div>
           </td>
         </tr>
@@ -161,7 +161,7 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1437129">package com.mycompany</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437130">uses java.lang.Exception</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437131">&nbsp;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1437132">@WebService </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1437132">@WsiWebService </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437133">class Test</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437134">{</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437139">&nbsp;</a>&nbsp;@Param("Name", "The user's name. Must not be an empty string.")</PRE>
@@ -174,7 +174,7 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1437146">&nbsp;</a>&nbsp;&nbsp;&nbsp;return "Hello, " + Name + "!"</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437147">&nbsp;</a>&nbsp;}</PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1437115">}</a></PRE>
-      <div class="B_-_Body"><a name="1438899">The following example specifies that a method is </a><span class="e_-_emphasis">deprecated</span>, which means it was a valid API but not anymore. A deprecated API is temporarily possibly to use but it is absent in a future release. Immediately start rewriting code that uses a deprecated API.</div>
+      <div class="B_-_Body"><a name="1472970">The following example specifies that a method is </a><span class="e_-_emphasis">deprecated</span>, which means it was a valid API but not anymore. A deprecated API is temporarily available but a future release will remove it. Immediately start to refactor code that uses deprecated APIs. This ensures your code is compatible with future releases, which will simplify your upgrades.</div>
       <PRE class="CF_-_Code_First_Line"><a name="1438900">class MyClass {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1438901">&nbsp;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1438118">&nbsp;</a>&nbsp;@Deprecated("Don't use MyClass.myMethod(). Instead, use betterMethod()")</PRE>

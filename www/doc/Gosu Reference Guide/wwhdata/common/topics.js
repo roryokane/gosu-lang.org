@@ -54,7 +54,7 @@ function Guidewire_FMSourceFileMatch(FROM_URL,LOCAL_FILENAME) {
 
 
 // IMPORTANT: IF YOU CHANGE THE LOGIC OF THIS CODE, ALSO CHANGE THE MIRROR FUNCTION IN CONTROLS.JS
-// THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION DECODES IT
+// THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION ENCODES it and compares against the input string with the full name for each topic (potentially with funny characters)
 function Guidewire_SafeTopicName(theTitle) {
 theTitle = theTitle.replace(/ /g, "_");  // converts space char
 theTitle = theTitle.replace(/\u00a0/g, "_");  // converts nbsp char
@@ -66,6 +66,9 @@ theTitle = theTitle.replace(/\u201d/g, "'");// single quote smart
 theTitle = theTitle.replace(/\u2018/g, "'");// dub quote smart
 theTitle = theTitle.replace(/\u2019/g, "'");// dub quote smart
 theTitle = theTitle.replace(/\u2022/g, "");// trademark
+theTitle = theTitle.replace(/\</g, "(");  // open bracket
+theTitle = theTitle.replace(/\>/g, ")");   // close bracket
+theTitle = theTitle.replace(/:/g, "_");    // colon
 theTitle = theTitle.replace(/&/g, "");
 return (theTitle);  }
 
@@ -100,14 +103,11 @@ else if (Guidewire_TopicMatch(TOPIC,"Gosu Comments") && Guidewire_FMSourceFileMa
 else if (Guidewire_TopicMatch(TOPIC,"Gosu Reserved Words") && Guidewire_FMSourceFileMatch(SRCFILE,"intro.03.15.html") ) { return "intro.03.15.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Notable Differences Between Gosu and Java") && Guidewire_FMSourceFileMatch(SRCFILE,"intro.03.16.html") ) { return "intro.03.16.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Get Ready for Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"intro.03.17.html") ) { return "intro.03.17.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Getting Started with Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.1.html") ) { return "getting-started-gosu-opensource.04.1.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Installing the Eclipse Gosu Editor Plugin") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.2.html") ) { return "getting-started-gosu-opensource.04.2.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Getting Started with Gosu in Eclipse") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.3.html") ) { return "getting-started-gosu-opensource.04.3.html";}
-else if (Guidewire_TopicMatch(TOPIC,"The IntelliJ IDEA Plugin") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.4.html") ) { return "getting-started-gosu-opensource.04.4.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Installing Gosu as Command Line Tool") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.5.html") ) { return "getting-started-gosu-opensource.04.5.html";}
-else if (Guidewire_TopicMatch(TOPIC,"The Servlet Example") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.6.html") ) { return "getting-started-gosu-opensource.04.6.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Hibernate Example") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.7.html") ) { return "getting-started-gosu-opensource.04.7.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Dynamic Type Example") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.8.html") ) { return "getting-started-gosu-opensource.04.8.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Getting Started with Gosu Community Release") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.1.html") ) { return "getting-started-gosu-opensource.04.1.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Gosu and IntelliJ IDEA") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.2.html") ) { return "getting-started-gosu-opensource.04.2.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Installing Gosu as Command Line Tool") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.3.html") ) { return "getting-started-gosu-opensource.04.3.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Advanced Examples") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.4.html") ) { return "getting-started-gosu-opensource.04.4.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Dynamic Type Example") && Guidewire_FMSourceFileMatch(SRCFILE,"getting-started-gosu-opensource.04.5.html") ) { return "getting-started-gosu-opensource.04.5.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Gosu Programs and Command Line Tools") && Guidewire_FMSourceFileMatch(SRCFILE,"gscript-shell.05.1.html") ) { return "gscript-shell.05.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Gosu Command Line Tool Basics") && Guidewire_FMSourceFileMatch(SRCFILE,"gscript-shell.05.2.html") ) { return "gscript-shell.05.2.html";}
 else if (Guidewire_TopicMatch(TOPIC,"The Structure of a Gosu Program") && Guidewire_FMSourceFileMatch(SRCFILE,"gscript-shell.05.3.html") ) { return "gscript-shell.05.3.html";}
@@ -175,11 +175,10 @@ else if (Guidewire_TopicMatch(TOPIC,"What is an Interface") && Guidewire_FMSourc
 else if (Guidewire_TopicMatch(TOPIC,"Defining and Using an Interface") && Guidewire_FMSourceFileMatch(SRCFILE,"interfaces.13.3.html") ) { return "interfaces.13.3.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Composition") && Guidewire_FMSourceFileMatch(SRCFILE,"composition.14.1.html") ) { return "composition.14.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Using Gosu Composition") && Guidewire_FMSourceFileMatch(SRCFILE,"composition.14.2.html") ) { return "composition.14.2.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Annotations and Interceptors") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.1.html") ) { return "annotations.15.1.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Annotations") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.1.html") ) { return "annotations.15.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Annotating a Class, Method, Type, or Constructor") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.2.html") ) { return "annotations.15.2.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Annotations at Run Time") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.3.html") ) { return "annotations.15.3.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Defining Your Own Annotations") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.4.html") ) { return "annotations.15.4.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Gosu Interceptors") && Guidewire_FMSourceFileMatch(SRCFILE,"annotations.15.5.html") ) { return "annotations.15.5.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Enhancements") && Guidewire_FMSourceFileMatch(SRCFILE,"enhancements.16.1.html") ) { return "enhancements.16.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Using Enhancements") && Guidewire_FMSourceFileMatch(SRCFILE,"enhancements.16.2.html") ) { return "enhancements.16.2.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Gosu Blocks") && Guidewire_FMSourceFileMatch(SRCFILE,"blocks.17.1.html") ) { return "blocks.17.1.html";}
@@ -222,12 +221,10 @@ else if (Guidewire_TopicMatch(TOPIC,"Substitution Group Hierarchies") && Guidewi
 else if (Guidewire_TopicMatch(TOPIC,"Element Sorting for XSD-based Elements") && Guidewire_FMSourceFileMatch(SRCFILE,"xml.20.16.html") ) { return "xml.20.16.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Built-in Schemas") && Guidewire_FMSourceFileMatch(SRCFILE,"xml.20.17.html") ) { return "xml.20.17.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Schema Access Type") && Guidewire_FMSourceFileMatch(SRCFILE,"xml.20.18.html") ) { return "xml.20.18.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Calling Web Services from Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.1.html") ) { return "webservice-consuming.21.1.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Learning Gosu XML APIs") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.2.html") ) { return "webservice-consuming.21.2.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Adding WS-I Configuration Options") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.3.html") ) { return "webservice-consuming.21.3.html";}
-else if (Guidewire_TopicMatch(TOPIC,"One-Way Methods") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.4.html") ) { return "webservice-consuming.21.4.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Asynchronous Methods") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.5.html") ) { return "webservice-consuming.21.5.html";}
-else if (Guidewire_TopicMatch(TOPIC,"MTOM Attachments") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-consuming.21.6.html") ) { return "webservice-consuming.21.6.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Calling WS-I Web Services from Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-wsi-consuming.21.1.html") ) { return "webservice-wsi-consuming.21.1.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Adding WS-I Configuration Options") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-wsi-consuming.21.2.html") ) { return "webservice-wsi-consuming.21.2.html";}
+else if (Guidewire_TopicMatch(TOPIC,"One-Way Methods") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-wsi-consuming.21.3.html") ) { return "webservice-wsi-consuming.21.3.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Asynchronous Methods") && Guidewire_FMSourceFileMatch(SRCFILE,"webservice-wsi-consuming.21.4.html") ) { return "webservice-wsi-consuming.21.4.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Java and Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"java-gosu.22.1.html") ) { return "java-gosu.22.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Overview of Calling Java from Gosu") && Guidewire_FMSourceFileMatch(SRCFILE,"java-gosu.22.2.html") ) { return "java-gosu.22.2.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Deploying Your Java Classes") && Guidewire_FMSourceFileMatch(SRCFILE,"java-gosu.22.3.html") ) { return "java-gosu.22.3.html";}
@@ -240,20 +237,26 @@ else if (Guidewire_TopicMatch(TOPIC,"Type System") && Guidewire_FMSourceFileMatc
 else if (Guidewire_TopicMatch(TOPIC,"Basic Type Checking") && Guidewire_FMSourceFileMatch(SRCFILE,"typesystem.24.2.html") ) { return "typesystem.24.2.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Using Reflection") && Guidewire_FMSourceFileMatch(SRCFILE,"typesystem.24.3.html") ) { return "typesystem.24.3.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Compound Types") && Guidewire_FMSourceFileMatch(SRCFILE,"typesystem.24.4.html") ) { return "typesystem.24.4.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Gosu Type Loaders") && Guidewire_FMSourceFileMatch(SRCFILE,"typesystem.24.5.html") ) { return "typesystem.24.5.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Type Loaders") && Guidewire_FMSourceFileMatch(SRCFILE,"typesystem.24.5.html") ) { return "typesystem.24.5.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Running Local Shell Commands") && Guidewire_FMSourceFileMatch(SRCFILE,"gw-util-shell.html") ) { return "gw-util-shell.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Checksums") && Guidewire_FMSourceFileMatch(SRCFILE,"checksums.26.1.html") ) { return "checksums.26.1.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Overview of Checksums") && Guidewire_FMSourceFileMatch(SRCFILE,"checksums.26.2.html") ) { return "checksums.26.2.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Concurrency") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.1.html") ) { return "concurrency.27.1.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Overview of Thread Safety and Concurrency") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.2.html") ) { return "concurrency.27.2.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Gosu Scoping Classes (Pre-scoped Maps)") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.3.html") ) { return "concurrency.27.3.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Concurrent Lazy Variables") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.4.html") ) { return "concurrency.27.4.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Concurrent Cache") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.5.html") ) { return "concurrency.27.5.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Concurrency with Monitor Locks and Reentrant Objects") && Guidewire_FMSourceFileMatch(SRCFILE,"concurrency.27.6.html") ) { return "concurrency.27.6.html";}
 else if (Guidewire_TopicMatch(TOPIC,"Properties Files") && Guidewire_FMSourceFileMatch(SRCFILE,"propertiesfiles.html") ) { return "propertiesfiles.html";}
-else if (Guidewire_TopicMatch(TOPIC,"Coding Style") && Guidewire_FMSourceFileMatch(SRCFILE,"style.28.1.html") ) { return "style.28.1.html";}
-else if (Guidewire_TopicMatch(TOPIC,"General Coding Guidelines") && Guidewire_FMSourceFileMatch(SRCFILE,"style.28.2.html") ) { return "style.28.2.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Coding Style") && Guidewire_FMSourceFileMatch(SRCFILE,"style.29.1.html") ) { return "style.29.1.html";}
+else if (Guidewire_TopicMatch(TOPIC,"General Coding Guidelines") && Guidewire_FMSourceFileMatch(SRCFILE,"style.29.2.html") ) { return "style.29.2.html";}
 else { return("../wwhelp/topic_cannot_be_found.html"); } }
 
 function  WWHBookData_MatchTopic(P)
 {
 var C=null;P=decodeURIComponent(decodeURIComponent(escape(P)));//workaround epub bug with UTF8 processing!
 if(P=="The_Gosu_Language")C="intro.03.02.html#1466155";
-if(P=="Gosu_Case_Sensitivity")C="intro.03.12.html#1410297";
+if(P=="Gosu_Case_Sensitivity")C="intro.03.12.html#1489374";
 if(P=="Gosu_Code_Comments")C="intro.03.14.html#1437092";
 if(P=="Gosu_Shell")C="gscript-shell.05.1.html#2186180";
 if(P=="Gosu_Interactive_Shell")C="gscript-shell.05.7.html#2190274";
@@ -264,5 +267,6 @@ if(P=="Calling_Java_from_Gosu")C="java-gosu.22.1.html#2005457";
 if(P=="Gosu-to-Java_Class_Deployment")C="java-gosu.22.3.html#2001895";
 if(P=="Type_System_and_Reflection")C="typesystem.24.1.html#1444075";
 if(P=="Running_Command_Line_Tools_from_Gosu")C="gw-util-shell.html#2186018";
+if(P=="Gosu_Scoping_Classes")C="concurrency.27.3.html#1443367";
 if (C) { return C } else { return GUIDEWIRE_TOPIC_TO_FILE(P,Guidewire_ExtractSrcFromURL());}
 }

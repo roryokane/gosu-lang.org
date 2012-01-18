@@ -56,7 +56,7 @@ text_val.select();
     <hr align="left" />
     <div>
       <div class="H1_-_Heading_1"><a name="2450606">Inner Classes</a></div>
-      <div class="B_-_Body"><a name="2450607">You can define inner classes in Gosu, similar to inner classes in Java. They are useful to for encapsulating code </a>even further and defining it in the same file as related code. Use named inner classes if you want to be able to refer to the inner class from multiple related methods or multiple related classes. Use anonymous inner classes if you just need a simple subclass that you can define in-line within a class method.</div>
+      <div class="B_-_Body"><a name="2450607">You can define inner classes in Gosu, similar to inner classes in Java. They are useful for encapsulating code </a>even further within the same file as related code. Use <span class="s_-_strong">named inner classes</span> if you want to be able to refer to the inner class from multiple related methods or multiple related classes. Use <span class="s_-_strong">anonymous inner classes</span> if you just need a simple subclass that you can define in-line within a class method.</div>
       <div class="B_-_Body"><a name="2450646">Inner classes optionally can include generics features (see </a><a href="javascript:WWHClickedPopup('gosu', 'generics.18.1.html#1455314', '');" title="Gosu Generics">"Gosu Generics"</a>).</div>
       <div class="H2_-_Heading_2"><a name="2450636">Named Inner Classes</a></div>
       <div class="B_-_Body"><a name="2450637">You can define a named class within another Gosu class. Once defined, it can be used within the class within </a>which it is defined, or from classes that derive from it. If using it from the current class, </div>
@@ -184,7 +184,18 @@ text_val.select();
       <PRE class="CF_-_Code_First_Line"><a name="2450176">A vehicle was just constructed!</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="2450177">actionOne was called with arg USA</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="2460581">actionTwo was called with arg ABCDEFG</a></PRE>
-      <div class="H3_-_Heading_3"><a name="2464956">Gosu Block Shortcut for Anonymous Inner Classes Implementing an Interface</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="2464956">Gosu Block Shortcut for Anonymous Inner Classes Implementing an Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="2464957">If the anonymous inner class implements an interface and the interface has </a><span class="s_-_strong">exactly one method</span>, then you can use a Gosu block to implement the interface as a block. This is an alternative to using an explicit anonymous class. This is true for interfaces originally implemented in either Gosu or Java.</div>
       <div class="B_-_Body"><a name="2464958">The parameters of the block are the same number and type as the parameters to the single method. The return </a>type is the same as the return type of that method. This feature works with any interface, including interfaces defined as inner interfaces within a class.</div>
       <div class="B_-_Body"><a name="2464959">This Gosu block shortcut is helpful for writing concise code in some situations. For example, APIs that use the </a>Java interface called <span class="cv_-_computer_voice">Runnable</span>, which is a simple container for code within a method called <span class="cv_-_computer_voice">run</span>.</div>

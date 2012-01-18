@@ -58,50 +58,122 @@ text_val.select();
       <div class="H1_-_Heading_1"><a name="1595812">New Object Expressions</a></div>
       <div class="B_-_Body"><a name="1595813">Gosu uses the </a><span class="cv_-_computer_voice">new</span> operator to create an instance of a type. The type can be a Gosu class, a Java class, an array.</div>
       <div class="B_-_Body"><a name="1596131">You can use the </a><span class="cv_-_computer_voice">new</span> operator with any valid Gosu type, Java type, or an array. At least one constructor (creation function) must be exposed on a type to construct an instance of the type with the <span class="cv_-_computer_voice">new</span> operator. </div>
-      <div class="HS_-_Head_Sub"><a name="1596132">Syntax</a></div>
+      <div class="HS_-_Head_Sub"><a name="1596132">Syntax In General Case</a></div>
       <PRE class="CF_-_Code_First_Line"><a name="1596133">new &lt;java-type&gt; ( [arguments] )</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1138683">new &lt;array-type&gt; [ &lt;size-expression&gt; ]</a></PRE>
       <PRE class="CL_-_Code_Last_Line"><a name="1138684">new  &lt;array-type&gt; [] { [array-value-list] }</a></PRE>
       <div class="B_-_Body"><a name="1561015">If you pass arguments to the </a><span class="cv_-_computer_voice">new</span> operator, Gosu passes those arguments to the constructor. There might be multiple constructors defined, in which case Gosu uses the types and numbers of objects to choose which constructor to call.</div>
       <div class="HS_-_Head_Sub"><a name="1138685">Examples</a></div>
-      <div class="T_-_Table"><a name="1551459">&nbsp;</a></div>
+      <div class="T_-_Table"><a name="1604137">&nbsp;</a></div>
       <table class="withoutHeading" style="text-align: left;" cellspacing="10" summary="">
         <caption></caption>
         <tr>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
-            <div class="TH_-_Table_Heading"><a name="1551438">Expression</a></div>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1604090">Expression</a></div>
           </td>
-          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom;">
-            <div class="TH_-_Table_Heading"><a name="1551440">Result</a></div>
-          </td>
-        </tr>
-        <tr>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1551443">new java.util.HashMap(8) </a></span></div>
-          </td>
-          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text"><a name="1551446">Creates an instance of the HashMap Java class. </a></div>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1604092">Result</a></div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1551448">new String[12]</a></span></div>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1604095">new java.util.HashMap(8) </a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text"><a name="1551450">Creates a </a><span class="cvt_-_computer_voice_table">String</span> array with 12 members with no initial values.</div>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1604098">Creates an instance of the </a><span class="cvt_-_computer_voice_table">HashMap</span> Java class. </div>
           </td>
         </tr>
         <tr>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1551452">new String[] { "a", "b", "c" }</a></span></div>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1604100">new String[12]</a></span></div>
           </td>
-          <td style="padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top;">
-            <div class="TT_-_Table_Text"><a name="1551454">Creates a </a><span class="cvt_-_computer_voice_table">String</span> array with three members, initialized to “a”, “b”, and “c”.	</div>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1604102">Creates a </a><span class="cvt_-_computer_voice_table">String</span> array with 12 members with no initial values.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1604104">new String[] { "a", "b", "c" }</a></span></div>
+          </td>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1604106">Creates a </a><span class="cvt_-_computer_voice_table">String</span> array with three members, initialized to <span class="cvt_-_computer_voice_table">"a"</span>, <span class="cvt_-_computer_voice_table">"b"</span>, and <span class="cvt_-_computer_voice_table">"c"</span>.	</div>
           </td>
         </tr>
       </table>
-      <div class="H3_-_Heading_3"><a name="1570563">Object Initializer Syntax</a></div>
-      <div class="B_-_Body"><a name="1571326">Object initializers allow you to set properties on an object immediately after a </a><span class="cv_-_computer_voice">new</span> expression. In other words, you can assign properties as part of creating a new object. Use object initializers for compact and clear object declarations. They are especially useful if combined with data structure syntax and nested objects.</div>
+      <div class="PB_-_Page_Break_Empty_Para"><a name="1604138">&nbsp;</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1605664">Optionally Omit Type Name with ‘new’ When Type is Determined From Context</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1604139">If the type of the object is determined from the programming context, you can omit the type name entirely in the </a>object creation expression with the <span class="cv_-_computer_voice">new</span> keyword. </div>
+      <div class="B_-_Body"><a name="1605905">For example, first declare a variable to a specific type. Next, assign that variable a new object of that type in a </a>simple assignment statement that omits the type name:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1605621">// declare variable explicitly with a type</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605622">var s : String</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605623">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605624">// create empty string</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1605625">s = new()</a></PRE>
+      <div class="B_-_Body"><a name="1604691">You can also omit the type name if the context is a method argument type:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605818">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605819">class SimpleObj {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605820">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605821">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605822">class Test {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605823">  function doAction ( arg1 : SimpleObj ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605824">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605825">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605826">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605827">var t = new Test()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605828">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605830">// the type of the argument in doAction method is predetermined, </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605831">// therefore you can omit type name if you create a new instance as a method argument</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605811">t.doAction( new() )</a></PRE>
+      <div class="B_-_Body"><a name="1605725">The following is a more complex example using both local variables and class variables:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1604845">class Person {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604846"> private var _name : String as Name</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604847"> private var _age : int as Age</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604848">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604849">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604850">class Tutoring {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604851">  private var _teacher : Person as Teacher</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604852">  private var _student : Person as Student</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604853">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604854">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604855">// declare a variable as a specific type to omit the type name in the "new" expression</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604856">// during assignment to that variable</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604857">var p : Person</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604858">var t : Tutoring</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604859">p = new() </a>&nbsp;&nbsp;&nbsp;// notice the type name is omitted</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604860">t = new()</a>&nbsp;&nbsp;&nbsp;&nbsp;// notice the type name is omitted</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605895">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605896">// if a class var or other data property has a declared type, optionally omit type name</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1605897">t.Teacher = new()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604864">t.Student = new()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604865">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1604869">// optionally OMIT 'new' keyword and still use the Gosu initialization syntax</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1605248">t.Student = { :Name = "Bob Smith", :Age = 30 }</a></PRE>
+      <div class="B_-_Body"><a name="1605249">Omitting the </a><span class="cv_-_computer_voice">new</span> keyword can improve readability of creating XML objects when using XSD-based types. Types imported from XSDs sometimes have complex and hard to read type names.</div>
+      <div class="B_-_Body"><a name="1605270">For more information about object initializer syntax, see </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.07.10.html#1605251', '');" title="New Object Expressions">"Object Initializer Syntax"</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1605251">Object Initializer Syntax</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1603719">Object initializers allow you to set properties on an object immediately after a </a><span class="cv_-_computer_voice">new</span> expression. In other words, you can assign properties as part of creating a new object. Use object initializers for compact and clear object declarations. They are especially useful if combined with data structure syntax and nested objects.</div>
       <div class="B_-_Body"><a name="1571327">A simple version looks like the following:</a></div>
       <div class="CS_-_Code_Single_Line"><a name="1571328">var sampleClaim = new Claim(){ :ClaimId = "TestID" }</a></div>
       <div class="B_-_Body"><a name="1571329">The syntax is simple: after a constructor, open a curly brace and then add pairs of property name equals values, </a>followed by a close brace. After a constructor, open a curly and then add pairs of property name equals values. Each name/value pair has the following syntax:</div>
@@ -150,7 +222,18 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1570637">&nbsp;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1571306">return simpleTest.toXML()</a></PRE>
       <div class="B_-_Body"><a name="1573967">The object initializer syntax more clearly expresses the nested nature of the XML nodes, clarifying what the </a>generated XML looks like.</div>
-      <div class="H3_-_Heading_3"><a name="1573969">Special Syntax for Initializing Lists, Collections, and Maps</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1573969">Special Syntax for Initializing Lists, Collections, and Maps</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="B_-_Body"><a name="1573994">There are specialized initializer syntax and rules for creating new lists, collections, and maps, discussed in more </a>detail in <a href="javascript:WWHClickedPopup('gosu', 'collections.19.2.html#1451966', '');" title="Basic Lists">"Basic Lists"</a> and <a href="javascript:WWHClickedPopup('gosu', 'collections.19.3.html#1452058', '');" title="Basic HashMaps">"Basic HashMaps"</a>.</div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--

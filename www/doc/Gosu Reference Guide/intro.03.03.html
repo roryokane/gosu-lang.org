@@ -57,12 +57,10 @@ text_val.select();
     <div>
       <div class="H1_-_Heading_1"><a name="1486843">Running Gosu Programs and Calling Other Classes</a></div>
       <div class="B_-_Body"><a name="1486844">To use Gosu, the initial file that you run </a><span class="s_-_strong">must</span> be a Gosu program. A Gosu program file has the <span class="cv_-_computer_voice">.gsp</span> file name extension. Gosu code in a program can call out to other Gosu classes and other types. For more information about Gosu programs, see <a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.3.html#2182766', '');" title="The Structure of a Gosu Program">"The Structure of a Gosu Program"</a>.</div>
-      <div class="B_-_Body"><a name="1486848">You can run Gosu programs (</a><span class="cv_-_computer_voice">.gsp</span> files) directly from the command line or from within Eclipse. You cannot run a Gosu class file or other types file directly from the Eclipse user interface. If you want to call a Gosu class (or other type of file), make a simple Gosu program that uses your other types. </div>
+      <div class="B_-_Body"><a name="1486848">You can run Gosu programs (</a><span class="cv_-_computer_voice">.gsp</span> files) directly from the command line or from within an IDE such as IntelliJ. You cannot run a Gosu class file or other types file directly from within an IDE such as IntelliJ. If you want to call a Gosu class (or other type of file), make a simple Gosu program that uses your other types. </div>
       <div class="B_-_Body"><a name="1486849">In Java, you would define a </a><span class="cv_-_computer_voice">main()</span> method in a class and tell Java which main class to run. It would call out to other classes as needed. </div>
-      <div class="B_-_Body"><a name="1486850">In Gosu, your main Gosu program (</a><span class="cv_-_computer_voice">.gsp</span> file) can call any necessary code, including Gosu or Java classes. If you want to mirror the Java style, your <span class="cv_-_computer_voice">.gsp</span> file can contain a single line that calls a <span class="cv_-_computer_voice">main</span> method on an important Gosu class or Java class.</div>
-      <div class="NI_-_Note_Important">
-        <span class="n_-_note">IMPORTANT   </span><a name="1486851">You can run Gosu programs (</a><span class="cv_-_computer_voice">.gsp</span> files) directly from the command line or from within Eclipse. You cannot <span class="e_-_emphasis">run</span> a Gosu class file or other types file directly from the Eclipse user interface. However, you can make a simple Gosu program that instantiates and calls your other classes.</div>
-      <div class="B_-_Body"><a name="1486852">To tell Gosu where to load additional classes, do either of the following:</a></div>
+      <div class="B_-_Body"><a name="1489665">In Gosu, your main Gosu program (</a><span class="cv_-_computer_voice">.gsp</span> file) can call any necessary code, including Gosu or Java classes. If you want to mirror the Java style, your <span class="cv_-_computer_voice">.gsp</span> file can contain a single line that calls a <span class="cv_-_computer_voice">main</span> method on an important Gosu class or Java class.</div>
+      <div class="B_-_Body"><a name="1489667">IntelliJTo tell Gosu where to load additional classes, do either of the following:</a></div>
       <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
         <table border="0" cellspacing="0" cellpadding="0" summary="">
           <tr style="vertical-align: baseline;">
@@ -72,7 +70,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1486856">Use the </a><span class="cv_-_computer_voice">classpath</span> argument on the command line tool. See “Command Line Arguments” on page&nbsp;259.</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1489671">Use the </a><span class="cv_-_computer_voice">classpath</span> <span class="s_-_strong">argument</span> on the command line tool. See <a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.2.html#2182333', '');" title="Gosu Command Line Tool Basics">"Command Line Tool Options"</a>.</div>
             </td>
           </tr>
         </table>
@@ -86,7 +84,7 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><a name="1486857">Add a </a><span class="cv_-_computer_voice">classpath</span> statement to the top of your Gosu program.</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1486857">Add a </a><span class="cv_-_computer_voice">classpath</span> <span class="s_-_strong">statement</span> at the top of your Gosu program.</div>
             </td>
           </tr>
         </table>

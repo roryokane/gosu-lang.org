@@ -113,13 +113,13 @@ text_val.select();
       <PRE class="CL_-_Code_Last_Line"><a name="1441183">}</a></PRE>
       <div class="B_-_Body"><a name="1441184">Similarly, if you use a </a><span class="cv_-_computer_voice">switch</span> statement, consider using an <span class="cv_-_computer_voice">else</span> section.</div>
       <div class="B_-_Body"><a name="1441185">This strict requirement for </a><span class="cv_-_computer_voice">return</span> statements mirrors the analogous requirements in the Java language.</div>
-      <div class="H2_-_Heading_2"><a name="1142377">Named Arguments</a></div>
-      <div class="B_-_Body"><a name="1483567">Optionally you can name use your argument names from other Gosu code. This is especially useful if you want </a>to provide default argument values but can also make your code more readable. For example, typical method calls might like this:</div>
+      <div class="H2_-_Heading_2"><a name="1483902">Named Functions Arguments and Argument Defaults</a></div>
+      <div class="B_-_Body"><a name="1483903">In code that calls functions, you can specify argument names explicitly rather than relying on matching the decla</a>ration order of the arguments. This helps make your code more readable. For example, typical method calls might look like the following:</div>
       <div class="CS_-_Code_Single_Line"><a name="1483568">someMethod(true, false) // what do those values represent? difficult to tell visually</a></div>
-      <div class="B_-_Body"><a name="1483569">Instead of passing simply a series of one or more comma-separated arguments, pass a colon, then the argument </a>name, then the equals sign, then the value. If that argument has a default value, passing the argument overrides the default. </div>
-      <div class="B_-_Body"><a name="1483538">For example:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1483578">someMethod(:redisplay=true, :sendUpdate=false) // easy to read code!</a></div>
-      <div class="B_-_Body"><a name="1483541">The Gosu named arguments feature requires that the method name is not already overloaded on the class:</a></div>
+      <div class="B_-_Body"><a name="1483569">Instead of passing simply a series of one or more comma-separated arguments, pass a colon, then the argument </a>name, then the equals sign, then the value. </div>
+      <div class="B_-_Body"><a name="1484218">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1484219">someMethod(:redisplay=true, :sendUpdate=false) // easy to read code!</a></div>
+      <div class="B_-_Body"><a name="1483943">Additionally, this feature lets you provide default argument values in function declarations. The function caller </a>can omit that argument. If the function caller passes the argument, the passed-in value overrides any declared default value. To declare a default, follow the argument name with an equals sign and then the value.</div>
       <div class="B_-_Body"><a name="1483552">To demonstrate default arguments, imagine a function that printed strings with a prefix:</a></div>
       <PRE class="CF_-_Code_First_Line"><a name="1483219">class MyClass {</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483196">var _names : java.util.ArrayList&lt;String&gt;</a></PRE>
@@ -134,14 +134,19 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="1483125">    }</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483180">  }</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483266">}</a></PRE>
-      <div class="B_-_Body"><a name="1483181">If you want to use the default values, call this class with the optional arguments omitted. Name the parameter and </a>pass a value to override the default value.</div>
+      <div class="B_-_Body"><a name="1484576">Notice that in the </a><span class="cv_-_computer_voice">printWithPrefix</span> declaration, the prefix value has the default value <span class="cv_-_computer_voice">" ---&gt; "</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt;">. </span>To use the default values, call this class with the optional arguments omitted. </div>
+      <div class="B_-_Body"><a name="1484577">The following example shows calling the </a><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt;">printWithPrefix</span> method using the default and also a separate time overriding the default.</div>
       <PRE class="CF_-_Code_First_Line"><a name="1483057">var c = new MyClass({"hello", "there"})</a></PRE>
-      <PRE class="CL_-_Code_Last_Line"><a name="1483058">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1483058">&nbsp;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483643">// Because the argument has a default, it is optional -- you can omit it</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483644">c.printWithPrefix() </a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483645">&nbsp;</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483657">// Alternatively, specify the parameter to pass and override any default if one exists</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="1483658">c.printWithPrefix(:prefix= " next string is:") </a></PRE>
+      <div class="B_-_Body"><a name="1484237">The Gosu named arguments feature requires that the method name is not already overloaded on the class.</a></div>
+      <div class="HS_-_Head_Sub"><a name="1484935">Calling Conventions</a></div>
+      <div class="B_-_Body"><a name="1484967">When you call a function with a multiple arguments, you can name some of the arguments and not others. Any </a>non-named arguments that you call must match in left-to-right order any <span class="s_-_strong">arguments without defaults</span>. </div>
+      <div class="B_-_Body"><a name="1485374">Gosu considers any additional passed-in non-named arguments as representing the arguments with defaults, </a>passed in the same order (left-to-right) as they are declared in the function.</div>
       <div class="H2_-_Heading_2"><a name="1483028">Public and Private Functions</a></div>
       <div class="B_-_Body"><a name="1142381">A function is public by default, meaning that it can be called from any Gosu code. In contrast, a private function </a>can be called only within the library in which it is defined. For example, suppose you have the following two functions defined in a library:</div>
       <PRE class="CF_-_Code_First_Line"><a name="1142383">public function funcA() {</a></PRE>
