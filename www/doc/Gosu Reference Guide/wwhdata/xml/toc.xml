@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpTOC version="5.0" xmlns="urn:WebWorks-Help-TOC-Schema">
+  <i t="About This Document" l="1">
+    <i t="Intended Audience" l="1#1315821" />
+    <i t="Downloads, Technical Questions, and Submitting Feedback" l="1#1329476" />
+    <i t="Conventions In This Document" l="1#1333816" />
+  </i>
+  <i t="Gosu Introduction" l="2">
+    <i t="Welcome to Gosu" l="3">
+      <i t="Control Flow" l="3#1437383" />
+      <i t="Blocks" l="3#1469415" />
+      <i t="Enhancements" l="3#1435182" />
+      <i t="Collections" l="3#1441186" />
+      <i t="Access to Java Types" l="3#1435102" />
+      <i t="Gosu Classes and Properties" l="3#1440296" />
+      <i t="Interfaces" l="3#1450798" />
+      <i t="List and Array Expansion Operator *." l="3#1450589" />
+      <i t="Comparisons" l="3#1452648" />
+      <i t="Case Sensitivity" l="3#1450590" />
+      <i t="Compound Assignment Statements" l="3#1454915" />
+      <i t="Delegating Interface Implementation with Composition" l="3#1457296" />
+      <i t="Concurrency" l="3#1456854" />
+      <i t="Exceptions" l="3#1457070" />
+      <i t="Annotations" l="3#1458452" />
+      <i t="Gosu Templates" l="3#1457886" />
+      <i t="Native XML and XSD Support" l="3#1460816" />
+      <i t="Native Web Service Support Using a WSDL Type Loader" l="3#1460937" />
+      <i t="Gosu Character Set" l="3#1484203" />
+    </i>
+    <i t="Running Gosu Programs and Calling Other Classes" l="4" />
+    <i t="More About the Gosu Type System" l="5">
+      <i t="Compile Time Error Prevention" l="6" />
+      <i t="Type Inference" l="7" />
+      <i t="Intelligent Code Completion and Other Gosu Editor Tools" l="8" />
+      <i t="Null Safety for Properties Other Operators" l="9" />
+      <i t="Generics in Gosu" l="10" />
+      <i t="Gosu Primitives Types" l="11" />
+      <i t="Gosu Type Loaders" l="12" />
+    </i>
+    <i t="Gosu Case Sensitivity" l="13" />
+    <i t="Gosu Statement Terminators" l="14" />
+    <i t="Gosu Comments" l="15" />
+    <i t="Gosu Reserved Words" l="16" />
+    <i t="Notable Differences Between Gosu and Java" l="17" />
+    <i t="Get Ready for Gosu" l="18" />
+  </i>
+  <i t="Getting Started with Gosu Community Release" l="19">
+    <i t="System Requirements" l="19#1455061" />
+    <i t="Gosu and IntelliJ IDEA" l="20" />
+    <i t="Installing Gosu as Command Line Tool" l="21" />
+    <i t="Advanced Examples" l="22">
+      <i t="Servlet Example" l="22#1478621" />
+      <i t="Hibernate Database Example" l="22#1471689" />
+    </i>
+    <i t="Dynamic Type Example" l="23" />
+  </i>
+  <i t="Gosu Programs and Command Line Tools" l="24">
+    <i t="Gosu Command Line Tool Basics" l="25">
+      <i t="Command Line Tool Options" l="25#2182333" />
+      <i t="Writing a Simple Gosu Program" l="25#2180168" />
+    </i>
+    <i t="The Structure of a Gosu Program" l="26">
+      <i t="Metaline as First Line" l="26#2182879" />
+      <i t="Functions in a Gosu Program" l="26#2182773" />
+      <i t="Setting the Class Path to Call Other Gosu or Java Classes" l="26#2183011" />
+    </i>
+    <i t="Command Line Arguments" l="27" />
+    <i t="Advanced Class Loading Registry" l="28" />
+    <i t="The Self-Contained Gosu Editor" l="29" />
+    <i t="Gosu Interactive Shell" l="30" />
+    <i t="Helpful APIs for Command Line Gosu Programs" l="31" />
+  </i>
+  <i t="Gosu Types" l="32">
+    <i t="Built-in Types" l="33">
+      <i t="Array" l="34" />
+      <i t="Boolean" l="35" />
+      <i t="DateTime" l="36" />
+      <i t="Number" l="37" />
+      <i t="Object" l="38" />
+      <i t="String" l="39" />
+      <i t="Type" l="40" />
+      <i t="Primitive Types" l="41" />
+    </i>
+    <i t="Access to Java Types" l="42" />
+    <i t="Arrays" l="43">
+      <i t="Java-based Lists as Arrays" l="43#1441480" />
+      <i t="Array Expansion" l="43#1441521" />
+    </i>
+    <i t="Object Instantiation and Properties" l="44">
+      <i t="Creating New Objects" l="44#1441638" />
+      <i t="Assigning Object Properties" l="44#1441650" />
+      <i t="Accessing Object Properties" l="44#1441662" />
+      <i t="Accessing Object Methods" l="44#1441682" />
+      <i t="Accessing Object Arrays" l="44#1441721" />
+    </i>
+    <i t="Numeric, Binary, and Hex Literals" l="45" />
+  </i>
+  <i t="Gosu Operators and Expressions" l="46">
+    <i t="Gosu Operators" l="47">
+      <i t="Operator Precedence" l="48" />
+    </i>
+    <i t="Standard Gosu Expressions" l="49" />
+    <i t="Arithmetic Expressions" l="50" />
+    <i t="Equality Expressions" l="51" />
+    <i t="Evaluation Expressions" l="52" />
+    <i t="Existence Testing Expressions" l="53" />
+    <i t="Logical Expressions" l="54" />
+    <i t="New Object Expressions" l="55" />
+    <i t="Relational Expressions" l="56" />
+    <i t="Unary Expressions" l="57" />
+    <i t="Importing Types and Package Namespaces" l="58" />
+    <i t="Conditional Ternary Expressions" l="59" />
+    <i t="Special Gosu Expressions" l="60">
+      <i t="Function Calls" l="61" />
+      <i t="Static Method Calls" l="62" />
+      <i t="Static Property Paths" l="63" />
+    </i>
+    <i t="Handling Null Values In Expressions" l="64">
+      <i t="Null-safe Property Access" l="64#1597340" />
+      <i t="Null-safe Default Operator" l="64#1598038" />
+      <i t="Null-safe Indexing for Arrays, Lists, and Maps" l="64#1598052" />
+      <i t="Null-safe Math Operators" l="64#1597472" />
+    </i>
+  </i>
+  <i t="Statements" l="65">
+    <i t="Gosu Statements" l="66">
+      <i t="Statement Lists" l="66#1440698" />
+    </i>
+    <i t="Gosu Variables" l="67">
+      <i t="Variable Type Declaration" l="67#1141530" />
+      <i t="Variable Assignment" l="67#1453654" />
+    </i>
+    <i t="Gosu Conditional Execution and Looping" l="68">
+      <i t="If() … Else() Statements" l="68#1142199" />
+      <i t="For() Statements" l="68#1456475" />
+      <i t="While() Statements" l="68#1141335" />
+      <i t="Do…While() Statements" l="68#1137579" />
+      <i t="Switch() Statements" l="68#1137580" />
+    </i>
+    <i t="Gosu Functions" l="69">
+      <i t="Named Functions Arguments and Argument Defaults" l="69#1483902" />
+      <i t="Public and Private Functions" l="69#1483028" />
+    </i>
+  </i>
+  <i t="Intervals" l="70">
+    <i t="What are Intervals?" l="71">
+      <i t="Reversing Interval Order" l="71#1456056" />
+      <i t="Granularity (Step and Unit)" l="71#1456531" />
+    </i>
+    <i t="Writing Your Own Interval Type" l="72">
+      <i t="Custom Iterable Intervals Using Sequenceable Items" l="72#1461393" />
+      <i t="Custom Iterable Intervals Using Manually-written Iterators" l="72#1462661" />
+      <i t="Custom Non-iterable Interval Types" l="72#1461152" />
+    </i>
+  </i>
+  <i t="Exception Handling" l="73">
+    <i t="Try-Catch-Finally Constructions" l="74" />
+    <i t="Throw Statements" l="75" />
+    <i t="Checked Exceptions in Gosu" l="76" />
+    <i t="Object Lifecycle Management (‘using’ Clauses)" l="77">
+      <i t="Disposable Objects" l="77#1466707" />
+      <i t="Closeable Objects and ‘using’ Clauses" l="77#1466986" />
+      <i t="Reentrant Objects and ‘using’ Clauses" l="77#1457358" />
+      <i t="Returning Values from ‘using’ Clauses" l="77#1469250" />
+    </i>
+  </i>
+  <i t="Classes" l="78">
+    <i t="What Are Classes?" l="79" />
+    <i t="Creating and Instantiating Classes" l="80">
+      <i t="Creating a New Instance of a Class" l="80#2449212" />
+      <i t="Naming Conventions for Packages and Classes" l="80#2447745" />
+    </i>
+    <i t="Properties" l="81">
+      <i t="Properties Act Like Data But They Are Dynamic and Virtual Functions" l="81#2477145" />
+      <i t="Property Paths are Null Tolerant" l="81#2465283" />
+      <i t="Static Properties" l="81#2449277" />
+      <i t="More Property Examples" l="81#2447851" />
+    </i>
+    <i t="Modifiers" l="82">
+      <i t="Access Modifiers" l="82#2445688" />
+      <i t="Override Modifier" l="82#2449862" />
+      <i t="Abstract Modifier" l="82#2449868" />
+      <i t="Final Modifier" l="82#2449875" />
+      <i t="Static Modifier" l="82#2446412" />
+    </i>
+    <i t="Inner Classes" l="83">
+      <i t="Named Inner Classes" l="83#2450636" />
+      <i t="Anonymous Inner Classes" l="83#2450064" />
+    </i>
+  </i>
+  <i t="Enumerations" l="84">
+    <i t="Using Enumerations" l="85">
+      <i t="Extracting Information from Enumerations" l="85#1459344" />
+      <i t="Comparing Enumerations" l="85#1459295" />
+    </i>
+  </i>
+  <i t="Interfaces" l="86">
+    <i t="What is an Interface?" l="87" />
+    <i t="Defining and Using an Interface" l="88">
+      <i t="Defining and Using Properties with Interfaces" l="88#1457203" />
+      <i t="Modifiers and Interfaces" l="88#1459141" />
+    </i>
+  </i>
+  <i t="Composition" l="89">
+    <i t="Using Gosu Composition" l="90">
+      <i t="Overriding Methods Independent of the Delegate Class" l="90#2201000" />
+      <i t="Declaring Delegate Implementation Type in the Variable Definition" l="90#2198236" />
+      <i t="Using One Delegate for Multiple Interfaces" l="90#2198240" />
+      <i t="Using Composition With Built-in Interfaces" l="90#2198246" />
+    </i>
+  </i>
+  <i t="Annotations" l="91">
+    <i t="Annotating a Class, Method, Type, or Constructor" l="92">
+      <i t="Built-in Annotations" l="92#1471842" />
+    </i>
+    <i t="Annotations at Run Time" l="93" />
+    <i t="Defining Your Own Annotations" l="94">
+      <i t="Customizing Annotation Usage" l="94#1434674" />
+    </i>
+  </i>
+  <i t="Enhancements" l="95">
+    <i t="Using Enhancements" l="96">
+      <i t="Syntax for Using Enhancements" l="96#1439437" />
+      <i t="Creating a New Enhancement" l="96#1439200" />
+      <i t="Syntax for Defining Enhancements" l="96#1439430" />
+      <i t="Enhancement Naming and Package Conventions" l="96#1437458" />
+      <i t="Enhancements on Arrays" l="96#1438604" />
+    </i>
+  </i>
+  <i t="Gosu Blocks" l="97">
+    <i t="What Are Blocks?" l="98" />
+    <i t="Basic Block Definition and Invocation" l="99" />
+    <i t="Variable Scope and Capturing Variables In Blocks" l="100" />
+    <i t="Argument Type Inference Shortcut In Certain Cases" l="101" />
+    <i t="Block Type Literals" l="102" />
+    <i t="Blocks and Collections" l="103" />
+    <i t="Blocks as Shortcuts for Anonymous Classes" l="104" />
+  </i>
+  <i t="Gosu Generics" l="105">
+    <i t="Gosu Generics Overview" l="106" />
+    <i t="Using Gosu Generics" l="107" />
+    <i t="Other Unbounded Generics Wildcards" l="108" />
+    <i t="Generics and Blocks" l="109" />
+    <i t="How Generics Help Define Collection APIs" l="110" />
+    <i t="Multiple Dimensionality Generics" l="111" />
+    <i t="Generics With Custom ‘Containers’" l="112">
+      <i t="Generics with Non-Containers" l="112#1446525" />
+    </i>
+  </i>
+  <i t="Collections" l="113">
+    <i t="Basic Lists" l="114" />
+    <i t="Basic HashMaps" l="115">
+      <i t="Special Enhancements on Maps" l="115#1452216" />
+    </i>
+    <i t="List and Array Expansion (*.)" l="116" />
+    <i t="Enhancement Reference for Collections and Related Types" l="117">
+      <i t="Collections Enhancement Methods" l="118" />
+      <i t="Finding Data in Collections" l="118#1462591" />
+      <i t="Sorting Collections" l="118#1444564" />
+      <i t="Mapping Data in Collections" l="118#1442277" />
+      <i t="Iterating Across Collections" l="118#1442285" />
+      <i t="Partitioning Collections" l="118#1442296" />
+      <i t="Converting Lists, Arrays, and Sets" l="118#1449882" />
+      <i t="Flat Mapping a Series of Collections or Arrays" l="118#1450050" />
+      <i t="Sizes and Length of Collections and Strings are Equivalent" l="118#1443101" />
+    </i>
+  </i>
+  <i t="Gosu and XML" l="119">
+    <i t="Manipulating XML Overview" l="120" />
+    <i t="Introduction to XmlElement" l="121">
+      <i t="Dollar Sign Prefix For Some Properties When Using XSD Types" l="122" />
+    </i>
+    <i t="Exporting XML Data" l="123" />
+    <i t="Parsing XML Data into an XML Element" l="124" />
+    <i t="Creating Many QNames in the Same Namespace" l="125" />
+    <i t="XSD-based Properties and Types" l="126">
+      <i t="Important Concepts in XSD Properties and Types" l="126#1651042" />
+      <i t="XSD Generated Type Examples" l="126#1673249" />
+      <i t="Automatic Insertion into Lists" l="126#1673851" />
+      <i t="XSD List Property Example" l="126#1610237" />
+    </i>
+    <i t="Getting Data From an XML Element" l="127">
+      <i t="Manipulating Elements and Values (Works With or Without XSD)" l="128" />
+      <i t="Attributes" l="128#1520181" />
+    </i>
+    <i t="Simple Values" l="129">
+      <i t="XSD to Gosu Simple Type Mappings" l="129#1622952" />
+      <i t="Facet Validation" l="129#1623085" />
+    </i>
+    <i t="Access the Nillness of an Element" l="130" />
+    <i t="Automatic Creation of Intermediary Elements" l="131" />
+    <i t="Default/Fixed Attribute Values" l="132" />
+    <i t="Substitution Group Hierarchies" l="133" />
+    <i t="Element Sorting for XSD-based Elements" l="134" />
+    <i t="Built-in Schemas" l="135">
+      <i t="The XSD that Defines an XSD (The Metaschema)" l="135#1541995" />
+    </i>
+    <i t="Schema Access Type" l="136" />
+  </i>
+  <i t="Calling WS-I Web Services from Gosu" l="137">
+    <i t="Consuming WS-I Web Service Overview" l="137#2001852">
+      <i t="Loading WS-I WSDL Directly into the File System" l="137#2064509" />
+      <i t="How Does Gosu Process WSDL?" l="137#2013784" />
+      <i t="Learning Gosu XML APIs" l="137#2047933" />
+      <i t="What Gosu Creates from Your WSDL" l="137#2043632" />
+      <i t="A Real Example: Weather" l="137#2047856" />
+    </i>
+    <i t="Adding WS-I Configuration Options" l="138">
+      <i t="HTTP Authentication" l="138#2064831" />
+      <i t="Setting a Timeout" l="138#2055335" />
+      <i t="Custom SOAP Headers" l="138#2052743" />
+      <i t="Server Override URL" l="138#2056586" />
+      <i t="Implementing Advanced Web Service Security with WSS4J" l="138#2052910" />
+    </i>
+    <i t="One-Way Methods" l="139" />
+    <i t="Asynchronous Methods" l="140" />
+  </i>
+  <i t="Java and Gosu" l="141">
+    <i t="Overview of Calling Java from Gosu" l="142">
+      <i t="Java Classes are First-Class Types" l="142#2002026" />
+      <i t="Many Java Classes are Core Classes for Gosu" l="142#2002392" />
+      <i t="Java Packages in Scope" l="142#2002365" />
+      <i t="Static Members in Gosu" l="142#2047802" />
+      <i t="Simple Java Example" l="142#2003007" />
+      <i t="Java Get and Set Methods Convert to Gosu Properties" l="142#2021794" />
+      <i t="Interfaces" l="142#2020668" />
+      <i t="Enumerations" l="142#2020577" />
+      <i t="Annotations" l="142#2047848" />
+      <i t="Java Primitives" l="142#2047899" />
+    </i>
+    <i t="Deploying Your Java Classes" l="143" />
+    <i t="Java Class Loading, Delegation, and Package Naming" l="144">
+      <i t="Java Class Loading Rules" l="144#2031881" />
+    </i>
+  </i>
+  <i t="Gosu Templates" l="145">
+    <i t="Template Overview" l="146">
+      <i t="Template Expressions" l="146#1464080" />
+      <i t="When to Escape Special Characters for Templates" l="147" />
+    </i>
+    <i t="Using Template Files" l="148">
+      <i t="Creating and Running a Template File" l="148#1464601" />
+      <i t="Template Scriptlet Tags" l="148#1461443" />
+      <i t="Template Parameters" l="148#1463866" />
+      <i t="Extending a Template From a Class" l="148#1455745" />
+      <i t="Template Comments" l="148#1463274" />
+    </i>
+    <i t="Template Export Formats" l="148#1465221" />
+  </i>
+  <i t="Type System" l="149">
+    <i t="Basic Type Coercion" l="149#1444327" />
+    <i t="Basic Type Checking" l="150">
+      <i t="Automatic Downcasting for ‘typeis’ and ‘typeof’" l="150#1455253" />
+    </i>
+    <i t="Using Reflection" l="151">
+      <i t="Type Object Properties" l="151#1441372" />
+      <i t="Java Type Reflection" l="151#1441477" />
+      <i t="Type System Class" l="151#1465566" />
+    </i>
+    <i t="Compound Types" l="152" />
+    <i t="Type Loaders" l="153" />
+  </i>
+  <i t="Running Local Shell Commands" l="154">
+    <i t="Running Command Line Tools from Gosu" l="154#2186018" />
+  </i>
+  <i t="Checksums" l="155">
+    <i t="Overview of Checksums" l="156" />
+    <i t="Creating Fingerprints" l="156#1442951">
+      <i t="How to Output Data Inside a Fingerprint" l="156#1443786" />
+    </i>
+    <i t="Extending Fingerprints" l="156#1442456" />
+  </i>
+  <i t="Concurrency" l="157">
+    <i t="Overview of Thread Safety and Concurrency" l="158" />
+    <i t="Gosu Scoping Classes (Pre-scoped Maps)" l="159" />
+    <i t="Concurrent Lazy Variables" l="160" />
+    <i t="Concurrent Cache" l="161" />
+    <i t="Concurrency with Monitor Locks and Reentrant Objects" l="162" />
+  </i>
+  <i t="Properties Files" l="163">
+    <i t="Reading Properties Files" l="163#1458192" />
+  </i>
+  <i t="Coding Style" l="164">
+    <i t="General Coding Guidelines" l="165">
+      <i t="Omit Semicolons" l="165#1445233" />
+      <i t="Type Declarations" l="165#1445238" />
+      <i t="The == and != Operator Recommendations and Warnings" l="165#1445388" />
+      <i t="Gosu Case Sensitivity Implications" l="165#1446066" />
+      <i t="Class Variable and Class Property Recommendations" l="165#1446206" />
+      <i t="Use ‘typeis’ Inference" l="165#1454113" />
+    </i>
+  </i>
+</WebWorksHelpTOC>

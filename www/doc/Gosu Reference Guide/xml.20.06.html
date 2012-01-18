@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Parsing XML Data into an XML Element</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.20.01.html#1539638">Gosu and XML</a> : Parsing XML Data into an XML Element</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1539638">Parsing XML Data into an XML Element</a></div>
+      <div class="B_-_Body"><a name="1539639">The </a><span class="cv_-_computer_voice">XmlElement</span> class contains static methods for parsing XML data into a graph of <span class="cv_-_computer_voice">XmlElement</span> objects. Parsing means to convert serialized XML data into a more complex in-memory representation of the document. All these methods begin with the prefix <span class="cv_-_computer_voice">parse</span>. There are multiple methods because Gosu supports parsing from several different sources of XML data.</div>
+      <div class="B_-_Body"><a name="1594042">For each source of data, there is an optional method variant that modifies the way Gosu parses the XML. Gosu </a>encapsulates these options in an instance of the type <span class="cv_-_computer_voice">XmlParseOptions</span>. The <span class="cv_-_computer_voice">XmlParseOptions</span> specifies additional schemas that resolve schema components for the input instance XML document. Typical code does not need this. Use this if your XML data contains references to schema components that are neither directly nor indirectly imported by the schema of the context type. For more information, refer to later in this topic.</div>
+      <div class="B_-_Body"><a name="1594035">For example, the following simple example parses XML contained in a </a><span class="cv_-_computer_voice">String</span> into an <span class="cv_-_computer_voice">XmlElement</span> object, and then prints the parsed XML data:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1519323">var a = XmlElement.parse( "&lt;Test123/&gt;" )</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1519324">a.print()</a></PRE>
+      <div class="B_-_Body"><a name="1539651">If you are using an XSD, call the </a><span class="cv_-_computer_voice">parse</span> method directly on your XSD-based node, which is a subclass of <span class="cv_-_computer_voice">XmlElement</span>. For example:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1519372">var a = com.guidewire.pl.docexamples.gosu.xml.demoattributes.Element1.parse(xmlDataString)</a></div>
+      <div class="B_-_Body"><a name="1519373">The following table lists the parsing methods (for details of </a><span class="cv_-_computer_voice">XmlParseOptions</span>, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.06.html#1594202', '');" title="Parsing XML Data into an XML Element">"Referencing Additional Schemas During Parsing"</a>):</div>
+      <div class="T_-_Table"><a name="1518370">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left;" cellspacing="10" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1518484">Method name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1518486">arguments</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom;">
+            <div class="TH_-_Table_Heading"><a name="1518488">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518490">parse</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518492">byte[]</a></span><span class="cvt_-_computer_voice_table"><br /></span><span class="cvt_-_computer_voice_table">byte[], XmlParseOptions</span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1518494">parse XML from a byte array with optional pars</a>ing options.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518502">parse</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1598684">java.io.File</a></span><span class="cvt_-_computer_voice_table"><br /></span><span class="cvt_-_computer_voice_table">java.io.File, XmlParseOptions</span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1598698">parse XML from a file, with optional parsing </a>options.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518514">parse</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518516">java.io.InputStream</a></span><span class="cvt_-_computer_voice_table"><br /></span><span class="cvt_-_computer_voice_table">java.io.InputStream, XmlParseOptions</span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1518518">parse XML from an </a><span class="cvt_-_computer_voice_table">InputStream</span> with optional parsing options.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1518520">parse</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1519059">java.io.Reader</a></span><span class="cvt_-_computer_voice_table"><br /></span><span class="cvt_-_computer_voice_table">java.io.Reader, XmlParseOptions</span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1518524">parse XML from a reader, which is an object for </a>reading character streams. Optionally, add parsing options.</div>
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="1598513">WARNING:</a></span> Because this uses character data, not bytes, the character encoding is irrelevant. Any encoding header at the top of the file has no effect. It is <span class="s_-_strong">strongly recommended</span> to treat XML as binary data, not as <span class="cvt_-_computer_voice_table">String</span> data. If your code needs to send XML with a transport that only understands character (not byte) data, always <span class="cvt_-_computer_voice_table">Base64</span> encode the bytes. (From Gosu, use the syntax: <span class="cvt_-_computer_voice_table">Base64Util.encode(element.bytes())</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1519198">parse</a></span></div>
+          </td>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline;"><span class="cvt_-_computer_voice_table"><a name="1519200">String</a></span><span class="cvt_-_computer_voice_table"><br /></span><span class="cvt_-_computer_voice_table">String, XmlParseOptions</span></div>
+          </td>
+          <td style="border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top;">
+            <div class="TT_-_Table_Text"><a name="1598801">parse XML from a </a><span class="cvt_-_computer_voice_table">String</span>, with optional parsing options.</div>
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="1598588">IMPORTANT:</a></span> Because this uses character data, not bytes, the character encoding is irrelevant. Any encoding header at the top of the file has no effect. It is <span class="s_-_strong">strongly recommended</span> to treat XML as binary data, not as <span class="cvt_-_computer_voice_table">String</span> data. If your code needs to send XML with a transport that only understands character (not byte) data, always <span class="cvt_-_computer_voice_table">Base64</span> encode the bytes. From Gosu, create the syntax: <span class="cvt_-_computer_voice_table">Base64Util.encode(element.bytes())</span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="HS_-_Head_Sub"><a name="1519617">Checking XML Well-Formedness and Validation During Parsing</a></div>
+      <div class="B_-_Body"><a name="1594212">For XSD-based XML elements, Gosu has the following behavior:</a></div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1594226">Gosu checks for well-formedness (for example, no unclosed tags or other structural errors). </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1594236">Always validates the XML against the XSD.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1594219">For non-XSD-based XML elements:</a></div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1594269">Gosu checks for well-formedness. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><a name="1594270">If the XML parse options object includes references to other schemas, Gosu validates against those sche</a>mas. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.06.html#1594202', '');" title="Parsing XML Data into an XML Element">"Referencing Additional Schemas During Parsing"</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1594311">If the XML document fails any of these tests, Gosu throws an exception.</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap;"></div>
+            </td>
+            <td width="100%">
+              <div class="H3_-_Heading_3_inner"><a name="1594202">Referencing Additional Schemas During Parsing</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1522917">In some advanced parsing situations, you might need to reference additional schemas other than your main </a>schema during parsing.</div>
+      <div class="B_-_Body"><a name="1522939">To specify additional schemas, set the </a><span class="cv_-_computer_voice">XmlParseOptions.AdditionalSchemas</span> to a specific <span class="cv_-_computer_voice">SchemaAccess</span> object. This <span class="cv_-_computer_voice">SchemaAccess</span> object represents the XSD. To access it from an XSD, use the syntax:</div>
+      <div class="CS_-_Code_Single_Line"><span class="pc_-_parameter_in_code"><a name="1521693">package_for_the_schema</a></span>.util.SchemaAccess</div>
+      <div class="B_-_Body"><a name="1521694">To see how and why you would use this, suppose you have the following two schemas:</a></div>
+      <div class="B_-_Body"><a name="1598868">The XSD </a><span class="cv_-_computer_voice">ImportXSD1.xsd</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1598869">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ImportXSD1"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1598870">&nbsp;</a>&nbsp;&nbsp;&nbsp;xmlns:ImportXSD1="urn:ImportXSD1"&gt;</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521906">    &lt;xsd:element name="ElementFromSchema1" type="ImportXSD1:TypeFromSchema1"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521907">    &lt;xsd:complexType name="TypeFromSchema1"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1519418">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1519421">The XSD </a><span class="cv_-_computer_voice">ImportXSD2.xsd</span>:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521920">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ImportXSD2"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1596498">&nbsp;</a>&nbsp;xmlns:ImportXSD1="urn:ImportXSD1" xmlns:ImportXSD2="urn:ImportXSD2" elementFormDefault="qualified"&gt;</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521921">    &lt;xsd:import schemaLocation="ImportXSD1.xsd" namespace="urn:ImportXSD1"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521922">    &lt;xsd:complexType name="TypeFromSchema2"&gt; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521923">        &lt;xsd:complexContent&gt;&lt;!-- the TypeFromSchema2 type extends the TypeFromSchema1 type! --&gt; </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521924">            &lt;xsd:extension base="ImportXSD1:TypeFromSchema1"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521925">        &lt;/xsd:complexContent&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521926">    &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1519685">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1519686">Notice that the </a><span class="cv_-_computer_voice">ImportXSD2</span> XSD extends a type that the <span class="cv_-_computer_voice">ImportXSD1</span> defines. This is analogous to saying the <span class="cv_-_computer_voice">ImportXSD2</span> type called <span class="cv_-_computer_voice">TypeFromSchema2</span> is like a subclass of the <span class="cv_-_computer_voice">ImportXSD1</span> type called <span class="cv_-_computer_voice">TypeFromSchema1</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt;">.</span></div>
+      <div class="B_-_Body"><a name="1521700">The following code fails (throws exceptions) because the </a><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt;">ImportXSD1</span> references the schema type <span class="cv_-_computer_voice">ImportXSD2:TypeFromSchema2</span> and Gosu cannot find it anywhere in the current schema.</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522060">var schema2 = com.guidewire.pl.docexamples.gosu.xml.importxsd2.util.SchemaAccess</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522062">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522063">var xsdtext =  "&lt;ElementFromSchema1 xmlns=\"urn:ImportXSD1\" xmlns:ImportXSD2=\"urn:ImportXSD2\"" +</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522064">&nbsp;</a>" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ImportXSD2:TypeFromSchema2\"/&gt;"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522088">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522089">// parse an element defined in the the first schema, but pass an extension to that</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522090">// that type that the second schema defines. THIS FAILS without using the AdditionalSchemas feature</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522091">var element = ElementFromSchema1.parse(xsdtext)</a></PRE>
+      <div class="B_-_Body"><a name="1598933">The main problem is that the </a><span class="cv_-_computer_voice">ImportXSD1</span> XSD type does not directly know about the existence of the schema called <span class="cv_-_computer_voice">ImportXSD2</span> even though it extends one of its types.</div>
+      <div class="B_-_Body"><a name="1598934">To make it work, set the </a><span class="cv_-_computer_voice">AdditionalSchemas</span> property of the <span class="cv_-_computer_voice">XmlParseOptions</span> object to a list containing one or more <span class="cv_-_computer_voice">SchemaAccess</span> objects. In other words, the following XML parsing code succeeds:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521988">var schema2 = com.guidewire.pl.docexamples.gosu.xml.importxsd2.util.SchemaAccess</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521989">var options = new gw.xml.XmlParseOptions() { :AdditionalSchemas = { schema2 } }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521991">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522030">var xsdtext =  "&lt;ElementFromSchema1 xmlns=\"urn:ImportXSD1\" xmlns:ImportXSD2=\"urn:ImportXSD2\"" +</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521992">&nbsp;</a>" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"ImportXSD2:TypeFromSchema2\"/&gt;"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521994">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1522043">// parse an element defined in the the first schema, but pass an extension to that</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521995">// that type that the second schema defines. To do this, it requires using the XmlParseOptions </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1521996">var element = ElementFromSchema1.parse(xsdtext, options)</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
