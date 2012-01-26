@@ -27,18 +27,22 @@
 		  <li>is provided via the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a></li>
         </ul>
         <div style="text-align: center;">
-            <a href="#"  onClick="if(navigator.appVersion.indexOf('Win') == -1) { 
+            <button style="font-size:24px;padding:8px;font-weight:bold" onClick="if(navigator.appVersion.indexOf('Win') == -1) { 
                                     this.href = '${latest}.tgz'
                                   } else {
                                     this.href = '${latest}.zip'
                                   }                                  
                                   return confirm('By downloading this software I confirm and accept the Gosu Terms of Use')">
-				<img src="images/btn_download.png"/>
-			</a>
+				Download
+			</button>
 			
             <div style="padding-top: 10px;">
 				<a href="intro.shtml">Learn More</a> | <a href="downloads.shtml">Installation Instructions</a>
 			</div>
+            <button style="margin-top:10px;font-size:24px;padding:8px;font-weight:bold" onClick="window.location='editors.shtml';">
+				IDE Support
+			</button>
+
         </div>
        </div>
 
