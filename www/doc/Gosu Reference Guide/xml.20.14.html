@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Default/Fixed Attribute Values</title>
+    <link rel="StyleSheet" href="css/xml.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="xml.20.01.html#1541163">Gosu and XML</a> : Default/Fixed Attribute Values</span></div>
+    <hr align="left" />
+    <div>
+      <div class="H1_-_Heading_1"><a name="1541163">Default/Fixed Attribute Values</a></div>
+      <div class="B_-_Body"><a name="1541165">The defaulting of </a><span class="cv_-_computer_voice">default</span> and <span class="cv_-_computer_voice">fixed</span> attribute/element values is solely an aspect of the statically typed property getter for that element or attribute. These values are not actually stored in the type instance’s attribute map or content list, nor are they serialized, unless explicit. Keep in mind that elements pick up their default/fixed values if and only if they exist (per the XML Schema specification).</div>
+      <div class="B_-_Body"><a name="1541167">Example:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541169">&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541170">    &lt;xsd:element name="root"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541171">        &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541172">            &lt;xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541173">                &lt;xsd:element name="person" minOccurs="0" maxOccurs="unbounded"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541174">                    &lt;xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541175">                        &lt;xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541176">                            &lt;xsd:element name="name" type="xsd:string"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541177">                        &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541178">                        &lt;xsd:attribute name="os" type="ostype" default="Windows"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541179">                        &lt;xsd:attribute name="location" type="xsd:string" fixed="San Mateo"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541180">                    &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541181">                &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541182">            &lt;/xsd:sequence&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541183">        &lt;/xsd:complexType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541184">    &lt;/xsd:element&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541185">    &lt;xsd:simpleType name="ostype"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541186">        &lt;xsd:restriction base="xsd:string"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541187">            &lt;xsd:enumeration value="Windows"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541188">            &lt;xsd:enumeration value="MacOSX"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541189">            &lt;xsd:enumeration value="Linux"/&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541190">        &lt;/xsd:restriction&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541191">    &lt;/xsd:simpleType&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541192">&lt;/xsd:schema&gt;</a></PRE>
+      <div class="B_-_Body"><a name="1541193">Code:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541194">var xml = new schema.Root()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541195">xml.Person[0].Name = "jsmith"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541196">xml.Person[0].Os = Linux</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541197">xml.Person[1].Name = "aanderson"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541198">for ( person in xml.Person ) {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541199">  print( "${person.Name} (${person.Location}) -&gt; ${person.Os}" )</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541200">}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541201">xml.print()</a></PRE>
+      <div class="B_-_Body"><a name="1541203">Output:</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541205">jsmith (San Mateo) -&gt; Linux</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541206">aanderson (San Mateo) -&gt; Windows</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541207">&lt;?xml version="1.0"?&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541208">&lt;root&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541209">  &lt;person os="Linux"&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541210">    &lt;name&gt;jsmith&lt;/name&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541211">  &lt;/person&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541212">  &lt;person&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541213">    &lt;name&gt;aanderson&lt;/name&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541214">  &lt;/person&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1541215">&lt;/root&gt;</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </div>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
