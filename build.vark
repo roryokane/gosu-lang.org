@@ -7,9 +7,6 @@ uses java.lang.*
 uses gw.util.*
 uses gw.util.process.ProcessRunner
 uses gw.util.concurrent.LazyVar
-uses org.apache.maven.artifact.ant.AttachedArtifact
-uses org.apache.maven.artifact.ant.Authentication
-uses org.apache.maven.artifact.ant.RemoteRepository
 
 uses www.*
 
@@ -87,28 +84,4 @@ private function buildIndexPage() {
 
 private function buildDownloadsPage() {
   buildDir.getChild( "www/downloads.shtml" ).write( Downloads.renderToString( _current ) )
-}
-
-/* 
- * Deploys the entire internal website
- */
-function deployInternal() {
-  log( "Deploying" )
-  Ant.scp( :filesetList = {buildDir.file( "www" ).fileset()}, 
-           :todir="root@opensource-internal:/var/www/html/gosu",
-           :password=Shell.readMaskedLine( "Password:" ),
-           :trust=true,
-           :verbose=true )
-}
-
-/* 
- * Deploys the entire external website
- */
-function deployExternal() {
-  log( "Deploying" )
-  Ant.scp( :filesetList = {buildDir.file( "www" ).fileset()}, 
-           :todir="root@gosu-lang.org:/var/www/html",
-           :password=Shell.readMaskedLine( "Password:" ),
-           :trust=true,
-           :verbose=true )
 }
