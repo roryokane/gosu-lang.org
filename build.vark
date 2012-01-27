@@ -12,7 +12,7 @@ uses www.*
 
 DefaultTarget = "build-website"
 
-var _current = "downloads/gosu-0.8.6.1-C/gosu-0.8.6.1-C"
+var _current = "downloads/gosu-0.9-RC1/gosu-0.9-RC1"
 
 var binariesRepository = LazyVar.make(\ -> {
   // TODO - use a target arg or system property rather than hard coding
