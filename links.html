@@ -28,16 +28,8 @@
               <li><a href="docs/index.html">Long form documentation</a></li>
             </ul>
           </li>
-          <li><a href="news.html">News</a></li>
           <li><a href="downloads.html">Downloads</a></li>
-          <li class="dropdown active">
-            <a class="dropdown-toggle" href="#">Links</a>
-            <ul class="dropdown-menu">
-              <li><a href="links.html#group">gosu-lang Google Group</a></li>
-              <li><a href="links.html#vark">Aardvark - Sane build scripts</a></li>
-              <li><a href="links.html#ronin">Ronin - MVC web framework</a></li>
-            </ul>
-          </li>
+          <li><a href="links.html">Links</a></li>
         </ul>
       </div>
     </div>
@@ -46,58 +38,99 @@
 
 
   <div class="container">
-    <h1>Related Links</h1>
-
     <section id="group">
       <div class="page-header">
-        <h1>gosu-lang <small>Got problems? We've got answers</small></h1>
+	      <h1>Gosu Resources</h1>
       </div>
-      <p>Need help getting your gosu program off the ground? Want to discuss features in the next release? Subscribe to the gosu-lang Google group.</p>
+      <h2>The gosu-lang Newsgroup <small>Got problems? We've got answers, or at least snide remarks.</small></h2>
+      <p>Need help getting your gosu program off the ground? Want to discuss features in the next release? Subscribe to the gosu-lang Google group:</p>
       <p><a href="http://groups.google.com/group/gosu-lang">groups.google.com/group/gosu-lang</a></p>
+
+      <h2>Report Bugs <small>Works for me!</small></h2>
+      <p>You can report bugs on Github: <a href="https://github.com/gosu-lang/gosu/issues">https://github.com/gosu-lang/gosu/issues</a></p>
+
+      <h2>Examples</h2>
+      <p>We have a few small example projects available on Github:</p>
+      <p><a href="https://github.com/gosu-lang/gosu-example-dynamictype">https://github.com/gosu-lang/gosu-example-dynamictype</a></p>
+      <p><a href="https://github.com/gosu-lang/gosu-example-servlet">https://github.com/gosu-lang/gosu-example-servlet</a></p>
+
+    </section>
+
+    <div class='page-header'>
+	    <br/>
+	    <h1>Gosu-Related Projects</h1>
+    </div>
+    <br/>
+    <section id="ronin">
+      <div class="page-header">
+        <h2>Ronin <small>MVC Web Framework built for Gosu</small></h2>
+      </div>
+      <p>Excerpt from the <a href="http://ronin-web.org">Ronin</a> website:</p>
+      <blockquote>
+        <p>Imagine you're developing a web application with a typical web framework. You've noticed a bug on some page of your app - how do you fix it? Maybe you'll look for some distinctive text on the page, then search for that text in your project using your favorite IDE. Say the text turns up a template which was used to generate the page. Now you have to track down the data that was used to render the template, which means you need to find the code that retrieved the data, and maybe an XML configuration file which specifies how that data was mapped to an identifier used in the template. If you're not intimately familiar with the inner workings of the app, and of the framework you're using, you've got a lot of searching to do.
+<br><br>
+With Ronin, everything is out in the open - there's no reflective magic or arcane XML files. The URL in your browser tells you which method on which class was called to generate the current page. That method contains a call to render the template for the page, and an explicit set of parameters providing the data for the template. With an IDE, you can navigate between all these different pieces with a single click. And best of all, should you make a mistake - misspell a file name, or leave out a parameter - there will be a compilation error, so you'll know right away instead of having to exhaustively walk through your app (or maintain 100% unit test coverage).</p>
+      </blockquote>
+      <p>Sounds pretty fantastic, right? It is. Check it out at <a href="http://ronin-web.org">ronin-web.org</a></p>
+
+      <h3>Ronin Plugins</h3>
+      <p>Ronin also has a small but growing number of plugins:</p>
+      <p><b><a href="https://github.com/carsongross/ronin-coffee">ronin-coffee</a></b> - support for CoffeeScript in ronin</p>
+      <p><b><a href="https://github.com/carsongross/ronin-less">ronin-less</a></b> - support for LessCSS in ronin</p>
+      <p><b><a href="https://github.com/carsongross/ronin-ws">ronin-ws</a></b> - support for XML Web Services in ronin</p>
+      <p><b><a href="https://github.com/carsongross/goson">goson</a></b> - support for JSchema in ronin (Goson is more than a plugin, see below, but can be used to expose JSchema-RPC endpoints)</p>
     </section>
 
     <section id="vark">
       <div class="page-header">
-        <h1>Aardvark <small>Sane build scripts written in Gosu</small></h1>
+        <h2>Aardvark <small>A Sane Build and System Scripting Tool</small></h2>
       </div>
-      <p>Some shit about how great it is compared to ant.  Blah blah blah.  We need to talk to <strong>Brian</strong> to get the verbiage here.</p>
-      <br>
-      <p>Read all about it over at <a href="http://vark.github.com">vark.github.com</a></p>
+      <p>Aardvark is a gosu-based scripting environment that exposes familiar Ant functionality in a more comfortable programming environment.  It also includes integration with Maven for easy dependency resolution and management.</p>
+      <p>Check it out at <a href="http://vark.github.com">vark.github.com</a></p>
     </section>
 
-    <section id="ronin">
+    <section id="goson">
       <div class="page-header">
-        <h1>Ronin <small>MVC Web Framework written in and for Gosu</small></h1>
+        <h2>Goson <small>JSON/JSchema support for Gosu</small></h2>
       </div>
-      <p>Exerpt from the <a href="http://ronin-web.org">Ronin</a> website:</p>
-      <blockquote>
-        <p>Imagine you're developing a web application with a typical web framework. You've noticed a bug on some page of your app - how do you fix it? Maybe you'll look for some distinctive text on the page, then search for that text in your project using your favorite IDE. Say the text turns up a template which was used to generate the page. Now you have to track down the data that was used to render the template, which means you need to find the code that retrieved the data, and maybe an XML configuration file which specifies how that data was mapped to an identifier used in the template. If you're not intimately familiar with the inner workings of the app, and of the framework you're using, you've got a lot of searching to do.
-<br><br>
-With Ronin, everything is out in the open - there's no reflective magic or arcane XML files. The URL in your browser tells you which method on which class was called to generate the current page. That method contains a call to render the template for the page, and an explicit set of parameters providing the data for the template. If you're using Eclipse, you can navigate between all these different pieces with a single click. And best of all, should you make a mistake - misspell a file name, or leave out a parameter - there will be a compilation error, so you'll know right away instead of having to exhaustively walk through your app (or maintain 100% unit test coverage).</p>
-      </blockquote>
-      <p>Sounds pretty fantastic, right? It is. Check it out at <a href="http://ronin-web.org">ronin-web.org</a></p>
-
-      <h2>Ronin Plugins + Extensions</h2>
-
-      <h3>goson</h3>
-      <p>The trend these days to use JSON to express your data is constantly growing and with good reason. We love JSON, but we also love type-safe programming. When we use the goson type-loader, we get both.  Everybody wins!</p>
-      <p>Here is a short list of some of the features of goson:
-      <ul>
-        <li>Tools for parsing, validating and producing JSON</li>
-        <li>A Gosu type loader For <a href="http://jschema.org">JSchema</a> (<code>.jsc</code>), <a href="http://json.org">JSON</a> (<code>.json</code>) and <a href="http://jschema.org/rpc.html">JSchema-RPC</a> (<code>.jsc-rpc</code>) documents</li>
-        <li>A servlet filter that can be used to publish JSchema-RPC end points</li>
-        <li>A simple HTTP server that can be used to publish JSchema-RPC end points</li>
-      </ul>
-      <p>Do yourself a favor and check out the <a href="https://github.com/carsongross/Goson">goson project page</a> for more details and examples.</p>
-
-      <h3>romail</h3>
-      <p>Should this be included here, or at the top level?</p>
-
-      <h3>ronin-coffee</h3>
-      <p>Do you prefer to use coffeescript over standard javascript in your web applications? Apparently you're not alone. With the
-<a href="https://github.com/carsongross/ronin-coffee">ronin-coffee</a> plugin for Ronin, blah blah blah.</p>
+	    <p>The trend these days to use JSON to express your data is constantly growing and with good reason. We love JSON, but we also love type-safe programming. When we use the goson type-loader, we get both.  Everybody wins!</p>
+	    <p>Here is a short list of some of the features of goson:
+	    <ul>
+	      <li>Tools for parsing, validating and producing JSON</li>
+	      <li>A Gosu type loader For <a href="http://jschema.org">JSchema</a> (<code>.jsc</code>), <a href="http://json.org">JSON</a> (<code>.json</code>) and <a href="http://jschema.org/rpc.html">JSchema-RPC</a> (<code>.jsc-rpc</code>) documents</li>
+	      <li>A servlet filter that can be used to publish JSchema-RPC end points</li>
+	      <li>A simple HTTP server that can be used to publish JSchema-RPC end points</li>
+	    </ul>
+	    <p>Do yourself a favor and check out the <a href="https://github.com/carsongross/Goson">goson project page</a> for more details and examples.</p>
     </section>
-  </div>
+
+    <section id="romail">
+      <div class="page-header">
+        <h2>RoMail <small>JavaMail... Yeah.</small></h2>
+      </div>
+	    <p>JavaMail provides a bunch of great functionality wrapped up in a very... difficult... API</p>
+	    <p>RoMail is wraps JavaMail up in a nice, clean API that leverages many Gosu language features.  While it is designed to be used with Ronin, it is a stand-alone project and does not depend on Ronin.</p>
+    </section>
+
+    <section id="romail">
+      <div class="page-header">
+        <h2>Gosu Mode for Emacs <small>For the cold, dead hands crowd.</small></h2>
+      </div>
+      <p>Still prefer to use Emacs? No problem.  For you crazy kids, we've got a Gosu emacs mode plugin.</p>
+      <p>Download the <a href="downloads/gosu-mode.el">gosu-mode.el</a> Emacs mode.</p>
+    </section>
+
+    <section id="romail">
+      <div class="page-header">
+        <h2>Textmate Gosu Bundle <small>Please.  Use IntelliJ.  But if you insist.</small></h2>
+      </div>
+      <p><a href="https://github.com/jpcamara/Textmate-Gosu-Bundle">Here you go.</a></p>
+    </section>
+
+		<br/>  
+		<br/>  
+		<br/>  
+</div>
 <script>
   $('#topbar').dropdown();
 </script>
