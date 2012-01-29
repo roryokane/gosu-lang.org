@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="style/bootstrap.min.css">
   <link rel="stylesheet" href="script/google-code-prettify/prettify.css">
   <link rel="stylesheet" href="style/style.css">
+  <script type="text/javascript">
+     $(function() {
+				var section = location.href.split('#')[1];
+				if(section != null) {
+					scrollToSection(section);
+				}
+     });
+
+     function scrollToSection(section) {
+ 	     $('body').animate({ scrollTop: $('#' + section).offset().top - 50 }, 'fast');
+     }
+
+  </script>
 </head>
 <body>
   <div id="topbar" class="topbar">
@@ -19,13 +32,13 @@
           <li class="dropdown active">
             <a class="dropdown-toggle" href="docs.html">Documentation</a>
             <ul class="dropdown-menu">
-              <li><a href="docs.html#getting-started">Getting Started</a></li>
-              <li><a href="docs.html#basics">The Basics</a></li>
-              <li><a href="docs.html#gsp">Gosu Program Files</a></li>
-              <li><a href="docs.html#blocks">Blocks</a></li>
-              <li><a href="docs.html#enhancements">Enhancements</a></li>
-              <li><a href="docs.html#strings">Playing with Strings</a></li>
-              <li><a href="docs.html#collections">Collections++</a></li>
+              <li><a onClick="scrollToSection('getting-started')">Getting Started</a></li>
+              <li><a onClick="scrollToSection('basics')">The Basics</a></li>
+              <li><a onClick="scrollToSection('gsp')">Gosu Program Files</a></li>
+              <li><a onClick="scrollToSection('blocks')">Blocks</a></li>
+              <li><a onClick="scrollToSection('enhancements')">Enhancements</a></li>
+              <li><a onClick="scrollToSection('strings')">Playing with Strings</a></li>
+              <li><a onClick="scrollToSection('collections')">Collections++</a></li>
               <li class="divider"></li>
               <li><a href="docs/index.html">Long form documentation</a></li>
             </ul>
