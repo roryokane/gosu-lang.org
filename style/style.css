@@ -9,14 +9,6 @@ p {
   margin-top: 3px;
 }
 
-/*
-.topbar div > ul a, .nav a {
-  padding-bottom: 21px;
-  line-height: 29px;
-  font-size:  14px;
-}
-*/
-
 .menu-dropdown, .dropdown-menu {
   max-width: 240px;
 }
@@ -27,7 +19,8 @@ p {
 }
 
 .topbar a.brand {
-  padding-bottom: 8px;
+  padding-top: 10px;
+  padding-bottom: 9px;
 }
 
 section {
