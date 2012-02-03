@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Gosu Programming Language</title>
+  <script src="script/jquery-1.7.1.min.js"></script>
+  <script src="script/bootstrap-dropdown.js"></script>
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div id="topbar" class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <a class="brand" href="."><img src="images/gosu_120_white.png"></a>
+        <ul class="nav">
+          <li><a href=".">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="docs.html">Documentation</a>
+            <ul class="dropdown-menu">
+              <li><a href="docs.html#getting-started">Getting Started</a></li>
+              <li><a href="docs.html#basics">The Basics</a></li>
+              <li><a href="docs.html#gsp">Gosu Program Files</a></li>
+              <li><a href="docs.html#blocks">Blocks</a></li>
+              <li><a href="docs.html#enhancements">Enhancements</a></li>
+              <li><a href="docs.html#strings">Playing with Strings</a></li>
+              <li><a href="docs.html#collections">Collections++</a></li>
+              <li class="divider"></li>
+              <li><a href="docs/index.html">Long form documentation</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="news.html">News</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#">Links</a>
+            <ul class="dropdown-menu">
+              <li><a href="links.html#group">gosu-lang Google Group</a></li>
+              <li><a href="links.html#vark">Aardvark - Gosu based build scripts</a></li>
+              <li><a href="links.html#ronin">Ronin - Gosu MVC web framework</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<script>
+  $('#topbar').dropdown();
+</script>
+</body>
+</html>
+

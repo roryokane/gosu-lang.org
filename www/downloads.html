@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Gosu Programming Language</title>
+  <script src="script/jquery-1.7.1.min.js"></script>
+  <script src="script/bootstrap-dropdown.js"></script>
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div id="topbar" class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <a class="brand" href="."><img src="images/gosu_120_white.png"></a>
+        <ul class="nav">
+          <li><a href=".">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="docs.html">Documentation</a>
+            <ul class="dropdown-menu">
+              <li><a href="docs.html#getting-started">Getting Started</a></li>
+              <li><a href="docs.html#basics">The Basics</a></li>
+              <li><a href="docs.html#gsp">Gosu Program Files</a></li>
+              <li><a href="docs.html#blocks">Blocks</a></li>
+              <li><a href="docs.html#enhancements">Enhancements</a></li>
+              <li><a href="docs.html#strings">Playing with Strings</a></li>
+              <li><a href="docs.html#collections">Collections++</a></li>
+              <li class="divider"></li>
+              <li><a href="docs/index.html">Long form documentation</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="downloads.html">Downloads</a></li>
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Downloads</h1>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <h2>Gosu 0.9</h2>
+        <p>The latest and greatest</p>
+      </div>
+      <div class="span11">
+         <div class="download">      
+           <h4>Download Gosu 0.9</h4>
+           <p>Released January 25th 2012, the 0.9 release is the latest stable release.</p>
+           <ul>
+             <li><a href="#">gosu-0.9.tar.gz</a> (6.3 MB)</li>
+             <li><a href="#">gosu-0.9.zip</a> (6.7 MB)</li>
+           </ul>
+           <p>Installation is dead simple.  Just unzip/extract your download and add the bin directory to your <code>PATH</code>.
+              Be sure you have at least Java 1.6 installed as well as valid <code>JAVA_HOME</code> environment variable setup, too.</p>
+         </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="span5">
+        <h3>IntelliJ IDEA 11 Plugin</h3>
+        <p>Complete editor support</p>
+      </div>
+      <div class="span11">
+        <div class="download">
+          <p>Nobody likes writing code without good editor support. Download the Gosu plugin for IntelliJ IDEA 11 for access to all of the great features when writing gosu, including:</p>
+          <ul>
+            <li>Code completion</li>
+            <li>Compilation errors</li>
+            <li>Debugger support</li>
+            <li>Refactoring</li>
+          </ul>
+          <span>Download the Gosu Editor <a href="#">plugin</a> for IntelliJ IDEA 11</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  $('#topbar').dropdown();
+</script>
+</body>
+</html>
+

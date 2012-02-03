@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Gosu Programming Language</title>
+  <script src="script/jquery-1.7.1.min.js"></script>
+  <script src="script/bootstrap-dropdown.js"></script>
+  <script src="script/google-code-prettify/prettify.js"></script>
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="script/google-code-prettify/prettify.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div id="topbar" class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <a class="brand" href="."><img src="images/gosu_120_white.png"></a>
+        <ul class="nav">
+          <li class="active"><a href=".">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="docs.html">Documentation</a>
+            <ul class="dropdown-menu">
+              <li><a href="docs.html#getting-started">Getting Started</a></li>
+              <li><a href="docs.html#basics">The Basics</a></li>
+              <li><a href="docs.html#gsp">Gosu Program Files</a></li>
+              <li><a href="docs.html#blocks">Blocks</a></li>
+              <li><a href="docs.html#enhancements">Enhancements</a></li>
+              <li><a href="docs.html#strings">Playing with Strings</a></li>
+              <li><a href="docs.html#collections">Collections++</a></li>
+              <li class="divider"></li>
+              <li><a href="docs/index.html">Long form documentation</a></li>
+            </ul>
+          </li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="container">
+
+      <div class="hero-unit">
+        <img src="images/gosu_325.png">
+        <h2>A pragmatic language for the JVM</h2>
+        <pre class="prettyprint" style="background: white;">
+ // Type inference cuts down on the clutter
+ var minLength = 4
+
+ // Literal support for common data structures, such as Lists and Maps
+ var strings = { "red", "green", "blue" }
+
+ // Closures + pragmatic extensions to the core JVM classes
+ print( strings.where( \ s -> s.length() >= minLength ).sort().join( ", " ) )
+
+ // Utilizing the standard Java API
+ var someFile = new java.io.File( "SomeFile.txt" )
+
+ // Enhanced to make your life easier
+ someFile.write( strings.join( ", " ) )
+</pre>
+        <p>
+          <a class="btn primary large" href="downloads.html">Download Now &raquo;</a>
+          <a class="btn large" href="docs.html" style="margin-left: 8px;">Learn More &raquo;</a>
+        </p>
+      </div>
+
+      <footer>
+        <p>&copy; Guidewire Software 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+<script>
+  $('#topbar').dropdown();
+  prettyPrint();
+</script>
+</body>
+</html>
+
