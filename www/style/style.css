@@ -27,6 +27,10 @@ section {
   margin: 10px 0 20px;
 }
 
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: #A1A1A1;
+}
+
 div.download {
   padding: 9px 15px;
   background: #f6f6f6;

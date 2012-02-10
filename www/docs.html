@@ -9,15 +9,19 @@
   <link rel="stylesheet" href="script/google-code-prettify/prettify.css">
   <link rel="stylesheet" href="style/style.css">
   <script type="text/javascript">
-     $(function() {
-				var section = location.href.split('#')[1];
-				if(section != null) {
-					scrollToSection(section);
-				}
-     });
+
+	  $(window).load(function() {
+		  var section = location.href.split('#')[1];
+		  if(section != null) {
+			  scrollToSection(section);
+		  }
+	  });
 
      function scrollToSection(section) {
- 	     $('body').animate({ scrollTop: $('#' + section).offset().top - 50 }, 'fast');
+	     var sec = $('#' + section);
+	     if(sec != null) {
+	 	     $('body').animate({ scrollTop: sec.offset().top - 50 }, 'fast');		
+	     }
      }
 
   </script>
