@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>The Gosu Programming Language</title>
-  <script src="script/jquery-1.7.1.min.js"></script>
-  <script src="script/bootstrap-dropdown.js"></script>
-  <script src="script/google-code-prettify/prettify.js"></script>
+  <script src="./script/jquery-1.7.1.min.js"></script>
+  <script src="./script/bootstrap-dropdown.js"></script>
+  <script src="./script/google-code-prettify/prettify.js"></script>
   <link rel="stylesheet" href="style/bootstrap.min.css">
   <link rel="stylesheet" href="script/google-code-prettify/prettify.css">
   <link rel="stylesheet" href="style/style.css">
@@ -20,13 +20,17 @@
      function scrollToSection(section) {
 	     var sec = $('#' + section);
 	     if(sec != null) {
-	 	     $('body').animate({ scrollTop: sec.offset().top - 50 }, 'fast');		
+		     if($.browser.webkit) {
+		 	     $('body').animate({ scrollTop: sec.offset().top - 50 }, 'fast');		
+         } else {
+		 	     $('html').animate({ scrollTop: sec.offset().top - 50 }, 'fast');			
+         }
 	     }
      }
 
   </script>
 </head>
-<body>
+<body id="main">
   <div id="topbar" class="topbar">
     <div class="topbar-inner">
       <div class="container">
