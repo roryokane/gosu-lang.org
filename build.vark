@@ -40,31 +40,13 @@ function clean() {
 }
 
 /* 
- * Generates an HTML spec for the website
- */
-function genSpec() {
- /*
-  var book = build.docbook.Book.parse( file(GOSU_SPEC) )
-  var htmlConverter = new SpecHTMLConverter(){ :Book = book }
-  log( htmlConverter.genHTML() )
-  htmlConverter.writeToFile( file("www/spec.shtml") );
-*/
-}
-
-/* 
  * Prepares the website for a deployment
  */
 @Depends( "init" )
 function buildWebsite() {
 
   log( "Copying website..." )
-  Ant.copy( :filesetList={file( "." ).fileset( :includes="www/**", :excludes="**/*.gst" )}, :todir=buildDir )
-
-  log( "Create Examples zips..." )
-
-  log( "Generating dynamic web pages..." )
-  buildIndexPage()
-  buildDownloadsPage()
+  Ant.copy( :filesetList={file( "." ).fileset( :includes="www/**" )}, :todir=buildDir )
 
   log( "Copying releases to downloads" )
   if (binariesRepository.get() != null) {
@@ -76,12 +58,4 @@ function buildWebsite() {
   Ant.copy( :filesetList={file("emacs").fileset( :includes="gosu-mode.el" ) }, :todir=buildDir.getChild( "www/downloads" ) )
   
   log( "Done building website." )
-}
-
-private function buildIndexPage() {
-  buildDir.getChild( "www/index.shtml" ).write( Index.renderToString( _current ) )
-}
-
-private function buildDownloadsPage() {
-  buildDir.getChild( "www/downloads.shtml" ).write( Downloads.renderToString( _current ) )
 }
