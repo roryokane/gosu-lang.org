@@ -2,4 +2,6 @@ access_log
 doc
 eclipse
 google*.html
+downloads/.htaccess
+repositories/
 m2
