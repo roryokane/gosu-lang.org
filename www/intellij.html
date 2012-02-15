@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IntelliJ IDEA 11 Plugin</title>
+  <script src="script/jquery-1.7.1.min.js"></script>
+  <script src="script/bootstrap-dropdown.js"></script>
+  <script src="script/google-code-prettify/prettify.js"></script>
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="script/google-code-prettify/prettify.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script type="text/javascript">
+
+	  $(window).load(function() {
+		  var section = location.href.split('#')[1];
+		  if(section != null) {
+			  scrollToSection(section);
+		  }
+	  });
+
+     function scrollToSection(section) {
+	     var sec = $('#' + section);
+	     if(sec != null) {
+	 	     $('body').animate({ scrollTop: sec.offset().top - 50 }, 'fast');		
+	     }
+     }
+
+  </script>
+</head>
+<body>
+  <div id="topbar" class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <a class="brand" href="."><img src="images/gosu_120_white.png"></a>
+        <ul class="nav">
+          <li><a href=".">Home</a></li>
+          <li class="active"><a href="intellij.html">IntelliJ Plugin</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="docs.html">Documentation</a>
+            <ul class="dropdown-menu">
+              <li><a href="docs.html#getting-started">Getting Started</a></li>
+              <li><a href="docs.html#basics">The Basics</a></li>
+              <li><a href="docs.html#gsp">Gosu Program Files</a></li>
+              <li><a href="docs.html#blocks">Blocks</a></li>
+              <li><a href="docs.html#enhancements">Enhancements</a></li>
+              <li><a href="docs.html#strings">Playing with Strings</a></li>
+              <li><a href="docs.html#collections">Collections++</a></li>
+              <li class="divider"></li>
+              <li><a href="doc/index.html">Long form documentation</a></li>
+            </ul>
+          </li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+  
+    <section id="intellij">
+      <div class="page-header">
+        <h1>IntelliJ IDEA 11 Plugin</h1>
+      </div>
+      <div>
+          <p>Nobody likes writing code without good editor support. Luckily you donlt have to. Use the Gosu plugin 
+		  for IntelliJ IDEA 11 and access all of the great features you love in IntelliJ.</p>
+
+		  <div><h3>Supported Features</h3></div>
+	      <ul>
+			<li> Create Gosu classes, programs, etc.
+			<li> Syntax highlighting and error highlighting
+			<li> Go to Declaration (including Quick Definition lookup);
+			<li> Code completion
+			<li> Parameter information
+			<li> Find Usages
+			<li> Rename and Move refactorings
+			<li> Code formatter
+			<li> Code inspections and intentions
+			<li> Structure View (including the File Structure Popup)
+			<li> Hierarchy view
+			<li> Go to Class, Go to Symbol
+			<li> Brace matching
+			<li> Code folding
+			<li> Javadoc
+			<li> Launch Gosu programs directly via IJ run configurations
+			<li> Debug Gosu
+			<li> JUnit integration
+			<li> Gosu scratchpad
+			<li> Incremental Gosu compiler
+			<li> Custom typeloader support
+			<li> Hyperlink to Gosu from stack traces
+		  </ul>
+
+		  <div><h3>Intallation</h3></div>
+          <span>
+			The plugin is hosted on the <a href="http://plugins.intellij.net/plugin/?idea_ce&id=6816">IntelliJ IDEA Plugin Repository</a>.
+			To download and install the plugin, follow these steps:</span>
+          <ol>
+            <li>Install IntelliJ IDEA 11 (either the Ultimate or Community editions) to your machine</li>
+            <li>With IntelliJ running, open the <em>Settings</em> menu and select <em>Plugins</em></li>
+            <li>Click the <em>Browse Repositories...</em> button, and search for <em>gosu</em></li>
+            <li>Right click on the Gosu plugin and select <em>Download and Install</em></li>
+            <li>After the plugin has been installed, restart IntelliJ</li>
+          </ol>
+
+		  <div><h3>FAQ</h3></div>
+          <span>
+		  Q: I created a new project but can't find the action to create new Gosu files, where are they?<br>
+		  A: Make sure you created a package first, then right-click on it and and select New->Gosu Class<br>
+		  <br>
+		  Q: Gosu does not seem to work properly in my project, but I cannot see why.<br>
+		  A: Make sure you have the Default Gosu SDK set on your project (File/Project Structure/Project).<br>
+
+		</div>
+    </section>
+
+  </div>
+<script>
+  $('#topbar').dropdown();
+  prettyPrint();
+</script>
+</body>
+</html>
+
