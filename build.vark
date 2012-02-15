@@ -12,8 +12,6 @@ uses www.*
 
 DefaultTarget = "build-website"
 
-var _current = "downloads/gosu-0.9-RC1/gosu-0.9-RC1"
-
 var binariesRepository = LazyVar.make(\ -> {
   // TODO - use a target arg or system property rather than hard coding
   var repoDir = file("/depot/opensource/gosu")
@@ -51,7 +49,7 @@ function buildWebsite() {
   log( "Copying releases to downloads" )
   if (binariesRepository.get() != null) {
     var releasesDir = binariesRepository.get().file("releases")
-    Ant.copy( :filesetList={releasesDir.fileset()}, :todir=buildDir.getChild( "www/downloads" ) )
+    Ant.copy( :filesetList={releasesDir.fileset(:excludes = "**/gosu-idea*")}, :todir=buildDir.getChild( "www/downloads" ) )
   }
 
   log( "Copying gosu-mode.el" )
