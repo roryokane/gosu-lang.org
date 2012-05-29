@@ -180,17 +180,17 @@
       <p>That's a pretty verbose way of letting users gain access to this field variable, yet Java developers are forced to do it time and again.  Now consider the same field visibility as exposed through Gosu:</p>
 <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" as Bar
+   var _bar : String as Bar = "bar"
  }</pre>
       <p>Only want to expose a getter?  No problem</p>
 <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" readonly as Bar
+   var _bar : String as readonly Bar = "bar"
  }</pre>
       <p>Gosu properties aren't limited to simple getter/setter shorthand either.  You can define your own properties however you like:
 <pre class="prettyprint">
  public class Foo {
-   var _bar = "bar" as Bar
+   var _bar : String as Bar = "bar"
    var _foo = "foo"
    property get FooBar() : String {
      return _foo + _bar
