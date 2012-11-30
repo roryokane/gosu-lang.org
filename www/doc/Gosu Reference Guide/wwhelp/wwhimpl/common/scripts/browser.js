@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHBrowserUtilities_SearchReplace(ParamString,
@@ -61,6 +61,7 @@ function  WWHBrowser_Object()
 
   this.fInitialize      = WWHBrowser_Initialize;
   this.fNormalizeURL    = WWHBrowser_NormalizeURL;
+  this.fValidateFrameReference = WWHBrowser_ValidateFrameReference;
   this.fSetLocation     = WWHBrowser_SetLocation;
   this.fReplaceLocation = WWHBrowser_ReplaceLocation;
   this.fReloadLocation  = WWHBrowser_ReloadLocation;
@@ -256,27 +257,93 @@ function  WWHBrowser_NormalizeURL(ParamURL)
   //
   URL = WWHBrowserUtilities_SearchReplace(URL, " ", "%20");
 
+  // Deal with Safari perfect encoding issue
+  //
+  URL = WWHBrowserUtilities_SearchReplace(URL, "%23", "#");
+
   return URL;
+}
+
+function  WWHBrowser_ValidateFrameReference(ParamFrameReference, ParamAction)
+{
+  var  VarFrame;
+
+  // Ensure required frames can be resolved (required for Mac Help)
+  //
+  if (ParamFrameReference !== undefined)
+  {
+    try
+    {
+      // Frame not yet created?
+      //
+      VarFrame = eval(ParamFrameReference);
+      if (VarFrame !== undefined)
+      {
+        // File not yet loaded?
+        //
+        if (VarFrame.location.href === "about:blank")
+        {
+          // Try to set the appropriate file path
+          //
+          VarFrame.location.replace(WWHStringUtilities_GetBaseURL(location.href) + "wwhelp/wwhimpl/common/html/blank.htm");
+
+          // Try again in a bit
+          //
+          setTimeout(function () {
+              WWHFrame.WWHBrowser.fValidateFrameReference(ParamFrameReference, ParamAction);
+            }, 10);
+        }
+        else
+        {
+          // Perform action!
+          //
+          ParamAction();
+        }
+      }
+      else
+      {
+        // Try again in a bit
+        //
+        setTimeout(function () {
+            WWHFrame.WWHBrowser.fValidateFrameReference(ParamFrameReference, ParamAction);
+          }, 10);
+      }
+    }
+    catch (err)
+    {
+      // Try again in a bit
+      //
+      setTimeout(function () {
+          WWHFrame.WWHBrowser.fValidateFrameReference(ParamFrameReference, ParamAction);
+        }, 10);
+    }
+  }
 }
 
 function  WWHBrowser_SetLocation(ParamFrameReference,
                                  ParamURL)
 {
-  var  EscapedURL;
+  this.fValidateFrameReference(ParamFrameReference,
+    function () {
+      var  EscapedURL;
 
 
-  EscapedURL = WWHBrowserUtilities_EscapeURLForJavaScriptAnchor(ParamURL);
-  setTimeout(ParamFrameReference + ".location = \"" + EscapedURL + "\";", 1);
+      EscapedURL = WWHBrowserUtilities_EscapeURLForJavaScriptAnchor(ParamURL);
+      setTimeout(ParamFrameReference + ".location = \"" + EscapedURL + "\";", 1);
+    });
 }
 
 function  WWHBrowser_ReplaceLocation(ParamFrameReference,
                                      ParamURL)
 {
-  var  EscapedURL;
+  this.fValidateFrameReference(ParamFrameReference,
+    function () {
+      var  EscapedURL;
 
 
-  EscapedURL = WWHBrowserUtilities_EscapeURLForJavaScriptAnchor(ParamURL);
-  setTimeout(ParamFrameReference + ".location.replace(\"" + EscapedURL + "\");", 1);
+      EscapedURL = WWHBrowserUtilities_EscapeURLForJavaScriptAnchor(ParamURL);
+      setTimeout(ParamFrameReference + ".location.replace(\"" + EscapedURL + "\");", 1);
+    });
 }
 
 function  WWHBrowser_ReloadLocation(ParamFrameReference)

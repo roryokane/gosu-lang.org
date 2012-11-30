@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 // Load book search info

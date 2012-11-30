@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2009 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2009-2012 Quadralay Corporation.  All rights reserved.
 //
 
 // Derived from icu/source/data/unidata/DerivedCoreProperties.txt

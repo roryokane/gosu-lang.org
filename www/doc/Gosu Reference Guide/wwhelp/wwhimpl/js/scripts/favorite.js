@@ -1,4 +1,4 @@
-// Copyright (c) 2005-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2005-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHFavorites_Object()
@@ -23,6 +23,8 @@ function  WWHFavorites_Object()
   this.fAdvanceHTMLSegment     = WWHFavorites_AdvanceHTMLSegment;
   this.fGetHTMLSegment         = WWHFavorites_GetHTMLSegment;
   this.fEndHTMLSegments        = WWHFavorites_EndHTMLSegments;
+  this.fFocusTitle             = WWHFavorites_FocusTitle;
+  this.fFocusAddButton         = WWHFavorites_FocusAddButton;
   this.fPanelNavigationLoaded  = WWHFavorites_PanelNavigationLoaded;
   this.fPanelViewLoaded        = WWHFavorites_PanelViewLoaded;
   this.fHoverTextTranslate     = WWHFavorites_HoverTextTranslate;
@@ -113,24 +115,49 @@ function  WWHFavorites_NavigationBodyHTML()
     }
 
     this.mHTMLSegment.fAppend("<form name=\"WWHFavoritesForm\"" + VarOnSubmitAttribute + ">\n");
-    this.mHTMLSegment.fAppend(" <table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"4px\">\n");
-    this.mHTMLSegment.fAppend("  <tr>\n");
-    this.mHTMLSegment.fAppend("   <td width=\"100%\">\n");
-    this.mHTMLSegment.fAppend("    <table width=\"100%\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n");
-    this.mHTMLSegment.fAppend("     <tr>\n");
-    this.mHTMLSegment.fAppend("      <td width=\"100%\">\n");
-    this.mHTMLSegment.fAppend("<div>");
-    this.mHTMLSegment.fAppend((this.mCurrent.mTitle.length > 0) ? this.mCurrent.mTitle : "&#160;");
-    this.mHTMLSegment.fAppend("</div>");
-    this.mHTMLSegment.fAppend("      </td>\n");
-    this.mHTMLSegment.fAppend("     </tr>\n");
-    this.mHTMLSegment.fAppend("    </table>\n");
-    this.mHTMLSegment.fAppend("   </td>\n");
-    this.mHTMLSegment.fAppend("   <td>\n");
-    this.mHTMLSegment.fAppend("    <input type=\"submit\" value=\"" + VarButtonLabel + "\" />\n");
-    this.mHTMLSegment.fAppend("   </td>\n");
-    this.mHTMLSegment.fAppend("  </tr>\n");
-    this.mHTMLSegment.fAppend(" </table>\n");
+
+    // Accessibility support
+    //
+    if (WWHFrame.WWHHelp.mbAccessible)
+    {
+      // Determine message to display
+      //
+      AccessibilityMessage = VarButtonLabel + " " + this.mCurrent.mTitle;
+
+      // Label button input
+      //
+      this.mHTMLSegment.fAppend("<label for=\"WWHFavoritesAddButton\">");
+      this.mHTMLSegment.fAppend(AccessibilityMessage);
+      this.mHTMLSegment.fAppend("</label>");
+      this.mHTMLSegment.fAppend("<br />");
+      this.mHTMLSegment.fAppend("<div>");
+      this.mHTMLSegment.fAppend("<input tabindex=\"1\" type=\"text\" name=\"WWHFavoritesTitle\" size=\"20\" value=\"" + WWHStringUtilities_EscapeHTML(this.mCurrent.mTitle) + "\">\n");
+      this.mHTMLSegment.fAppend("&#160;");
+      this.mHTMLSegment.fAppend("<input tabindex=\"2\" type=\"submit\" name=\"WWHFavoritesAddButton\" value=\"" + VarButtonLabel + "\" />\n");
+      this.mHTMLSegment.fAppend("</div>");
+    }
+    else
+    {
+      this.mHTMLSegment.fAppend(" <table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"4px\" role=\"presentation\">\n");
+      this.mHTMLSegment.fAppend("  <tr>\n");
+      this.mHTMLSegment.fAppend("   <td width=\"100%\">\n");
+      this.mHTMLSegment.fAppend("    <table width=\"100%\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n");
+      this.mHTMLSegment.fAppend("     <tr>\n");
+      this.mHTMLSegment.fAppend("      <td width=\"100%\">\n");
+      this.mHTMLSegment.fAppend("<div>");
+      this.mHTMLSegment.fAppend((this.mCurrent.mTitle.length > 0) ? this.mCurrent.mTitle : "&#160;");
+      this.mHTMLSegment.fAppend("</div>");
+      this.mHTMLSegment.fAppend("      </td>\n");
+      this.mHTMLSegment.fAppend("     </tr>\n");
+      this.mHTMLSegment.fAppend("    </table>\n");
+      this.mHTMLSegment.fAppend("   </td>\n");
+      this.mHTMLSegment.fAppend("   <td>\n");
+      this.mHTMLSegment.fAppend("    <input tabindex=\"1\" type=\"submit\" name=\"WWHFavoritesAddButton\" value=\"" + VarButtonLabel + "\" />\n");
+      this.mHTMLSegment.fAppend("   </td>\n");
+      this.mHTMLSegment.fAppend("  </tr>\n");
+      this.mHTMLSegment.fAppend(" </table>\n");
+    }
+
     this.mHTMLSegment.fAppend("</form>\n");
   }
 
@@ -200,7 +227,16 @@ function  WWHFavorites_StartHTMLSegments()
 {
   this.mDisplayIndex = 0;
 
-  return "";
+  this.mHTMLSegment.fReset();
+
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    this.mHTMLSegment.fAppend("<h2>");
+    this.mHTMLSegment.fAppend(WWHStringUtilities_EscapeHTML(this.mPanelTabTitle));
+    this.mHTMLSegment.fAppend("</h2>");
+  }
+
+  return this.mHTMLSegment.fGetBuffer();
 }
 
 function  WWHFavorites_AdvanceHTMLSegment()
@@ -220,27 +256,34 @@ function  WWHFavorites_AdvanceHTMLSegment()
   {
     VarFavoritesEntry = this.mFavorites[this.mDisplayIndex];
 
+    VarAccessibilityTitle = " title=\"" + WWHStringUtilities_EscapeHTML(VarFavoritesEntry.mTitle) + "\"";
     if (VarAccessible)
     {
-      VarAccessibilityTitle = " title=\"" + WWHStringUtilities_EscapeHTML(VarFavoritesEntry.mTitle) + "\"";
+      this.mHTMLSegment.fAppend("<div>");
+      this.mHTMLSegment.fAppend("<a href=\"javascript:fC(" + this.mDisplayIndex + ");\"" + this.fGetPopupAction(this.mDisplayIndex) + VarAccessibilityTitle + ">");
+      this.mHTMLSegment.fAppend(VarFavoritesEntry.mTitle);
+      this.mHTMLSegment.fAppend("</a>");
+      this.mHTMLSegment.fAppend("</div>");
     }
-
-    this.mHTMLSegment.fAppend("<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"2\">");
-    this.mHTMLSegment.fAppend("<tr>");
-    this.mHTMLSegment.fAppend("<td width=\"17\" valign=\"middle\">");
-    this.mHTMLSegment.fAppend("<a href=\"javascript:fC(" + this.mDisplayIndex + ");\">");
-    this.mHTMLSegment.fAppend("<img border=\"0\" src=\"" + WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/images/doc.gif\" width=\"17\" height=\"17\" alt=\"\">");
-    this.mHTMLSegment.fAppend("</a>");
-    this.mHTMLSegment.fAppend("</td>");
-    this.mHTMLSegment.fAppend("<td width=\"100%\" align=\"left\" valign=\"middle\">");
-    this.mHTMLSegment.fAppend("<div>");
-    this.mHTMLSegment.fAppend("<a href=\"javascript:fC(" + this.mDisplayIndex + ");\"" + this.fGetPopupAction(this.mDisplayIndex) + VarAccessibilityTitle + ">");
-    this.mHTMLSegment.fAppend(VarFavoritesEntry.mTitle);
-    this.mHTMLSegment.fAppend("</a>");
-    this.mHTMLSegment.fAppend("</div>");
-    this.mHTMLSegment.fAppend("</td>");
-    this.mHTMLSegment.fAppend("</tr>");
-    this.mHTMLSegment.fAppend("</table>\n");
+    else
+    {
+      this.mHTMLSegment.fAppend("<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"2\">");
+      this.mHTMLSegment.fAppend("<tr>");
+      this.mHTMLSegment.fAppend("<td width=\"17\" valign=\"middle\">");
+      this.mHTMLSegment.fAppend("<a href=\"javascript:fC(" + this.mDisplayIndex + ");\">");
+      this.mHTMLSegment.fAppend("<img border=\"0\" src=\"" + WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/images/doc.gif\" width=\"17\" height=\"17\" alt=\"\">");
+      this.mHTMLSegment.fAppend("</a>");
+      this.mHTMLSegment.fAppend("</td>");
+      this.mHTMLSegment.fAppend("<td width=\"100%\" align=\"left\" valign=\"middle\">");
+      this.mHTMLSegment.fAppend("<div>");
+      this.mHTMLSegment.fAppend("<a href=\"javascript:fC(" + this.mDisplayIndex + ");\"" + this.fGetPopupAction(this.mDisplayIndex) + VarAccessibilityTitle + ">");
+      this.mHTMLSegment.fAppend(VarFavoritesEntry.mTitle);
+      this.mHTMLSegment.fAppend("</a>");
+      this.mHTMLSegment.fAppend("</div>");
+      this.mHTMLSegment.fAppend("</td>");
+      this.mHTMLSegment.fAppend("</tr>");
+      this.mHTMLSegment.fAppend("</table>\n");
+    }
 
     this.mDisplayIndex++;
   }
@@ -258,15 +301,61 @@ function  WWHFavorites_EndHTMLSegments()
   return "";
 }
 
+function  WWHFavorites_FocusTitle()
+{
+  var VarPanelNavigationFrame, VarFavoritesForm;
+
+  WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame");
+  VarPanelNavigationFrame = eval(WWHFrame.WWHHelp.fGetFrameReference("WWHPanelNavigationFrame"));
+  VarFavoritesForm = VarPanelNavigationFrame.document.forms["WWHFavoritesForm"];
+  if (VarFavoritesForm !== undefined)
+  {
+    VarFavoritesForm.elements["WWHFavoritesTitle"].focus();
+  }
+}
+
+function  WWHFavorites_FocusAddButton()
+{
+  var VarPanelNavigationFrame, VarFavoritesForm;
+
+  WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame");
+  VarPanelNavigationFrame = eval(WWHFrame.WWHHelp.fGetFrameReference("WWHPanelNavigationFrame"));
+  VarFavoritesForm = VarPanelNavigationFrame.document.forms["WWHFavoritesForm"];
+  if (VarFavoritesForm !== undefined)
+  {
+    VarFavoritesForm.elements["WWHFavoritesAddButton"].focus();
+  }
+}
+
 function  WWHFavorites_PanelNavigationLoaded()
 {
   // Set focus
   //
-  WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame");
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    this.fFocusTitle();
+  }
+  else
+  {
+    this.fFocusAddButton();
+  }
+
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelNavigationFrame");
+  }
 }
 
 function  WWHFavorites_PanelViewLoaded()
 {
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelViewFrame");
+  }
 }
 
 function  WWHFavorites_HoverTextTranslate(ParamEntryID)

@@ -37,7 +37,7 @@ text_val.select();
 }
 </script>
   </head>
-  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
     <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
     <div id="linkToThisPage" class="popup" style="display: none;">
       <div class="popupTitle">Link Directly to This Page 
@@ -54,12 +54,12 @@ text_val.select();
       <span>Gosu Reference Guide</span> : 
     <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="intro.03.01.html#1467541">Gosu Introduction</a> : <a class="WebWorks_Breadcrumb_Link" href="intro.03.04.html#1467541">More About the Gosu Type System</a> : Compile Time Error Prevention</span></div>
     <hr align="left" />
-    <div>
+    <blockquote>
       <div class="H2B_-_Heading_2_Break"><a name="1467541">Compile Time Error Prevention</a></div>
       <div class="B_-_Body"><a name="1456666">Static typing allows you to detect most type-related errors at compile time. This increases reliability of your code </a>at run time. This is critical for real-world production systems. When the Gosu editor detects compilation compilation errors and warnings, it displays them in the user interface as you edit Gosu source code.</div>
       <div class="B_-_Body"><a name="1432891">For example, functions (including object methods) take parameters and return a value. The information about the </a>type of each parameter and the return type is known at compile time. During compilation, Gosu enforces the following constraints:</div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -72,8 +72,8 @@ text_val.select();
           </tr>
         </table>
       </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -86,8 +86,8 @@ text_val.select();
           </tr>
         </table>
       </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -116,7 +116,7 @@ text_val.select();
           document.writeln(WWHRelatedTopicsInlineHTML());
         // -->
       </script>
-    </div>
+    </blockquote>
     <script type="text/javascript" language="JavaScript1.2">
       <!--
         document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());

@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHIndex_Object()
@@ -166,14 +166,14 @@ function  WWHIndex_ProcessSeeAlsoEntries()
 
     // Access group entry
     //
-    VarSeeAlsoGroupEntry = this.mTopEntry.mChildren[VarEntry.mSeeAlsoGroupKey + "~"];
+    VarSeeAlsoGroupEntry = this.mTopEntry.mChildren[VarEntry.mSeeAlsoGroupKey];
     if ((typeof(VarSeeAlsoGroupEntry) != "undefined") &&
         (VarSeeAlsoGroupEntry != null) &&
         (VarSeeAlsoGroupEntry.mChildren != null))
     {
       // Access see also entry
       //
-      VarSeeAlsoEntry = VarSeeAlsoGroupEntry.mChildren[VarEntry.mSeeAlsoKey + "~"];
+      VarSeeAlsoEntry = VarSeeAlsoGroupEntry.mChildren[VarEntry.mSeeAlsoKey];
       if ((typeof(VarSeeAlsoEntry) != "undefined") &&
           (VarSeeAlsoEntry != null))
       {
@@ -556,10 +556,23 @@ function  WWHIndex_PanelNavigationLoaded()
   // Restore focus
   //
   WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame", "in" + this.mSectionIndex);
+
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelNavigationFrame");
+  }
 }
 
 function  WWHIndex_PanelViewLoaded()
 {
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelViewFrame");
+  }
 }
 
 function  WWHIndex_HoverTextTranslate(ParamEntryInfo)
@@ -1377,12 +1390,12 @@ function  WWHIndexEntry_AddEntry(ParamText,
   // Access entry, creating it if it doesn't exist
   //
   BookIndex = WWHFrame.WWHIndex.mInitIndex;
-  ChildEntry = this.mChildren[VarKey + "~"];
+  ChildEntry = this.mChildren[VarKey];
   if (typeof(ChildEntry) == "undefined")
   {
     ChildEntry = new WWHIndexEntry_Object(bVarGroupHeading, BookIndex, ParamText,
                                           Links, VarSeeAlsoKey, VarSeeAlsoGroupKey);
-    this.mChildren[VarKey + "~"] = ChildEntry;
+    this.mChildren[VarKey] = ChildEntry;
 
     // Add entry to see also collection if it is a see also entry
     //

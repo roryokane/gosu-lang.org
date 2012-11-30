@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHHandler_Object()
@@ -152,6 +152,15 @@ function  WWHHandler_GetFrameName(ParamFrameName)
           VarName += WWHFrame.WWHHelp.mMessages.mAccessibilityListSeparator + " ";
         }
         VarName += WWHFrame.WWHJavaScript.mMessages.mTabsSearchLabel;
+      }
+
+      if (WWHFrame.WWHJavaScript.mSettings.mFavorites.mbShow)
+      {
+        if (VarName.length > 0)
+        {
+          VarName += WWHFrame.WWHHelp.mMessages.mAccessibilityListSeparator + " ";
+        }
+        VarName += WWHFrame.WWHJavaScript.mMessages.mTabsFavoritesLabel;
       }
 
       VarName = WWHStringUtilities_FormatMessage(WWHFrame.WWHJavaScript.mMessages.mAccessibilityTabsFrameName, VarName);

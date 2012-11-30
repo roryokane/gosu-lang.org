@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Objects</title>
+    <link rel="StyleSheet" href="css/datatypes.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>Gosu Reference Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="datatypes.07.1.html#1530997">Types</a> : Objects</span></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_-_Heading_1"><a name="1530997">Objects</a></div>
+      <div class="B_-_Body"><a name="1535131">The root type for all object types in Gosu is the Java class </a><span class="cv_-_computer_voice">java.lang.Object</span>. An object encapsulates some data (variables and properties) and methods (functions that act on the object). Because it is always in scope, simply type <span class="cv_-_computer_voice">Object</span> unless a similarly-named type is in scope and requires disambiguation. </div>
+      <div class="B_-_Body"><a name="1535160">Do not create objects directly with the root object type </a><span class="cv_-_computer_voice">Object</span>. However, you can create classes that extend the root object type <span class="cv_-_computer_voice">Object</span>. If you do not declare a new class to extend a specific class, your new class extends the <span class="cv_-_computer_voice">Object</span> class.</div>
+      <div class="B_-_Body"><a name="1530999">In some cases you may need to declare a variable that use the type </a><span class="cv_-_computer_voice">Object</span> to support a variety of object subclasses. For example, you can define a collection to can contain a heterogeneous mix of various object types, all of which extend the root object type Object.</div>
+      <div class="HS_-_Head_Sub"><a name="1531006">Examples</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1534826">var a : Address</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1534828">var map = new java.util.HashMap()</a></PRE>
+      <div class="B_-_Body"><a name="1534832">To create or use objects, see </a><a href="javascript:WWHClickedPopup('gosu', 'datatypes.07.4.html#1538265', '');" title="Objects">“Object Instantiation”</a>.</div>
+      <div class="B_-_Body"><a name="1531024">For more information about the Gosu type system, see </a><a href="javascript:WWHClickedPopup('gosu', 'typesystem.25.1.html#1444075', '');" title="Type System">“Type System”</a>.</div>
+      <div class="H2_-_Heading_2"><a name="1538265">Object Instantiation</a></div>
+      <div class="B_-_Body"><a name="1538267">A Gosu object is an instance of a type. A type can be a class or other construct exposed to Gosu through the type </a>system. A class is a collection of object data and methods. To instantiate the class means to use the class definition to create an in-memory copy of the object with its own object data. Other code can get or set properties on the object. Other code can call methods on the object, which are functions that perform actions on that instance unique of the object.</div>
+      <div class="HS_-_Head_Sub"><a name="1538936">Creating New Objects</a></div>
+      <div class="B_-_Body"><a name="1538938">You use the Gosu </a><span class="cv_-_computer_voice">new</span> operator to create an instance from a class definition or other type that can be instantiated. </div>
+      <div class="B_-_Body"><a name="1539067">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1538939">new java.util.ArrayList()</a>&nbsp;//&nbsp;Create an instance of an ArrayList.</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1538286">new Number[5]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create an array of numbers.</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1538287">new LossCause[3] </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create an array of loss causes.</PRE>
+      <div class="B_-_Body"><a name="1538291">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.08.10.html#1595812', '');" title="New Object Expressions">“New Object Expressions”</a> for more details.</div>
+      <div class="H2_-_Heading_2"><a name="1538294">Object Property Assignment</a></div>
+      <div class="B_-_Body"><a name="1538295">Property assignment is similar to variable assignment.</a></div>
+      <div class="HS_-_Head_Sub"><a name="1538296">Syntax</a></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538297">&lt;object-property-path&gt; = &lt;expression&gt;</a></span></div>
+      <div class="B_-_Body"><a name="1538298">However, properties can be write-protected (as well as read-protected). For example, the following Gosu code:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1538299">Activity.UpdateTime = "Mar 17, 2006"</a></div>
+      <div class="B_-_Body"><a name="1538300">causes the following error:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1538301">Property, UpdateTime, of class Activity, is not writable</a></div>
+      <div class="HS_-_Head_Sub"><a name="1538302">Example</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1538303">myObject.Prop = "Test Value" </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1538304">var startTime = myObject.UpdateTime</a></PRE>
+      <div class="H2_-_Heading_2"><a name="1538306">Object Property Access</a></div>
+      <div class="B_-_Body"><a name="1538307">Gosu retrieves a property’s value using the period operator. You can chain this expression with additional prop</a>erty accessors. For important details about how Gosu handles <span class="cv_-_computer_voice">null</span> values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.08.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a>.</div>
+      <div class="HS_-_Head_Sub"><a name="1538311">Syntax</a></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538312">object.</a></span><span class="pc_-_parameter_in_code">PROPERTY_NAME</span></div>
+      <div class="HS_-_Head_Sub"><a name="1538313">Examples</a></div>
+      <div class="T_-_Table"><a name="1538327">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" cellspacing="10" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538316">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538318">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538320">Claim.Contacts.Attorney.Name </a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538322">Some Name</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538324">Claim.Addresses.State</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538326">New Mexico</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_-_Heading_2"><a name="1538329">Object Methods</a></div>
+      <div class="B_-_Body"><a name="1538330">An object property can be any valid data type, including an array, a function, or another object. An object func</a>tion is generally called a <span class="e_-_emphasis">method</span>. Invoking a method on an object is similar to accessing an object property, with the addition of parenthesis at the end to denote the function. Gosu uses the dot notation to call a method on a object instance. For more details about how Gosu handles <span class="cv_-_computer_voice">null</span> values in the expression to the left of the period, see <a href="javascript:WWHClickedPopup('gosu', 'expressions.08.19.html#1655838', '');" title="Handling Null Values In Expressions">“Handling Null Values In Expressions”</a>.</div>
+      <div class="HS_-_Head_Sub"><a name="1538336">Syntax</a></div>
+      <div class="CS_-_Code_Single_Line" style="font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="pc_-_parameter_in_code"><a name="1538337">object</a></span><span class="cvt_-_computer_voice_table">.</span><span class="pc_-_parameter_in_code">METHOD_NAME</span><span class="cvt_-_computer_voice_table">()</span></div>
+      <div class="HS_-_Head_Sub"><a name="1538338">Example</a></div>
+      <div class="T_-_Table"><a name="1538352">&nbsp;</a></div>
+      <table class="withoutHeading" style="text-align: left" cellspacing="10" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538341">Expression</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1538343">Result</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538345">claim.isClosed()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538347">Return a Boolean value indicating the status of Claim</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538349">claim.resetFlags()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1538351">Reset flags for this claim</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1539956">See </a><a href="javascript:WWHClickedPopup('gosu', 'expressions.08.17.html#1161201', '');" title="Static Method Calls">“Static Method Calls”</a> for more details. See also <a href="javascript:WWHClickedPopup('gosu', 'typesystem.25.4.html#1455649', '');" title="Using Reflection">“Using Reflection”</a> for regarding using type information to determine methods of an object.</div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

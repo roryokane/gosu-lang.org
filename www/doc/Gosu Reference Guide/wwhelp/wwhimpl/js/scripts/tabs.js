@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHTabs_Object(ParamPanels)
@@ -85,7 +85,7 @@ function  WWHTabs_BodyHTML()
   //
   if (WWHFrame.WWHBrowser.mBrowser != 1)  // Shorthand for Netscape
   {
-    TabsHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">\n";
+    TabsHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" role=\"presentation\">\n";
     TabsHTML += "<tr>";
   }
 
@@ -151,7 +151,7 @@ function  WWHTabs_BodyHTML()
     {
       TableWidth = "100%";
     }
-    TabsHTML += "<table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"" + TableWidth + "\">";
+    TabsHTML += "<table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"" + TableWidth + "\" role=\"presentation\">";
 
     // Top spacer
     //

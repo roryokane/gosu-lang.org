@@ -1,4 +1,5 @@
-
+// BEGIN_GUIDEWIRE_EDIT
+// BEGINNING OF GUIDEWIRE LARGE BLOCK
 // get the context, which is the shortname for the book, such as rules, studio, etc
 function Guidewire_GetContext(thisPane) {
    var  info;
@@ -53,31 +54,31 @@ function Guidewire_GetSourceFile(thisPane) {
  return VarLastSectionInURL ;
 }
 
+
 // this function takes a topic Name and converts it to a simpler string, such as underscores instead of space chars
 // This is also important because FrameMaker + ePubs's  native handling of topic alias names mirror this behavior
 //
-// IMPORTANT: IF YOU CHANGE THIS CODE, ALSO CHANGE THE MIRROR FUNCTION IN TOPICUTILS.FSL
+// IMPORTANT: IF YOU CHANGE THIS CODE IN CONTROLS.JS (IN TEMPLATE OVERRIDES), ALSO CHANGE THE MIRROR FUNCTION IN TOPICUTILS-JAVASCRIPT.JS
+// IMPORTANT: IF YOU CHANGE THIS CODE IN TOPICUTILS.FSL, ALSO CHANGE THE MIRROR FUNCTION IN CONTROLS.JS (IN TEMPLATE OVERRIDES)
+// THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION ENCODES it and compares against the input string with the full name for each topic (potentially with funny characters)
 function Guidewire_SafeTopicName(theTitle) {
-
-  // convert space and non-breaking space chars
-  theTitle = theTitle.replace(/ /g, "_");  // converts space char
-  theTitle = theTitle.replace(/\u00a0/g, "_");  // converts nbsp char
-
-  // censor (remove) characters that mess up epublisher in URLs: forward slash, backslash, question mark, &amp;
-  theTitle= theTitle.replace(/[\\\/\?]/g, "");
-  //alert(theTitle);// DEBUG
-  theTitle = theTitle.replace(/&/g, "");
-  theTitle = theTitle.replace(/\u201c/g, "'"); // single quote smart
-  theTitle = theTitle.replace(/\u201d/g, "'"); // single quote smart
-  theTitle = theTitle.replace(/\u2018/g, "'"); // dub quote smart
-  theTitle = theTitle.replace(/\u2019/g, "'"); // dub quote smart
-  theTitle = theTitle.replace(/\u2122/g, ""); // trademark
-  theTitle = theTitle.replace(/\</g, "(");  // open bracket
-  theTitle = theTitle.replace(/\>/g, ")");   // close bracket
-  theTitle = theTitle.replace(/:/g, "_");    // colon
-  //alert(theTitle);// DEBUG
- return (theTitle);
-}
+theTitle = theTitle.replace(/ /g, "_");  // converts space char
+theTitle = theTitle.replace(/\u00a0/g, "_");  // converts nbsp char
+// censor (remove) characters that mess up epublisher in URLs: forward slash, backslash, question mark, &amp;
+theTitle= theTitle.replace(/[\\\/\?]/g, "");
+theTitle = theTitle.replace(/&/g, "");
+theTitle = theTitle.replace(/\u201c/g, ""); // double quote smart L
+theTitle = theTitle.replace(/\u201d/g, "");// double quote smart R
+theTitle = theTitle.replace(/\u2018/g, "");// single quote smart L
+theTitle = theTitle.replace(/\u2019/g, "");// single quote smart R
+theTitle = theTitle.replace(/\u2022/g, "");// trademark
+theTitle = theTitle.replace(/'/g, "");// apparently a dumb single quote gets stripped by webworks
+theTitle = theTitle.replace(/"/g, "");// to be safe let us strip double quotes too
+theTitle = theTitle.replace(/\</g, "(");  // open bracket
+theTitle = theTitle.replace(/\>/g, ")");   // close bracket
+theTitle = theTitle.replace(/:/g, "_");    // colon
+theTitle = theTitle.replace(/&/g, "");
+return (theTitle);  }
 
 
 // get the long URL in the official Guidewire way
@@ -131,8 +132,6 @@ function Guidewire_LinkToThis_Toggle(myurl, mytitle) {
 	}
     //if it is hidden, show it...
     else {
-        //myurl = "http://test.com";
-        //mytitle = "test";
 
         var bookmarkurl = "To bookmark this page, right-click on this link:<br><a target=\"_top\" href=\""+myurl+"\">"+mytitle+"</a>";
 
@@ -142,19 +141,18 @@ function Guidewire_LinkToThis_Toggle(myurl, mytitle) {
         thePopupBookmark.innerHTML = bookmarkurl + "<br><br>Or you can copy this address:";
         thePopupURL.value = myurl;
 
-        //thePopup.style.top = docFrame.scrollTop;
 	thePopup.style.display=""; // show the popup
 	}
 
 }
+// END OF GUIDEWIRE LARGE BLOCK
+// END_GUIDEWIRE_EDIT
 
 
 
 
 
-
-
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHControlEntry_Object(ParamControlName,
@@ -230,7 +228,14 @@ function  WWHControlEntry_GetHTML()
 
   // Set style attribute to insure small image height
   //
-  VarStyleAttribute = " style=\"font-size: 1px; line-height: 1px;\"";
+  if (WWHFrame.WWHBrowser.mBrowser == 1)  // Shorthand for Netscape
+  {
+    VarStyleAttribute = "";
+  }
+  else
+  {
+    VarStyleAttribute = " style=\"font-size: 1px; line-height: 1px;\"";
+  }
 
   if (this.mbEnabled)
   {
@@ -249,10 +254,14 @@ function  WWHControlEntry_GetHTML()
 
     // Display control
     //
-    VarHTML += "  <td >";
+  // BEGIN_GUIDWIRE_EDIT to change <TD> tag to simply remove width attribute... we have some wider buttons, such as linktothispage
+    VarHTML += "  <td width=\"23\">";
+  // END_GUIDWIRE_EDIT
     VarHTML += "<div" + VarStyleAttribute + ">";
     VarHTML += "<a name=\"" + this.mControlName + "\" href=\"javascript:WWHFrame.WWHControls." + this.mAnchorMethod + "();\" title=\"" + VarLabel + "\">";
+  // BEGIN_GUIDWIRE_EDIT to change <IMG> tag to simply remove width attribute... we have some wider buttons, such as linktothispage
     VarHTML += "<img name=\"" + this.mControlName + "\" alt=\"" + VarLabel + "\" border=\"0\" src=\"" + this.fGetIconURL() + "\" height=\"21\">";
+  // END_GUIDWIRE_EDIT
     VarHTML += "</a>";
     VarHTML +=" </div>";
     VarHTML += "</td>\n";
@@ -329,7 +338,9 @@ function  WWHControls_Object()
   this.fClickedRelatedTopics  = WWHControls_ClickedRelatedTopics;
   this.fClickedEmail          = WWHControls_ClickedEmail;
   this.fClickedPrint          = WWHControls_ClickedPrint;
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
   this.fClickedBookmark       = WWHControls_ClickedBookmark;
+// END_GUIDEWIRE_EDIT 
   this.fShowNavigation        = WWHControls_ShowNavigation;
   this.fSyncTOC               = WWHControls_SyncTOC;
   this.fPrevious              = WWHControls_Previous;
@@ -338,9 +349,11 @@ function  WWHControls_Object()
   this.fRelatedTopics         = WWHControls_RelatedTopics;
   this.fEmail                 = WWHControls_Email;
   this.fPrint                 = WWHControls_Print;
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
   this.fBookmark              = WWHControls_Bookmark;
   this.fBookmarkData          = WWHControls_BookmarkData;
   this.fBookmarkLink          = WWHControls_BookmarkLink;
+// END_GUIDEWIRE_EDIT 
   this.fProcessAccessKey      = WWHControls_ProcessAccessKey;
 }
 
@@ -355,14 +368,35 @@ function  WWHControls_ControlsLoaded(ParamDescription)
 {
   if (ParamDescription == "left")
   {
+    // Set frame name for accessibility
+    //
+    if (WWHFrame.WWHHelp.mbAccessible)
+    {
+      WWHFrame.WWHHelp.fSetFrameName("WWHControlsLeftFrame");
+    }
+
     WWHFrame.WWHHelp.fReplaceLocation("WWHControlsRightFrame", WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/html/controlr.htm");
   }
   else if (ParamDescription == "right")
   {
+    // Set frame name for accessibility
+    //
+    if (WWHFrame.WWHHelp.mbAccessible)
+    {
+      WWHFrame.WWHHelp.fSetFrameName("WWHControlsRightFrame");
+    }
+
     WWHFrame.WWHHelp.fReplaceLocation("WWHTitleFrame", WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/html/title.htm");
   }
   else  // (ParamDescription == "title")
   {
+    // Set frame name for accessibility
+    //
+    if (WWHFrame.WWHHelp.mbAccessible)
+    {
+      WWHFrame.WWHHelp.fSetFrameName("WWHTitleFrame");
+    }
+
     if ( ! WWHFrame.WWHHelp.mbInitialized)
     {
       // All control frames are now loaded
@@ -433,17 +467,12 @@ function  WWHControls_Initialize()
     VarSettings.mbSyncContentsEnabled = false;
   }
 
-
-// GUIDEWIRE always email
-  VarSettings.mbEmailEnabled = true;
-  // Confirm E-mail can be enabled
-  //
-  if (VarSettings.mbEmailEnabled)
-  {
-// GUIDEWIRE COMMENT THIS OUT SO THAT EMAIL IS ALWAYS AVAILABLE EVEN IF EMPTY STRING
-   // VarSettings.mbEmailEnabled = ((typeof(VarSettings.mEmailAddress) == "string") &&
-   //                               (VarSettings.mEmailAddress.length > 0));
-  }
+  // BEGIN_GUIDWIRE_EDIT to always enable email button -- not sure where it is getting email address from though
+// we deleted some lines that checks the email address (is it of the user or the global email setting? i think we
+// set the email address field to empty so that it doesn't appear in the UI, but then we need to force the email
+// icon to appear in the button bar)
+   VarSettings.mbEmailEnabled = true;
+  // END_GUIDWIRE_EDIT 
 
   // Confirm Print can be enabled
   //
@@ -480,9 +509,11 @@ function  WWHControls_Initialize()
   this.fAddControl("WWHPrintIcon", VarSettings.mbPrintEnabled, false,
                    WWHFrame.WWHHelp.mMessages.mPrintIconLabel,
                    "print.gif", "printx.gif", "fClickedPrint", "WWHControlsRightFrame");
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
   this.fAddControl("WWHBookmarkIcon", VarSettings.mbBookmarkEnabled, false,
                    WWHFrame.WWHHelp.mMessages.mBookmarkIconLabel,
                    "bkmark.gif", "bkmarkx.gif", "fClickedBookmark", "WWHControlsRightFrame");
+// END_GUIDEWIRE_EDIT 
 
   // Load control frames
   //
@@ -522,9 +553,16 @@ function  WWHControls_TopSpacerHTML()
 
   // Set style attribute to insure small image height
   //
-  VarStyleAttribute = " style=\"font-size: 1px; line-height: 1px;\"";
+  if (WWHFrame.WWHBrowser.mBrowser == 1)  // Shorthand for Netscape
+  {
+    VarStyleAttribute = "";
+  }
+  else
+  {
+    VarStyleAttribute = " style=\"font-size: 1px; line-height: 1px;\"";
+  }
 
-  VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
+  VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" role=\"presentation\">\n";
   VarHTML += " <tr>\n";
   VarHTML += "  <td><div" + VarStyleAttribute + "><img src=\"" + WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/images/spc_tb_t.gif" + "\" alt=\"\"></div></td>\n";
   VarHTML += " </tr>\n";
@@ -574,7 +612,7 @@ function  WWHControls_LeftHTML()
     VarHTML += this.fTopSpacerHTML();
     if (VarEnabledControls.length > 0)
     {
-      VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
+      VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" role=\"presentation\">\n";
       VarHTML += " <tr>\n";
 
       VarHTML += "  <td><div><img src=\"" + WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/common/images/spc_tb_l.gif" + "\" alt=\"\"></div></td>\n";
@@ -630,18 +668,20 @@ function  WWHControls_RightHTML()
     {
       VarEnabledControls[VarEnabledControls.length] = VarControl;
     }
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
     VarControl = this.fGetControl("WWHBookmarkIcon");
     if (VarControl.mbEnabled)
     {
       VarEnabledControls[VarEnabledControls.length] = VarControl;
     }
+// END_GUIDEWIRE_EDIT
 
     // Emit HTML for controls
     //
     VarHTML += this.fTopSpacerHTML();
     if (VarEnabledControls.length > 0)
     {
-      VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
+      VarHTML += "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" role=\"presentation\">\n";
       VarHTML += " <tr>\n";
 
       for (VarMaxIndex = VarEnabledControls.length, VarIndex = 0 ; VarIndex < VarMaxIndex ; VarIndex++)
@@ -746,7 +786,7 @@ function  WWHControls_RightFrameTitle()
     }
     VarTitle += this.fGetControl("WWHPrintIcon").fGetLabel();
   }
-
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
   if (this.fGetControl("WWHBookmarkIcon").fGetLabel().length > 0)
   {
     if (VarTitle.length > 0)
@@ -755,6 +795,8 @@ function  WWHControls_RightFrameTitle()
     }
     VarTitle += this.fGetControl("WWHBookmarkIcon").fGetLabel();
   }
+// END_GUIDEWIRE_EDIT
+
 
   return VarTitle;
 }
@@ -775,7 +817,9 @@ function  WWHControls_UpdateHREF(ParamHREF)
   this.fGetControl("WWHRelatedTopicsIcon").fSetStatus(WWHFrame.WWHRelatedTopics.fHasRelatedTopics());
   this.fGetControl("WWHEmailIcon").fSetStatus(this.fCanSyncTOC());
   this.fGetControl("WWHPrintIcon").fSetStatus(this.fCanSyncTOC());
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
   this.fGetControl("WWHBookmarkIcon").fSetStatus(this.fCanSyncTOC());
+// END_GUIDEWIRE_EDIT 
 
   // Update controls
   //
@@ -797,7 +841,9 @@ function  WWHControls_UpdateHREF(ParamHREF)
     this.fGetControl("WWHRelatedTopicsIcon").fUpdateIcon();
     this.fGetControl("WWHEmailIcon").fUpdateIcon();
     this.fGetControl("WWHPrintIcon").fUpdateIcon();
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
     this.fGetControl("WWHBookmarkIcon").fUpdateIcon();
+// END_GUIDEWIRE_EDIT
 
     // Restore previous focus
     //
@@ -908,10 +954,12 @@ function  WWHControls_ClickedPrint()
   this.fPrint();
 }
 
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
 function  WWHControls_ClickedBookmark()
 {
   this.fBookmark();
 }
+// END_GUIDEWIRE_EDIT 
 
 function  WWHControls_ShowNavigation()
 {
@@ -1003,13 +1051,14 @@ function  WWHControls_Email()
   var  VarMailTo;
 
 
-  //GUIDEWIRE MODIFIED
   if (this.fCanSyncTOC())
   {
+  //BEGIN_GUIDEWIRE_EDIT to change the logic of "email this page" to use our Link to This Page URL
     VarLocation = Guidewire_GetLongURL(this);
     var VarPageTitle=escape("Link to page \'" + WWHFrame.WWHHelp.fHREFToTitle(this.mSyncPrevNext[0]) + "\'");
     VarMessage = VarPageTitle + escape(" at URL ") + escape(VarLocation);
     VarMailTo = "mailto:?subject=" + VarPageTitle + "&body=" + VarMessage;
+// END_GUIDEWIRE_EDIT
 
     WWHFrame.WWHHelp.fSetLocation("WWHDocumentFrame", VarMailTo);
   }
@@ -1029,6 +1078,11 @@ function  WWHControls_Print()
   }
 }
 
+// BEGIN_GUIDEWIRE_EDIT restore the bookmark button, which seemed to have dissapeared in later webworks releases
+// note that within this large guidewire section, there are marks
+// notated ORIGINAL_BEGIN_GUIDEWIRE_EDIT and ORIGINAL_END_GUIDEWIRE_EDIT where our changes would be
+// if the whole WWHControls_Bookmark.* functions hadn't been removed entirely for some reason by Quadralay
+
 function  WWHControls_Bookmark()
 {
   var  BookmarkData;
@@ -1042,16 +1096,20 @@ function  WWHControls_Bookmark()
         (BookmarkData[1] != null))
     {
 
+// ORIGINAL_BEGIN_GUIDEWIRE_EDIT this change the basic logic of "bookmark button" to instead open and close our link to this page window
     var varMyURL = Guidewire_GetLongURL(this);
     var varMyTitle = WWHFrame.WWHHelp.fHREFToTitle(this.mSyncPrevNext[0]);
     Guidewire_LinkToThis_Toggle( varMyURL , varMyTitle  );
+// ORIGINAL_END_GUIDEWIRE_EDIT
     }
   }
 }
 
 function  WWHControls_BookmarkData()
 {
+// ORIGINAL_BEGIN_GUIDEWIRE_EDIT add a third array element to this variable for our link to this page URL, honestly I do not remember why we do this
   var  BookmarkData = new Array(null, null, null);
+// ORIGINAL_END_GUIDEWIRE_EDIT
   var  DocumentURL;
   var  DocumentTitle;
   var  VarQuote;
@@ -1076,6 +1134,7 @@ function  WWHControls_BookmarkData()
       {
         VarQuote = "%22";
       }
+// ORIGINAL_BEGIN_GUIDEWIRE_EDIT for link to this page, set the URL to our link to this page URL (and add a third array element with a dupe of our URL for some crazy reason, may not be necessary
 
       DocumentBookmarkURL = WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/api.htm?href=" + DocumentURL;
       //if (this.fSansNavigation())
@@ -1088,6 +1147,7 @@ function  WWHControls_BookmarkData()
       BookmarkData[0] = DocumentTitle;
       BookmarkData[1] = DocumentBookmarkURL;
       BookmarkData[2] = DocumentBookmarkURL;
+// ORIGINAL_END_GUIDEWIRE_EDIT
     }
   }
 
@@ -1104,11 +1164,14 @@ function  WWHControls_BookmarkLink()
       (BookmarkData[1] != null))
   {
     BookmarkLink = "<a href=\"" + BookmarkData[1] + "\">" + BookmarkData[0] + "</a>";
+// BEGIN_GUIDEWIRE_EDIT override the text in the bookmark window -- this might not be used by anything anymore actually
     BookmarkLink = BookmarkLink + "<p>Direct URL to send customer support:<br><a href=\""+ BookmarkData[2] + "\">" + BookmarkData[2]  + "</a>"; 
+// END_GUIDEWIRE_EDIT
   }
 
   return BookmarkLink;
 }
+// END_GUIDEWIRE_EDIT end large edit (adding back functions that were removed)
 
 function  WWHControls_ProcessAccessKey(ParamAccessKey)
 {
@@ -1133,9 +1196,10 @@ function  WWHControls_ProcessAccessKey(ParamAccessKey)
     case 8:
       this.fClickedPrint();
       break;
-
+// BEGIN_GUIDEWIRE_EDIT restore back bookmark button that had been removed
     case 9:
       this.fClickedBookmark();
       break;
+// END_GUIDEWIRE_EDIT
   }
 }

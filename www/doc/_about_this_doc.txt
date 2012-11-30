@@ -1,10 +1,10 @@
 When sending questions to customer support, include this:
 
- ** PRODUCT Gosu 0.9.0-C
+ ** PRODUCT Gosu 0.10.0-C
  ** PRODUCTCODE OSLANG
- ** BRANCH //depot/eng/doc/diamond/release/oslang/0.9.0/docs/
- ** DATE 1/17/2012 6:09:32 PM
- ** SERVER DOCBUILD2WIN7
+ ** BRANCH //depot/eng/doc/diamond/active/docs/
+ ** DATE 11/29/2012 4:25:01 PM
+ ** SERVER DOCBUILD
  ** LINK TO A PAGE: Click on "LINK TO THIS PAGE" in the upper-right of any HTML page. Copy that URL.
 
 The following is an auto-generated summary of the structure of all books in the doc set.
@@ -15,9 +15,8 @@ The following is an auto-generated summary of the structure of all books in the 
 
 
 ===About This Document===
-* Intended Audience
 * Downloads, Technical Questions, and Submitting Feedback
-* Conventions In This Document
+* Conventions in This Document
 
 ===Gosu Introduction===
 * Welcome to Gosu
@@ -42,18 +41,17 @@ The following is an auto-generated summary of the structure of all books in the 
 ** Exceptions
 ** Annotations
 ** Gosu Templates
-** Native XML and XSD Support
-** Native Web Service Support Using a WSDL Type Loader
+** XML and XSD Support
+** Web Service Support (Consuming WSDL)
 ** Gosu Character Set
 * Running Gosu Programs and Calling Other Classes
 * More About the Gosu Type System
 ** Compile Time Error Prevention
 ** Type Inference
 ** Intelligent Code Completion and Other Gosu Editor Tools
-** Null Safety for Properties Other Operators
+** Null Safety for Properties and Other Operators
 ** Generics in Gosu
 ** Gosu Primitives Types
-** Gosu Type Loaders
 * Gosu Case Sensitivity
 * Gosu Statement Terminators
 * Gosu Comments
@@ -63,57 +61,61 @@ The following is an auto-generated summary of the structure of all books in the 
 
 ===Getting Started with Gosu Community Release===
 * System Requirements
-* Gosu and IntelliJ IDEA
-* Installing Gosu as Command Line Tool
+* Getting Started With IntelliJ IDEA Gosu Plugin
+** Install the IntelliJ Gosu Plugin
+** Do Not Depend Directly on Gosu JARs
+** The Gosu Scratchpad
+** Keep Only One Project Open at a Time
+* Getting Started With Gosu Command Line Tools
+** Advanced Gosu Command Line Tool Usage
+* Using XML and SOAP Libraries with Gosu Community Release
 * Advanced Examples
 ** Servlet Example
-** Hibernate Database Example
-* Dynamic Type Example
 
-===Gosu Programs and Command Line Tools===
+===Gosu Command Line Shell===
 * Gosu Command Line Tool Basics
 ** Command Line Tool Options
-** Writing a Simple Gosu Program
+** Writing a Simple Gosu Command Line Program
+* Command Line Arguments
+*** Raw Argument Processing
+*** Advanced Argument Processing
+* Gosu Interactive Shell
+* Helpful APIs for Command Line Gosu Programs
+
+===Gosu Programs===
 * The Structure of a Gosu Program
 ** Metaline as First Line
 ** Functions in a Gosu Program
 ** Setting the Class Path to Call Other Gosu or Java Classes
-* Command Line Arguments
-*** Raw Argument Processing
-*** Advanced Argument Processing
-* Advanced Class Loading Registry
-* The Self-Contained Gosu Editor
-* Gosu Interactive Shell
-* Helpful APIs for Command Line Gosu Programs
+** Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)
 
-===Gosu Types===
-* Built-in Types
-** Array
-** Boolean
-** DateTime
-*** Gosu DateTime and Java
-** Number
-** Object
-** String
+===Types===
+* Access to Java Types
+* Primitive Types
+* Objects
+** Object Instantiation
+** Object Property Assignment
+** Object Property Access
+** Object Methods
+* Boolean Values
+* Sequences of Characters
 *** String Variables Can Have Content, Be Empty, or Be Null
 *** Other Methods on String Objects
 *** String Utilities
 *** In-line String Templates
 *** Escaping Special Characters in Strings
 *** Gosu String Templates
-** Type
-** Primitive Types
-* Access to Java Types
-* Arrays
-** Java-based Lists as Arrays
+* Array Types
+** List Access Using Array Index Notation
 ** Array Expansion
-* Object Instantiation and Properties
-** Creating New Objects
-** Assigning Object Properties
-** Accessing Object Properties
-** Accessing Object Methods
-** Accessing Object Arrays
-* Numeric, Binary, and Hex Literals
+** Associative Array Syntax for Property Access
+** Legacy Array Type
+* Numeric Literals
+*** Scientific Notation, Including Floating Point
+* Compatibility with Earlier Gosu Releases
+** DateTime
+** Number
+** Array
 
 ===Gosu Operators and Expressions===
 * Gosu Operators
@@ -138,12 +140,13 @@ The following is an auto-generated summary of the structure of all books in the 
 * Evaluation Expressions
 * Existence Testing Expressions
 * Logical Expressions
+*** Supported Logical Operators
 *** Logical AND
 *** Logical OR
 *** Logical NOT
 *** Typeis Expressions
 * New Object Expressions
-*** Optionally Omit Type Name with ‘new' When Type is Determined From Context
+*** Optionally Omit Type Name with the new Keyword When Type is Determined From Context
 *** Object Initializer Syntax
 *** Special Syntax for Initializing Lists, Collections, and Maps
 * Relational Expressions
@@ -177,15 +180,15 @@ The following is an auto-generated summary of the structure of all books in the 
 ** Variable Type Declaration
 ** Variable Assignment
 * Gosu Conditional Execution and Looping 
-** If() … Else() Statements
+** If() ‚Ä¶ Else() Statements
 ** For() Statements
 *** Iteration in For() Statements
 *** Examples
 ** While() Statements
-** Do…While() Statements
+** Do‚Ä¶While() Statements
 ** Switch() Statements
 * Gosu Functions
-** Named Functions Arguments and Argument Defaults
+** Named Arguments and Argument Defaults
 ** Public and Private Functions
 
 ===Intervals===
@@ -201,12 +204,12 @@ The following is an auto-generated summary of the structure of all books in the 
 ===Exception Handling===
 * Try-Catch-Finally Constructions
 * Throw Statements
-* Checked Exceptions in Gosu
-* Object Lifecycle Management (‘using' Clauses)
+* Catching Exceptions in Gosu
+* Object Lifecycle Management ('using' Clauses)
 ** Disposable Objects
-** Closeable Objects and ‘using' Clauses
-** Reentrant Objects and ‘using' Clauses
-** Returning Values from ‘using' Clauses
+** Closeable Objects and 'using' Clauses
+** Reentrant Objects and 'using' Clauses
+** Returning Values from 'using' Clauses
 
 ===Classes===
 * What Are Classes?
@@ -228,7 +231,7 @@ The following is an auto-generated summary of the structure of all books in the 
 * Inner Classes
 ** Named Inner Classes
 ** Anonymous Inner Classes
-*** Gosu Block Shortcut for Anonymous Inner Classes Implementing an Interface
+*** Gosu Block Shortcut for Anonymous Classes Implementing an Interface
 
 ===Enumerations===
 * Using Enumerations
@@ -275,21 +278,36 @@ The following is an auto-generated summary of the structure of all books in the 
 ===Gosu Generics===
 * Gosu Generics Overview
 * Using Gosu Generics
+** Parameterized Classes
+** Parameterized Methods
 * Other Unbounded Generics Wildcards
 * Generics and Blocks
 * How Generics Help Define Collection APIs
 * Multiple Dimensionality Generics
-* Generics With Custom ‘Containers'
+* Generics With Custom 'Containers'
 ** Generics with Non-Containers
 
 ===Collections===
 * Basic Lists
-* Basic HashMaps
+** Creating a List
+** Type Inference and List Initialization
+** Getting and Setting List Values
+** Special Behavior of List in Gosu
+* Basic Hash Maps
+** Creating a Hash Map
+** Getting and Setting Values in a Hash Map
+** Creating a Hash Map with Type Inference 
 ** Special Enhancements on Maps
+*** Map Properties for Keys and Values
+*** Each Key and Value
 * List and Array Expansion (*.)
-*** Array Flattening to Single Dimensional Array
+** Array Flattening to Single Dimensional Array
 * Enhancement Reference for Collections and Related Types
 ** Collections Enhancement Methods
+*** Enhancement Methods on Iterable<T>
+*** Enhancement Methods on Collection<T>
+*** Methods on List<T>
+*** Methods on Set<T>
 ** Finding Data in Collections
 ** Sorting Collections
 ** Mapping Data in Collections
@@ -301,9 +319,11 @@ The following is an auto-generated summary of the structure of all books in the 
 
 ===Gosu and XML===
 * Manipulating XML Overview
-* Introduction to XmlElement
-** Dollar Sign Prefix For Some Properties When Using XSD Types
+* Introduction to the XML Element in Gosu
+** Dollar Sign Prefix for Properties that Are XSD Types
 * Exporting XML Data
+** Export-related Methods on an XML Element
+** XML Serialization Options Reference and Examples
 * Parsing XML Data into an XML Element
 *** Referencing Additional Schemas During Parsing
 * Creating Many QNames in the Same Namespace
@@ -322,11 +342,12 @@ The following is an auto-generated summary of the structure of all books in the 
 *** Removing Child Elements By Name
 ** Attributes
 * Simple Values
+** Methods to Create XML Simple Values
 ** XSD to Gosu Simple Type Mappings
 ** Facet Validation
 * Access the Nillness of an Element
 * Automatic Creation of Intermediary Elements
-* Default/Fixed Attribute Values
+* Default and Fixed Attribute Values
 * Substitution Group Hierarchies
 * Element Sorting for XSD-based Elements
 *** If Element Order Is Already Correct
@@ -345,15 +366,18 @@ The following is an auto-generated summary of the structure of all books in the 
 ** What Gosu Creates from Your WSDL
 *** Special Behavior For Multiple Ports
 ** A Real Example: Weather
+** Request XML Complexity Affects Appearance of Method Arguments
 * Adding WS-I Configuration Options
 *** Directly Modifying the WSDL Configuration Object for a Service
 ** HTTP Authentication
 ** Setting a Timeout
 ** Custom SOAP Headers
 ** Server Override URL
+** Setting XML Serialization Options
 ** Implementing Advanced Web Service Security with WSS4J
 * One-Way Methods
 * Asynchronous Methods
+* MTOM Attachments
 
 ===Java and Gosu===
 * Overview of Calling Java from Gosu
@@ -384,9 +408,10 @@ The following is an auto-generated summary of the structure of all books in the 
 * Template Export Formats
 
 ===Type System===
+* The Type of All Types
 * Basic Type Coercion
 * Basic Type Checking
-** Automatic Downcasting for ‘typeis' and ‘typeof'
+** Automatic Downcasting for 'typeis' and 'typeof'
 * Using Reflection
 ** Type Object Properties
 ** Java Type Reflection
@@ -418,7 +443,6 @@ The following is an auto-generated summary of the structure of all books in the 
 ** Omit Semicolons
 ** Type Declarations
 ** The == and != Operator Recommendations and Warnings
-** Gosu Case Sensitivity Implications
 ** Class Variable and Class Property Recommendations
-** Use ‘typeis' Inference
+** Use 'typeis' Inference
 

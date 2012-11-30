@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHHelp_Object(ParamURL)
@@ -282,7 +282,7 @@ function  WWHHelp_GetURLParameters(ParamURL)
 
   // Using a closure for this function. It is copied in switch.js as well
   //
-  function GetDelimitedArguments(ParamURL) 
+  function GetDelimitedArguments(ParamURL)
   {
     var  Parts = [];
     var  Parameters;
@@ -307,7 +307,7 @@ function  WWHHelp_GetURLParameters(ParamURL)
   // Check for possible context specification
   //
   Parts = GetDelimitedArguments(ParamURL);
-  if (Parts.length > 1) 
+  if (Parts.length > 1)
   {
     // Get parameters
     //
@@ -396,7 +396,49 @@ function  WWHHelp_InitStage(ParamStage)
           alert(WWHFrame.WWHHelp.mMessages.mBrowserNotSupported);
         }
 
-        this.fReplaceLocation("WWHControlsLeftFrame", this.mHelpURLPrefix + "wwhelp/wwhimpl/common/html/init0.htm");
+        // Test for frameset security exceptions
+        //
+        try
+        {
+          var VarFrame, VarFrameLocation;
+
+          if (this.fSingleTopic())
+          {
+            VarFrame = eval(this.fGetFrameReference("WWHControlsLeftFrame"));
+          }
+          else
+          {
+            VarFrame = eval(this.fGetFrameReference("WWHContentFrame"));
+          }
+
+          VarFrameLocation = VarFrame.location.href;
+
+          // Success!
+          //
+          this.fReplaceLocation("WWHControlsLeftFrame", this.mHelpURLPrefix + "wwhelp/wwhimpl/common/html/init0.htm");
+        }
+        catch (exception)
+        {
+          // Encountered a frameset security exception
+          //
+          Parameters = "";
+          if (this.mLocationURL.indexOf("?") != -1)
+          {
+            Parts = this.mLocationURL.split("?");
+            Parameters = "?" + Parts[1];
+          }
+          else if (this.mLocationURL.indexOf("#") != -1)
+          {
+            Parts = this.mLocationURL.split("#");
+            Parameters = "#" + Parts.slice(1).join("#");
+          }
+
+          // Sanitize parameters
+          //
+          Parameters = Parameters.replace(/[\\<>:;"']|%5C|%3C|%3E|%3A|%3B|%22|%27/gi, "");
+
+          setTimeout("window.top.location.replace(\"../../api.htm" + Parameters + "\");", 1);
+        }
         break;
 
       case 1:  // Prep book data
@@ -426,16 +468,6 @@ function  WWHHelp_InitStage(ParamStage)
       case 5:  // Display document
         this.fSetDocumentFrame();
         this.mbInitialized = true;
-
-        // Set frame names for accessibility
-        //
-        if (this.mbAccessible)
-        {
-          WWHFrame.WWHHelp.fSetFrameName("WWHControlsLeftFrame");
-          WWHFrame.WWHHelp.fSetFrameName("WWHTitleFrame");
-          WWHFrame.WWHHelp.fSetFrameName("WWHControlsRightFrame");
-          WWHFrame.WWHHelp.fSetFrameName("WWHDocumentFrame");
-        }
 
         // Finalize hander
         //
@@ -515,6 +547,8 @@ function  WWHHelp_GetFrameName(ParamFrameName)
       VarName = WWHStringUtilities_EscapeHTML(WWHFrame.WWHHelp.mMessages.mAccessibilityDocumentFrameName);
       break;
   }
+
+  return VarName;
 }
 
 function  WWHHelp_SetFrameName(ParamFrameName)
@@ -534,6 +568,8 @@ function  WWHHelp_SetFrameName(ParamFrameName)
       //
       VarFrame = eval(this.fGetFrameReference(ParamFrameName));
       VarFrame.name = VarName;
+      VarFrame.title = VarName;
+      VarFrame.document.title = VarName;
     }
   }
 }
@@ -1167,11 +1203,11 @@ function  WWHHelp_PopupAdjustSize()
     //
     if (VarWidth > VarIFrame.style.width)
     {
-      VarIFrame.style.width = VarWidth;
+      VarIFrame.style.width = VarWidth + 'px';
     }
     if (VarHeight > VarIFrame.style.height)
     {
-      VarIFrame.style.height = VarHeight;
+      VarIFrame.style.height = VarHeight + 'px';
     }
   }
   else
@@ -1212,11 +1248,11 @@ function  WWHHelp_PopupAdjustSize()
     //
     if (VarWidth > VarIFrame.width)
     {
-      VarIFrame.width = VarWidth;
+      VarIFrame.width = VarWidth + 'px';
     }
     if (VarHeight > VarIFrame.height)
     {
-      VarIFrame.height = VarHeight;
+      VarIFrame.height = VarHeight + 'px';
     }
   }
 }
@@ -1531,12 +1567,23 @@ function  WWHHelp_UpdateHash(ParamURL)
       }
       if (WWHFrame.location.hash != VarHash)
       {
-        // Only works well on certain browsers
+        // Use pushState?
         //
-        if ((WWHFrame.WWHBrowser.mBrowser == 2) ||  // Shorthand for IE
-            (WWHFrame.WWHBrowser.mBrowser == 4))    // Shorthand for Netscape 6.0 (Mozilla)
+        if (typeof WWHFrame.history.replaceState === 'function')
         {
-          WWHFrame.location.hash = VarHash;
+          // Use it!
+          //
+          WWHFrame.history.replaceState(WWHFrame.location.hash, WWHFrame.document.title, VarHash);
+        }
+        else
+        {
+          // Only works well on certain browsers
+          //
+          if ((WWHFrame.WWHBrowser.mBrowser == 2) ||  // Shorthand for IE
+              (WWHFrame.WWHBrowser.mBrowser == 4))    // Shorthand for Netscape 6.0 (Mozilla)
+          {
+            WWHFrame.location.hash = VarHash;
+          }
         }
       }
     }

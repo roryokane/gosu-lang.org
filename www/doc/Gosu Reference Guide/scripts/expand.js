@@ -1,4 +1,4 @@
-// Copyright (c) 2002-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2002-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WebWorks_WriteArrow(ParamBaseURL,

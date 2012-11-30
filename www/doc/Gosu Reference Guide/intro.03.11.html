@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
-    <title>Gosu Type Loaders</title>
+    <title>Gosu Case Sensitivity</title>
     <link rel="StyleSheet" href="css/intro.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
@@ -37,7 +37,7 @@ text_val.select();
 }
 </script>
   </head>
-  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
     <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
     <div id="linkToThisPage" class="popup" style="display: none;">
       <div class="popupTitle">Link Directly to This Page 
@@ -52,58 +52,124 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="intro.03.01.html#1486615">Gosu Introduction</a> : <a class="WebWorks_Breadcrumb_Link" href="intro.03.04.html#1486615">More About the Gosu Type System</a> : Gosu Type Loaders</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="intro.03.01.html#1513909">Gosu Introduction</a> : Gosu Case Sensitivity</span></div>
     <hr align="left" />
-    <div>
-      <div class="H2B_-_Heading_2_Break"><a name="1486615">Gosu Type Loaders</a></div>
-      <div class="B_-_Body"><a name="1484771">The Gosu type system has an open type system. An important part of this is that Gosu supports custom type </a>loaders. A type loader dynamically injects types into the language and attaches potentially complex dynamic behaviors to working with the type. For example, a custom type loader adds types to the type system. Each time Gosu code accesses a property or calls methods on the custom types, you can run custom code. Gosu calls custom type loader code each time any Gosu code accesses a property or calls methods on the custom types.</div>
-      <div class="B_-_Body"><a name="1489594">There are several built-in type loaders:</a></div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1489595">Gosu XML/XSD type loader.</a></span> This type loader supports the native Gosu APIs for XML. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'xml.20.01.html#1470967', '');" title="Gosu and XML">"Gosu and XML"</a>.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1486062">Gosu SOAP/WSDL type loader.</a></span> This type loader supports the native Gosu APIs for the web services SOAP protocol. This works through a Gosu type loaders that reads web service WSDL files and lets you interact with the external service through a natural syntax and type-safe coding. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'webservice-wsi-consuming.21.1.html#2001852', '');" title="Calling WS-I Web Services from Gosu">"Consuming WS-I Web Service Overview"</a></div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
-          <tr style="vertical-align: baseline;">
-            <td>
-              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="bu_-_bullet">•	</span>
-              </div>
-            </td>
-            <td width="100%">
-              <div class="BI_-_Bullet_Item_inner"><span class="ri_-_run_in_header"><a name="1486081">Property file type loader.</a></span> This type loader finds property files in the hierarchy of files on the disk along with your Gosu class files. Gosu creates types in the appropriate package (by the property file location) for each property. Access the properties directly in Gosu in a type-safe manner. For more information, see <a href="javascript:WWHClickedPopup('gosu', 'propertiesfiles.html#1442074', '');" title="Properties Files">"Properties Files"</a>.</div>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="B_-_Body"><a name="1486193">You do not need to do anything special to install or enable these type loaders. Gosu includes these type loaders </a>automatically for all Gosu code.</div>
-      <div class="B_-_Body"><a name="1489364">A future Gosu release will include documentation and supported APIs for creating custom type loaders.</a></div>
-      <div class="NI_-_Note_Important" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;">
-        <span class="n_-_note">IMPORTANT   </span><span class="s_-_strong"><a name="1490456">Later versions of the Gosu community release will include more APIs and docu</a></span><span class="s_-_strong">mentation about creating your own custom Gosu type loaders.</span></div>
+    <blockquote>
+      <div class="H1_-_Heading_1"><a name="1513909">Gosu Case Sensitivity</a></div>
+      <div class="B_-_Body"><a name="1519231">Gosu in the Community Release is case sensitive.</a></div>
+      <div class="B_-_Body"><a name="1453425">The following table lists various language elements and the standard Gosu capitalization for those language </a>elements:</div>
+      <div class="T_-_Table"><a name="1453651">&nbsp;</a></div>
+      <table class="BulletListDoubleCol" style="text-align: left" cellspacing="10" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1453664">Language element</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1453666">Standard capitalization </a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1453668">Example</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1487185">Gosu keywords</a></div>
+          </td>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1487234">Always specify Gosu key</a>words correctly as they are declared, typically lowercase. </div>
+          </td>
+          <td style="border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1487190">if</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453670">type names</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453672">uppercase first character</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453674">DateUtil</a></span></div>
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453675">Claim</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453677">variable names</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453679">lowercase first character</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453681">myClaim</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453689">method names</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453691">lowercase first character</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453693">printReport</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453695">property names </a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453697">uppercase first character</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453699">Name</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453701">package names (case sensitive)</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1453703">lowercase entire package </a>name when creating new packages</div>
+            <div class="TT_-_Table_Text"><a name="1454576">Always specify package </a>names correctly as they are declared..</div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1453705">com.mycompany.*</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1454555">Java types (case sensitive)</a></div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1487212">Java types require case </a>sensitivity</div>
+            <div class="TT_-_Table_Text"><a name="1454622">Always specify Java types </a>correctly as they are declared..</div>
+          </td>
+          <td style="padding-bottom: 0pt; padding-left: 0pt; padding-right: 5pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text" style="color: #000000; font-family: &quot;Lucida Sans Typewriter&quot;; font-style: normal; font-variant: normal; font-weight: normal; margin-top: 3.0pt; text-transform: none; vertical-align: baseline"><span class="cvt_-_computer_voice_table"><a name="1454559">java.util.String</a></span></div>
+            <div class="TT_-_Table_Text"><a name="1454587">&nbsp;</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1453725">Remember to access these items exactly as they are declared.</a></div>
+      <div class="B_-_Body"><a name="1453740">For example, if an object has a </a><span class="cv_-_computer_voice">Name</span> property, do not write:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1453434">var n = myObject.name</a></div>
+      <div class="B_-_Body"><a name="1410283">Instead, use the code:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1410284">var n = myObject.Name</a></div>
+      <div class="B_-_Body"><a name="1410285">Similarly, use class names properly. Do not write:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1410286">var a = new address()</a></div>
+      <div class="B_-_Body"><a name="1410287">Instead, use the code:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1410288">var a = new Address()</a></div>
+      <div class="B_-_Body"><a name="1410312">Capitalization in the </a><span class="e_-_emphasis">middle</span> of a word is also important. Do not write:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1410313">var date1 = gw.api.util.DateUtil.currentdate()</a></PRE>
+      <div class="B_-_Body"><a name="1410314">Instead, use the code</a></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1410315">var date2 = gw.api.util.DateUtil.currentDate()</a></PRE>
+      <div class="B_-_Body"><a name="1410316">It is best to change any existing code to be case sensitive, and write any new code to follow these guidelines.</a></div>
+      <div class="B_-_Body"><a name="1519179">Use the Gosu editor Code Completion feature to enter the names of types and properties correctly. This ensures </a>standard capitalization.</div>
+      <div class="B_-_Body"><a name="1453794">Use initial lower-case for your own variables (local variables and class variables). Use an initial uppercase letter </a>for type names and property names, and initial lowercase letters for method names.</div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics
@@ -113,7 +179,7 @@ text_val.select();
           document.writeln(WWHRelatedTopicsInlineHTML());
         // -->
       </script>
-    </div>
+    </blockquote>
     <script type="text/javascript" language="JavaScript1.2">
       <!--
         document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());

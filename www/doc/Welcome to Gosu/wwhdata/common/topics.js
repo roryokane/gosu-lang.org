@@ -53,7 +53,11 @@ function Guidewire_FMSourceFileMatch(FROM_URL,LOCAL_FILENAME) {
 }
 
 
-// IMPORTANT: IF YOU CHANGE THE LOGIC OF THIS CODE, ALSO CHANGE THE MIRROR FUNCTION IN CONTROLS.JS
+// this function takes a topic Name and converts it to a simpler string, such as underscores instead of space chars
+// This is also important because FrameMaker + ePubs's  native handling of topic alias names mirror this behavior
+//
+// IMPORTANT: IF YOU CHANGE THIS CODE IN CONTROLS.JS (IN TEMPLATE OVERRIDES), ALSO CHANGE THE MIRROR FUNCTION IN TOPICUTILS-JAVASCRIPT.JS
+// IMPORTANT: IF YOU CHANGE THIS CODE IN TOPICUTILS.FSL, ALSO CHANGE THE MIRROR FUNCTION IN CONTROLS.JS (IN TEMPLATE OVERRIDES)
 // THE CONTROLS.JS FUNCTION ENCODES THE URL, AND THIS FUNCTION ENCODES it and compares against the input string with the full name for each topic (potentially with funny characters)
 function Guidewire_SafeTopicName(theTitle) {
 theTitle = theTitle.replace(/ /g, "_");  // converts space char
@@ -61,11 +65,13 @@ theTitle = theTitle.replace(/\u00a0/g, "_");  // converts nbsp char
 // censor (remove) characters that mess up epublisher in URLs: forward slash, backslash, question mark, &amp;
 theTitle= theTitle.replace(/[\\\/\?]/g, "");
 theTitle = theTitle.replace(/&/g, "");
-theTitle = theTitle.replace(/\u201c/g, "'"); // single quote smart
-theTitle = theTitle.replace(/\u201d/g, "'");// single quote smart
-theTitle = theTitle.replace(/\u2018/g, "'");// dub quote smart
-theTitle = theTitle.replace(/\u2019/g, "'");// dub quote smart
+theTitle = theTitle.replace(/\u201c/g, ""); // double quote smart L
+theTitle = theTitle.replace(/\u201d/g, "");// double quote smart R
+theTitle = theTitle.replace(/\u2018/g, "");// single quote smart L
+theTitle = theTitle.replace(/\u2019/g, "");// single quote smart R
 theTitle = theTitle.replace(/\u2022/g, "");// trademark
+theTitle = theTitle.replace(/'/g, "");// apparently a dumb single quote gets stripped by webworks
+theTitle = theTitle.replace(/"/g, "");// to be safe let us strip double quotes too
 theTitle = theTitle.replace(/\</g, "(");  // open bracket
 theTitle = theTitle.replace(/\>/g, ")");   // close bracket
 theTitle = theTitle.replace(/:/g, "_");    // colon
@@ -73,18 +79,23 @@ theTitle = theTitle.replace(/&/g, "");
 return (theTitle);  }
 
 
+
+
 function Guidewire_TopicMatch(FROMEPUB,WHATTOMATCH) {
 var varLower1 = FROMEPUB.toLowerCase();
 var varLower2 = WHATTOMATCH.toLowerCase();
-  // match positively if they naturally match, or they match the safe version (convert spaces to underscores...)
- if (varLower1 == varLower2 || varLower1 == Guidewire_SafeTopicName(varLower2))
-{ return true; } else { return false; } 
-}
+var varLower2Safe = Guidewire_SafeTopicName(varLower2)
 
+// match positively if they naturally match, or they match the safe version (convert spaces to underscores...)
+var varMatches = (varLower1 == varLower2 || varLower1 == Guidewire_SafeTopicName(varLower2))
+
+// console.log(Guidewire_TopicMatch, varLower1, varLower2, varLower2Safe, varMatches)
+return varMatches
+}
 function GUIDEWIRE_TOPIC_TO_FILE(TOPIC, SRCFILE) { 
 if (Guidewire_TopicMatch(TOPIC,"cover")) return "index.html"
 
-else if (Guidewire_TopicMatch(TOPIC,"Welcome to Gosu 0.9.0-C") && Guidewire_FMSourceFileMatch(SRCFILE,"cover.html") ) { return "cover.html";}
+else if (Guidewire_TopicMatch(TOPIC,"Welcome to Gosu 0.10.0") && Guidewire_FMSourceFileMatch(SRCFILE,"cover.html") ) { return "cover.html";}
 else { return("../wwhelp/topic_cannot_be_found.html"); } }
 
 function  WWHBookData_MatchTopic(P)

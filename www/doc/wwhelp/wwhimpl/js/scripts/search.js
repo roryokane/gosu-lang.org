@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHSearch_Object()
@@ -21,6 +21,7 @@ function  WWHSearch_Object()
   this.mBookMatchesList       = new Array();
   this.mCombinedResults       = new WWHSearchResults_Object();
   this.mCombinedResultsIndex  = 0;
+  this.mbChangingToSearch     = true;
 
   this.fInitialize             = WWHSearch_Initialize;
   this.fInitHeadHTML           = WWHSearch_InitHeadHTML;
@@ -33,11 +34,13 @@ function  WWHSearch_Object()
   this.fAdvanceHTMLSegment     = WWHSearch_AdvanceHTMLSegment;
   this.fGetHTMLSegment         = WWHSearch_GetHTMLSegment;
   this.fEndHTMLSegments        = WWHSearch_EndHTMLSegments;
+  this.fFocusSearchWords       = WWHSearch_FocusSearchWords;
   this.fPanelNavigationLoaded  = WWHSearch_PanelNavigationLoaded;
   this.fPanelViewLoaded        = WWHSearch_PanelViewLoaded;
   this.fHoverTextTranslate     = WWHSearch_HoverTextTranslate;
   this.fHoverTextFormat        = WWHSearch_HoverTextFormat;
   this.fDisplaySearchForm      = WWHSearch_DisplaySearchForm;
+  this.fOnFocus_SearchWords    = WWHSearch_OnFocus_SearchWords;
   this.fSubmit                 = WWHSearch_Submit;
   this.fApplyWordBreaks        = WWHSearch_ApplyWordBreaks;
   this.fSetSearchWords         = WWHSearch_SetSearchWords;
@@ -387,11 +390,43 @@ function  WWHSearch_EndHTMLSegments()
   return "";
 }
 
+function  WWHSearch_FocusSearchWords()
+{
+  var VarPanelNavigationFrame, VarSearchForm;
+
+  WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame");
+  VarPanelNavigationFrame = eval(WWHFrame.WWHHelp.fGetFrameReference("WWHPanelNavigationFrame"));
+  VarSearchForm = VarPanelNavigationFrame.document.forms["WWHSearchForm"];
+  VarSearchForm.elements["WWHSearchWordsText"].focus();
+}
+
 function  WWHSearch_PanelNavigationLoaded()
 {
   // Set focus
   //
-  WWHFrame.WWHHelp.fFocus("WWHPanelNavigationFrame");
+  this.fFocusSearchWords();
+
+  // Focus on which frame?
+  //
+  if ((typeof(this.mCombinedResults.mEntries) != "undefined") &&
+      (this.mCombinedResults.mEntries.length > 0))
+  {
+    if ( ! this.mbChangingToSearch)
+    {
+      WWHFrame.WWHHelp.fFocus("WWHPanelViewFrame");
+    }
+  }
+
+  // Changing tabs?
+  //
+  this.mbChangingToSearch = WWHFrame.WWHJavaScript.mPanels.mbChangingPanels;
+
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelNavigationFrame");
+  }
 }
 
 function  WWHSearch_PanelViewLoaded()
@@ -409,6 +444,28 @@ function  WWHSearch_PanelViewLoaded()
     this.mSearchState = null;
 
     WWHFrame.WWHJavaScript.mPanels.fReloadView();
+  }
+  else
+  {
+    // Ensure search form message is up-to-date
+    //
+    if (this.mbChangingToSearch)
+    {
+      this.fFocusSearchWords();
+
+      this.mbChangingToSearch = false;
+    }
+    else
+    {
+      WWHFrame.WWHJavaScript.mPanels.fReloadNavigation();
+    }
+  }
+
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelViewFrame");
   }
 }
 
@@ -555,6 +612,7 @@ function  WWHSearch_HoverTextFormat(ParamWidth,
 function  WWHSearch_DisplaySearchForm()
 {
   var  HTML = "";
+  var  AccessibilityMessage;
   var  BookList = WWHFrame.WWHHelp.mBooks.mBookList;
   var  SelectedIndex;
   var  MaxIndex;
@@ -566,8 +624,40 @@ function  WWHSearch_DisplaySearchForm()
 
   HTML += "<form name=\"WWHSearchForm\" onsubmit=\"WWHFrame.WWHSearch.fSubmit();\">\n";
   HTML += "<nobr>\n";
-  HTML += "<input type=\"text\" name=\"WWHSearchWordsText\" size=\"20\" value=\"" + WWHStringUtilities_EscapeHTML(this.mSavedSearchWords) + "\" onkeydown=\"WWHFrame.WWHHelp.fIgnoreNextKeyPress((document.all||document.getElementById||document.layers)?event:null);\">\n";
-  HTML += "<input type=\"submit\" value=\"" + WWHFrame.WWHJavaScript.mMessages.mSearchButtonLabel + "\">\n";
+
+  // Accessibility support
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    // Determine message to display
+    //
+    if (this.mSavedSearchWords.length == 0)
+    {
+      AccessibilityMessage = WWHFrame.WWHJavaScript.mMessages.mSearchDefaultMessage
+    }
+    else
+    {
+      if ((typeof(this.mCombinedResults.mEntries) != "undefined") &&
+          (this.mCombinedResults.mEntries.length > 0))
+      {
+        AccessibilityMessage = WWHFrame.WWHJavaScript.mMessages.mSearchDefaultMessage
+      }
+      else
+      {
+        AccessibilityMessage = WWHFrame.WWHJavaScript.mMessages.mSearchNothingFoundMessage;
+      }
+    }
+
+    // Label search words input field
+    //
+    HTML += "<label for=\"WWHSearchWordsText\">";
+    HTML += AccessibilityMessage;
+    HTML += "</label>";
+    HTML += "<br />";
+  }
+
+  HTML += "<input tabindex=\"1\" type=\"text\" name=\"WWHSearchWordsText\" size=\"20\" value=\"" + WWHStringUtilities_EscapeHTML(this.mSavedSearchWords) + "\" onkeydown=\"WWHFrame.WWHHelp.fIgnoreNextKeyPress((document.all||document.getElementById||document.layers)?event:null);\" onfocus=\"WWHFrame.WWHSearch.fOnFocus_SearchWords(this);\">\n";
+  HTML += "<input tabindex=\"2\" type=\"submit\" value=\"" + WWHFrame.WWHJavaScript.mMessages.mSearchButtonLabel + "\">\n";
   HTML += "</nobr>\n";
 
   if (BookList.length > 1)
@@ -611,6 +701,30 @@ function  WWHSearch_DisplaySearchForm()
   HTML += "</form>\n";
 
   return HTML;
+}
+
+function  WWHSearch_OnFocus_SearchWords(ParamTextInput)
+{
+  var  VarTextRange;
+  var  VarValue;
+
+  if (ParamTextInput.createTextRange)
+  {
+    VarTextRange = ParamTextInput.createTextRange();
+    VarTextRange.moveStart('character', 0);
+    VarTextRange.moveEnd('character', ParamTextInput.value.length);
+    VarTextRange.select();
+  }
+  else if (ParamTextInput.setSelectionRange)
+  {
+    ParamTextInput.setSelectionRange(0, ParamTextInput.value.length);
+  }
+  else
+  {
+    VarValue = ParamTextInput.value;
+    ParamTextInput.value = '';
+    ParamTextInput.value = VarValue;
+  }
 }
 
 function  WWHSearch_Submit()
@@ -698,7 +812,7 @@ function  WWHSearch_ApplyWordBreaks(ParamSearchWordsString)
     VarBreak = WWHUnicode_CheckBreakAtIndex(ParamSearchWordsString, VarIndex);
     if (VarBreak)
     {
-      VarResult += " " + ParamSearchWordsString.charAt(VarIndex) + " ";
+      VarResult += " " + ParamSearchWordsString.charAt(VarIndex);
     }
     else
     {

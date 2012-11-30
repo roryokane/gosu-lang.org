@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHPanelsEntry_Object(ParamPanelObject)
@@ -354,46 +354,56 @@ function  WWHPanels_ReloadNavigation()
 
 function  WWHPanels_ReloadView()
 {
-  var  ExtraAction;
-  var  VarPanelViewFrame;
+  var VarPanels = this;
+
+  WWHFrame.WWHBrowser.fValidateFrameReference(WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame"),
+    function () {
+      var  ExtraAction;
+      var  VarPanelViewFrameReference;
+      var  VarPanelViewFrame;
 
 
-  if ( ! this.mbLoading)
-  {
-    // Save scroll position
-    //
-    this.fSaveScrollPosition();
-
-    // Set flag
-    //
-    this.mbLoading = true;
-
-    // Close down any popups we had going to prevent JavaScript errors
-    //
-    this.mPopup.fHide();
-
-    // Handle browser specific issues
-    //
-    ExtraAction = "";
-    if ((WWHFrame.WWHBrowser.mBrowser == 1) ||  // Shorthand for Netscape
-        (WWHFrame.WWHBrowser.mBrowser == 4))    // Shorthand for Netscape 6.0 (Mozilla)
-    {
-      // Navigator has trouble if the hash is defined
-      //
-      VarPanelViewFrame = eval(WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame"));
-      if (VarPanelViewFrame.location.hash.length != 0)
+      if ( ! VarPanels.mbLoading)
       {
-        ExtraAction = WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame") + ".location.hash = \"\"; ";
+        // Save scroll position
+        //
+        VarPanels.fSaveScrollPosition();
 
-        if (WWHFrame.WWHBrowser.mBrowser == 4)  // Shorthand for Netscape 6.0 (Mozilla)
+        // Set flag
+        //
+        VarPanels.mbLoading = true;
+
+        // Close down any popups we had going to prevent JavaScript errors
+        //
+        VarPanels.mPopup.fHide();
+
+        // Get frame reference
+        //
+        VarPanelViewFrameReference = WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame");
+
+        // Handle browser specific issues
+        //
+        ExtraAction = "";
+        if ((WWHFrame.WWHBrowser.mBrowser == 1) ||  // Shorthand for Netscape
+            (WWHFrame.WWHBrowser.mBrowser == 4))    // Shorthand for Netscape 6.0 (Mozilla)
         {
-          ExtraAction += WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame") + ".location.replace(\"" + WWHStringUtilities_EscapeURLForJavaScriptAnchor(WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/js/html/panelvie.htm") + "\"); "
-        }
-      }
-    }
+          // Navigator has trouble if the hash is defined
+          //
+          VarPanelViewFrame = eval(VarPanelViewFrameReference);
+          if (VarPanelViewFrame.location.hash.length != 0)
+          {
+            ExtraAction = VarPanelViewFrameReference + ".location.hash = \"\"; ";
 
-    setTimeout(ExtraAction + WWHFrame.WWHHelp.fGetFrameReference("WWHPanelViewFrame") + ".location.replace(\"" + WWHStringUtilities_EscapeURLForJavaScriptAnchor(WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/js/html/panelvie.htm") + "\");", 1);
-  }
+            if (WWHFrame.WWHBrowser.mBrowser == 4)  // Shorthand for Netscape 6.0 (Mozilla)
+            {
+              ExtraAction += VarPanelViewFrameReference + ".location.replace(\"" + WWHStringUtilities_EscapeURLForJavaScriptAnchor(WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/js/html/panelvie.htm") + "\"); "
+            }
+          }
+        }
+
+        setTimeout(ExtraAction + VarPanelViewFrameReference + ".location.replace(\"" + WWHStringUtilities_EscapeURLForJavaScriptAnchor(WWHFrame.WWHHelp.mHelpURLPrefix + "wwhelp/wwhimpl/js/html/panelvie.htm") + "\");", 1);
+      }
+    });
 }
 
 function  WWHPanels_PanelNavigationLoaded()

@@ -37,7 +37,7 @@ text_val.select();
 }
 </script>
   </head>
-  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
     <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
     <div id="linkToThisPage" class="popup" style="display: none;">
       <div class="popupTitle">Link Directly to This Page 
@@ -54,7 +54,7 @@ text_val.select();
       <span>Gosu Reference Guide</span> : 
     <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="intro.03.01.html#1468635">Gosu Introduction</a> : <a class="WebWorks_Breadcrumb_Link" href="intro.03.04.html#1468635">More About the Gosu Type System</a> : Type Inference</span></div>
     <hr align="left" />
-    <div>
+    <blockquote>
       <div class="H2B_-_Heading_2_Break"><a name="1468635">Type Inference</a></div>
       <div class="B_-_Body"><a name="1412278">As mentioned earlier, Gosu supports type inference, in which Gosu sometimes can infer (determine) the type </a>without requiring explicit type declarations in the Gosu code. For instance, Gosu can determine the type of a variable from its initialized value.</div>
       <PRE class="CF_-_Code_First_Line"><a name="1231368">var length = 12</a></PRE>
@@ -74,7 +74,7 @@ text_val.select();
           document.writeln(WWHRelatedTopicsInlineHTML());
         // -->
       </script>
-    </div>
+    </blockquote>
     <script type="text/javascript" language="JavaScript1.2">
       <!--
         document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());

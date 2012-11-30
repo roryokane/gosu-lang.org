@@ -1,10 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" "http://www.w3.org/TR/REC-html40/frameset.dtd">
-<html>
- <!-- Copyright (c) 2000-2006 Quadralay Corporation.  All rights reserved. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <!-- Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved. -->
 
  <head>
-  <meta http-equiv="content-type" content="text/html">
-  <meta http-equiv="charset"      content="UTF-8">
+  <meta http-equiv="content-type" content="text/html" />
+  <meta http-equiv="charset"      content="UTF-8" />
   <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
 
   <script type="text/javascript" language="JavaScript1.2" src="../private/title.js"></script>
@@ -41,9 +41,9 @@
 
       // Sanitize parameters
       //
-      Parameters = Parameters.replace(/[\\<>:;"']|%5C|%3C|%3E|%3A|%3B|%22|%27/gim, "");
+      Parameters = Parameters.replace(/[\\<>:;"']|%5C|%3C|%3E|%3A|%3B|%22|%27/gi, "");
 
-      setTimeout(WWHFrameReference + ".location.replace(\"switch.htm" + Parameters + "\");", 1);
+      setTimeout(WWHFrameReference + ".location.replace(\"../../../../wwhsec.htm" + Parameters + "\");", 1);
     }
 
     // Netscape Resize Fix
@@ -75,8 +75,8 @@
  </head>
 
  <frameset rows="300,*" border="0" frameborder="0" framespacing="0" onload="WWHFrameset_HandleLoad();" onresize="WWHFrameset_HandleResize();" onkeydown="WWHFrameset_HandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onkeypress="WWHFrameset_HandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onkeyup="WWHFrameset_HandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
-  <frame name="" src="blank.htm" scrolling="no">
-  <frame name="" src="blank.htm" scrolling="no">
+  <frame name="" src="blank.htm" scrolling="no" />
+  <frame name="" src="blank.htm" scrolling="no" role="presentation" />
 
   <noframes>
    <body>

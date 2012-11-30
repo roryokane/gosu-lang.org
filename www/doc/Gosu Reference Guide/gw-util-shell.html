@@ -37,7 +37,7 @@ text_val.select();
 }
 </script>
   </head>
-  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
     <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
     <div id="linkToThisPage" class="popup" style="display: none;">
       <div class="popupTitle">Link Directly to This Page 
@@ -54,7 +54,7 @@ text_val.select();
       <span>Gosu Reference Guide</span> : 
     <span class="WebWorks_Breadcrumbs" style="text-align: left;">Running Local Shell Commands</span></div>
     <hr align="left" />
-    <div>
+    <blockquote>
       <div class="CT_-_Chapter_Title"><a name="2180616">Running Local Shell Commands</a></div>
       <div class="B_-_Body"><a name="2180620">You can run local command line programs from Gosu.</a></div>
       <div class="H1NB_-_Heading_1_No_Break"><a name="2186018">Running Command Line Tools from Gosu</a></div>
@@ -69,7 +69,8 @@ text_val.select();
       <PRE class="CM_-_Code_Middle_Line"><a name="2186050">var currentDir = Shell.exec( "ls" )  // *nix</a></PRE>
       <PRE class="CM_-_Code_Middle_Line"><a name="2186051">Shell.exec( "rm -rf " + directoryToDelete ) // directory remove on Unix</a></PRE>
       <div class="B_-_Body"><a name="2186059">On windows, Gosu uses </a><span class="cv_-_computer_voice">CMD.EXE</span> to interpret commands. Beware of problems due to limitations of <span class="cv_-_computer_voice">CMD.EXE</span>, such as a command string may be too long for it. In these cases consider the <span class="cv_-_computer_voice">buildProcess(String)</span> method instead.</div>
-      <div class="B_-_Body"><a name="2186449">For related tools, see </a><a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.8.html#2186133', '');" title="Helpful APIs for Command Line Gosu Programs">“Helpful APIs for Command Line Gosu Programs” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'gscript-shell.05.8.html#2186133', '');" title="Helpful APIs for Command Line Gosu Programs">Gosu Reference Guide</a></span>.</div>
+      <div class="B_-_Body"><a name="2201989">For related tools, see </a><a href="javascript:WWHClickedPopup('gosu', 'gosu-commandline-emerald.05.5.html#2186133', '');" title="Helpful APIs for Command Line Gosu Programs">“Helpful APIs for Command Line Gosu Programs” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('gosu', 'gosu-commandline-emerald.05.5.html#2186133', '');" title="Helpful APIs for Command Line Gosu Programs">Gosu Reference Guide</a></span>.</div>
+      <div class="B_-_Body"><a name="2186449">&nbsp;</a></div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics
@@ -79,7 +80,7 @@ text_val.select();
           document.writeln(WWHRelatedTopicsInlineHTML());
         // -->
       </script>
-    </div>
+    </blockquote>
     <script type="text/javascript" language="JavaScript1.2">
       <!--
         document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());

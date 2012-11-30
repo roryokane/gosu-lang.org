@@ -466,7 +466,7 @@ PRE.CM_-_Code_Middle_Line, div.CM_-_Code_Middle_Line
 
 div.CN_-_Chapter_Num
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 14.0pt;
   font-style: italic;
@@ -491,7 +491,7 @@ div.CN_-_Chapter_Num
 
 .CN_-_Chapter_Num_inner
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 14.0pt;
   font-style: italic;
@@ -558,8 +558,8 @@ div.CS_-_Code_Single_Line
 
 div.CT_-_Chapter_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 24pt;
   font-style: normal;
   font-variant: normal;
@@ -583,8 +583,8 @@ div.CT_-_Chapter_Title
 
 .CT_-_Chapter_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 24pt;
   font-style: normal;
   font-variant: normal;
@@ -742,8 +742,8 @@ div.FT_-_Figure_TItle
 
 div.H1_-_Heading_1
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 18.0pt;
   font-style: normal;
   font-variant: normal;
@@ -769,8 +769,8 @@ div.H1_-_Heading_1
 
 .H1_-_Heading_1_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 18.0pt;
   font-style: normal;
   font-variant: normal;
@@ -790,8 +790,8 @@ div.H1_-_Heading_1
 
 div.H2_-_Heading_2
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 14pt;
   font-style: normal;
   font-variant: normal;
@@ -815,8 +815,8 @@ div.H2_-_Heading_2
 
 .H2_-_Heading_2_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 14pt;
   font-style: normal;
   font-variant: normal;
@@ -836,8 +836,8 @@ div.H2_-_Heading_2
 
 div.H3_-_Heading_3
 {
-  color: #000000;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 11.0pt;
   font-style: normal;
   font-variant: normal;
@@ -861,8 +861,8 @@ div.H3_-_Heading_3
 
 .H3_-_Heading_3_inner
 {
-  color: #000000;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 11.0pt;
   font-style: normal;
   font-variant: normal;
@@ -883,7 +883,7 @@ div.H3_-_Heading_3
 div.HS_-_Head_Sub
 {
   color: #000000;
-  font-family: "Trebuchet MS";
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 10pt;
   font-style: normal;
   font-variant: normal;
@@ -908,7 +908,7 @@ div.HS_-_Head_Sub
 .HS_-_Head_Sub_inner
 {
   color: #000000;
-  font-family: "Trebuchet MS";
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 10pt;
   font-style: normal;
   font-variant: normal;
@@ -1912,6 +1912,7 @@ div.TH_-_Table_Heading
   margin-left: 0pt;
   margin-right: 0pt;
   margin-top: 0.0pt;
+  padding-top: 5px;
   text-align: Left;
   text-indent: 0pt;
   text-transform: none;
@@ -1923,6 +1924,7 @@ div.TH_-_Table_Heading
   margin-bottom: 0.0pt;
   margin-right: 0pt;
   margin-top: 0.0pt;
+  padding-top: 5px;
 }
 
 .TH_-_Table_Heading_inner
@@ -1994,16 +1996,16 @@ div.TT_-_Table_Text
 
 div.zAboutThisDoc
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 24pt;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  margin-bottom: 68.0pt;
+  margin-bottom: 12pt;
   margin-left: 0pt;
   margin-right: 0pt;
-  margin-top: 28.0pt;
+  margin-top: 0pt;
   text-align: Left;
   text-indent: 0pt;
   text-transform: none;
@@ -2012,15 +2014,15 @@ div.zAboutThisDoc
 
 .zAboutThisDoc_outer
 {
-  margin-bottom: 68.0pt;
+  margin-bottom: 12pt;
   margin-right: 0pt;
-  margin-top: 28.0pt;
+  margin-top: 0pt;
 }
 
 .zAboutThisDoc_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 24pt;
   font-style: normal;
   font-variant: normal;
@@ -2134,12 +2136,12 @@ div.zFront_Matter
 {
   color: #000000;
   font-family: "Times New Roman";
-  font-size: 12pt;
+  font-size: 10pt;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   margin-bottom: 3.0pt;
-  margin-left: 9pt;
+  margin-left: 0pt;
   margin-right: 0pt;
   margin-top: 3.0pt;
   text-align: Left;
@@ -2159,7 +2161,7 @@ div.zFront_Matter
 {
   color: #000000;
   font-family: "Times New Roman";
-  font-size: 12pt;
+  font-size: 10pt;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -2178,8 +2180,8 @@ div.zFront_Matter
 
 div.zFront_Matter_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2203,8 +2205,8 @@ div.zFront_Matter_Title
 
 .zFront_Matter_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2224,8 +2226,8 @@ div.zFront_Matter_Title
 
 div.zGlossary_Term
 {
-  color: #77774d;
-  font-family: Arial;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2249,8 +2251,8 @@ div.zGlossary_Term
 
 .zGlossary_Term_inner
 {
-  color: #77774d;
-  font-family: Arial;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2270,7 +2272,7 @@ div.zGlossary_Term
 
 div.zGlossary_Title
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: normal;
@@ -2295,7 +2297,7 @@ div.zGlossary_Title
 
 .zGlossary_Title_inner
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: normal;
@@ -2408,8 +2410,8 @@ div.zHeader_Right
 
 div.zIndex_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2433,8 +2435,8 @@ div.zIndex_Title
 
 .zIndex_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -2455,6 +2457,7 @@ div.zIndex_Title
 div.zLogo
 {
   color: #000000;
+  float: right;
   font-family: "Times New Roman";
   font-size: 12pt;
   font-style: normal;
@@ -2480,6 +2483,7 @@ div.zLogo
 .zLogo_inner
 {
   color: #000000;
+  float: right;
   font-family: "Times New Roman";
   font-size: 12pt;
   font-style: normal;
@@ -2500,7 +2504,7 @@ div.zLogo
 
 div.zPart_Num
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: italic;
@@ -2525,7 +2529,7 @@ div.zPart_Num
 
 .zPart_Num_inner
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: italic;
@@ -2546,8 +2550,8 @@ div.zPart_Num
 
 div.zPart_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 32pt;
   font-style: normal;
   font-variant: normal;
@@ -2571,8 +2575,8 @@ div.zPart_Title
 
 .zPart_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 32pt;
   font-style: normal;
   font-variant: normal;
@@ -2638,7 +2642,7 @@ div.zPDFMark
 
 div.zRelease
 {
-  color: #000000;
+  color: #859AA0;
   font-family: Arial;
   font-size: 12pt;
   font-style: italic;
@@ -2663,7 +2667,7 @@ div.zRelease
 
 .zRelease_inner
 {
-  color: #000000;
+  color: #859AA0;
   font-family: Arial;
   font-size: 12pt;
   font-style: italic;
@@ -2684,9 +2688,9 @@ div.zRelease
 
 div.zTitle
 {
-  color: #77774d;
-  font-family: Arial;
-  font-size: 40pt;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
+  font-size: 34pt;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
@@ -2709,9 +2713,9 @@ div.zTitle
 
 .zTitle_inner
 {
-  color: #77774d;
-  font-family: Arial;
-  font-size: 40pt;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
+  font-size: 34pt;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
@@ -2868,7 +2872,7 @@ div.zWelcome
 
 div.N_007eAboutThisDoc
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: normal;
@@ -2893,7 +2897,7 @@ div.N_007eAboutThisDoc
 
 .N_007eAboutThisDoc_inner
 {
-  color: #77774d;
+  color: #0067AC;
   font-family: "Trebuchet MS";
   font-size: 12pt;
   font-style: normal;
@@ -3053,7 +3057,7 @@ div.N_007eFront_Matter
 div.N_007eFront_Matter_Title
 {
   color: #77774d;
-  font-family: "Trebuchet MS";
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3078,7 +3082,7 @@ div.N_007eFront_Matter_Title
 .N_007eFront_Matter_Title_inner
 {
   color: #77774d;
-  font-family: "Trebuchet MS";
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3144,8 +3148,8 @@ div.N_007eGlossary_Term
 
 div.N_007eGlossary_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3169,8 +3173,8 @@ div.N_007eGlossary_Title
 
 .N_007eGlossary_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3282,8 +3286,8 @@ div.N_007eHeader_Right
 
 div.N_007ePart_Num
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: italic;
   font-variant: normal;
@@ -3307,8 +3311,8 @@ div.N_007ePart_Num
 
 .N_007ePart_Num_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: italic;
   font-variant: normal;
@@ -3328,8 +3332,8 @@ div.N_007ePart_Num
 
 div.N_007ePart_Title
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3353,8 +3357,8 @@ div.N_007ePart_Title
 
 .N_007ePart_Title_inner
 {
-  color: #77774d;
-  font-family: "Trebuchet MS";
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 12pt;
   font-style: normal;
   font-variant: normal;
@@ -3466,8 +3470,8 @@ div.N_007eRelease
 
 div.N_007eTitle
 {
-  color: #77774d;
-  font-family: Arial;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 48pt;
   font-style: normal;
   font-variant: normal;
@@ -3491,8 +3495,8 @@ div.N_007eTitle
 
 .N_007eTitle_inner
 {
-  color: #77774d;
-  font-family: Arial;
+  color: #0067AC;
+  font-family: Calibri, 'Trebuchet MS', Arial;
   font-size: 48pt;
   font-style: normal;
   font-variant: normal;

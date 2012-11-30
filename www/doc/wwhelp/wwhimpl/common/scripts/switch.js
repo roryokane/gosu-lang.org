@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHSwitch_Object()
@@ -101,7 +101,7 @@ function  WWHSwitch_ParseURLParameters(ParamURL)
 
     // Sanitize parameters
     //
-    Parts[0] = Parts[0].replace(/[\\<>:;"']|%5C|%3C|%3E|%3A|%3B|%22|%27/gim, "");
+    Parts[0] = Parts[0].replace(/[\\<>:;"']|%5C|%3C|%3E|%3A|%3B|%22|%27/gi, "");
 
     Parts.length = 1;
     if (Parts[0].indexOf("&") != -1)

@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2003 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHOutline_Object()
@@ -20,7 +20,7 @@ function  WWHOutline_Object()
   this.mPanelAnchor       = null;
   this.mPanelTabTitle     = WWHFrame.WWHJavaScript.mMessages.mTabsTOCLabel;
   this.mPanelTabIndex     = -1;
-  this.mPanelFilename     = "panelvie.htm";
+  this.mPanelFilename     = ((WWHFrame.WWHBrowser.mBrowser == 1) ? "panelfno.htm" : "panelfso.htm");
   this.mInitIndex         = 0;
   this.mBookEntryArray    = new Array();
   this.mEntryHash         = new WWHOutlineEntryHash_Object();
@@ -36,6 +36,8 @@ function  WWHOutline_Object()
   this.fInitBodyHTML          = WWHOutline_InitBodyHTML;
   this.fInitGroupings         = WWHOutline_InitGroupings;
   this.fInitLoadBookTOC       = WWHOutline_InitLoadBookTOC;
+  this.fNavigationHeadHTML    = WWHOutline_NavigationHeadHTML;
+  this.fNavigationBodyHTML    = WWHOutline_NavigationBodyHTML;
   this.fHeadHTML              = WWHOutline_HeadHTML;
   this.fClickedExpand         = WWHOutline_ClickedExpand;
   this.fClickedCollapse       = WWHOutline_ClickedCollapse;
@@ -200,6 +202,16 @@ function  WWHOutline_InitLoadBookTOC(ParamAddTOCEntriesFunc)
   }
 }
 
+function  WWHOutline_NavigationHeadHTML()
+{
+  return "";
+}
+
+function  WWHOutline_NavigationBodyHTML()
+{
+  return "";
+}
+
 function  WWHOutline_HeadHTML()
 {
   var  HTML = new WWHStringBuffer_Object();
@@ -329,6 +341,13 @@ function  WWHOutline_PanelViewLoaded()
   // Restore focus
   //
   WWHFrame.WWHHelp.fFocus("WWHPanelViewFrame");
+
+  // Set accessibility title
+  //
+  if (WWHFrame.WWHHelp.mbAccessible)
+  {
+    WWHFrame.WWHHelp.fSetFrameName("WWHPanelViewFrame");
+  }
 }
 
 function  WWHOutline_HoverTextTranslate(ParamEntryID)

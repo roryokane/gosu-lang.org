@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
-    <title>Advanced Examples</title>
+    <title>Using XML and SOAP Libraries with Gosu Community Release</title>
     <link rel="StyleSheet" href="css/getting-started-gosu-opensource.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
     <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
@@ -37,7 +37,7 @@ text_val.select();
 }
 </script>
   </head>
-  <body style="" onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
     <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
     <div id="linkToThisPage" class="popup" style="display: none;">
       <div class="popupTitle">Link Directly to This Page 
@@ -52,15 +52,15 @@ text_val.select();
     <br />
     <div class="WebWorks_Breadcrumbs" style="text-align: left;">
       <span>Gosu Reference Guide</span> : 
-    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1478659">Getting Started with Gosu Community Release</a> : Advanced Examples</span></div>
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="getting-started-gosu-opensource.04.1.html#1512731">Getting Started with Gosu Community Release</a> : Using XML and SOAP Libraries with Gosu Community Release</span></div>
     <hr align="left" />
-    <div>
-      <div class="H1_-_Heading_1"><a name="1478659">Advanced Examples</a></div>
-      <div class="H2_-_Heading_2"><a name="1478621">Servlet Example</a></div>
-      <div class="B_-_Body"><a name="1466996">The Gosu community release includes an example called </a><span class="cv_-_computer_voice">Servlet</span>. It is a simple implementation of a web server servlet implemented in Gosu.</div>
-      <div class="HS_-_Head_Sub"><a name="1467067">To use the Gosu servlet example:</a></div>
-      <div class="LS_-_List_Start_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+    <blockquote>
+      <div class="H1_-_Heading_1"><a name="1512731">Using XML and SOAP Libraries with Gosu Community Release</a></div>
+      <div class="B_-_Body"><a name="1512811">The Gosu XML APIs and Gosu SOAP APIs are no longer built-in to the core Gosu Community Release </a>command line tool or the Gosu plugin for IntelliJ IDEA. </div>
+      <div class="B_-_Body"><a name="1513621">However, they are available as a separate download or using Maven-style remote configuration. </a></div>
+      <div class="HS_-_Head_Sub"><a name="1512812">To use XML or SOAP by downloading JAR files (for IntelliJ IDEA or command line use)</a></div>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap;">
@@ -68,14 +68,17 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LS_-_List_Start_inner"><a name="1467069">Install the Apache Tomcat web server. This example was written for Tomcat 6.0, which you can download at:</a></div>
+              <div class="LS_-_List_Start_inner"><a name="1512813">Download the JAR files directly from the Gosu web site. </a></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1469813">http://tomcat.apache.org/download-60.cgi</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="LP_-_List_Para"><a name="1513881">For XML, go to this URL:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1513882">http://gosu-lang.org/nexus/content/repositories/gosu/org/gosu-lang/gosu/gosu-xml/</a></div>
+      <div class="LP_-_List_Para"><a name="1513894">For SOAP, go to this URL:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1513913">http://gosu-lang.org/nexus/content/repositories/gosu/org/gosu-lang/gosu/gosu-webservices</a></div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -83,13 +86,13 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469972">Set the system environment variable </a><span class="cv_-_computer_voice">CATALINA_HOME</span> to the root directory of your Tomcat installation. In Windows, go to <span class="ui_-_UI_element">Control Panel</span> → <span class="ui_-_UI_element">System</span> → <span class="ui_-_UI_element">Advanced</span> → <span class="ui_-_UI_element">Set Environment Variables</span>. In the bottom pane, click <span class="ui_-_UI_element">New</span> and then create a new variable called <span class="cv_-_computer_voice">CATALINA_HOME</span> with value <span class="cv_-_computer_voice">C:\Program Files\apache-tomcat</span>, or wherever your installation is.</div>
+              <div class="LI_-_List_Item_inner"><a name="1512815">Click on the version number of your version of Gosu.</a></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -97,16 +100,15 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469973">Create a servlet folder called </a><span class="cv_-_computer_voice">GosuServlet</span> in your web server’s <span class="cv_-_computer_voice">webapps</span> directory. For this example, we assume you are using Apache Tomcat and the directory is called <span class="cv_-_computer_voice">apache-tomcat</span>. Copy the GosuServlet files</div>
+              <div class="LI_-_List_Item_inner"><a name="1512816">Right-click on the main JAR file in your browser, and save that file to a </a><span class="cv_-_computer_voice">lib</span> subdirectory of your project.</div>
             </td>
           </tr>
         </table>
       </div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467071">- apache-tomcat</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467072">    - webapps</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467073">      - GosuServlet</a></PRE>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="LP_-_List_Para"><a name="1514000">For XML, this has the file name </a><span class="cv_-_computer_voice">gosu-xml-</span><span class="pst_-_parameter_in_code_snippets_table">VERSIONNUMBER</span><span class="cv_-_computer_voice">.jar</span>.</div>
+      <div class="LP_-_List_Para"><a name="1514012">For SOAP, this has the file name </a><span class="cv_-_computer_voice">gosu-webservices-</span><span class="pst_-_parameter_in_code_snippets_table">VERSIONNUMBER</span><span class="cv_-_computer_voice">.jar</span>.</div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
               <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
@@ -114,189 +116,107 @@ text_val.select();
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467075">Add a </a><span class="cv_-_computer_voice">WEB-INF</span> folder under your new servlet directory:</div>
+              <div class="LI_-_List_Item_inner"><a name="1515585">Include the JAR files directly in your project as a dependency or add to your classpath. </a></div>
             </td>
           </tr>
         </table>
       </div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467077">- GosuServlet</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467078">    - WEB-INF</a></PRE>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="LP_-_List_Para"><a name="1515586">For IntelliJ IDEA, if you are not using Maven, this requires configuring your project to explicitly add a </a>dependency for that JAR file. </div>
+      <div class="LP_-_List_Para"><a name="1515597">For command line Gosu, add a </a><span class="cv_-_computer_voice">classpath</span> statement to your program. See <a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.06.2.html#2209362', '');" title="The Structure of a Gosu Program">“Setting the Class Path to Call Other Gosu or Java Classes”</a>.</div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1515408">The Gosu plugin for IntelliJ IDEA ignores the syntax for Maven-style configuration </a>classpath configuration. For command line use, see <a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.06.2.html#2210532', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a>. Although IntelliJ IDEA does not report syntax errors for that syntax, you must download JAR files and configure the IDE to add the JAR as a dependency.</div>
+      <div class="HS_-_Head_Sub"><a name="1514861">For command-line use only, use Maven-style remote configuration</a></div>
+      <div class="B_-_Body"><a name="1514862">If you are using command-line Gosu, you can use advanced Maven-style configuration classpath configuration. </a>See <a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.06.2.html#2210532', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1514184">The Gosu plugin for IntelliJ IDEA ignores the syntax for Maven-style configuration </a>classpath configuration. To use IntelliJ IDEA with XML and SOAP APIs, see the earlier procedure for downloading JARs.</div>
+      <div class="HS_-_Head_Sub"><a name="1515198">To use XML and SOAP using Maven POM files in IntelliJ</a></div>
+      <div class="B_-_Body"><a name="1515199">If you are using IntelliJ with a Maven project file and POM file, the Maven plugin for IntelliJ IDEA adds the </a>dependencies automatically to the local cached IntelliJ file. </div>
+      <div class="B_-_Body"><a name="1515200">Use the following repository information:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	5.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467080">Create a </a><span class="cv_-_computer_voice">web.xml</span> file inside that folder to enable Gosu template support, such as</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="1515201">STATUS</a></span> = <span class="cv_-_computer_voice">releases</span></div>
             </td>
           </tr>
         </table>
       </div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467082">- GosuServlet</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467083">    - WEB-INF</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467084">      - web.xml</a></PRE>
-      <div class="LP_-_List_Para"><a name="1467271">In this file paste the following:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467086">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467087">  &lt;web-app xmlns="http://java.sun.com/xml/ns/j2ee"</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467088">    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467089">    xsi:schemaLocation=</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1468993">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467090">    version="2.4"&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467091">  </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467092">    &lt;display-name&gt;Gosu Servlet Examples&lt;/display-name&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467093">    &lt;description&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467094">      Gosu Servlet Examples.</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467095">    &lt;/description&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467096">  </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467097">    &lt;servlet&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467098">      &lt;servlet-name&gt;GosuServlet&lt;/servlet-name&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467099">      &lt;servlet-class&gt;gw.util.servlet.GosuServlet&lt;/servlet-class&gt;     </a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467100">    &lt;/servlet&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467101">    &lt;servlet-mapping&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467102">      &lt;servlet-name&gt;GosuServlet&lt;/servlet-name&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467103">      &lt;url-pattern&gt;*.gst&lt;/url-pattern&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467104">    &lt;/servlet-mapping&gt;</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467105">  &lt;/web-app&gt;</a></PRE>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	6.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467107">Copy </a><span class="cv_-_computer_voice">HelloWorld.gst</span> from the example <span class="cv_-_computer_voice">example/GosuServlet/src/sample</span> directory into your servlet root directory. After this step, your file hierarchy looks like:</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="pst_-_parameter_in_code_snippets_table"><a name="1515202">REPOT_ID</a></span> = <span class="cv_-_computer_voice">gosu-lang.org-releases</span></div>
             </td>
           </tr>
         </table>
       </div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470108">- apache-tomcat</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470109">&nbsp;</a>&nbsp;- webapps</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467109">&nbsp;</a>&nbsp;&nbsp;&nbsp;- GosuServlet</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467110">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp; - sample</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467111">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- hello</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467112">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- HelloWorld.gst</PRE>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	7.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467114">Copy </a><span class="s_-_strong">all</span> JAR files from the root of the servlet example directory into your servlet <span class="cv_-_computer_voice">WEB-INF</span> directory. Next, copy the JAR files from the <span class="cv_-_computer_voice">lib</span> subdirectory of the servlet example into your servlet <span class="cv_-_computer_voice">WEB-INF</span> directory. Your servlet looks like this:</div>
+              <div class="BI_-_Bullet_Item_inner"><span class="pc_-_parameter_in_code"><a name="1515203">REPOSITORY_URL</a></span> = <span class="cv_-_computer_voice">http://gosu-lang.org/nexus/content/groups/releases/</span></div>
             </td>
           </tr>
         </table>
       </div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470142">- apache-tomcat</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470143">&nbsp;</a>&nbsp;- webapps</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467117">&nbsp;</a>&nbsp;&nbsp;&nbsp;- GosuServlet</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470159">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- WEB-INF</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467119">      </a>&nbsp;&nbsp;- lib</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470170">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- gw-gosu-core.jar</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470198">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- gw-gosu-core-api.jar</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1470217">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- servlet-api</PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1467121">&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...[the rest of the JAR files]</PRE>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	8.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469871">Start up Apache Tomcat. You can do this by running the following script:</a></div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1515204">group ID </a>– <span class="cv_-_computer_voice">org.gosu-lang.gosu</span></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1469890">apache-tomcat/bin/startup.bat</a></div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	9.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1469912">Wait for Tomcat to startup. If you see any servlet startup errors in the console, make a note of them for debug</a>ging or bug reporting.</div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1515205">artifact ID</a> – For XML, use <span class="cv_-_computer_voice">gosu-xml</span>. For SOAP, use gosu-webservices</div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="LI_-_List_Item_outer" style="margin-left: 57pt;">
-        <table border="0" cellspacing="0" cellpadding="0" summary="">
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
           <tr style="vertical-align: baseline;">
             <td>
-              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap;">
-                <span class="ri_-_run_in_header">	10.	</span>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="bu_-_bullet">•	</span>
               </div>
             </td>
             <td width="100%">
-              <div class="LI_-_List_Item_inner"><a name="1467123">Test this in your browser, remembering to set the domain name and port appropriately, such as:</a></div>
+              <div class="BI_-_Bullet_Item_inner"><a name="1515206">version number </a>– <span class="e_-_emphasis">your current Gosu version</span></div>
             </td>
           </tr>
         </table>
       </div>
-      <div class="CS_-_Code_Single_Line"><a name="1467125">   http://localhost:8080/GosuServlet/sample/hello/HelloWorld.gst</a></div>
-      <div class="H2_-_Heading_2"><a name="1471689">Hibernate Database Example</a></div>
-      <div class="B_-_Body"><a name="1471894">The </a><span class="cv_-_computer_voice">examples</span> directory in the Gosu directory includes an example called <span class="cv_-_computer_voice">hibernate</span>. This shows an example project that uses the Hibernate tool. Hibernate is a Java library that provides a framework for mapping an object-oriented domain model to a traditional relational database. This is also called an object-relational mapping (ORM). Hibernate is free and open source software. </div>
-      <div class="B_-_Body"><a name="1471801">Gosu can easily access any Java classes or JAR files, so Gosu can access these valuable persistence libraries.</a></div>
-      <div class="B_-_Body"><a name="1471989">For more information about the Hibernate project, refer to:</a></div>
-      <div class="CS_-_Code_Single_Line"><a name="1471990">http://www.hibernate.org/</a></div>
-      <div class="B_-_Body"><a name="1471978">The example contains a couple Gosu files and a directory of libraries (including the Hibernate libraries).</a></div>
-      <div class="B_-_Body"><a name="1472029">The main file is the file </a><span class="cv_-_computer_voice">src/demo/TestDrive.gsp</span>. This is the main entry point to the example. The file extension is <span class="cv_-_computer_voice">.gsp</span>, which means this is a Gosu program. A Gosu program is a way to write small scripts or to launch larger Gosu applications that use Gosu classes or other Java types.</div>
-      <div class="B_-_Body"><a name="1472074">The TestDrive.gsp file has a utility function called </a><span class="cv_-_computer_voice">configureHibernate</span>, which sets up a map of configuration properties for Hibernate. It uses the initialization Gosu syntax as follows:</div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472120">var props = {</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472121">    "hibernate.dialect" -&gt; "org.hibernate.dialect.HSQLDialect",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472122">    "hibernate.connection.driver_class" -&gt; "org.hsqldb.jdbcDriver",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472123">    "hibernate.connection.url" -&gt; "jdbc:hsqldb:mem:demodb",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472124">    "hibernate.connection.username" -&gt; "sa",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472125">    "hibernate.connection.password" -&gt; "",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472126">    "hibernate.connection.pool_size" -&gt; "1",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472127">    "hibernate.connection.autocommit" -&gt; "true",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472128">    "hibernate.cache.provider_class" -&gt; "org.hibernate.cache.NoCacheProvider",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472129">    "hibernate.hbm2ddl.auto" -&gt; "create-drop",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472130">    //"hibernate.show_sql" -&gt; "true",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472131">    "hibernate.transaction.factory_class" -&gt; "org.hibernate.transaction.JDBCTransactionFactory",</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472132">    "hibernate.current_session_context_class" -&gt; "thread"</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472133">  }</a></PRE>
-      <div class="B_-_Body"><a name="1472105">The resulting type is a </a><span class="cv_-_computer_voice">java.util.Map&lt;String, String&gt;</span> object, which is not explicit. Gosu infers the type because of the use of the -&gt; syntax that maps the property (a <span class="cv_-_computer_voice">String</span>) to a value (a <span class="cv_-_computer_voice">String</span>).</div>
-      <div class="B_-_Body"><a name="1472164">The configuration function then sends these properties to the Hibernate system:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472364">var config = new AnnotationConfiguration()</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472365">props.eachKeyAndValue( \k, v -&gt; config.setProperty(k, v) )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472366">config.addAnnotatedClass( Book.Type.BackingClass )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472367">return config.buildSessionFactory()</a></PRE>
-      <div class="B_-_Body"><a name="1472344">Next, the example begins a database transaction using the Hibernate libraries:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472190">// Add some books</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472191">var sn = sessionFactory.CurrentSession</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472192">var tx = sn.beginTransaction()</a></PRE>
-      <div class="B_-_Body"><a name="1472240">Next, the example creates some new objects to save in the database, and commits them to the database.</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472193">sn.save( new Book() {:Author="I.N. Herstein", :Title="Abstract Algebra"} )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472194">sn.save( new Book() {:Author="David Hackett Fischer", :Title="Washington's Crossing"} )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472195">tx.commit()</a></PRE>
-      <div class="B_-_Body"><a name="1472250">Finally, the example runs a database query to confirm that the sample worked successfully:</a></div>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472275">// Find some books</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472276">sn = sessionFactory.CurrentSession</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472277">tx = sn.beginTransaction()</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472278">var query = sn.createQuery( "from " + Book.Type.RelativeName )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472279">for( book in query.iterate() as Iterator&lt;Book&gt; ) {</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472280">  print( book.Title + " by " + book.Author )</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472281">}</a></PRE>
-      <PRE class="CM_-_Code_Middle_Line"><a name="1472282">tx.commit()</a></PRE>
-      <div class="B_-_Body"><a name="1472264">The Gosu code iterates across the results in a </a><span class="cv_-_computer_voice">for</span> loop. Note the code that casts the query to an iterator:</div>
-      <div class="CS_-_Code_Single_Line"><a name="1472310">as Iterator&lt;Book&gt;</a></div>
-      <div class="B_-_Body"><a name="1472219">By doing this, the code inside the loop can treat the book variable as the </a><span class="e_-_emphasis">correct specific type</span>. That means that it can access type-specific fields like <span class="cv_-_computer_voice">book.Title</span> and <span class="cv_-_computer_voice">book.Author</span> in a type-safe way.</div>
-      <div class="B_-_Body"><a name="1472334">As you can see, inside the loop is an example of the one global function in Gosu, which is the </a><span class="cv_-_computer_voice">print</span> function. It prints a <span class="cv_-_computer_voice">String</span> to the console or standard output.</div>
-      <div class="B_-_Body"><a name="1472498">Another project file is </a><span class="cv_-_computer_voice">src/demo/Book.gs</span>. It is a Gosu class that defines the structure of the book objects in the example. Refer to it for details if you plan to implement a Hibernate project in Gosu.</div>
+      <div class="B_-_Body"><a name="1514053">See the related section </a><a href="javascript:WWHClickedPopup('gosu', 'gosu-programs.06.2.html#2210532', '');" title="The Structure of a Gosu Program">“Advanced Remote Maven-style Configuration of Dependencies (Command Line Only)”</a>.</div>
       <script type="text/javascript" language="JavaScript1.2">
         <!--
           // Clear related topics
@@ -306,7 +226,7 @@ text_val.select();
           document.writeln(WWHRelatedTopicsInlineHTML());
         // -->
       </script>
-    </div>
+    </blockquote>
     <script type="text/javascript" language="JavaScript1.2">
       <!--
         document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());

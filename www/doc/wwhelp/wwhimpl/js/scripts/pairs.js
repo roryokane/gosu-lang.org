@@ -1,3 +1,6 @@
+// Copyright (c) 2005-2012 Quadralay Corporation.  All rights reserved.
+//
+
 function Pairs_Object(ParamArray)
 {
   // Store Original Array

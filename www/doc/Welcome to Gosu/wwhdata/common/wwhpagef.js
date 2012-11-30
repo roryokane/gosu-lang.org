@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHGetWWHFrame(ParamToBookDir,
@@ -9,15 +9,23 @@ function  WWHGetWWHFrame(ParamToBookDir,
 
   // Set reference to top level help frame
   //
-  if ((typeof(parent.WWHHelp) != "undefined") &&
-      (parent.WWHHelp != null))
+  try
   {
-    Frame = eval("parent");
+    if ((typeof(parent.WWHHelp) != "undefined") &&
+        (parent.WWHHelp != null))
+    {
+      Frame = eval("parent");
+    }
+    else if ((typeof(parent.parent.WWHHelp) != "undefined") &&
+             (parent.parent.WWHHelp != null))
+    {
+      Frame = eval("parent.parent");
+    }
   }
-  else if ((typeof(parent.parent.WWHHelp) != "undefined") &&
-           (parent.parent.WWHHelp != null))
+  catch (exception)
   {
-    Frame = eval("parent.parent");
+    // Assume we've got a security situation on our hands
+    //
   }
 
   // Redirect if Frame is null
@@ -60,37 +68,52 @@ function  WWHGetWWHFrame(ParamToBookDir,
         var  BaseList = new Array();
         var  MaxIndex;
         var  Index;
+        var  RelativePathComponent;
 
-
+        // Trim base file component
+        //
         PathList.length--;
         for (MaxIndex = RelativePathList.length, Index = 0 ; Index < MaxIndex ; Index++)
         {
-          if (RelativePathList[Index] == ".")
+          RelativePathComponent = RelativePathList[Index];
+
+          if (
+              (RelativePathComponent == "")
+               ||
+              (RelativePathComponent == ".")
+             )
           {
-            ;  // Do nothing!
+            // Do nothing!
+            //
           }
-          else if (RelativePathList[Index] == "..")
+          else if (RelativePathComponent == "..")
           {
-            if (BaseList.length == 0)
-            {
-              BaseList[BaseList.length] = PathList[PathList.length - 1];
-              PathList.length = PathList.length - 1;
-            }
-            else
-            {
-              BaseList.length--;
-            }
+            BaseList[BaseList.length] = PathList[PathList.length - 1];
+            PathList.length = PathList.length - 1;
           }
           else
           {
-            BaseList[BaseList.length] = RelativePathList[Index];
+            BaseList[BaseList.length] = RelativePathComponent;
           }
         }
 
-        BaseFilename = BaseList.join("/") + BaseFilename;
+        // Reverse compoment list before determining base file path
+        //
+        BaseList.reverse();
+
+        // Build path
+        //
+        if (BaseList.length > 0)
+        {
+          BaseFilename = BaseList.join("/") + "/" + BaseFilename;
+        }
+        else
+        {
+          BaseFilename = BaseFilename;
+        }
       }
 
-      location.replace(WWHToWWHelpDirectory() + ParamToBookDir + "wwhelp/wwhimpl/api.htm?context=" + WWHBookData_Context() + "&file=" + BaseFilename + "&single=true");
+      window.top.location.replace(WWHToWWHelpDirectory() + ParamToBookDir + "wwhelp/wwhimpl/api.htm?context=" + WWHBookData_Context() + "&file=" + BaseFilename + "&single=true");
     }
   }
 

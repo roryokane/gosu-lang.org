@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2005 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2000-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function  WWHPopupFormat_Translate(ParamText)

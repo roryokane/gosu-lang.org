@@ -1,3 +1,6 @@
+// Copyright (c) 2005-2012 Quadralay Corporation.  All rights reserved.
+//
+
 function Phrase_Object(ParamPhrase)
 {
   // Array of search words

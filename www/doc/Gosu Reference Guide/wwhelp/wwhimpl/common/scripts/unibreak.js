@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2009 Quadralay Corporation.  All rights reserved.
+// Copyright (c) 2009-2012 Quadralay Corporation.  All rights reserved.
 //
 
 function WWHUnicode_Break_CheckBreak_Sequence(ParamPrevious,
@@ -274,6 +274,30 @@ function WWHUnicode_Break_CheckBreak_Sequence(ParamPrevious,
   {
     VarResult = true;
   }
+  else if (
+           (
+            (true)
+           )
+            &&
+           (
+            (WWHUnicodeInfo_WWCloseBracket(ParamCurrent))
+           )
+          )
+  {
+    VarResult = false;
+  }
+  else if (
+           (
+            (WWHUnicodeInfo_WWOpenBracket(ParamPrevious))
+           )
+            &&
+           (
+            (true)
+           )
+          )
+  {
+    VarResult = false;
+  }
 
   return VarResult;
 }
@@ -299,7 +323,43 @@ function WWHUnicode_CheckBreakAtIndex(ParamString,
       }
       else
       {
-        VarResult = WWHUnicode_Break_CheckBreak_Sequence(ParamString.charAt(ParamIndex - 1), ParamString.charAt(ParamIndex));
+        var  VarPrevious = ParamString.charAt(ParamIndex - 1);
+        var  VarCurrent = ParamString.charAt(ParamIndex);
+
+        VarResult = WWHUnicode_Break_CheckBreak_Sequence(VarPrevious, VarCurrent);
+
+        // Check ending
+        //
+        if ( ! VarResult)
+        {
+          // Ending with a middle character?
+          //
+          if (
+              (WWHUnicodeInfo_MidLetter(VarCurrent))
+               ||
+              (WWHUnicodeInfo_MidNumLet(VarCurrent))
+               ||
+              (WWHUnicodeInfo_MidNum(VarCurrent))
+             )
+          {
+            // Check next character
+            //
+            if ((ParamIndex + 1) == ParamString.length)
+            {
+              // Break at end of search string
+              //
+              VarResult = true;
+            }
+            else
+            {
+              var  VarNext = ParamString.charAt(ParamIndex + 1);
+
+              // Depends on the next character
+              //
+              VarResult = WWHUnicode_Break_CheckBreak_Sequence(VarCurrent, VarNext);
+            }
+          }
+        }
       }
     }
   }
