@@ -1,5 +1,4 @@
 classpath "."
-classpath "org.gosu-lang.gosu:gosu-process:0.10"
 
 uses java.util.*
 uses java.io.*
